@@ -9,7 +9,11 @@ class HomeController extends ControllerBase {
     }
 
     public function defaultAction(){
-        $this->view->helloWorld();
+
+        //$this->view->helloWorld();
+
+        $data = $this->model->dbTest();
+        $this->view->dataUitTestDB($data);
     }
 
 }
