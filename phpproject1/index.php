@@ -18,6 +18,9 @@ session_start();
 if (isset($_SERVER['PATH_INFO'])) { //als er extra na de sitenaam sla dit op in variabele URL
     $url = explode('/', ltrim($_SERVER['PATH_INFO'], '/'));
 }
+else{
+    $url = [];
+}
 
 Router::route($url);
 
