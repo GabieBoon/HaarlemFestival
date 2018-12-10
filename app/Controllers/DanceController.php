@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends ControllerBase {
+class DanceController extends ControllerBase {
 
     //voer de functionaliteit van ControllerBase uit
     public function __construct($class)

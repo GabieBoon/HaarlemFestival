@@ -1,12 +1,33 @@
 <?php
 
-class ViewBase extends ApplicationBase{
+class ViewBase {
 
-    public function __construct()
+    protected $head, $body, $layout, $title, $class;
+
+    public function __construct($class, $siteTitle = SITE_TITLE)
     {
-        //roep de application base aan
-        parent::__construct();
+        $this->class = $class;
+        $this->title = $siteTitle;
     }
+
+    public function render(){
+
+        //head
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Head' .'.php';
+
+        //header
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Header' .'.php';
+
+        //content
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . $this->class . 'Layout' . '.php';
+
+        //footer
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Footer' .'.php';
+    }
+
+//    public function getLayoutName(){
+//        return $this->class . 'Layout';
+//    }
 
 
 }

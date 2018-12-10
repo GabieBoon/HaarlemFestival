@@ -15,7 +15,7 @@
         require_once ROOT . DS . 'app' . DS . 'Views' . DS . $view . '.php';
 
         $this->model = new $model();
-        $this->view = new $view();
+        $this->view = new $view($class);
 
         //roep de application base aan
         parent::__construct($class);

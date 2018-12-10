@@ -1,14 +1,11 @@
 <?php
 
-class ModelBase extends ApplicationBase{
+class ModelBase {
 
     protected $conn;
 
     public function __construct()
     {
-        //roep de application base aan
-        parent::__construct();
-
         //roep de database aan
         if (!isset($conn)){
             $this->conn = $this->dbconnect();
@@ -17,7 +14,7 @@ class ModelBase extends ApplicationBase{
     }
 
     private function dbconnect() {
-        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_DB);
+        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         return $conn;
     }
 

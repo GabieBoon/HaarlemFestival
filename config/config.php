@@ -27,8 +27,17 @@ define('DEFAULT_LAYOUT', 'default'); // if no layout is set in the controller us
 //set site title
 define('SITE_TITLE', 'Haarlem Festival');
 
+
+
+
 //set site project root
-define('PROOT', '/php-eindopdracht/');
+//define('PROOT', '/php-eindopdracht/'); //werkt alleen voor Jasper
+define('PROOT', '/phpfiles/');  //werkt alleen voor David
+
+
+
+
+
 
 //set developer details
 define('DEVELOPER_NAME', 'InHolland Informatica Inf2s Group 3 (1819)');
