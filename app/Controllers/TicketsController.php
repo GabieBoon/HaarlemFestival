@@ -1,6 +1,6 @@
 <?php
 
-class DanceController extends ControllerBase {
+class TicketsController extends ControllerBase {
 
     //voer de functionaliteit van ControllerBase uit
     public function __construct($class)
@@ -15,6 +15,12 @@ class DanceController extends ControllerBase {
 
     public function showPage(){
         $this->view->showPage();
+    }
+
+    public function clearWinkelwagenAction(){
+        $_SESSION['Winkelwagen'] = array();
+
+        $this->showPage();
     }
 
 }

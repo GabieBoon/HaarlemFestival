@@ -23,17 +23,4 @@
 
     }
 
-     public function addTicketAction($ticketId){
-
-        require_once ROOT . DS . 'app' . DS . 'Controllers' . DS . 'WinkelwagenController' . '.php';
-
-        $winkelwagen = new WinkelwagenController('Winkelwagen');
-        $winkelwagen->addTicket($ticketId);
-
-        $this->showPage();
-     }
-
-     public function showWinkelwagen(){
-
-     }
 }
