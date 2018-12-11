@@ -26,14 +26,24 @@ section {
     border-color: #797979;
     border-width: 1px;
 
-    margin: 50px;
+    box-sizing: border-box;
+
+    margin: 10px;
     padding-left: 70px;
+    float: left;
+
 }
 
 main {
     width: 1920px;
 
-    /*background: url(/phpfiles/Haarlem-Festival BitBucket/haarlem-festival/phpproject1/images/Dance BW.jpg) no-repeat center fixed; */
+    box-sizing: border-box;
+    padding: 40px;
+    margin: 0px;
+
+    background: url(/phpfiles/Haarlem-Festival%20BitBucket/haarlem-festival/images/Dance%20BW.jpg);
     background-size: cover;
+
 }
+
 

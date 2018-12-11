@@ -1,4 +1,4 @@
-
+<main>
     <!--<img src="/phpfiles/Haarlem-Festival BitBucket/haarlem-festival/phpproject1/images/Dance BW.jpg" alt="Background, dancing people in black and white">
     -->
     <section>
@@ -25,7 +25,7 @@
         <h2>Tickets</h2>
 
         <p>
-        <form action="">
+        <form action="http://localhost<?= PROOT ?>Haarlem-Festival%20BitBucket/haarlem-festival/Dance/addTicket/1">
             <button type = "submit"> add ticket to cart</button>
         </form>
 
@@ -33,3 +33,4 @@
 
     </section>
 
+</main>

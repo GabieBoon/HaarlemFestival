@@ -10,10 +10,11 @@ class DanceController extends ControllerBase {
 
     public function defaultAction(){
 
-        //$this->view->helloWorld();
 
-        //$data = $this->model->dbTest();
-        //$this->view->dataUitTestDB($data);
+        $this->showPage();
+    }
+
+    public function showPage(){
         $this->view->showPage();
     }
 

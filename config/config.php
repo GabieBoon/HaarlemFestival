@@ -18,6 +18,7 @@ define('DB_USER', 'jaspewo251_festival');
 define('DB_PASSWORD', 'YHQAzcGaVm');
 ##end DB settings##
 
+
 //set default controller
 define('DEFAULT_CONTROLLER', 'home'); // default controller if there isn't one defined in the url
 

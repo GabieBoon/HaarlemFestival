@@ -13,7 +13,7 @@ spl_autoload_register(function ($className) {
 });
 
 
-session_start();
+session_start(); //logischer om te verplaatsen?
 
 if (isset($_SERVER['PATH_INFO'])) { //als er extra na de sitenaam sla dit op in variabele URL
     $url = explode('/', ltrim($_SERVER['PATH_INFO'], '/'));

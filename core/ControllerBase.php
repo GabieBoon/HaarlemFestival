@@ -14,6 +14,7 @@
         require_once ROOT . DS . 'app' . DS . 'Models' . DS . $model . '.php';
         require_once ROOT . DS . 'app' . DS . 'Views' . DS . $view . '.php';
 
+
         $this->model = new $model();
         $this->view = new $view($class);
 
@@ -21,4 +22,18 @@
         parent::__construct($class);
 
     }
+
+     public function addTicketAction($ticketId){
+
+        require_once ROOT . DS . 'app' . DS . 'Controllers' . DS . 'WinkelwagenController' . '.php';
+
+        $winkelwagen = new WinkelwagenController('Winkelwagen');
+        $winkelwagen->addTicket($ticketId);
+
+        $this->showPage();
+     }
+
+     public function showWinkelwagen(){
+
+     }
 }
