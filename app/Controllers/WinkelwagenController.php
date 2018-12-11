@@ -9,7 +9,7 @@ class WinkelwagenController extends ControllerBase
         parent::__construct($class);
     }
 
-    public function addTicket($ticketId){
+    public function addTicketAction($ticketId){
 
         $data = $this->model->addTicket($ticketId);
 
@@ -17,7 +17,11 @@ class WinkelwagenController extends ControllerBase
             $_SESSION['Winkelwagen'][$ticketId] = $data;
         }
 
-        //echo $_SESSION['Winkelwagen'][1]['artist'];
+        //debug($_SESSION);
+
+
+        header('Location: http://localhost' .  PROOT . 'Haarlem-Festival%20BitBucket/haarlem-festival/' . $_SESSION['LastVisited'] . '/' );
+
     }
 
     public function viewWinkelwagen(){

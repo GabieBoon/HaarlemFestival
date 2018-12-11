@@ -12,6 +12,9 @@ class DanceView extends ViewBase{
     }
 
     public function showPage(){
+
+        //var_dump($_SESSION) ;
+
         $this->render();
     }
 }

@@ -25,7 +25,7 @@
         <h2>Tickets</h2>
 
         <p>
-        <form action="http://localhost<?= PROOT ?>Haarlem-Festival%20BitBucket/haarlem-festival/Dance/addTicket/1">
+        <form action="http://localhost<?= PROOT ?>Haarlem-Festival%20BitBucket/haarlem-festival/Winkelwagen/addTicket/1">
             <button type = "submit"> add ticket to cart</button>
         </form>
 
