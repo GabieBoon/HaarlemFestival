@@ -18,7 +18,7 @@ class WinkelwagenController extends ControllerBase
             $_SESSION['Winkelwagen'][$ticketId] = $data;
         }
 
-        header('Location: http://localhost' .  PROOT . 'Haarlem-Festival%20BitBucket/haarlem-festival/' . $_SESSION['LastVisited'] . '/' );
+        header('Location: http://localhost' .  PROOT . $_SESSION['LastVisited'] . '/' );
 
     }
 

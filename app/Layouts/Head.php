@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title> <?= $this->title ?> </title>
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Haarlem-Festival BitBucket/haarlem-festival/css/testcss.css" >
+    <link rel="stylesheet" type="text/css" href= "../css/testcss.css" >
 </head>
 
 <body>

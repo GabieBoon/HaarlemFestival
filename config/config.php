@@ -33,7 +33,7 @@ define('SITE_TITLE', 'Haarlem Festival');
 
 //set site project root
 //define('PROOT', '/php-eindopdracht/'); //werkt alleen voor Jasper
-define('PROOT', '/phpfiles/');  //werkt alleen voor David
+define('PROOT', '/haarlem-festival/');  //werkt alleen voor David
 
 
 

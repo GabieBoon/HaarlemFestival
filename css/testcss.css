@@ -17,6 +17,9 @@ p {
     align-content: center;
 
 }
+.clearfix{
+    overflow: auto;
+}
 
 section {
     width: 900px;
@@ -36,12 +39,12 @@ section {
 
 main {
     width: 1920px;
-
+    height: 100vh;
     box-sizing: border-box;
     padding: 40px;
     margin: 0px;
 
-    background: url(/phpfiles/Haarlem-Festival%20BitBucket/haarlem-festival/images/Dance%20BW.jpg);
+    background: url(/haarlem-festival/images/Dance%20BW.jpg);
     background-size: cover;
 
 }

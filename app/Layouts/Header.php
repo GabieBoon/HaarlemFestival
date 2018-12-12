@@ -1,7 +1,7 @@
 <header id="<?= $this->class ?>">
-    <a href="http://localhost<?= PROOT ?>Haarlem-Festival%20BitBucket/haarlem-festival/Home"> Home</a>
-    <a href="http://localhost<?= PROOT ?>Haarlem-Festival%20BitBucket/haarlem-festival/Dance"> Dance</a>
-    <a href="http://localhost<?= PROOT ?>Haarlem-Festival%20BitBucket/haarlem-festival/Tickets"> Tickets</a>
+    <a href="<?= PROOT ?>Home/"> Home</a>
+    <a href="<?= PROOT ?>Dance/"> Dance</a>
+    <a href="<?= PROOT ?>Tickets/"> Tickets</a>
 </header>
 
 

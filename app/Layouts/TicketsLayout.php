@@ -6,7 +6,7 @@
     <p> <?= $this->getWinkelwagen() ?> </p>
 
 
-    <form action="http://localhost<?= PROOT ?>Haarlem-Festival%20BitBucket/haarlem-festival/Tickets/clearWinkelwagen/">
+    <form action="<?= PROOT ?>Tickets/clearWinkelwagen/">
         <button type = "submit"> reken winkelwagen af </button>
     </form>
 
