@@ -1,6 +1,7 @@
 html, body{
     margin:0;
     padding:0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -38,7 +39,7 @@ section {
     box-sizing: border-box;
 
     margin: 10px;
-    padding-left: 70px;
+    padding: 25px;
     float: left;
 
 }
@@ -55,6 +56,9 @@ main {
 
 }
 
+
+/* ===== header css ===== */
+
 #test{
     background-color: #797979;
     height:150px;
@@ -62,10 +66,8 @@ main {
 
 .nav-logo{
     width: 150px;
-
-
-
 }
+
 .hide{
     visibility: hidden;
     display: none;
@@ -73,7 +75,7 @@ main {
 
 .nav-wrapper {
     /* 100 view width -  logo width  */
-    width:calc(100vw - 150px );
+    width:calc(100vw - 150px - 20px);
     float:right;
     height:50px;
     margin-top:50px;
@@ -88,9 +90,22 @@ main {
 
 .nav-wrapper ul li{
     display: inline-block;
-    background-color: white;
-    padding: 10px;
     list-style-type: none;
+    margin: 0;
+    width: auto;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-wrapper ul li a{
+    text-decoration: none;
+    display: inline-block;
+    background-color: white;
+    margin-right: 30px;
+    width: 125px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
 }
 
 .nav-right{
@@ -103,3 +118,42 @@ main {
     margin-left: 10px;
 }
 
+.dance-button a{
+    box-shadow:  5px 5px #3083D0;
+    color: #3083D0;
+}
+
+.jazz-button a{
+    box-shadow:  5px 5px #440E62;
+    color: #440E62;
+}
+
+.historic-button a{
+    box-shadow:  5px 5px #DB1F1F;
+    color: #DB1F1F;
+}
+
+.food-button a{
+    box-shadow: 5px 5px #F0841B;
+    color: #F0841B;
+}
+
+.schedule-button a{
+    box-shadow: 5px 5px #DCC500;
+    color: #DCC500;
+}
+
+.cart-button a{
+    box-shadow: 5px 5px #849A7D;
+    color: #849A7D;
+}
+
+.language-selection {
+    box-shadow: 5px 5px #A1A1A1;
+    color: #A1A1A1;
+}
+
+select .language-selection option[value="nederlands"]{
+    background-image: url(/images/languages/nederlands.png);
+    /*background: rgba(200, 200, 200, 0.3);*/
+}
