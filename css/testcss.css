@@ -1,4 +1,10 @@
- #Home {
+html, body{
+    margin:0;
+    padding:0;
+}
+
+
+#Home {
     background-color: #f2f2f2;
 }
  #Dance {
@@ -13,7 +19,7 @@ h1 {
 
 p {
     font-size: 24px;
-    width: 760px;
+    max-width: 500px;
     align-content: center;
 
 }
@@ -22,7 +28,7 @@ p {
 }
 
 section {
-    width: 900px;
+    max-width: 900px;
     background-color: #f2f2f2;
 
     border-style: solid;
@@ -38,7 +44,7 @@ section {
 }
 
 main {
-    width: 1920px;
+    width: 100%;
     height: 100vh;
     box-sizing: border-box;
     padding: 40px;
@@ -51,24 +57,49 @@ main {
 
 #test{
     background-color: #797979;
+    height:150px;
 }
 
 .nav-logo{
-    width: 10%;
-    height: 10%;
+    width: 150px;
+
+
+
+}
+.hide{
+    visibility: hidden;
+    display: none;
 }
 
-.page_section ul{
+.nav-wrapper {
+    /* 100 view width -  logo width  */
+    width:calc(100vw - 150px );
+    float:right;
+    height:50px;
+    margin-top:50px;
+}
+
+.nav-wrapper ul{
     display:inline-block;
+    padding-inline-start:0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
-.page_section ul li{
+.nav-wrapper ul li{
     display: inline-block;
     background-color: white;
     padding: 10px;
+    list-style-type: none;
 }
 
 .nav-right{
     float: right;
+    margin-right:10px;
+}
+
+.nav-left{
+    float: left;
+    margin-left: 10px;
 }
 
