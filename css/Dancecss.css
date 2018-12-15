@@ -1,6 +1,6 @@
 section {
     width: 900px;
-    background-color: #f2f2f2;
+    background-color: rgba(242,242,242,0.75);
 
     border-style: solid;
     border-color: #797979;
@@ -47,6 +47,7 @@ p {
 
     padding: 3px 23px 23px;
 
+    background-color: #f2f2f2;
 
     margin-left: 25px;
     margin-bottom: 25px;
