@@ -7,16 +7,11 @@ class WinkelwagenModel extends ModelBase{
     }
 
     public function addTicket($ticketId){
-        $sql = "SELECT * FROM Tickets WHERE id = $ticketId";
+        $sql = "SELECT * FROM Ticket WHERE id = ?";
 
-        //$result = $this->conn->query($sql);
+        $results = $this->executeQuery($sql, $ticketId);
 
-        $result = array();
-        $result['id'] = 1;
-        $result['price'] = 2.50;
-        $result['artist'] = 'Armin van Buuren';
-
-        return $result;
+        return $results;
     }
 
 

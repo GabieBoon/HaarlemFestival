@@ -14,10 +14,10 @@
         </ul>
         <ul class="nav-right">
             <li class="schedule-button"><a href="<?= PROOT ?>Schedule/">Schedule</a></li>
-            <li class="cart-button"><a href="<?= PROOT ?>Cart/">Cart</a></li>
+            <li class="cart-button"><a href="<?= PROOT ?>Tickets/">Cart</a></li>
             <li>
                 <select class="language-selection">
-                    <option value="nederlands"><img src="/images/languages/nederlands.png"></option>
+                    <option value="nederlands"><img src="/haarlem-festival/images/languages/nederlands.png"></option>
                     <option value="engels">Engels</option>
                 </select>
             </li>

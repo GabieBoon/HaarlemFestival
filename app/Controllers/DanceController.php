@@ -14,7 +14,10 @@ class DanceController extends ControllerBase {
     }
 
     public function showPage(){
-        $this->view->showPage();
+        $artists = $this->model->getArtists();
+        $locations = $this->model->getLocations();
+
+        $this->view->showPage($artists, $locations);
     }
 
 }

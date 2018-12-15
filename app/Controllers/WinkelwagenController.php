@@ -13,9 +13,10 @@ class WinkelwagenController extends ControllerBase
 
         $data = $this->model->addTicket($ticketId);
 
+
         //voeg ticket toe tenzij hij al in het winkelwagentje zit
         if ( !array_key_exists($ticketId, $_SESSION['Winkelwagen']) ){
-            $_SESSION['Winkelwagen'][$ticketId] = $data;
+            $_SESSION['Winkelwagen'][$ticketId] = $data[0];
         }
 
         header('Location: http://localhost' .  PROOT . $_SESSION['LastVisited'] . '/' );

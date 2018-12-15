@@ -1,6 +1,7 @@
 <main>
-    <!--<img src="/phpfiles/Haarlem-Festival BitBucket/haarlem-festival/phpproject1/images/Dance BW.jpg" alt="Background, dancing people in black and white">
-    -->
+
+
+
     <section>
         <h2>About dance</h2>
 
@@ -15,7 +16,16 @@
     <section>
         <h2>Artists</h2>
         <p>
-            Dit zijn de artistien
+            Dit zijn de artiesten
+
+        </p>
+
+    </section>
+
+    <section>
+        <h2>Locaties</h2>
+        <p>
+            <?= $this->showLocations(); ?>
 
         </p>
 
@@ -29,8 +39,24 @@
             <button type = "submit"> add ticket to cart</button>
         </form>
 
+        <form action="<?= PROOT ?>Winkelwagen/addTicket/2">
+            <button type = "submit"> add ticket to cart</button>
+        </form>
+
+
         </p>
 
     </section>
+
+    <section>
+        <h2>Schedule</h2>
+
+        <table>
+
+
+        </table>
+
+    </section>
+
 <span class="clearfix"></span>
 </main>

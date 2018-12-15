@@ -2,6 +2,8 @@
 
 class DanceView extends ViewBase{
 
+    public $artists, $locations;
+
     public function __construct($class)
     {
         parent::__construct($class);
@@ -11,10 +13,17 @@ class DanceView extends ViewBase{
         echo "Hello World";
     }
 
-    public function showPage(){
+    public function showPage($artists, $locations){
 
-        //var_dump($_SESSION) ;
+        $this->artists = $artists;
+        $this->locations = $locations;
 
         $this->render();
+    }
+
+    public function showLocations(){
+        foreach ($this->locations as $location){
+            echo $location->name;
+        }
     }
 }

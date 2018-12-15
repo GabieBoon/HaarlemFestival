@@ -1,0 +1,39 @@
+section {
+    width: 900px;
+    background-color: #f2f2f2;
+
+    border-style: solid;
+    border-color: #797979;
+    border-width: 1px;
+
+    box-sizing: border-box;
+
+    margin: 10px;
+    padding: 25px;
+    float: left;
+
+}
+
+main {
+    width: 1920px;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 40px;
+    margin: 0px;
+
+    background: url(/haarlem-festival/images/Dance%20BW.jpg);
+    background-size: cover;
+
+}
+
+h1 {
+    font-size: 36px;
+
+}
+
+p {
+    font-size: 24px;
+    width: 760px;
+    align-content: center;
+    margin-left: 70px;
+}
