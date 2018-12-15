@@ -10,7 +10,9 @@ class DanceModel extends ModelBase{
     }
 
     public function getArtists(){
-        //$sql = "select * from ";
+        $sql = "select * from DanceArtist join Artist on artistId = Artist.Id";
+
+        return $this->executeQuery($sql);
     }
     public function getLocations(){
         $sql = "select * from Venue";

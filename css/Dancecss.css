@@ -9,7 +9,7 @@ section {
     box-sizing: border-box;
 
     margin: 10px;
-    padding: 25px;
+
     float: left;
 
 }
@@ -36,4 +36,43 @@ p {
     width: 760px;
     align-content: center;
     margin-left: 70px;
+
+
+}
+
+.blok {
+    width: 266px;
+    height: 236px;
+    align-content: center;
+
+    padding: 3px 23px 23px;
+
+
+    margin-left: 25px;
+    margin-bottom: 25px;
+    float: left;
+
+
+    border-style: solid;
+    border-color: #A1A1A1;
+    border-width: 1px;
+    border-radius: 20px;
+
+    box-sizing: border-box ;
+
+}
+
+.blok img {
+    width: 220px;
+    height: 118px;
+    align-content: center;
+    float: bottom;
+
+}
+
+.blok h3{
+    font-size: 20px;
+    text-align: center;
+    float: top;
+
 }

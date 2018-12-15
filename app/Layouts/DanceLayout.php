@@ -16,7 +16,7 @@
     <section>
         <h2>Artists</h2>
         <p>
-            Dit zijn de artiesten
+            <?= $this->showArtists(); ?>
 
         </p>
 
