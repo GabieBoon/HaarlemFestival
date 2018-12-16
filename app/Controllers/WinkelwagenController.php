@@ -19,6 +19,7 @@ class WinkelwagenController extends ControllerBase
             $_SESSION['Winkelwagen'][$ticketId] = $data[0];
         }
 
+        //please use Router::redirect(); - Jasper
         header('Location: http://localhost' .  PROOT . $_SESSION['LastVisited'] . '/' );
 
     }

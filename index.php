@@ -22,5 +22,10 @@ else{
     $url = [];
 }
 
+
+if (!coreSession::sessionExists(CURRENT_USER_SESSION_NAME) && coreCookie::exists(REMEMBER_ME_COOKIE_NAME)) {
+    usersModel::loginUserFromCookie();
+}
+
 Router::route($url);
 
