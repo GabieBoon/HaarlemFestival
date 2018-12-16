@@ -3,10 +3,10 @@
 
     <h1> tickets</h1>
 
-    <p> <?= $this->getWinkelwagen() ?> </p>
+    <p><?= $this->getWinkelwagen() ?></p>
 
 
-    <form action="<?= PROOT ?>Tickets/clearWinkelwagen/">
-        <button type = "submit"> reken winkelwagen af </button>
+    <form action="<?= PROOT ?>Tickets/createOrder">
+        <button type="submit">reken winkelwagen af</button>
     </form>
 

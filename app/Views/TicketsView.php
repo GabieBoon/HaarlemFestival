@@ -2,8 +2,6 @@
 
 class TicketsView extends ViewBase{
 
-    protected $winkelwagen;
-
     public function __construct($class)
     {
         parent::__construct($class);

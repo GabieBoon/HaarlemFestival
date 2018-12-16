@@ -17,10 +17,16 @@ class TicketsController extends ControllerBase {
         $this->view->showPage();
     }
 
-    public function clearWinkelwagenAction(){
-        $_SESSION['Winkelwagen'] = array();
+//    public function clearWinkelwagenAction(){
+//        $_SESSION['Winkelwagen'] = array();
+//
+//        $this->showPage();
+//    }
 
-        $this->showPage();
+    public function createOrderAction() {
+        $orderDataController = new ControllerBase('OrderData');
+
+        $orderDataController->view->showPage();
     }
 
 }
