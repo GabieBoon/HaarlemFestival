@@ -10,6 +10,7 @@ class ViewBase {
         $this->title = $siteTitle;
     }
 
+    //geef de pagina weer
     public function render(){
 
         //head
@@ -25,9 +26,19 @@ class ViewBase {
         include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Footer' .'.php';
     }
 
-//    public function getLayoutName(){
-//        return $this->class . 'Layout';
-//    }
+    public function getPicture($pictureName){
 
+        $plek = ROOT . DS . 'images' . DS . $pictureName;
+
+        $pad = "/haarlem-festival/images/$pictureName";
+
+        if (file_exists($plek . '.jpg')){
+            return $pad . '.jpg';
+        }
+        elseif (file_exists($plek . '.png')) {
+            return $pad . '.png';
+        }
+
+    }
 
 }

@@ -36,19 +36,94 @@ class DanceView extends ViewBase{
         }
     }
 
-    public function getPicture($pictureName){
 
-        $plek = ROOT . DS . 'images' . DS . $pictureName;
+    //moet nog in aparte klasse
+    public function generateTable($startHour, $endHour, $event ,$head = true, $eventColumn = false){
 
-        $pad = "/haarlem-festival/images/$pictureName";
-
-        if (file_exists($plek . '.jpg')){
-            return $pad . '.jpg';
+        switch ($event) {
+            case "Dance":
+                $rowSource = "locations";
+                $rowTitle = "name";
+                break;
+            case "Historic":
+                $rowSource = "languages";
+                $rowTitle = "name";
+                break;
+            case "Jazz":
+                $rowSource = "locations";
+                $rowTitle = "name";
+                break;
+            case "Food":
+                $rowSource = "restaurants";
+                $rowTitle = "name";
+                break;
+            default:
+                echo "nope";
+                break;
         }
-        elseif (file_exists($plek . '.png')) {
-            return $pad . '.png';
+
+        $columnCount = $endHour - $startHour;
+
+
+        if ($head){
+            $this->generateTableHead($startHour, $columnCount, $eventColumn);
         }
+
+        $this->generateTableBody($columnCount, $rowTitle, $rowSource);
+    }
+
+
+    public function generateTableHead($startHour, $columnCount, $eventColumn){
+
+        //start rij
+        $this->startTableRow();
+
+        //alleen voor de schedule pagina
+        if ($eventColumn){
+            $this->generateTableData("Event");
+        }
+
+        //linkerhoek
+        $this->generateTableData("Location/Time");
+
+        //uren
+        for ($columnNumber = 0; $columnNumber <= $columnCount; $columnNumber++){
+
+            $this->generateTableData($startHour . ":00");
+            $startHour++;
+        }
+
+        //einde rij
+        $this->endTableRow();
 
     }
 
+    public function generateTableData($data = ""){
+
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen'  . DS .'TableData' .'.php';
+    }
+
+
+    public function generateTableBody($columnCount, $rowTitle ,$rowSource){
+
+        foreach($this->$rowSource as $row){
+           $this->startTableRow();
+
+           $this->generateTableData($row->$rowTitle);
+
+           for ($columnNumber = 0; $columnNumber <= $columnCount; $columnNumber++){
+               $this->generateTableData();
+           }
+
+           $this->endTableRow();
+        }
+    }
+
+    public function startTableRow(){
+        echo '<tr>';
+    }
+
+    public function endTableRow(){
+        echo '</tr>';
+    }
 }

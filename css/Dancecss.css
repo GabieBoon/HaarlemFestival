@@ -1,3 +1,5 @@
+/* GENERAL */
+
 section {
     width: 900px;
     background-color: rgba(242,242,242,0.75);
@@ -40,6 +42,7 @@ p {
 
 }
 
+/* BLOKKEN */
 .blok {
     width: 266px;
     height: 236px;
@@ -77,3 +80,34 @@ p {
     float: top;
 
 }
+
+.blok:hover {
+    border-color: #515151;
+    background-color: #bcbcbc;
+}
+
+/* TABLE */
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

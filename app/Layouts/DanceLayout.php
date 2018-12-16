@@ -52,6 +52,7 @@
         <h2>Schedule</h2>
 
         <table>
+            <?=$this->generateTable(10,18, "Dance") ?>
 
 
         </table>
