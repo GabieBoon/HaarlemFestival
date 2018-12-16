@@ -48,7 +48,7 @@
 
     </section>
 
-    <section>
+    <section id="schedule">
         <h2>Schedule</h2>
 
         <table>

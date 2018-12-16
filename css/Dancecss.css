@@ -16,6 +16,10 @@ section {
 
 }
 
+#schedule {
+    width: 1820px;
+}
+
 main {
     width: 1920px;
     height: 100vh;
@@ -28,8 +32,9 @@ main {
 
 }
 
-h1 {
+h2 {
     font-size: 36px;
+    margin-left: 100px;
 
 }
 
@@ -75,7 +80,7 @@ p {
 }
 
 .blok h3{
-    font-size: 20px;
+    font-size: 26px;
     text-align: center;
     float: top;
 
@@ -91,6 +96,10 @@ p {
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+table {
+    align-content: center;
 }
 
 
