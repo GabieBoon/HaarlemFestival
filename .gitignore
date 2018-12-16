@@ -1,1 +1,2 @@
-.idea/
+# ignore workspace changes
+.idea/workspace.xml
