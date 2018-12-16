@@ -23,10 +23,4 @@ class TicketsController extends ControllerBase {
 //        $this->showPage();
 //    }
 
-    public function createOrderAction() {
-        $orderDataController = new ControllerBase('OrderData');
-
-        $orderDataController->view->showPage();
-    }
-
 }

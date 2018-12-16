@@ -11,7 +11,7 @@
     <input type="email" placeholder="john.doe@gmail.com" name="email" required>
 
     <label for="remarks"><b>Remarks for restaurant</b></label>
-    <input type="text" placeholder="Vegetarian, lactose intolerant, ..." name="remarks">
+    <textarea placeholder="Vegetarian, lactose intolerant, ..." name="remarks" cols="30" rows="10"></textarea>
 
     <p>
         <b>*Required fields</b>
