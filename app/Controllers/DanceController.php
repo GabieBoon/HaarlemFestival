@@ -3,12 +3,12 @@
 class DanceController extends ControllerBase {
 
     //voer de functionaliteit van ControllerBase uit
-    public function __construct($class)
+    public function __construct($controller, $action)
     {
-        parent::__construct($class);
+        parent::__construct($controller, $action);
     }
 
-    public function defaultAction(){
+    public function indexAction(){
 
         $this->showPage();
     }

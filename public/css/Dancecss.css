@@ -2,18 +2,13 @@
 
 section {
     width: 900px;
-    background-color: rgba(242,242,242,0.75);
-
+    background-color: rgba(242, 242, 242, 0.75);
     border-style: solid;
     border-color: #797979;
     border-width: 1px;
-
     box-sizing: border-box;
-
     margin: 10px;
-
     float: left;
-
 }
 
 #schedule {
@@ -26,16 +21,13 @@ main {
     box-sizing: border-box;
     padding: 40px;
     margin: 0px;
-
-    background: url(/haarlem-festival/images/Dance%20BW.jpg);
+    background: url(/haarlem-festival/public/images/Dance%20BW.jpg);
     background-size: cover;
-
 }
 
 h2 {
     font-size: 36px;
     margin-left: 100px;
-
 }
 
 p {
@@ -43,32 +35,24 @@ p {
     width: 760px;
     align-content: center;
     margin-left: 70px;
-
-
 }
 
 /* BLOKKEN */
+
 .blok {
     width: 266px;
     height: 236px;
     align-content: center;
-
     padding: 3px 23px 23px;
-
     background-color: #f2f2f2;
-
     margin-left: 25px;
     margin-bottom: 25px;
     float: left;
-
-
     border-style: solid;
     border-color: #A1A1A1;
     border-width: 1px;
     border-radius: 20px;
-
-    box-sizing: border-box ;
-
+    box-sizing: border-box;
 }
 
 .blok img {
@@ -76,38 +60,15 @@ p {
     height: 118px;
     align-content: center;
     float: bottom;
-
 }
 
-.blok h3{
+.blok h3 {
     font-size: 26px;
     text-align: center;
     float: top;
-
 }
 
 .blok:hover {
     border-color: #515151;
     background-color: #bcbcbc;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

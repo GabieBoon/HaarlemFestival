@@ -1,2 +1,5 @@
 # ignore workspace changes
 .idea/workspace.xml
+\.vscode/launch\.json
+
+\.vscode/

@@ -1,7 +1,7 @@
 <header id="test">
 
     <a href="<?= PROOT ?>">
-        <img class="nav-logo <?php if($_SESSION['CurrentPage'] == 'Home'){echo 'hide';} ?>"   src="<?= PROOT ?>images/HaarlemFestival-Logo-WT.svg" alt="Haarlem Festival Logo" href="<?= PROOT ?>Home/" />
+        <img class="nav-logo <?php if($_SESSION['CurrentPage'] == 'Home'){echo 'hide';} ?>"   src="<?= PROOT ?>public/images/HaarlemFestival-Logo-WT.svg" alt="Haarlem Festival Logo" href="<?= PROOT ?>Home/" />
     </a>
 
 
@@ -17,7 +17,7 @@
             <li class="cart-button"><a href="<?= PROOT ?>Tickets/">Cart</a></li>
             <li>
                 <select class="language-selection">
-                    <option value="nederlands"><img src="/haarlem-festival/images/languages/nederlands.png"></option>
+                    <option value="nederlands"><img src="/haarlem-festival/public/images/languages/nederlands.png"></option>
                     <option value="engels">Engels</option>
                 </select>
             </li>

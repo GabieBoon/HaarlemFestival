@@ -6,7 +6,7 @@ class OrderDataController extends ControllerBase {
         parent::__construct($class);
     }
 
-    public function defaultAction() {
+    public function indexAction() {
         $this->view->showPage();
     }
 

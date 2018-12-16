@@ -97,7 +97,7 @@ class ModelBase {
         }
     }
 
-    protected function _getModelName()
+    protected function _getModelName()// herschrijf naar nieuw naming convention
     {
         $modelName = (strtolower($this->_table) . "Model");
         if (!class_exists($modelName)) {

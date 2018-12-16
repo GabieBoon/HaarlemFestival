@@ -2,7 +2,7 @@
 
 Class Router{
     //david
-    public static function route($url){
+    public static function route___disabled($url){
 
         //controller
         if (isset($url[0]) && $url[0] != ''){
@@ -47,12 +47,12 @@ Class Router{
     //methods
 
     // naming convention moet ff worden aangepast
-    public static function route_tempdisabled($url) //disabled until approved
+    public static function route($url) //disabled until approved
     {
         //set controller
         if (isset($url[0]) && ($url[0] != '')) {
 
-            $className = strtolower($url[0]);
+            $className = ucwords($url[0]);
         } else {
             $className = DEFAULT_CONTROLLER;
         }
@@ -72,7 +72,7 @@ Class Router{
         $queryParams = $url;
 
         if (method_exists($controllerName, $actionName)) {
-            $dispatch = new $controllerName($controllerName, $actionName);
+            $dispatch = new $controllerName($className, $actionName);
             call_user_func_array([$dispatch, $actionName], $queryParams);
         } else {
             die('That method does not exist in the controller "' . $controllerName . '"');

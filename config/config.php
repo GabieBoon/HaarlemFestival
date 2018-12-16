@@ -20,7 +20,7 @@ define('DB_PASSWORD', 'YHQAzcGaVm');
 
 
 //set default controller
-define('DEFAULT_CONTROLLER', 'home'); // default controller if there isn't one defined in the url
+define('DEFAULT_CONTROLLER', 'Home'); // default controller if there isn't one defined in the url
 
 //set default layout
 define('DEFAULT_LAYOUT', 'default'); // if no layout is set in the controller use this layout.
@@ -32,8 +32,7 @@ define('SITE_TITLE', 'Haarlem Festival');
 
 
 //set site project root
-//define('PROOT', '/php-eindopdracht/'); //werkt alleen voor Jasper
-define('PROOT', '/haarlem-festival/');  //werkt alleen voor David
+define('PROOT', '/haarlem-festival/');  
 
 
 

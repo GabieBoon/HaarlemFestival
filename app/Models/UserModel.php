@@ -1,6 +1,6 @@
 <?php
 
-class UsersModel extends ModelBase
+class UserModel extends ModelBase
 {
     private $_isLoggedIn, $_sessionName, $_cookieName;
     public static $currentLoggedInUser = null;
@@ -34,7 +34,7 @@ class UsersModel extends ModelBase
     public static function currentLoggedInUser()
     {
         if ((!isset(self::$currentLoggedInUser)) && (Session::sessionExists(CURRENT_USER_SESSION_NAME))) {
-            $u = new UsersModel((int)Session::getSession(CURRENT_USER_SESSION_NAME));
+            $u = new UserModel((int)Session::getSession(CURRENT_USER_SESSION_NAME));
             self::$currentLoggedInUser = $u;
         }
         return self::$currentLoggedInUser;

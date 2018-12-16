@@ -26,23 +26,27 @@ class ViewBase {
         include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Footer' .'.php';
     }
 
-    public function getPicture($pictureName){
+    public function getPicture($pictureName){ // desperately in need of some rework
 
-        $plek = ROOT . DS . 'images' . DS . $pictureName;
 
-        $pad = "/haarlem-festival/images/$pictureName";
+        //plek en pad zijn hetzelfde?
+        $plek = ROOT . DS . 'public' . DS . 'images' . DS . $pictureName ;
 
-        if (file_exists($plek . '.jpg')){
+        $pad = "/haarlem-festival/public/images/$pictureName";
+
+
+        // als "plek" .jpg bestaat, return "pad". jpg en anders "pad" . png? waarom geen return "plek"
+        if (file_exists($plek . '.jpg')) {
             return $pad . '.jpg';
-        }
-        elseif (file_exists($plek . '.png')) {
+        } elseif (file_exists($plek . '.png')) {
             return $pad . '.png';
         }
 
     }
 
     //table shit, misschien nog een aparte class voor maken
-    public function generateTable($startHour, $endHour, $event ,$head = true, $eventColumn = false){
+    public function generateTable($startHour, $endHour, $event, $head = true, $eventColumn = false)
+    {
 
         $body = true;
 
@@ -71,22 +75,23 @@ class ViewBase {
         $columnCount = $endHour - $startHour;
 
 
-        if ($head){
+        if ($head) {
             $this->generateTableHead($startHour, $columnCount, $eventColumn);
         }
 
-        if ($body){
+        if ($body) {
             $this->generateTableBody($columnCount, $rowTitle, $rowSource, $eventColumn, $event);
         }
 
     }
-    public function generateTableHead($startHour, $columnCount, $eventColumn){
+    public function generateTableHead($startHour, $columnCount, $eventColumn)
+    {
 
         //start rij
         $this->startTableRow();
 
         //alleen voor de schedule pagina
-        if ($eventColumn){
+        if ($eventColumn) {
             $this->generateTableData("Event", 'eventCell');
         }
 
@@ -94,7 +99,7 @@ class ViewBase {
         $this->generateTableData("Location/Time", 'locationCell');
 
         //uren
-        for ($columnNumber = 0; $columnNumber <= $columnCount; $columnNumber++){
+        for ($columnNumber = 0; $columnNumber <= $columnCount; $columnNumber++) {
 
             $this->generateTableData($startHour . ":00");
             $startHour++;
@@ -104,41 +109,44 @@ class ViewBase {
         $this->endTableRow();
 
     }
-    public function generateTableData($data = "", $class = "normalCell"){
+    public function generateTableData($data = "", $class = "normalCell")
+    {
 
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen'  . DS .'TableData' .'.php';
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen' . DS . 'TableData' . '.php';
     }
 
-    public function generateTableBody($columnCount, $rowTitle ,$rowSource, $eventColumn, $event){
+    public function generateTableBody($columnCount, $rowTitle, $rowSource, $eventColumn, $event)
+    {
 
         $geprint = true;
 
-        foreach($this->$rowSource as $row){
+        foreach ($this->$rowSource as $row) {
             $this->startTableRow();
 
-            if ($eventColumn){
-                if ($geprint){
+            if ($eventColumn) {
+                if ($geprint) {
                     $this->generateTableData($event, 'eventCell');
                     $geprint = false;
-                }
-                else{
-                    $this->generateTableData("" , 'eventCell');
+                } else {
+                    $this->generateTableData("", 'eventCell');
                 }
             }
 
             $this->generateTableData($row->$rowTitle, 'locationCell');
 
-            for ($columnNumber = 0; $columnNumber <= $columnCount; $columnNumber++){
+            for ($columnNumber = 0; $columnNumber <= $columnCount; $columnNumber++) {
                 $this->generateTableData();
             }
 
             $this->endTableRow();
         }
     }
-    public function startTableRow(){
+    public function startTableRow()
+    {
         echo '<tr>';
     }
-    public function endTableRow(){
+    public function endTableRow()
+    {
         echo '</tr>';
     }
 
