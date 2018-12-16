@@ -1,6 +1,7 @@
 <?php
 
-class DanceModel extends ModelBase{
+class ScheduleModel extends ModelBase
+{
 
     public $artists, $locations;
 
@@ -9,20 +10,23 @@ class DanceModel extends ModelBase{
         parent::__construct();
     }
 
-    public function getArtists(){
+    public function getArtists()
+    {
         $sql = "select * from DanceArtist join Artist on artistId = Artist.Id";
 
         return $this->executeQuery($sql);
     }
 
-    public function getLocations(){
+    public function getLocations()
+    {
         $sql = "select * from Venue where event like 'Dance'";
 
         return $this->executeQuery($sql);
 
     }
 
-    public function getTickets(){
+    public function getTickets()
+    {
         $sql = "select * from Ticket as t where t.event = Dance join DanceTicket as dt on t where t.id = td.ticketId";
 
     }
