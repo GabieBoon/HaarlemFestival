@@ -2,7 +2,7 @@
 
 class DanceView extends ViewBase{
 
-    public $artists, $locations;
+    public $danceArtists, $danceLocations;
 
     public function __construct($class)
     {
@@ -15,14 +15,14 @@ class DanceView extends ViewBase{
 
     public function showPage($artists, $locations){
 
-        $this->artists = $artists;
-        $this->locations = $locations;
+        $this->danceArtists = $artists;
+        $this->danceLocations = $locations;
 
         $this->render();
     }
 
     public function showLocations(){
-        foreach ($this->locations as $location){
+        foreach ($this->danceLocations as $location){
             $title = $location->name;
             include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'DanceBlok' .'.php';
             //echo $location->name . "<br>";
@@ -30,7 +30,7 @@ class DanceView extends ViewBase{
     }
 
     public function showArtists(){
-        foreach ($this->artists as $artist){
+        foreach ($this->danceArtists as $artist){
             $title = $artist->firstName . " " . $artist->preposition . " " . $artist->lastName;
             include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'DanceBlok' .'.php';
         }

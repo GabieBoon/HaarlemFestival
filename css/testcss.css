@@ -126,6 +126,17 @@ table {
     align-content: center;
 }
 
-td {
-    width: 40px;
+td.normalCell {
+    width: 60px;
 }
+td.eventCell {
+    width: 100px;
+}
+
+td.locationCell {
+    width: 250px;
+}
+
+
+
+

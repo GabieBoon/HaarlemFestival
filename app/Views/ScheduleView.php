@@ -2,21 +2,22 @@
 
 class ScheduleView extends ViewBase{
 
-    public $artists, $locations;
+    public $danceArtists, $danceLocations, $jazzLocations, $restaurants, $languages;
 
     public function __construct($class)
     {
         parent::__construct($class);
     }
 
-    public function showPage($artists, $locations){
+    public function showPage($artists, $danceLocations, $jazzLocations, $restaurants){
 
-        $this->artists = $artists;
-        $this->locations = $locations;
+        $this->danceArtists = $artists;
+        $this->danceLocations = $danceLocations;
+        $this->jazzLocations = $jazzLocations;
+        $this->restaurants = $restaurants;
 
         $this->render();
     }
 
-    //moet nog in aparte klasse
 
 }

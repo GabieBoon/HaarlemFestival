@@ -41,14 +41,14 @@ class ViewBase {
 
     }
 
-    //table shit
+    //table shit, misschien nog een aparte class voor maken
     public function generateTable($startHour, $endHour, $event ,$head = true, $eventColumn = false){
 
         $body = true;
 
         switch ($event) {
             case "Dance":
-                $rowSource = "locations";
+                $rowSource = "danceLocations";
                 $rowTitle = "name";
                 break;
             case "Historic":
@@ -56,7 +56,7 @@ class ViewBase {
                 $rowTitle = "name";
                 break;
             case "Jazz":
-                $rowSource = "locations";
+                $rowSource = "jazzLocations";
                 $rowTitle = "name";
                 break;
             case "Food":
@@ -87,11 +87,11 @@ class ViewBase {
 
         //alleen voor de schedule pagina
         if ($eventColumn){
-            $this->generateTableData("Event");
+            $this->generateTableData("Event", 'eventCell');
         }
 
         //linkerhoek
-        $this->generateTableData("Location/Time");
+        $this->generateTableData("Location/Time", 'locationCell');
 
         //uren
         for ($columnNumber = 0; $columnNumber <= $columnCount; $columnNumber++){
@@ -104,10 +104,11 @@ class ViewBase {
         $this->endTableRow();
 
     }
-    public function generateTableData($data = ""){
+    public function generateTableData($data = "", $class = "normalCell"){
 
         include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen'  . DS .'TableData' .'.php';
     }
+
     public function generateTableBody($columnCount, $rowTitle ,$rowSource, $eventColumn, $event){
 
         $geprint = true;
@@ -117,16 +118,15 @@ class ViewBase {
 
             if ($eventColumn){
                 if ($geprint){
-                    $this->generateTableData($event);
+                    $this->generateTableData($event, 'eventCell');
                     $geprint = false;
                 }
                 else{
-                    $this->generateTableData();
+                    $this->generateTableData("" , 'eventCell');
                 }
-
             }
 
-            $this->generateTableData($row->$rowTitle);
+            $this->generateTableData($row->$rowTitle, 'locationCell');
 
             for ($columnNumber = 0; $columnNumber <= $columnCount; $columnNumber++){
                 $this->generateTableData();

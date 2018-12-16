@@ -57,4 +57,18 @@ class ModelBase {
 
     }
 
+    public function getLocations($event){
+        $sql = "select * from Venue where event like '$event'";
+
+        return $this->executeQuery($sql);
+
+    }
+
+    public function getDanceArtists()
+    {
+        $sql = "select * from DanceArtist join Artist on artistId = Artist.Id";
+
+        return $this->executeQuery($sql);
+    }
+
 }
