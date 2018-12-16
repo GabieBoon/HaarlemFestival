@@ -54,7 +54,6 @@
         <table>
             <?=$this->generateTable(10,18, "Dance") ?>
 
-
         </table>
 
     </section>

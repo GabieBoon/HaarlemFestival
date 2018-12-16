@@ -113,3 +113,30 @@ select .language-selection option[value="nederlands"]{
     background-image: url(/haarlem-festival/images/languages/nederlands.png);
     /*background: rgba(200, 200, 200, 0.3);*/
 }
+
+
+/* TABLE */
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    align-content: center;
+}
+
+td.normalCell {
+    width: 60px;
+}
+td.eventCell {
+    width: 100px;
+}
+
+td.locationCell {
+    width: 250px;
+}
+
+
+
+

@@ -1,6 +1,6 @@
 <?php
 
-class DanceController extends ControllerBase {
+class ScheduleController extends ControllerBase {
 
     //voer de functionaliteit van ControllerBase uit
     public function __construct($class)
@@ -16,8 +16,10 @@ class DanceController extends ControllerBase {
     public function showPage(){
         $danceArtists = $this->model->getDanceArtists();
         $danceLocations = $this->model->getLocations("Dance");
+        $jazzLocations = $this->model->getLocations("Jazz");
+        $restaurants = $this->model->getLocations("Food");
 
-        $this->view->showPage($danceArtists, $danceLocations);
+        $this->view->showPage($danceArtists, $danceLocations, $jazzLocations, $restaurants);
     }
 
 }

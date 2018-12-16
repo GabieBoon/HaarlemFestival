@@ -91,16 +91,7 @@ p {
     background-color: #bcbcbc;
 }
 
-/* TABLE */
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-table {
-    align-content: center;
-}
 
 
 

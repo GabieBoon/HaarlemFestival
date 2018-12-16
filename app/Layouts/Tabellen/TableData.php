@@ -1,1 +1,1 @@
-<td> <?= $data ?></td>
+<td class="<?=$class ?>"> <?= $data ?></td>
