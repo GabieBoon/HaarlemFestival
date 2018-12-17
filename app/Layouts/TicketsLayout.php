@@ -6,7 +6,7 @@
     <p><?= $this->getCart() ?></p>
 
 
-    <form action="<?= PROOT ?>OrderData">
+    <form method="post" action="<?= PROOT ?>OrderData">
         <button type="submit">reken Cart af</button>
     </form>
 
