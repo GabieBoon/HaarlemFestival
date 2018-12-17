@@ -1,45 +1,19 @@
 <?php
 
-class CmsView extends ViewBase
+class CmsModel extends ModelBase
 {
 
-    //public $danceArtists, $danceLocations;
+    //public $artists, $locations;
 
-    public function __construct($class)
+    public function __construct()
     {
-        parent::__construct($class);
+        parent::__construct();
     }
 
-    public function helloWorld()
+
+    public function getTickets()
     {
-        echo "Hello World";
+        $sql = "select * from Ticket as t where t.event = Dance join DanceTicket as dt on t where t.id = td.ticketId";
+
     }
-
-    public function showPage($artists, $locations)
-    {
-
-        $this->danceArtists = $artists;
-        $this->danceLocations = $locations;
-
-        $this->render();
-    }
-
-    public function showLocations()
-    {
-        foreach ($this->danceLocations as $location) {
-            $title = $location->name;
-            include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'DanceBlok' . '.php';
-            //echo $location->name . "<br>";
-        }
-    }
-
-    public function showArtists()
-    {
-        foreach ($this->danceArtists as $artist) {
-            $title = $artist->firstName . " " . $artist->preposition . " " . $artist->lastName;
-            include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'DanceBlok' . '.php';
-        }
-    }
-
 }
-?>

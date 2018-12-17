@@ -1,58 +1,17 @@
 <?php
 
 Class Router{
-    //david
-    public static function route___disabled($url){
 
-        //controller
-        if (isset($url[0]) && $url[0] != ''){
-            $class = ucwords($url[0]);
-        }
-        else{
-            $class = DEFAULT_CONTROLLER;
-        }
-        array_shift($url);
-
-        //action
-        if (isset($url[0]) && $url[0] != ''){
-            $action = $url[0] . 'Action';
-        }
-        else{
-            $action = 'defaultAction';
-        }
-        array_shift($url);
-
-        //parameters
-        $parameters = $url;
-
-        //include the controller, model en view
-        $controller = $class . 'Controller';
-
-        require_once ROOT . DS . 'app' . DS . 'Controllers' . DS . $controller . '.php';
-
-        //instantiate the controller class
-        $dispatch = new $controller($class);
-
-        //execute the method inside the called controller
-        if (method_exists($controller, $action)){
-            call_user_func_array([$dispatch, $action], $parameters);
-        }
-        else{
-            echo "oh noes, that method doesn't exist";
-        }
-    }
 
 //jasper
 
-    //methods
-
     // naming convention moet ff worden aangepast
-    public static function route($url) //disabled until approved
+    public static function route($url) 
     {
         //set controller
         if (isset($url[0]) && ($url[0] != '')) {
 
-            $className = ucwords($url[0]);
+            $className = ucwords(strtolower($url[0]));//fi
         } else {
             $className = DEFAULT_CONTROLLER;
         }

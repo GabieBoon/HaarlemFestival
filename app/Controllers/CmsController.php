@@ -1,11 +1,14 @@
 <?php
-class RegisterController extends ControllerBase //Jasper
+class CmsController extends ControllerBase //Jasper
 {
     public function __construct($controller, $action)
     {
         parent::__construct($controller, $action);
-        $this->loadModel('usersModel');
-        $this->view->setLayout('default');
+        //$this->loadModel('usersModel');
+        //$this->view->setLayout('default');
+    }
+    public function indexAction(){
+formatted_print_r($this->view);
     }
 
     public function loginAction()
@@ -42,7 +45,7 @@ class RegisterController extends ControllerBase //Jasper
 
         }
         $this->view->displayErrors = $validation->displayErrors();
-        $this->view->render('register/loginView');
+        $this->view->render('cms/loginView');
     }
 
     public function logoutAction()
@@ -51,7 +54,7 @@ class RegisterController extends ControllerBase //Jasper
         if (currentUser()) {
             currentUser()->logout();
         }
-        Router::redirect('register/login');
+        Router::redirect('CMS/login');
     }
 }
 ?>

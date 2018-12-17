@@ -1,20 +1,6 @@
-
-
-<?php //set site title ?>
-<?php $this->setSiteTitle('Register'); ?>
-
-<?php //head ?>
-<?php $this->start('head'); ?>
-<meta content="test" />
-
-<?php $this->end(); ?>
-
-<?php //body ?>
-<?php $this->start('body'); ?>
-
 <div class="col-md-6 col-md-offset-3 container card bg-light p-3">
-    <form class="form" action="<?=PROOT?>register/login" method="POST">
-    <div class="alert-danger"><?=$this->displayErrors ?></div>
+    <form class="form" action="<?= PROOT ?>CMS/login" method="POST">
+    <div class="alert-danger"><?= $this->displayErrors ?></div>
         <h3 class="text-center">Login</h3>
         <div class="form-group">
             <label for="Username">Username: </label>
@@ -31,10 +17,6 @@
             <input type="submit" name="submit_btn" value="Login" class="btn-primary btn-lg btn-block btn"></label>
         </div>
         <div class="text-right">
-            <a href="<?=PROOT?>register/register" class="text-primary">Register</a>
+            <!-- <a href="<?= PROOT ?>CMS/register" class="text-primary">Register</a> -->
         </div>
     </form>
-
-</div>
-
-<?php $this->end(); ?>
