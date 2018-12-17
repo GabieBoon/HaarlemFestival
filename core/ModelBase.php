@@ -67,15 +67,24 @@ class ModelBase {
     public $id;
 
 //wordt gebruikt als davids construct verwijderd is.
-    public function __construct($table = null)
+    public function __construct()
     {
-        if ($table = null) {
-            return false;
-        }
         $this->_db = DB::getInstance();
+        //$this->_getModelName();
+    }
+
+    public function query(string $sql, array $bind = [])
+    {
+        return $this->_db->query($sql, $bind);
+    }
+
+
+
+
+    protected function _setTable(string $table)
+    {
         $this->_table = $table;
         $this->_setTableColumns();
-        $this->_getModelName();
     }
     
     protected function _setTableColumns()
@@ -105,34 +114,34 @@ class ModelBase {
         return $this->_db->fetchColumns($this->_table);
     }
 
-    public function find(array $params = [])
-    {
-        $results = [];
-        $resultsQuery = $this->_db->find($this->_table, $params);
+    // public function find(array $params = [])
+    // {
+    //     $results = [];
+    //     $resultsQuery = $this->_db->find($this->_table, $params);
 
-        for ($i = 0; $i < count($resultsQuery); $i++) {
-            $modelName = ucwords(strtolower($this->_table) . "Model");
-            $obj = new $this->_modelName($modelName);
-            $obj->getDataFromObj($resultsQuery[$i]);
-            $results[] = $obj;
-        }
-        return $results;
-    }
+    //     for ($i = 0; $i < count($resultsQuery); $i++) {
+    //         $modelName = ucwords(strtolower($this->_table) . "Model");
+    //         $obj = new $this->_modelName($modelName);
+    //         $obj->getDataFromObj($resultsQuery[$i]);
+    //         $results[] = $obj;
+    //     }
+    //     return $results;
+    // }
 
-    public function findFirstResult(array $params = [])
-    {
-        $modelName = ucwords(strtolower($this->_table) . "Model");
-        $result = new $this->_modelName($modelName);
-        $resultsQuery = $this->_db->findFirstResult($this->_table, $params);
-        $result->getDataFromObj($resultsQuery);
-        return $result;
+    // public function findFirstResult(array $params = [])
+    // {
+    //     $modelName = ucwords(strtolower($this->_table) . "Model");
+    //     $result = new $this->_modelName($modelName);
+    //     $resultsQuery = $this->_db->findFirstResult($this->_table, $params);
+    //     $result->getDataFromObj($resultsQuery);
+    //     return $result;
 
-    }
+    // }
 
-    public function findByID(int $id)
-    {
-        return $this->findFirstResult(['conditions' => "id", 'bind' => [$id]]);
-    }
+    // public function findByID(int $id)
+    // {
+    //     return $this->findFirstResult(['conditions' => "id", 'bind' => [$id]]);
+    // }
 
     public function save()
     {
@@ -182,10 +191,7 @@ class ModelBase {
         return $this->_db->deleteByID($id, $this->_table);
     }
 
-    public function query(string $sql, array $bind = [])
-    {
-        return $this->_db->query($sql, $bind);
-    }
+
 
     public function data()
     {
@@ -221,19 +227,6 @@ class ModelBase {
 
     }
 
-// david
 
-    public function getLocations($event)
-    {
-        $sql = "select * from Venue where event like {event}";
 
-         formatted_print_r( $this->_db->query($sql,[$event]));
-
-    }
-
-    public function getDanceArtists()
-    {
-        $sql = "select * from DanceArtist join Artist on artistId = Artist.Id";
-        return $this->_db->query($sql);
-    }
 }
