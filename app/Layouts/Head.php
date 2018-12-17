@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="<?= PROOT ?>public/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="<?= PROOT ?>public/css/custom.css" media="screen" title="no title" charset="utf-8">
 
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
     <!-- Scripts -->
     <script src="<?= PROOT ?>public/javascripts/jquery-3.3.1.slim.min.js"></script>
     <script src="<?= PROOT ?>public/javascripts/bootstrap.min.js"></script>

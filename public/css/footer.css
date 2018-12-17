@@ -3,28 +3,27 @@ footer{
 }
 
 .foot-logo{
-    width: 100px;
+    width: 150px;
     display:block;
     margin:auto;
 
 }
 
 
-.contactinfo{
-    text-align: right;
-}
-
 .contactinfo p{
     text-align:center;
     margin:0;
     color:white;
+    padding-right: 20px;
 }
 
 .contactinfo-box{
     padding-top:10px;
+    padding-right:50px;
+    margin:0;
+    float: right;
+    display:block;
 }
-
-
 
 /* Create three equal columns that floats next to each other */
 .column {
@@ -38,9 +37,25 @@ footer{
     content: "";
     display: table;
     clear: both;
-    float:
 }
 
-.contactinfo{
-    float:right;
+.CMS-buttons a{
+    padding: 10px;
+    border-style: solid;
+    border-color: white;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+}
+
+.CMS-buttons a:hover{
+    background-color: white;
+    color: #555555;
+}
+
+.CMS-buttons{
+    float: right;
+    display:inline-block;
+    padding-right: 20px;
 }
