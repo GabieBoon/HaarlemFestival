@@ -2,17 +2,15 @@
 
         <div class="row">
             <div class="column">
-                <nav>
-                    <ul>
-                        <ol>facebook</ol>
-                        <ol>twitter</ol>
-                        <ol>instagram</ol>
+                    <ul class="social-media">
+                        <ol><a href="http://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i> facebook</a></ol>
+                        <ol><a href="http://www.twitter.com/" target="_blank"><i class="fab fa-twitter-square"></i> twitter</a></ol>
+                        <ol><a href="http://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> instagram</a></ol>
 
                     </ul>
-                </nav>
             </div>
             <div class="column">
-                <img class="foot-logo"   src="<?= PROOT ?>public/images/HaarlemFestival-Logo-WT.svg" alt="Haarlem Festival Logo" href="<?= PROOT ?>Home/" />
+                <a href="<?= PROOT ?>Home/" ><img class="foot-logo"   src="<?= PROOT ?>public/images/HaarlemFestival-Logo-WT.svg" alt="Haarlem Festival Logo" /></a>
             </div>
             <div class="column contactinfo">
                 <div class="contactinfo-box">
