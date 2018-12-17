@@ -41,11 +41,11 @@
         <h2>Tickets</h2>
 
         <p>
-        <form action="<?= PROOT ?>Winkelwagen/addTicket/1">
+        <form action="<?= PROOT ?>Cart/addTicket/1">
             <button type = "submit"> add ticket to cart</button>
         </form>
 
-        <form action="<?= PROOT ?>Winkelwagen/addTicket/2">
+        <form action="<?= PROOT ?>Cart/addTicket/2">
             <button type = "submit"> add ticket to cart</button>
         </form>
 

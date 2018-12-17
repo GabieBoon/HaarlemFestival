@@ -7,7 +7,7 @@
              href="<?= PROOT ?>Home/"
         />
     </a>
-    <nav class='nav-wrapper'>
+    <nav class="nav-wrapper">
         <ul class="nav-left">
             <li class="dance-button"><a href="<?= PROOT ?>Dance/" >Dance</a></li>
             <li class="jazz-button"><a href="<?= PROOT ?>Jazz/">Jazz</a></li>
@@ -17,7 +17,7 @@
         <ul class="nav-right">
             <li class="schedule-button"><a href="<?= PROOT ?>Schedule/">Schedule</a></li>
             <li class="cart-button">
-                <a href="<?= PROOT ?>Cart/">
+                <a href="<?= PROOT ?>Tickets/">
                     <img class="carticon" src="<?= PROOT ?>public/images/cart.svg">
                 </a>
             </li>
