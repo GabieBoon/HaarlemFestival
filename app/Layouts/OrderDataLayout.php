@@ -1,6 +1,7 @@
 <h1>Order - Data</h1>
 
-<form action="">
+<!-- still needs a METHOD (get or post) and an ACTION -->
+<form action=""> 
     <label for="firstName"><b>First name*</b></label>
     <input type="text" placeholder="John" name="firstName" required>
 

@@ -2,8 +2,8 @@
 
 class OrderDataController extends ControllerBase {
 
-    public function __construct($class) {
-        parent::__construct($class);
+    public function __construct($className, $action) {
+        parent::__construct($className, $action);
     }
 
     public function indexAction() {
