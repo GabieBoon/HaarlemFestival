@@ -1,6 +1,6 @@
 /* GENERAL */
 
-section {
+.dancesection {
     width: 900px;
     background-color: rgba(242, 242, 242, 0.75);
     border-style: solid;
@@ -13,13 +13,13 @@ section {
 
 #schedule {
     width: 1820px;
+    margin-bottom: 0px;
 }
 
 main {
     width: 1920px;
-    height: 100vh;
     box-sizing: border-box;
-    padding: 40px;
+    padding: 40px 40px 0px;
     margin: 0px;
     background: url(/haarlem-festival/public/images/Dance%20BW.jpg);
     background-size: cover;

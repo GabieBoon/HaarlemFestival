@@ -4,11 +4,10 @@ class DanceView extends ViewBase{
 
     public $danceArtists, $danceLocations;
 
-    public function __construct($class)
+    public function __construct($className)
     {
-        parent::__construct($class);
+        parent::__construct($className);
     }
-
     public function helloWorld(){
         echo "Hello World";
     }

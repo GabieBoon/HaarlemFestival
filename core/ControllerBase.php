@@ -25,12 +25,24 @@
     protected $controller, $action, $model;
     public $view;
 
-    public function __construct($className, $action)
+    public function __construct($className, $action, $modelName = "", $viewName = "")
     {
         parent::__construct($className);
 
-        $model = $className . 'Model';
-        $view = $className . 'View';
+        if ($modelName == ""){
+            $model = $className . 'Model';
+        }
+        else{
+            $model = $modelName;
+        }
+
+        if ($modelName == ""){
+            $view = $className . 'View';
+        }
+        else{
+            $view = $viewName;
+        }
+
      
         $this->controller = $className . 'Controller';
         $this->action = $action; //you can run without this, only troubleshooting will be a lot harder when using debugger

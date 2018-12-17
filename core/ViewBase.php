@@ -11,7 +11,11 @@ class ViewBase {
     }
 
     //geef de pagina weer
-    public function render(){
+    public function render($layoutName = NULL){
+
+        if ($layoutName == NULL){
+            $layoutName = $this->class;
+        }
 
         //head
         include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Head' .'.php';
@@ -20,7 +24,7 @@ class ViewBase {
         include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Header' .'.php';
 
         //content
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . $this->class . 'Layout' . '.php';
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . $layoutName . 'Layout' . '.php';
 
         //footer
         include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Footer' .'.php';

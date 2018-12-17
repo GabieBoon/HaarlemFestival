@@ -28,7 +28,7 @@
 
     </section>
 
-    <section>
+    <section class="dancesection">
         <h2>Locaties</h2>
         <p>
             <?= $this->showLocations(); ?>
@@ -54,7 +54,7 @@
 
     </section>
 
-    <section id="schedule">
+    <section class="dancesection" id="schedule">
         <h2>Schedule</h2>
 
         <table>
