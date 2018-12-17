@@ -3,7 +3,7 @@
 class ControllerBase extends ApplicationBase
 {
 
-    protected $controller, $action;//, $model;
+    protected $controller, $action, $model;
     public $view;
 
     public function __construct($className, $action, bool $diffView = false, string $diffModel = null)
@@ -21,6 +21,7 @@ class ControllerBase extends ApplicationBase
         }
 
         if (isset($diffModel)) {
+            $diffModel = ucwords(strtolower($diffModel));
             $model = $diffModel . 'Model';
             if (class_exists($model)) {
                 $this->$model = new $model($diffModel);
@@ -28,7 +29,7 @@ class ControllerBase extends ApplicationBase
         } else {
             $model = $className . 'Model';
             if (class_exists($model)) {
-                $this->$model = new $model();
+                $this->model = new $model();
             }
         }
 

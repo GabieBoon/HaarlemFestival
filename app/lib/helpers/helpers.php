@@ -28,7 +28,7 @@ function sanitize($dirty)
 }
 
 function currentUser(){
-    return usersModel::currentLoggedInUser();
+    return UserModel::currentLoggedInUser();
 }
 
 /*

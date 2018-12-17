@@ -42,7 +42,7 @@ Class Router{
 
     }
 
-    public static function redirect($location)
+    public static function redirect(string $location = '')
     {
         if (!headers_sent()) {
             header('Location: ' . PROOT . $location);

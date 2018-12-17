@@ -45,7 +45,7 @@ class ViewBase {
         //plek en pad zijn hetzelfde?
         $plek = ROOT . DS . 'public' . DS . 'images' . DS . $pictureName ;
 
-        $pad = "/haarlem-festival/public/images/$pictureName";
+        $pad = "/haarlem-festival/public/images/" . $pictureName;
 
 
         // als "plek" .jpg bestaat, return "pad". jpg en anders "pad" . png? waarom geen return "plek"
@@ -124,7 +124,6 @@ class ViewBase {
     }
     public function generateTableData($data = "", $class = "normalCell")
     {
-
         include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen' . DS . 'TableData' . '.php';
     }
 

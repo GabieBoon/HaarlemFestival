@@ -2,7 +2,7 @@
 
 class ModelBase {
 //david 
-    protected $conn;
+ /*   protected $conn;
 
     public function __construct()
     {
@@ -57,21 +57,9 @@ class ModelBase {
 
     }
 
-    public function getLocations($event){
-        $sql = "select * from Venue where event like '$event'";
-
-        return $this->executeQuery($sql);
-
-    }
-
-    public function getDanceArtists()
-    {
-        $sql = "select * from DanceArtist join Artist on artistId = Artist.Id";
-
-        return $this->executeQuery($sql);
-    }
 
 
+*/
 
 // jasper
 
@@ -79,8 +67,11 @@ class ModelBase {
     public $id;
 
 //wordt gebruikt als davids construct verwijderd is.
-    public function __construct_tempdisabled($table)
+    public function __construct($table = null)
     {
+        if ($table = null) {
+            return false;
+        }
         $this->_db = DB::getInstance();
         $this->_table = $table;
         $this->_setTableColumns();
@@ -90,6 +81,9 @@ class ModelBase {
     protected function _setTableColumns()
     {
         $columns = $this->fetchColumns();
+        if ($columns == null) {
+            return false;
+        }
         for ($i = 0; $i < count($columns); $i++) {
             $columnName = $columns[$i]->Field;
             $this->_columnNames[] = $columns[$i]->Field;
@@ -99,9 +93,9 @@ class ModelBase {
 
     protected function _getModelName()// herschrijf naar nieuw naming convention
     {
-        $modelName = (strtolower($this->_table) . "Model");
+        $modelName = ucwords(strtolower($this->_table) . "Model");
         if (!class_exists($modelName)) {
-            $modelName = lcfirst(str_replace(' ', '', ucwords(str_replace('_', '', $this->_table)))) . "Model";
+            $modelName = ucwords(str_replace(' ', '', ucwords(str_replace('_', '', $this->_table)))) . "Model";
         }
         $this->_modelName = $modelName;
     }
@@ -117,7 +111,7 @@ class ModelBase {
         $resultsQuery = $this->_db->find($this->_table, $params);
 
         for ($i = 0; $i < count($resultsQuery); $i++) {
-            $modelName = (strtolower($this->_table) . "Model");
+            $modelName = ucwords(strtolower($this->_table) . "Model");
             $obj = new $this->_modelName($modelName);
             $obj->getDataFromObj($resultsQuery[$i]);
             $results[] = $obj;
@@ -127,7 +121,7 @@ class ModelBase {
 
     public function findFirstResult(array $params = [])
     {
-        $modelName = (strtolower($this->_table) . "Model");
+        $modelName = ucwords(strtolower($this->_table) . "Model");
         $result = new $this->_modelName($modelName);
         $resultsQuery = $this->_db->findFirstResult($this->_table, $params);
         $result->getDataFromObj($resultsQuery);
@@ -225,5 +219,21 @@ class ModelBase {
 
         }
 
+    }
+
+// david
+
+    public function getLocations($event)
+    {
+        $sql = "select * from Venue where event like {event}";
+
+         formatted_print_r( $this->_db->query($sql,[$event]));
+
+    }
+
+    public function getDanceArtists()
+    {
+        $sql = "select * from DanceArtist join Artist on artistId = Artist.Id";
+        return $this->_db->query($sql);
     }
 }
