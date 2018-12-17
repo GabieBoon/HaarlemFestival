@@ -21,6 +21,8 @@
 
 
     <title> <?= $this->title ?> </title>
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/header.css" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/footer.css" >
 </head>
 
 <body>

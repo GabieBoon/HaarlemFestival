@@ -1,0 +1,109 @@
+/* ===== header css ===== */
+
+header{
+    background-color: #797979;
+    height:150px;
+}
+
+.nav-logo{
+    width: 150px;
+}
+
+.hide{
+    visibility: hidden;
+    display: none;
+}
+
+.nav-wrapper {
+    /* 100 view width -  logo width  */
+    width:calc(100vw - 150px - 20px);
+    float:right;
+    height:50px;
+    margin-top:50px;
+}
+
+.nav-wrapper ul{
+    display:inline-block;
+    padding-inline-start:0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.nav-wrapper ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    width: auto;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-wrapper ul li a{
+    text-decoration: none;
+    display: inline-block;
+    background-color: white;
+    margin-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+.nav-right{
+    float: right;
+    margin-right:50px;
+}
+
+.nav-left{
+    float: left;
+    margin-left: 10px;
+}
+
+.dance-button a{
+    box-shadow:  5px 5px #3083D0;
+    color: #3083D0;
+    width: 125px;
+}
+
+.jazz-button a{
+    box-shadow:  5px 5px #440E62;
+    color: #440E62;
+    width: 125px;
+}
+
+.historic-button a{
+    box-shadow:  5px 5px #DB1F1F;
+    color: #DB1F1F;
+    width: 125px;
+}
+
+.food-button a{
+    box-shadow: 5px 5px #F0841B;
+    color: #F0841B;
+    width: 125px;
+}
+
+.schedule-button a{
+    box-shadow: 5px 5px #DCC500;
+    color: #DCC500;
+    width: 125px;
+}
+
+.cart-button a{
+    box-shadow: 5px 5px #849A7D;
+    color: #849A7D;
+    width:41px;
+}
+
+.carticon{
+    height: 16px;
+}
+
+.language-selection {
+    box-shadow: 5px 5px #A1A1A1;
+    color: #A1A1A1;
+}
+
+select .language-selection option[value="nederlands"]{
+    background-image: url(/images/languages/nederlands.png);
+    /*background: rgba(200, 200, 200, 0.3);*/
+}

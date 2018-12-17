@@ -1,0 +1,29 @@
+footer{
+    background-color: #555555;
+}
+
+.foot-logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 125px;
+}
+
+.contactinfo{
+    float:right;
+    display: inline-block;
+}
+
+.contactinfo p{
+    text-align: center;
+    color:white;
+    background-color: black
+}
+
+p {
+    font-size: 24px;
+    align-content: center;
+
+;
+
+}

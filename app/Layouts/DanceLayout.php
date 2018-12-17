@@ -1,8 +1,14 @@
 <main>
+<<<<<<< Updated upstream
 
 
 
     <section>
+=======
+    <!--<img src="/phpfiles/Haarlem-Festival BitBucket/haarlem-festival/phpproject1/images/Dance BW.jpg" alt="Background, dancing people in black and white">
+    -->
+    <section class="dancesection">
+>>>>>>> Stashed changes
         <h2>About dance</h2>
 
         <p>
@@ -13,7 +19,7 @@
         </p>
     </section>
 
-    <section>
+    <section class="dancesection">
         <h2>Artists</h2>
         <p>
             <?= $this->showArtists(); ?>
@@ -31,7 +37,7 @@
 
     </section>
 
-    <section>
+    <section class="dancesection">
         <h2>Tickets</h2>
 
         <p>
