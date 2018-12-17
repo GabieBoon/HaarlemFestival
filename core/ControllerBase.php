@@ -33,7 +33,7 @@
         $view = $className . 'View';
      
         $this->controller = $className . 'Controller';
-        $this->action = $action; //testing if it can run without this property
+        $this->action = $action; //you can run without this, only troubleshooting will be a lot harder when using debugger
         $this->view = new $view($className);
         
         if (class_exists($model)) {
