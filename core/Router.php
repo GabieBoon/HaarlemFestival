@@ -11,7 +11,7 @@ Class Router{
         //set controller
         if (isset($url[0]) && ($url[0] != '')) {
 
-            $className = ucwords(strtolower($url[0]));//fi
+            $className = ucwords(strtolower($url[0]));//first every word to lowercase, then capitalize every word.
         } else {
             $className = DEFAULT_CONTROLLER;
         }

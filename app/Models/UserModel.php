@@ -7,7 +7,7 @@ class UserModel extends ModelBase
 
     public function __construct($user = '')
     {
-        $table = 'Users';
+        $table = 'User';
         parent::__construct($table);
         $this->_sessionName = CURRENT_USER_SESSION_NAME;
         $this->_cookieName = REMEMBER_ME_COOKIE_NAME;

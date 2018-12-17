@@ -3,16 +3,20 @@ class CmsController extends ControllerBase //Jasper
 {
     public function __construct($controller, $action)
     {
-        parent::__construct($controller, $action);
-        //$this->loadModel('usersModel');
-        //$this->view->setLayout('default');
+        parent::__construct($controller, $action, true, 'user' );
+        //$this->loadModel('userModel');
+        $this->view->setLayout('Default');
     }
-    public function indexAction(){
-formatted_print_r($this->view);
+
+    public function indexAction()
+    {
+        die("Hello from: " . __class__ . ' and from: ' . __FUNCTION__);
+        //formatted_print_r($this->view);
     }
 
     public function loginAction()
     {
+        //formatted_print_r($this->view);
         $validation = new Validate();
         if ($_POST) {
             //form validation
@@ -28,7 +32,7 @@ formatted_print_r($this->view);
                 ]
             ]);
             if ($validation->passed()) {
-                $user = $this->usersModel->findByUsername($_POST['username']);
+                $user = $this->userModel->findByUsername($_POST['username']);
 
                 if ($user && password_verify(Input::getInput('password'), $user->password)) {
                     if (isset($_POST['remember_me']) && Input::getInput('remember_me')) {
@@ -45,7 +49,7 @@ formatted_print_r($this->view);
 
         }
         $this->view->displayErrors = $validation->displayErrors();
-        $this->view->render('cms/loginView');
+        $this->view->render_curtis('CMS/loginView');
     }
 
     public function logoutAction()
