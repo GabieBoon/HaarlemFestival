@@ -12,6 +12,5 @@ class DanceModel extends ModelBase{
 
     public function getTickets(){
         $sql = "select * from Ticket as t where t.event = Dance join DanceTicket as dt on t where t.id = td.ticketId";
-
     }
 }
