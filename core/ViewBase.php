@@ -3,6 +3,11 @@
 class ViewBase {
 
     protected $head, $body, $layout, $title, $class;
+    protected $_head,
+              $_body,
+              $_siteTitle,
+              $_outputBuffer,
+              $_layout = DEFAULT_LAYOUT;
 
     public function __construct($class, $siteTitle = SITE_TITLE)
     {
@@ -10,24 +15,28 @@ class ViewBase {
         $this->title = $siteTitle;
     }
 
+
+
     //geef de pagina weer
     public function render($layoutName = NULL){
 
         if ($layoutName == NULL){
-            $layoutName = $this->class;
+            $layoutName = $this->class . 'Layout.php';
+        }else {
+            $layoutName += 'Layout.php';
         }
 
         //head
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Head' .'.php';
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Head.php';
 
         //header
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Header' .'.php';
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Header.php';
 
         //content
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . $layoutName . 'Layout' . '.php';
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . $layoutName;
 
         //footer
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Footer' .'.php';
+        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Footer.php';
     }
 
     public function getPicture($pictureName){ // desperately in need of some rework
@@ -152,6 +161,79 @@ class ViewBase {
     public function endTableRow()
     {
         echo '</tr>';
+    }
+
+
+
+
+
+    public function render_curtis($viewName)
+    {
+        $viewArray = explode('/', $viewName);
+        $viewString = implode(DS, $viewArray);
+
+        $basePath = ROOT . DS . 'App' . DS . 'Views' . DS;
+        $pathToView = $basePath . $viewString . '.php';
+        $pathToLayout = $basePath . DS . 'Layouts' . DS . $this->_layout . 'Layout.php';
+
+        if (file_exists($pathToView)) {
+            include($pathToView);
+            include($pathToLayout);
+        } else {
+            die('The view \"' . $viewName . '\" does not exist.');
+        }
+    }
+
+    //basically a getter / setter
+    public function content($type)
+    {
+        switch ($type) {
+            case 'head':
+                return $this->_head;
+                //break;
+            case 'body':
+                return $this->_body;
+                //break;     
+            default:
+                return false;
+                //break;
+        }
+    }
+
+
+    public function start($type)
+    {
+        $this->_outputBuffer = $type;
+        ob_start();
+    }
+
+    public function end()
+    {
+        if ($this->_outputBuffer == 'head') {
+            $this->_head = ob_get_clean();
+        } elseif ($this->_outputBuffer == 'body') {
+            $this->_body = ob_get_clean();
+        } else {
+            die('You first have to run the start method!');
+        }
+    }
+
+    public function getSiteTitle()
+    {
+        if ($this->_siteTitle == '') {
+            return SITE_TITLE;
+        }
+        return $this->_siteTitle;
+    }
+
+    public function setSiteTitle(string $title)
+    {
+        $this->_siteTitle = $title;
+    }
+
+    public function setLayout(string $path)
+    {
+        $this->_layout = $path;
     }
 
 }

@@ -25,12 +25,7 @@ spl_autoload_register(function ($fullClassName)
 
     $pathToCore = ROOT . DS . 'core' . DS . $fullClassName . '.php';
 
-
-    //$pathToClass = ROOT . DS . 'app' . DS . $mvcFolderName . DS . $className . DS . $fullClassName . '.php';
     $pathToClass = ROOT . DS . 'app' . DS . $mvcFolderName . DS . $fullClassName . '.php';
-
-
-    
 
     if (file_exists($pathToCore)) {
         require_once($pathToCore);
