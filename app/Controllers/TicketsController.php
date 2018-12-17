@@ -17,8 +17,8 @@ class TicketsController extends ControllerBase {
         $this->view->showPage();
     }
 
-//    public function clearWinkelwagenAction(){
-//        $_SESSION['Winkelwagen'] = array();
+//    public function clearCartAction(){
+//        $_SESSION['Cart'] = array();
 //
 //        $this->showPage();
 //    }

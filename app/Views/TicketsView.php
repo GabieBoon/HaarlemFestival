@@ -18,8 +18,8 @@ class TicketsView extends ViewBase{
         $this->render();
     }
 
-    public function getWinkelwagen(){
-        foreach ($_SESSION['Winkelwagen'] as $ticketId => $ticket){
+    public function getCart(){
+        foreach ($_SESSION['Cart'] as $ticketId => $ticket){
             var_dump($ticket);
         }
     }

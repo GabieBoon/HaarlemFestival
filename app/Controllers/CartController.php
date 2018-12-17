@@ -14,7 +14,7 @@ class CartController extends ControllerBase
         $data = $this->model->addTicket($ticketId);
 
 
-        //voeg ticket toe tenzij hij al in het winkelwagentje zit
+        //voeg ticket toe tenzij hij al in het Cart zit
         if ( !array_key_exists($ticketId, $_SESSION['Cart']) ){
             $_SESSION['Cart'][$ticketId] = $data[0];
         }
