@@ -1,14 +1,14 @@
 <main>
-<<<<<<< Updated upstream
+
 
 
 
     <section>
-=======
+
     <!--<img src="/phpfiles/Haarlem-Festival BitBucket/haarlem-festival/phpproject1/images/Dance BW.jpg" alt="Background, dancing people in black and white">
     -->
     <section class="dancesection">
->>>>>>> Stashed changes
+
         <h2>About dance</h2>
 
         <p>

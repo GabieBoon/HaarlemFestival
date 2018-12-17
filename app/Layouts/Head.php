@@ -17,12 +17,12 @@
 
     <!-- other CSS -->
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/StyleSheet.css" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/header.css" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/footer.css" >
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/<?= $this->class ?>css.css" >
 
 
     <title> <?= $this->title ?> </title>
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/header.css" >
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/footer.css" >
 </head>
 
 <body>
