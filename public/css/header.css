@@ -62,36 +62,90 @@ header{
     box-shadow:  5px 5px #3083D0;
     color: #3083D0;
     width: 125px;
+    border-style: solid;
+    border-color:white;
+}
+
+.dance-button a:hover{
+    box-shadow:  5px 5px white;
+    border-color: white;
+    color: white;
+    background-color: #3083D0;
 }
 
 .jazz-button a{
     box-shadow:  5px 5px #440E62;
     color: #440E62;
     width: 125px;
+    border-style: solid;
+    border-color:white;
+}
+
+.jazz-button a:hover{
+    box-shadow:  5px 5px white;
+    border-color: white;
+    color: white;
+    background-color: #440E62;
 }
 
 .historic-button a{
     box-shadow:  5px 5px #DB1F1F;
     color: #DB1F1F;
     width: 125px;
+    border-style: solid;
+    border-color:white;
+}
+
+.historic-button a:hover{
+    box-shadow:  5px 5px white;
+    border-color: white;
+    color: white;
+    background-color: #DB1F1F;
 }
 
 .food-button a{
     box-shadow: 5px 5px #F0841B;
     color: #F0841B;
     width: 125px;
+    border-style: solid;
+    border-color:white;
+}
+
+.food-button a:hover{
+    box-shadow:  5px 5px white;
+    border-color: white;
+    color: white;
+    background-color: #F0841B;
 }
 
 .schedule-button a{
     box-shadow: 5px 5px #DCC500;
     color: #DCC500;
     width: 125px;
+    border-style: solid;
+    border-color:white;
+}
+
+.schedule-button a:hover{
+    box-shadow:  5px 5px white;
+    border-color: white;
+    color: white;
+    background-color: #DCC500;
 }
 
 .cart-button a{
     box-shadow: 5px 5px #849A7D;
     color: #849A7D;
     width:41px;
+    border-style: solid;
+    border-color:white;
+}
+
+.cart-buttont a:hover{
+    box-shadow:  5px 5px white;
+    border-color: white;
+    color: white;
+    background-color: #849A7D;
 }
 
 .carticon{

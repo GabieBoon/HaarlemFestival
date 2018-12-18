@@ -23,7 +23,6 @@
         <h2>Artists</h2>
         <p>
             <?= $this->showArtists(); ?>
-
         </p>
 
     </section>
@@ -32,7 +31,6 @@
         <h2>Locaties</h2>
         <p>
             <?= $this->showLocations(); ?>
-
         </p>
 
     </section>
