@@ -24,6 +24,13 @@
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/footer.css" >
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/<?= $this->class ?>css.css" >
 
+    <!--  dynamic background image  -->
+
+    <style type="text/css">
+        .background-image {
+            background: #FFF url(<?php echo $this->$backgroundImg; ?>);
+        }
+    </style>
 
     <title> <?= $this->title ?> </title>
 </head>

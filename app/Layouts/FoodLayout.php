@@ -1,10 +1,4 @@
-<style type="text/css">
-    .background-image{
-        background: url("<?= PROOT ?>public/images/foodbackground.jpg");
-    }
-</style>
-
-<div class="background-image image-background">
+<div class="background-image">
     <article class="food-content">
         <div class="about-food">
             <h1>About Food</h1>

@@ -2,7 +2,7 @@
 
 class ViewBase {
 
-    protected $head, $body, $layout, $title, $class;
+    protected $head, $body, $layout, $title, $class, $backgroundImg;
     protected $_head,
               $_body,
               $_siteTitle,
@@ -13,6 +13,7 @@ class ViewBase {
     {
         $this->class = $class;
         $this->title = $siteTitle;
+        $this->backgroundImg = PROOT."public/images/foodbackground.jpg";
     }
 
 
