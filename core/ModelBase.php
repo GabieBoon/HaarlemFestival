@@ -114,34 +114,34 @@ class ModelBase {
         return $this->_db->fetchColumns($this->_table);
     }
 
-    // public function find(array $params = [])
-    // {
-    //     $results = [];
-    //     $resultsQuery = $this->_db->find($this->_table, $params);
+    public function find(array $params = [])
+    {
+        $results = [];
+        $resultsQuery = $this->_db->find($this->_table, $params);
 
-    //     for ($i = 0; $i < count($resultsQuery); $i++) {
-    //         $modelName = ucwords(strtolower($this->_table) . "Model");
-    //         $obj = new $this->_modelName($modelName);
-    //         $obj->getDataFromObj($resultsQuery[$i]);
-    //         $results[] = $obj;
-    //     }
-    //     return $results;
-    // }
+        for ($i = 0; $i < count($resultsQuery); $i++) {
+            $modelName = ucwords(strtolower($this->_table) . "Model");
+            $obj = new $this->_modelName($modelName);
+            $obj->getDataFromObj($resultsQuery[$i]);
+            $results[] = $obj;
+        }
+        return $results;
+    }
 
-    // public function findFirstResult(array $params = [])
-    // {
-    //     $modelName = ucwords(strtolower($this->_table) . "Model");
-    //     $result = new $this->_modelName($modelName);
-    //     $resultsQuery = $this->_db->findFirstResult($this->_table, $params);
-    //     $result->getDataFromObj($resultsQuery);
-    //     return $result;
+    public function findFirstResult(array $params = [])
+    {
+        $modelName = ucwords(strtolower($this->_table) . "Model");
+        $result = new $this->_modelName($modelName);
+        $resultsQuery = $this->_db->findFirstResult($this->_table, $params);
+        $result->getDataFromObj($resultsQuery);
+        return $result;
 
-    // }
+    }
 
-    // public function findByID(int $id)
-    // {
-    //     return $this->findFirstResult(['conditions' => "id", 'bind' => [$id]]);
-    // }
+    public function findByID(int $id)
+    {
+        return $this->findFirstResult(['conditions' => "id", 'bind' => [$id]]);
+    }
 
     public function save()
     {

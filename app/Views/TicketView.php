@@ -1,6 +1,6 @@
 <?php
 
-class TicketsView extends ViewBase{
+class TicketView extends ViewBase{
 
     public function __construct($class)
     {

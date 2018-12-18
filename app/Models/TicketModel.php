@@ -1,6 +1,6 @@
 <?php
 
-class TicketsModel extends ModelBase{
+class TicketModel extends ModelBase{
     public function __construct()
     {
         parent::__construct();

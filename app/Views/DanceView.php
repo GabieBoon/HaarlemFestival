@@ -2,7 +2,7 @@
 
 class DanceView extends ViewBase{
 
-    public $danceArtists, $danceLocations;
+    protected $danceArtists, $danceLocations;
 
     public function __construct($className)
     {

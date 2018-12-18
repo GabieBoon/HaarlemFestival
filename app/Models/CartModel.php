@@ -1,28 +1,28 @@
 <?php
 
-class CartModel extends ModelBase{
+class CartModel extends ModelBase
+{
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function addTicket($ticketId){
+    public function addTicket($ticketId)
+    {
         $sql = "SELECT * FROM Ticket WHERE id = ?";
-
-        $results = $this->executeQuery($sql, $ticketId);
-
-        return $results;
+        return $this->_db->query($sql, [$ticketId])->getResult();
     }
 
 
-
-    public function dbTest(){
+    //old test code
+    public function dbTest()
+    {
         $sql = "SELECT * FROM test ";
         $result = $this->conn->query($sql);
 
-        $data= [];
+        $data = [];
 
-        foreach ($result as $row){
+        foreach ($result as $row) {
             //echo $row['id'] . " ";
             //echo $row['testcol'] . " ";
 

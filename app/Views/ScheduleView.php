@@ -2,7 +2,7 @@
 
 class ScheduleView extends ViewBase{
 
-    public $danceArtists, $danceLocations, $jazzLocations, $restaurants, $languages;
+    protected $danceArtists, $danceLocations, $jazzLocations, $restaurants, $languages;
 
     public function __construct($class)
     {

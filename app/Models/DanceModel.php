@@ -7,13 +7,12 @@ class DanceModel extends ModelBase{
     public function __construct()
     {
         parent::__construct();
-        //$this->_setTable('Ticket');
-        //formatted_print_r();
     }
 
 
     public function getTickets(){
         $sql = "select * from Ticket as t where t.event = Dance join DanceTicket as dt on t where t.id = td.ticketId";
+        return $this->_db->query($sql)->getResult();
     }
 
     public function getLocations($event)

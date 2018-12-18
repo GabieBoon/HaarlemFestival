@@ -1,6 +1,6 @@
 <?php
 
-class TicketsController extends ControllerBase {
+class TicketController extends ControllerBase {
 
     //voer de functionaliteit van ControllerBase uit
     public function __construct($className, $action)
