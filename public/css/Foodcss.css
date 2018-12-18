@@ -1,0 +1,15 @@
+.food-content{
+    background-color: #FFFFFF;
+    padding: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: -30px;
+    overflow: auto;
+    z-index: 20;
+}
+
+.image-background{
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center center;
+}
