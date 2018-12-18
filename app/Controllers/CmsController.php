@@ -10,15 +10,11 @@ class CmsController extends ControllerBase //Jasper
 
     public function indexAction()
     {
-        if (currentUser()) {
-            Router::redirect();
-        }
         Router::redirect('CMS/login');
     }
 
     public function loginAction()
     {
-        //formatted_print_r($this->view);
         $validation = new Validate();
         if ($_POST) {
             //form validation
@@ -34,7 +30,8 @@ class CmsController extends ControllerBase //Jasper
                 ]
             ]);
             if ($validation->passed()) {
-                $user = $this->UserModel->findByUsername($_POST['username']);
+                $table = 'User';
+                $user = $this->UserModel->findByUsername($table, $_POST['username']);
 
                 if ($user && password_verify(Input::getInput('password'), $user->password)) {
                     if (isset($_POST['remember_me']) && Input::getInput('remember_me')) {
@@ -42,8 +39,9 @@ class CmsController extends ControllerBase //Jasper
                     } else {
                         $user->login(false);
                     }
-
-                    Router::redirect('');
+                
+                    formatted_print_r($user); //dump and die
+                    Router::redirect();
                 } else {
                     $validation->addError("There is an error with your username or password.");
                 }

@@ -26,9 +26,9 @@ class UserModel extends ModelBase
         }
     }
 
-    public function findByUsername($username)
+    public function findByUsername($table, $username)
     {
-        return $this->findFirstResult(['conditions' => 'userName = ?', 'bind' => [$username]]);
+        return $this->findFirstResult($table, ['conditions' => 'userName = ?', 'bind' => [$username]]);
     }
 
     public static function currentLoggedInUser()

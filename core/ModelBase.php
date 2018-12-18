@@ -83,7 +83,7 @@ class ModelBase {
 
     protected function _setTable(string $table)
     {
-        $this->_table = $table;
+        
         $this->_setTableColumns();
     }
     
@@ -100,27 +100,27 @@ class ModelBase {
         }
     }
 
-    protected function _getModelName()// herschrijf naar nieuw naming convention
+    protected function _getModelName($table)// herschrijf naar nieuw naming convention
     {
-        $modelName = ucwords(strtolower($this->_table) . "Model");
+        $modelName = ucwords(strtolower($table) . "Model");
         if (!class_exists($modelName)) {
-            $modelName = ucwords(str_replace(' ', '', ucwords(str_replace('_', '', $this->_table)))) . "Model";
+            $modelName = ucwords(str_replace(' ', '', ucwords(str_replace('_', '', $table)))) . "Model";
         }
         $this->_modelName = $modelName;
     }
 
-    public function fetchColumns()
+    public function fetchColumns($table)
     {
-        return $this->_db->fetchColumns($this->_table);
+        return $this->_db->fetchColumns($table);
     }
 
-    public function find(array $params = [])
+    public function find($table, array $params = [])
     {
         $results = [];
-        $resultsQuery = $this->_db->find($this->_table, $params);
+        $resultsQuery = $this->_db->find($table, $params);
 
         for ($i = 0; $i < count($resultsQuery); $i++) {
-            $modelName = ucwords(strtolower($this->_table) . "Model");
+            $modelName = $this->_getModelName($table);
             $obj = new $this->_modelName($modelName);
             $obj->getDataFromObj($resultsQuery[$i]);
             $results[] = $obj;
@@ -128,19 +128,19 @@ class ModelBase {
         return $results;
     }
 
-    public function findFirstResult(array $params = [])
+    public function findFirstResult($table, array $params = [])
     {
-        $modelName = ucwords(strtolower($this->_table) . "Model");
+        $modelName = $this->_getModelName($table);
         $result = new $this->_modelName($modelName);
-        $resultsQuery = $this->_db->findFirstResult($this->_table, $params);
+        $resultsQuery = $this->_db->findFirstResult($table, $params);
         $result->getDataFromObj($resultsQuery);
         return $result;
 
     }
 
-    public function findByID(int $id)
+    public function findByID(int $id, $table)
     {
-        return $this->findFirstResult(['conditions' => "id", 'bind' => [$id]]);
+        return $this->findFirstResult($table, ['conditions' => "id", 'bind' => [$id]]);
     }
 
     public function save()
@@ -160,18 +160,18 @@ class ModelBase {
 
     }
 
-    public function insert($fields)
+    public function insert($table, $fields)
     {
         if (isset($fields)) {
-            return $this->_db->insert($this->_table, $fields);
+            return $this->_db->insert($table, $fields);
         }
         return false;
     }
 
-    public function updateByID(int $id = null, $fields)
+    public function updateByID($table, int $id = null, $fields)
     {
         if (isset($fields) || $id != null) {
-            return $this->_db->updateByID($id, $this->_table, $fields);
+            return $this->_db->updateByID($id, $table, $fields);
         }
         return false;
 
