@@ -18,19 +18,20 @@
     <script src="<?= PROOT ?>public/javascripts/jquery-3.3.1.slim.min.js"></script>
     <script src="<?= PROOT ?>public/javascripts/bootstrap.min.js"></script>
 
+
+    <!--  dynamic background image  -->
+    <style type="text/css">
+        .background-image {
+            background: #FFF url(<?= $this->backgroundImg; ?>);
+        }
+    </style>
+
     <!-- other CSS -->
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/StyleSheet.css" >
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/header.css" >
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/footer.css" >
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/<?= $this->class ?>css.css" >
 
-    <!--  dynamic background image  -->
-
-    <style type="text/css">
-        .background-image {
-            background: #FFF url(<?php echo $this->$backgroundImg; ?>);
-        }
-    </style>
 
     <title> <?= $this->title ?> </title>
 </head>
