@@ -2,7 +2,7 @@
 
 header{
     background-color: #797979;
-    height:150px;
+    height:175px;
 }
 
 .nav-logo{
@@ -48,6 +48,10 @@ header{
     font-weight: bold;
 }
 
+.nav-wrapper ul li .cart-icon{
+    width:50px;
+}
+
 .nav-right{
     float: right;
     margin-right:50px;
@@ -58,98 +62,73 @@ header{
     margin-left: 10px;
 }
 
-.dance-button a{
-    box-shadow:  5px 5px #3083D0;
-    color: #3083D0;
+.nav-btn a{
     width: 125px;
     border-style: solid;
     border-color:white;
 }
 
-.dance-button a:hover{
+.nav-btn a:hover{
+    width: 125px;
+    border-style: solid;
+    border-color:white;
     box-shadow:  5px 5px white;
-    border-color: white;
     color: white;
+}
+
+.dance-btn a{
+    box-shadow:  5px 5px #3083D0;
+    color: #3083D0;
+}
+
+.dance-btn a:hover{
     background-color: #3083D0;
 }
 
-.jazz-button a{
+.jazz-btn a{
     box-shadow:  5px 5px #440E62;
     color: #440E62;
-    width: 125px;
-    border-style: solid;
-    border-color:white;
 }
 
-.jazz-button a:hover{
-    box-shadow:  5px 5px white;
-    border-color: white;
-    color: white;
+.jazz-btn a:hover{
     background-color: #440E62;
 }
 
-.historic-button a{
+.historic-btn a{
     box-shadow:  5px 5px #DB1F1F;
     color: #DB1F1F;
-    width: 125px;
-    border-style: solid;
-    border-color:white;
 }
 
-.historic-button a:hover{
-    box-shadow:  5px 5px white;
-    border-color: white;
-    color: white;
+.historic-btn a:hover{
     background-color: #DB1F1F;
 }
 
-.food-button a{
+.food-btn a{
     box-shadow: 5px 5px #F0841B;
     color: #F0841B;
-    width: 125px;
-    border-style: solid;
-    border-color:white;
 }
 
-.food-button a:hover{
-    box-shadow:  5px 5px white;
-    border-color: white;
-    color: white;
+.food-btn a:hover{
     background-color: #F0841B;
 }
 
-.schedule-button a{
+.schedule-btn a{
     box-shadow: 5px 5px #DCC500;
     color: #DCC500;
-    width: 125px;
-    border-style: solid;
-    border-color:white;
 }
 
-.schedule-button a:hover{
-    box-shadow:  5px 5px white;
-    border-color: white;
-    color: white;
+.schedule-btn a:hover{
     background-color: #DCC500;
 }
 
-.cart-button a{
+.cart-btn a{
     box-shadow: 5px 5px #849A7D;
     color: #849A7D;
-    width:41px;
-    border-style: solid;
-    border-color:white;
+    width: 50px;
 }
 
-.cart-buttont a:hover{
-    box-shadow:  5px 5px white;
-    border-color: white;
-    color: white;
+.cart-btn a:hover{
     background-color: #849A7D;
-}
-
-.carticon{
-    height: 16px;
 }
 
 .language-selection {

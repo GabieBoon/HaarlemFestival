@@ -9,20 +9,16 @@
     </a>
     <nav class="nav-wrapper">
         <ul class="nav-left">
-            <li class="dance-button"><a href="<?= PROOT ?>Dance/" >Dance</a></li>
-            <li class="jazz-button"><a href="<?= PROOT ?>Jazz/">Jazz</a></li>
-            <li class="historic-button"><a href="<?= PROOT ?>Historic/">Historic</a></li>
-            <li class="food-button"><a href="<?= PROOT ?>Food/">Food</a></li>
+            <li class="dance-btn nav-btn"><a href="<?= PROOT ?>Dance/" >Dance</a></li>
+            <li class="jazz-btn nav-btn"><a href="<?= PROOT ?>Jazz/">Jazz</a></li>
+            <li class="historic-btn nav-btn"><a href="<?= PROOT ?>Historic/">Historic</a></li>
+            <li class="food-btn nav-btn"><a href="<?= PROOT ?>Food/">Food</a></li>
         </ul>
         <ul class="nav-right">
-            <li class="schedule-button"><a href="<?= PROOT ?>Schedule/">Schedule</a></li>
-            <li class="cart-button">
-                <a href="<?= PROOT ?>Ticket/">
-                    <img class="carticon" src="<?= PROOT ?>public/images/cart.svg">
-                </a>
-            </li>
+            <li class="schedule-btn nav-btn"><a href="<?= PROOT ?>Schedule/">Schedule</a></li>
+            <li class="cart-btn nav-btn"><a class="cart-icon" href="<?= PROOT ?>Ticket/"><i class="fas fa-shopping-cart"></i></a></li>
 
-            <li>
+            <li class="nav-btn">
                 <select class="language-selection">
                     <option value="nederlands"><img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="test">Nederlands</option>
                     <option value="engels">Engels</option>
