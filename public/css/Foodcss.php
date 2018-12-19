@@ -1,3 +1,9 @@
+<?php
+header("Content-type: text/css; charset: UTF-8");
+
+$foodColor = "#F0841B";
+?>
+
 .food-content-box{
     background-color: rgba(242,242,242,0.95);
     padding: 10px;
