@@ -28,10 +28,11 @@
 
     <!-- other CSS -->
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/StyleSheet.css" >
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/header.css" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/headercss.php" >
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/footer.css" >
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/<?= $this->class ?>css.css" >
 
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/Foodcss.php" >
 
     <title> <?= $this->title ?> </title>
 </head>

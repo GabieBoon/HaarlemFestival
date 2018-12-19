@@ -12,7 +12,7 @@
             <li class="dance-btn nav-btn"><a href="<?= PROOT ?>Dance/" >Dance</a></li>
             <li class="jazz-btn nav-btn"><a href="<?= PROOT ?>Jazz/">Jazz</a></li>
             <li class="historic-btn nav-btn"><a href="<?= PROOT ?>Historic/">Historic</a></li>
-            <li class="food-btn nav-btn"><a href="<?= PROOT ?>Food/">Food</a></li>
+            <li class="active food-btn nav-btn"><a href="<?= PROOT ?>Food/">Food</a></li>
         </ul>
         <ul class="nav-right">
             <li class="schedule-btn nav-btn"><a href="<?= PROOT ?>Schedule/">Schedule</a></li>
@@ -20,7 +20,7 @@
 
             <li class="nav-btn">
                 <select class="language-selection">
-                    <option value="nederlands"><img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="test">Nederlands</option>
+                    <option value="nederlands">Nederlands</option>
                     <option value="engels">Engels</option>
                 </select>
             </li>
