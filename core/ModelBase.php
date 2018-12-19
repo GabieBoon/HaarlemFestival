@@ -66,7 +66,6 @@ class ModelBase {
     protected $_db, $_table, $_modelName, $_softDelete = false, $_columnNames = [];
     public $id;
 
-//wordt gebruikt als davids construct verwijderd is.
     public function __construct()
     {
         $this->_db = DB::getInstance();

@@ -40,6 +40,8 @@
 ) -->
 
 <?php
+
+formatted_print_r($_SESSION);
 //$_POST['button'] &&
 if( isset($_FILES['attachment'])) 
 { 
