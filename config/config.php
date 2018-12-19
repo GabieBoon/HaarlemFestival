@@ -46,4 +46,4 @@ define('CURRENT_USER_SESSION_NAME', '7fd78a90f67ds0af789d0as78f9d0sa6'); //sessi
 
 define('REMEMBER_ME_COOKIE_NAME', 'f87d8s9ayfu9d7as8f9d07as8f6978f7'); // cookie name for logged in user remember me
 
-define('REMEMBER_COOKIE_EXPIRY', 2592000); // time for remember me cookie to live (30 days) 
+define('REMEMBER_ME_COOKIE_EXPIRY', 2592000); // time for remember me cookie to live (30 days) 

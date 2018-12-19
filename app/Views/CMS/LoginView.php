@@ -1,5 +1,5 @@
 <?php //set site title ?>
-<?php $this->setSiteTitle('CMS'); ?>
+<?php $this->setSiteTitle('CMS Login Page'); ?>
 
 <?php //head ?>
 <?php $this->start('head'); ?>
@@ -32,6 +32,7 @@
             <a href="<?= PROOT ?>register/register" class="text-primary">Register</a>
         </div>
     </form>
+
 
 </div>
 

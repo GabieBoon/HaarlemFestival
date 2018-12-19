@@ -10,6 +10,9 @@ class CmsController extends ControllerBase //Jasper
 
     public function indexAction()
     {
+        if (currentUser()->_isLoggedIn) {
+            Router::redirect('CMS/dashboard');
+        }
         Router::redirect('CMS/login');
     }
 
@@ -39,9 +42,7 @@ class CmsController extends ControllerBase //Jasper
                     } else {
                         $user->login(false);
                     }
-                
-                    formatted_print_r($user); //dump and die
-                    Router::redirect();
+                    Router::redirect('CMS/dashboard');
                 } else {
                     $validation->addError("There is an error with your username or password.");
                 }
@@ -59,6 +60,11 @@ class CmsController extends ControllerBase //Jasper
             currentUser()->logout();
         }
         Router::redirect('CMS/login');
+    }
+
+    public function dashboardAction()
+    {
+        formatted_print_r(currentUser());
     }
 }
 ?>
