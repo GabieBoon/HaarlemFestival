@@ -7,6 +7,7 @@ class OrderSuccessView extends ViewBase {
     }
 
     public function showPage() {
+        formatted_print_r($_SESSION);
         $this->render();
     }
 }
