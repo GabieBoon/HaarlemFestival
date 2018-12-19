@@ -1,6 +1,6 @@
 <h1>Order - Confirmation</h1>
 
-<!--<pre>--><?php //var_dump($_POST); ?><!--</pre>-->
+<!--<pre>--><?php //var_dump($_SESSION['customerData']); ?><!--</pre>-->
 
 <h2>Order details</h2>
 
@@ -33,3 +33,9 @@
 
     ?>
 </ul>
+
+<form action="<?= PROOT ?>OrderSuccess">
+    <button type="submit">Go to payment</button>
+</form>
+<a href="<?= PROOT ?>OrderData">Back</a>
+
