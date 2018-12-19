@@ -9,7 +9,7 @@ $jazzColor = "#440E62";
 $historicColor = "#DB1F1F";
 $scheduleColor = "#DCC500";
 $cartColor = "#849A7D";
-$activeColor = "";
+$activeColor = "#F0841B";
 
 // header background color
 $headerStandardColor = "#797979";
@@ -161,4 +161,37 @@ border-color: white;
 box-shadow:  5px 5px white;
 color: white;
 background-color: <?php echo $activeColor?> !important;
+}
+
+
+.Dance{
+    background-color: <?php echo $danceColor?>;
+}
+
+.Food{
+    background-color: <?php echo $foodColor?>;
+}
+
+.Ticket{
+    background-color: <?= $cartColor?>;
+}
+
+.Orderdata{
+background-color: <?= $cartColor?>;
+}
+
+.Orderconfirm{
+background-color: <?= $cartColor?>;
+}
+
+.Ordersuccess{
+background-color: <?= $cartColor?>;
+}
+
+.Home{
+    background-color: <?php echo $headerStandardColor?>;
+}
+
+.Schedule{
+    background-color: <?php echo $scheduleColor?>
 }

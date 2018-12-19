@@ -1,4 +1,4 @@
-<header>
+<header class="<?= $this->class?>">
     <a href="<?= PROOT ?>">
         <img
              class="nav-logo <?php if($_SESSION['CurrentPage'] == 'Home'){echo 'hide';} ?>"
