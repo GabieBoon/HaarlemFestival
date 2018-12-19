@@ -24,7 +24,7 @@ class ViewBase {
         if ($layoutName == NULL){
             $layoutName = $this->class . 'Layout.php';
         }else {
-            $layoutName .= 'Layout.php';
+            $layoutName += 'Layout.php';
         }
 
         //head
@@ -73,7 +73,7 @@ class ViewBase {
                 break;
             case "Historic":
                 $rowSource = "languages";
-                $rowTitle = "name";
+                $rowTitle = "language";
                 break;
             case "Jazz":
                 $rowSource = "jazzLocations";
@@ -128,7 +128,7 @@ class ViewBase {
     }
 
     //plz move to genTableView or scheduleView
-    public function generateTableData($data = "", $class = "normalCell")
+    public function generateTableData($text = "", $class = "normalCell", $event = NULL, $rowName = NULL, $rowTitle = NULL)
     {
         include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen' . DS . 'TableData' . '.php';
     }
@@ -140,7 +140,6 @@ class ViewBase {
         $geprint = true;
        //$object = $this->class . 'View';
         if (!is_array($this->$rowSource)) {
-            //$rowSource = [$rowSource];
             return false;
         }
         foreach ($this->$rowSource as $row) {
@@ -175,23 +174,21 @@ class ViewBase {
         echo '</tr>';
     }
 
-    public function printTickets() {
-        foreach ($_SESSION['Cart'] as $ticket) {
-            $startTime = explode(' ', $ticket->startTime);
-            $endTime = explode(' ', $ticket->endTime);
+    public function checkForTicket($event, $rowName, $rowTitle){
+        if ($event != NULL && $rowName != NULL){
+            $ticketSource = strtolower($event) . "Tickets";
 
-            echo "<li>";
-            echo "    <span><b>$ticket->event ticket</b></span>";
-            echo "    <ul>";
-            echo "        <li>Date: $startTime[0]</li>";
-            echo '        <li>Time: ' . substr($startTime[1], 0, -3) . ' - ' . substr($endTime[1], 0, -3) . '</li>';
-            echo "        <li>Price: &euro;$ticket->price</li>";
-            echo "    </ul>";
-            echo "</li>";
+            foreach ($this->$ticketSource as $ticket){
+                if ($ticket[$rowTitle] == $rowName && $ticket['startTime'] == "de tijd"){
+
+                }
+            }
+
+
+
         }
+
     }
-
-
 
 
 
