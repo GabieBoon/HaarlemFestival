@@ -24,6 +24,7 @@ class ViewBase {
         if ($layoutName == NULL){
             $layoutName = $this->class . 'Layout.php';
         }else {
+            $layoutName .= 'Layout.php';
             $layoutName += 'Layout.php';
         }
 
