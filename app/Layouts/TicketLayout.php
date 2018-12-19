@@ -1,9 +1,10 @@
 
 
 
-    <h1> tickets</h1>
+    <h1>Tickets</h1>
 
-    <p><?= $this->getCart() ?></p>
+<!--    <p>//$this->getCart()</p>-->
+    <?php $this->printTickets(); ?>
 
 
     <form method="post" action="<?= PROOT ?>OrderData">

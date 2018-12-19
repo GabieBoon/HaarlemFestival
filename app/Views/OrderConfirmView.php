@@ -9,5 +9,4 @@ class OrderConfirmView extends ViewBase {
     public function showPage() {
         $this->render();
     }
-
 }

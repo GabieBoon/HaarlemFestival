@@ -24,7 +24,7 @@ class ViewBase {
         if ($layoutName == NULL){
             $layoutName = $this->class . 'Layout.php';
         }else {
-            $layoutName += 'Layout.php';
+            $layoutName .= 'Layout.php';
         }
 
         //head
@@ -173,6 +173,22 @@ class ViewBase {
     public function endTableRow()
     {
         echo '</tr>';
+    }
+
+    public function printTickets() {
+        foreach ($_SESSION['Cart'] as $ticket) {
+            $startTime = explode(' ', $ticket->startTime);
+            $endTime = explode(' ', $ticket->endTime);
+
+            echo "<li>";
+            echo "    <span><b>$ticket->event ticket</b></span>";
+            echo "    <ul>";
+            echo "        <li>Date: $startTime[0]</li>";
+            echo '        <li>Time: ' . substr($startTime[1], 0, -3) . ' - ' . substr($endTime[1], 0, -3) . '</li>';
+            echo "        <li>Price: &euro;$ticket->price</li>";
+            echo "    </ul>";
+            echo "</li>";
+        }
     }
 
 
