@@ -18,8 +18,14 @@ class ScheduleController extends ControllerBase {
         $danceLocations = $this->model->getLocations("Dance");
         $jazzLocations = $this->model->getLocations("Jazz");
         $restaurants = $this->model->getLocations("Food");
+        $languages = $this->model->getLanguages();
 
-        $this->view->showPage($danceArtists, $danceLocations, $jazzLocations, $restaurants);
+
+        $danceTickets = $this->model->getDanceTickets();
+
+        //($languages);
+
+        $this->view->showPage($danceArtists, $danceLocations, $jazzLocations, $restaurants, $languages, $danceTickets);
     }
 
 }

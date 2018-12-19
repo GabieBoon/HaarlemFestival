@@ -73,7 +73,7 @@ class ViewBase {
                 break;
             case "Historic":
                 $rowSource = "languages";
-                $rowTitle = "name";
+                $rowTitle = "language";
                 break;
             case "Jazz":
                 $rowSource = "jazzLocations";
@@ -128,7 +128,7 @@ class ViewBase {
     }
 
     //plz move to genTableView or scheduleView
-    public function generateTableData($data = "", $class = "normalCell")
+    public function generateTableData($text = "", $class = "normalCell", $event = NULL, $rowName = NULL, $rowTitle = NULL)
     {
         include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen' . DS . 'TableData' . '.php';
     }
@@ -140,7 +140,6 @@ class ViewBase {
         $geprint = true;
        //$object = $this->class . 'View';
         if (!is_array($this->$rowSource)) {
-            //$rowSource = [$rowSource];
             return false;
         }
         foreach ($this->$rowSource as $row) {
@@ -175,7 +174,21 @@ class ViewBase {
         echo '</tr>';
     }
 
+    public function checkForTicket($event, $rowName, $rowTitle){
+        if ($event != NULL && $rowName != NULL){
+            $ticketSource = strtolower($event) . "Tickets";
 
+            foreach ($this->$ticketSource as $ticket){
+                if ($ticket[$rowTitle] == $rowName && $ticket['startTime'] == "de tijd"){
+
+                }
+            }
+
+
+
+        }
+
+    }
 
 
 

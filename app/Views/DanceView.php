@@ -30,7 +30,10 @@ class DanceView extends ViewBase{
 
     public function showArtists(){
         foreach ($this->danceArtists as $artist){
-            $title = $artist->firstName . " " . $artist->preposition . " " . $artist->lastName;
+            $title = $artist->firstName . $artist->preposition .  $artist->lastName;
+
+            //debug($title);
+
             include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'DanceBlok' .'.php';
         }
     }
