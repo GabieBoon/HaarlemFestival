@@ -1,3 +1,44 @@
+<!-- Array
+(
+    [Cart] => Array
+        (
+            [1] => stdClass Object
+                (
+                    [id] => 1
+                    [price] => 75
+                    [startTime] => 2019-07-27 20:00:00
+                    [endTime] => 2019-07-28 02:00:00
+                    [ticketsAvailable] => 1500
+                    [event] => Dance
+                    [isAllAccessTicket] => 0
+                )
+
+            [2] => stdClass Object
+                (
+                    [id] => 2
+                    [price] => 60
+                    [startTime] => 2019-07-27 22:00:00
+                    [endTime] => 2019-07-27 23:30:00
+                    [ticketsAvailable] => 200
+                    [event] => Dance
+                    [isAllAccessTicket] => 0
+                )
+
+        )
+
+    [CurrentPage] => Ordersuccess
+    [LastVisited] => Orderconfirm
+    [7fd78a90f67ds0af789d0as78f9d0sa6] => 0
+    [customerData] => Array
+        (
+            [firstName] => fdasf
+            [lastName] => fdasfsd
+            [email] => info.haarlemfestival@gmail.com
+            [remarks] => 
+        )
+
+) -->
+
 <?php
 //$_POST['button'] &&
 if( isset($_FILES['attachment'])) 
