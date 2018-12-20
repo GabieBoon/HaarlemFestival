@@ -1,7 +1,7 @@
 <h1>Order - Data</h1>
 
 <!-- still needs a METHOD (get or post) and an ACTION -->
-<form method="post" action="<?= PROOT ?>OrderConfirm">
+<form method="post" action="<?= PROOT ?>ticket/confirm">
     <label for="firstName"><b>First name*</b></label>
     <input type="text" placeholder="John" name="firstName" required>
 

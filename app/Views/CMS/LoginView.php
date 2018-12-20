@@ -28,9 +28,9 @@
         <div class="form-group">
             <input type="submit" name="submit_btn" value="Login" class="btn-primary btn-lg btn-block btn"></label>
         </div>
-        <div class="text-right hide">
-            <a href="<?= PROOT ?>register/register" class="text-primary">Register</a>
-        </div>
+        <!-- <div class="text-right hide"> -->
+            <!-- <a href="<?= PROOT ?>cms/register" class="text-primary">Register</a> -->
+        <!-- </div> -->
     </form>
 
 
