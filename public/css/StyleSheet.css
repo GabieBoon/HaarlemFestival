@@ -138,3 +138,7 @@ td.eventCell {
 td.locationCell {
     width: 250px;
 }
+
+.ticket {
+    background-color: #3083D0 ;
+}

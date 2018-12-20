@@ -21,7 +21,7 @@
                 <br> <br> <br> <br>
                 <nav>
                     <ul class="CMS-buttons">
-                        <il><a href="<?= PROOT ?>CMS">Management login</a></il>
+                        <il><a href="<?= PROOT ?>Cms/login">Management login</a></il>
                         <il><a href="#">Site Map</a></il>
                     </ul>
                 </nav>
