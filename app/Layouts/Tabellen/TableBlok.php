@@ -1,1 +1,1 @@
-<div class="ticket"> <?=$this->showTicket()?></div>
+<div class="ticket" style="width: <?=$ticketLength?>px"   class="<?=$this->event?>"> <?=$this->showTicket()?></div>

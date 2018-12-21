@@ -56,7 +56,7 @@
         <h2>Schedule</h2>
 
         <table>
-            <?=$this->table->generateTable(27,10,21, "Dance", true, false, $this->danceLocations, $this->danceTickets) ?>
+            <?=$this->table->generateTable(27,10,27, "Dance", true, false, $this->danceLocations, $this->danceTickets) ?>
 
         </table>
 
