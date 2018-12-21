@@ -1,3 +1,12 @@
+<?php //head ?>
+<?php $this->start('head'); ?>
+<meta content="test" />
+
+<?php $this->end(); ?>
+
+<?php //body ?>
+<?php $this->start('body'); ?>
+
 <div class="background-image">
     <article class="food-content-box">
         <div class="food-content">
@@ -85,3 +94,5 @@
         </div>
     </article>
 </div>
+
+<?php $this->end(); ?>

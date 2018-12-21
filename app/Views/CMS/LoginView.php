@@ -32,8 +32,6 @@
             <!-- <a href="<?= PROOT ?>cms/register" class="text-primary">Register</a> -->
         <!-- </div> -->
     </form>
-
-
 </div>
 
 <?php $this->end(); ?>

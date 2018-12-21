@@ -184,11 +184,7 @@ class ViewBase {
 
                 }
             }
-
-
-
         }
-
     }
 
     public function printTickets() {
