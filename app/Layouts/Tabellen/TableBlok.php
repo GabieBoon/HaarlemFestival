@@ -1,0 +1,1 @@
+<div class="ticket"> <?=$this->showTicket()?></div>

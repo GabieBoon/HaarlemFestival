@@ -2,7 +2,7 @@
 
 class DanceView extends ViewBase{
 
-    protected $danceArtists, $danceLocations;
+    protected $danceArtists, $danceLocations, $danceTickets;
 
     public function __construct($className)
     {
@@ -12,10 +12,11 @@ class DanceView extends ViewBase{
         echo "Hello World";
     }
 
-    public function showPage($artists, $locations){
+    public function showPage($artists, $locations, $tickets){
 
         $this->danceArtists = $artists;
         $this->danceLocations = $locations;
+        $this->danceTickets = $tickets;
 
         $this->render();
     }

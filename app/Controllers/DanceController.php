@@ -16,8 +16,9 @@ class DanceController extends ControllerBase {
     public function showPage(){
         $danceArtists = $this->model->getDanceArtists();
         $danceLocations = $this->model->getLocations("Dance");
+        $danceTickets = $this->model->getDanceTickets();
 
-        $this->view->showPage($danceArtists, $danceLocations);
+        $this->view->showPage($danceArtists, $danceLocations, $danceTickets);
     }
 
 }
