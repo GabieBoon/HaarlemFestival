@@ -205,14 +205,14 @@ class Table {
 
 
         if ($this->eventColumn){
-            $width = $widthOfHourColumns - $eventCellWidth;
+            $widthOfHourColumns = $widthOfHourColumns - $eventCellWidth;
         }
 
-        $cellWidth = floor($width / $this->columnCount);
+        $cellWidth = floor($widthOfHourColumns / $this->columnCount);
 
         $cellWidth = $cellWidth - 2; //borders weghalen van de cellWidth
 
-        
+
         $divWidth = $duration * $cellWidth -3; //begin 1 px na de border, eindig 1 px ervoor
 
         return $divWidth;
