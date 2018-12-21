@@ -2,9 +2,11 @@
 
 class UserSessionsModel extends ModelBase
 {
+    public $table;
+
     public function __construct()
     {
-        $table = 'User_Sessions';
+        $this->table = 'UserSession';
         parent::__construct($table);
     }
 

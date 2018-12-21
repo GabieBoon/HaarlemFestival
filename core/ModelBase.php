@@ -63,7 +63,7 @@ class ModelBase {
 
 // jasper
 
-    protected $_db, $_table, $_modelName, $_softDelete = false, $_columnNames = [];
+    protected $_db,  $_modelName, $_softDelete = false, $_columnNames = [];
     public $id;
 
     public function __construct()
@@ -79,13 +79,14 @@ class ModelBase {
 
 
 
-
+/*
     protected function _setTable(string $table)
     {
         
         $this->_setTableColumns();
     }
-    
+    */
+
     protected function _setTableColumns()
     {
         $columns = $this->fetchColumns();
@@ -142,7 +143,7 @@ class ModelBase {
         return $this->findFirstResult($table, ['conditions' => "id", 'bind' => [$id]]);
     }
 
-    public function save()
+    public function save($table)
     {
         $fields = [];
         for ($i = 0; $i < count($this->_columnNames); $i++) {
@@ -152,7 +153,7 @@ class ModelBase {
         //determine whether to update or insert
 
         if (property_exists($this, 'id') && $this->id != '') {
-            return $this->updateByID($this->id, $fields);
+            return $this->updateByID($table, $this->id, $fields);
         } else {
             return $this->insert($fields);
         }

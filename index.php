@@ -49,7 +49,7 @@ else{
 
 
 if (!Session::sessionExists(CURRENT_USER_SESSION_NAME) && Cookie::exists(REMEMBER_ME_COOKIE_NAME)) {
-    UsersModel::loginUserFromCookie();
+    UserModel::loginUserFromCookie();
 }
 
 Router::route($url);
