@@ -3,8 +3,8 @@
 class Table {
 
     private $day, $startHour, $endHour, $event, $tickets, $eventColumn, $columnCount; //meegegeven vanuit generateTable
-    private $rowSource, $rowTitle, $ticketTitle, $checkForTickets; //handig om informatie door te geven door de klasse
-    private $currentRow, $currentHour, $currentTicket;  //houd bij welke rij, colom etc je in zit
+    private $rowSource, $rowTitle, $ticketTitle, $ticketFormat, $checkForTickets; //handig om informatie door te geven door de klasse
+    private $currentRow, $currentHour, $currentTicket, $foodSessionsPrinted, $historicToursPrinted;  //houd bij welke rij, colom etc je in zit
 
     public function generateTable($day, $startHour, $endHour, $event, $head = true, $eventColumn = false, $rowSource = NULL, $tickets = NULL)
     {
@@ -27,18 +27,22 @@ class Table {
             case "Dance":
                 $this->rowTitle = "name";
                 $this->ticketTitle = "venue";
+                $this->ticketFormat = ['firstName','preposition','lastName'];
                 break;
             case "Historic":
                 $this->rowTitle = "language";
                 $this->ticketTitle = "startLocation";
+                $this->ticketFormat = ['Morning Tour','Midday Tour','Evening Tour'];
                 break;
             case "Jazz":
                 $this->rowTitle = "name";
                 $this->ticketTitle = "venue";
+                $this->ticketFormat = ['firstName','preposition','lastName'];
                 break;
             case "Food":
                 $this->rowTitle = "name";
                 $this->ticketTitle = "restaurant";
+                $this->ticketFormat = ['Session 1','Session 2','Session 3'];
                 break;
             default:
                 $body = false;
@@ -63,7 +67,7 @@ class Table {
 
     }
 
-    public function generateTableHead()
+    private function generateTableHead()
     {
 
         //start rij
@@ -84,6 +88,9 @@ class Table {
 
             $this->generateTableData($this->currentHour . ":00");
             $this->currentHour++;
+            if ($this->currentHour == 24){
+                $this->currentHour = 0;
+            }
         }
 
         //einde rij
@@ -91,7 +98,7 @@ class Table {
 
     }
 
-    public function generateTableBody()
+    private function generateTableBody()
     {
 
         $eventNaamGeprint = false;
@@ -102,7 +109,10 @@ class Table {
             //houd de huidige rij bij
             $this->currentRow = $row;
 
+            //start een nieuwe rij
             $this->startTableRow();
+            $this->foodSessionsPrinted = 0;
+            $this->historicToursPrinted = 0;
 
 
             //alleen voor schedule pagina
@@ -132,23 +142,23 @@ class Table {
         }
     }
 
-    public function startTableRow()
+    private function startTableRow()
     {
         echo '<tr>';
     }
 
-    public function endTableRow()
+    private function endTableRow()
     {
         echo '</tr>' . PHP_EOL; //end + formatting
     }
 
-    public function generateTableData($text = "", $class = "normalCell")
+    private function generateTableData($text = "", $class = "normalCell")
     {
         //maak een cel in de tabel
         include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen' . DS . 'TableData' . '.php';
     }
 
-    public function checkForTicket(){
+    private function checkForTicket(){
 
         if ($this->checkForTickets){
             foreach ($this->tickets as $ticket){
@@ -180,7 +190,7 @@ class Table {
 
     }
 
-    public function getTicketLength($startTime, $endTime, $startDate, $endDate){
+    private function getTicketLength($startTime, $endTime, $startDate, $endDate){
 
         //mag nog dynamisch vanuit de css worden opgehaald
         $tableWidth = 1250;
@@ -219,8 +229,25 @@ class Table {
 
     }
 
-    public function showTicket(){
-        echo "ticket info nog netjes weergeven € ". $this->currentTicket->price;
+    private function showTicket(){
+
+        if ($this->event == "Food" ){
+             echo $this->ticketFormat[$this->foodSessionsPrinted];
+            $this->foodSessionsPrinted++;
+        }
+        elseif ($this->event == "Historic"){
+            echo $this->ticketFormat[$this->historicToursPrinted];
+            $this->historicToursPrinted++;
+        }
+        else{
+            $format = $this->ticketFormat;
+
+            foreach ($format as $item){
+                echo $this->currentTicket->$item;
+            }
+        }
+
+        echo " €". $this->currentTicket->price;
     }
 }
 

@@ -154,3 +154,17 @@ td.locationCell {
     text-align: center;
 
 }
+
+.ticket.Dance {
+    background-color: #3083D0 ;
+}
+
+.ticket.Food {
+    background-color: #F0841B;
+}
+.ticket.Historic {
+    background-color: #DB1F1F;
+}
+.ticket.Jazz {
+    background-color: #440E62;
+}
