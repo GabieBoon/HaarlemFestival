@@ -9,11 +9,17 @@ $jazzColor = "#440E62";
 $historicColor = "#DB1F1F";
 $scheduleColor = "#DCC500";
 $cartColor = "#849A7D";
-$activeColor = "#F0841B";
+$activeColor = "";
 
 // header background color
 $headerStandardColor = "#797979";
 ?>
+
+.hide{
+visibility: hidden;
+display: none;
+}
+
 header{
     background-color: <?php echo $activeColor?>;
     height:175px;
@@ -21,11 +27,6 @@ header{
 
 .nav-logo{
     width: 150px;
-}
-
-.hide{
-    visibility: hidden;
-    display: none;
 }
 
 .nav-wrapper {
@@ -155,12 +156,12 @@ select .language-selection option[value="nederlands"]{
 }
 
 .active a {
-width: 125px;
-border-style: solid;
-border-color: white;
-box-shadow:  5px 5px white;
-color: white;
-background-color: <?php echo $activeColor?> !important;
+    width: 125px;
+    border-style: solid;
+    border-color: white;
+    box-shadow:  5px 5px white;
+    color: white;
+    background-color: <?php echo $activeColor?> !important;
 }
 
 

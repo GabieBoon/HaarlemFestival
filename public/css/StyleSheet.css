@@ -121,14 +121,20 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
     background-color: #f2f2f2;
+
+    box-sizing: border-box;
+
+    text-align: center;
 }
 
 table {
     align-content: center;
+    width: 1250px;
+    table-layout: fixed;
 }
 
 td.normalCell {
-    width: 60px;
+
 }
 
 td.eventCell {
@@ -139,6 +145,37 @@ td.locationCell {
     width: 250px;
 }
 
-.ticket {
+.TableTicket{
     background-color: #3083D0 ;
+    position: relative;
+    z-index: 9;
+    box-sizing: border-box;
+    margin: 0px;
+    text-align: center;
+
+}
+
+.DanceTicket {
+    background-color: #3083D0 ;
+}
+
+.FoodTicket {
+    background-color: #F0841B;
+}
+.HistoricTicket {
+    background-color: #DB1F1F;
+}
+.JazzTicket {
+    background-color: #440E62;
+}
+
+.TicketPopup {
+    position: relative;
+    z-index: 10;
+    width: 300px;
+}
+
+.PopupHideBorder {
+    position: relative;
+    z-index: 8;
 }

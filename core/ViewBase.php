@@ -3,8 +3,8 @@
 class ViewBase {
 
     protected $head, $body, $layout, $title, $class, $backgroundImg;
-    protected $_head,
-              $_body,
+    protected $_head, $_header,
+              $_body, $_footer,
               $_siteTitle,
               $_outputBuffer,
               $_layout = DEFAULT_LAYOUT;
@@ -64,8 +64,6 @@ class ViewBase {
 
     }
 
-
-
     public function printTickets() {
         foreach ($_SESSION['Cart'] as $ticket) {
             $startTime = explode(' ', $ticket->startTime);
@@ -81,9 +79,6 @@ class ViewBase {
             echo "</li>" . PHP_EOL;
         }
     }
-
-
-
 
     public function render_curtis($viewName)
     {
@@ -109,9 +104,15 @@ class ViewBase {
             case 'head':
                 return $this->_head;
                 //break;
+            case 'header':
+                return $this->_header;
+            //break;
             case 'body':
                 return $this->_body;
-                //break;     
+                //break;
+            case 'footer':
+                return $this->_footer;
+            //break;
             default:
                 return false;
                 //break;
@@ -148,6 +149,13 @@ class ViewBase {
     {
         $this->_siteTitle = $title;
     }
+
+    public function getHeader()
+    {
+        require $this->_header; //jasper
+    }
+
+    //getFooter -> jasper
 
     public function setLayout(string $path)
     {

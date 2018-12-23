@@ -23,12 +23,13 @@
     <title><?= $this->getSiteTitle(); ?></title>
   </head>
   <body>
-  
-    <?= $this->content('header'); ?>
+
+  <?php require PROOT.'app/Layouts/Header.php' ;?>
+<!--  <?//= $this->content('header'); ?>   -->
 
     <?= $this->content('body'); ?>
 
-    <?= $this->content('footer'); ?>
+<!--  <?//= $this->content('footer'); ?>   -->
 
   </body>
 </html>
