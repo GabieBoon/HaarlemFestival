@@ -8,12 +8,16 @@ class ViewBase {
               $_siteTitle,
               $_outputBuffer,
               $_layout = DEFAULT_LAYOUT;
+    protected $table;
 
     public function __construct($class, $siteTitle = SITE_TITLE)
     {
         $this->class = $class;
         $this->title = $siteTitle;
         $this->backgroundImg = PROOT."public/images/foodbackground.jpg";
+
+        include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
+        $this->table = new Table();
     }
 
 
@@ -60,12 +64,7 @@ class ViewBase {
 
     }
 
-    //plz move to genTableView or scheduleView
-    //table shit, misschien nog een aparte class voor maken
-    public function generateTable($startHour, $endHour, $event, $head = true, $eventColumn = false)
-    {
 
-        $body = true;
 
         switch ($event) {
             case "Dance":

@@ -1,1 +1,1 @@
-<td class="<?=$class ?>"> <?= $text ?> <div class="Ticket"> <?= $this->checkForTicket($event,$rowName, $rowTitle) ?></div>  </td>
+<td class="<?=$class ?>"> <?= $text ?> <?=$this->CheckForTicket()?> </td>

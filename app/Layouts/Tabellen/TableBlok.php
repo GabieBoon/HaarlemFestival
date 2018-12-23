@@ -1,0 +1,1 @@
+<div class="ticket <?=$this->event?>"  style="width: <?=$ticketLength?>px"> <?=$this->showTicket()?></div>

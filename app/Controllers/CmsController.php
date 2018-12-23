@@ -12,7 +12,7 @@ class CmsController extends ControllerBase //Jasper
     {
         
         formatted_print_r(currentUser());
-        if (currentUser()->_isLoggedIn) {
+        if (currentUser()) {
             Router::redirect('CMS/dashboard');
         }
         Router::redirect('CMS/login');

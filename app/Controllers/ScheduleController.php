@@ -22,10 +22,12 @@ class ScheduleController extends ControllerBase {
 
 
         $danceTickets = $this->model->getDanceTickets();
-
+        $foodTickets = $this->model->getFoodTickets();
+        $historicTickets = $this->model->getHistoricTickets();
+        $jazzTickets = $this->model->getJazzTickets();
         //($languages);
 
-        $this->view->showPage($danceArtists, $danceLocations, $jazzLocations, $restaurants, $languages, $danceTickets);
+        $this->view->showPage($danceArtists, $danceLocations, $jazzLocations, $restaurants, $languages, $danceTickets, $foodTickets, $historicTickets, $jazzTickets);
     }
 
 }
