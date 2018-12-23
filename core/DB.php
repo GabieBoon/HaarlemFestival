@@ -176,7 +176,7 @@ class DB //jasper
          */
     }
 
-    protected function _read($table, array $params = [])
+    protected function _read($table, array $params = [])// omschrijven naar query
     {
         $conditionString = '';
         $bind = [];
@@ -244,7 +244,7 @@ class DB //jasper
          */
     }
 
-    public function findFirstResult($table, array $params = [])
+    public function findFirstResult($table, array $params = [])// omschrijven naar query
     {
         if ($this->_read($table, $params)) {
             return $this->getFirstResult();

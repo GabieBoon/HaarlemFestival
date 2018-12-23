@@ -10,9 +10,6 @@
 <?php //body ?>
 <?php $this->start('body'); ?>
 
-
-
-
-</div>
-
+<?php print_r(UserModel::currentLoggedInUser()) ?>
+<?php echo ('Hello World!'); ?>
 <?php $this->end(); ?>

@@ -11,8 +11,8 @@ class CmsController extends ControllerBase //Jasper
     public function indexAction()
     {
         
-        formatted_print_r(currentUser());
-        if (currentUser()) {
+        //formatted_print_r(UserModel::currentLoggedInUser());
+        if (UserModel::currentLoggedInUser()) {
             Router::redirect('CMS/dashboard');
         }
         Router::redirect('CMS/login');
@@ -35,14 +35,15 @@ class CmsController extends ControllerBase //Jasper
                 ]
             ]);
             if ($validation->passed()) {
-                $table = 'User';
-                $user = $this->UserModel->findByUsername($table, $_POST['username']);
+                $user = $this->UserModel->findByUsername($_POST['username']);
 
                 if ($user && password_verify(Input::getInput('password'), $user->password)) {
+                    UserModel::currentLoggedInUser = $user;
+
                     if (isset($_POST['remember_me']) && Input::getInput('remember_me')) {
-                        $user->login(true);
+                        $this->UserModel->login(true);
                     } else {
-                        $user->login(false);
+                        $this->UserModel->login(false);
                     }
                     Router::redirect('CMS/dashboard');
                 } else {
@@ -66,7 +67,7 @@ class CmsController extends ControllerBase //Jasper
 
     public function dashboardAction()
     {
-        formatted_print_r(currentUser());
+        $this->view->render_curtis('CMS/DashboardView');
     }
 }
 ?>
