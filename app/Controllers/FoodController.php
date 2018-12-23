@@ -6,11 +6,11 @@ class FoodController extends ControllerBase {
     public function __construct($className, $action)
     {
         parent::__construct($className, $action, true);
+        $this->view->setLayout('Default');
     }
 
     public function indexAction(){
-
-        $this->showPage();
+        $this->view->render_curtis('FoodView');
     }
 
     public function showPage(){

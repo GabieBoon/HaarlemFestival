@@ -18,14 +18,6 @@
     <script src="<?= PROOT ?>public/javascripts/jquery-3.3.1.slim.min.js"></script>
     <script src="<?= PROOT ?>public/javascripts/bootstrap.min.js"></script>
 
-
-    <!--  dynamic background image  -->
-    <style type="text/css">
-        .background-image {
-            background: #FFF url(<?= $this->backgroundImg; ?>);
-        }
-    </style>
-
     <!-- other CSS -->
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/StyleSheet.css" >
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/headercss.php" >

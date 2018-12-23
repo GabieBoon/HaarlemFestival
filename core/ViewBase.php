@@ -3,8 +3,8 @@
 class ViewBase {
 
     protected $head, $body, $layout, $title, $class, $backgroundImg;
-    protected $_head,
-              $_body,
+    protected $_head, $_header,
+              $_body, $_footer,
               $_siteTitle,
               $_outputBuffer,
               $_layout = DEFAULT_LAYOUT;
@@ -64,128 +64,6 @@ class ViewBase {
 
     }
 
-
-
-        switch ($event) {
-            case "Dance":
-                $rowSource = "danceLocations";
-                $rowTitle = "name";
-                break;
-            case "Historic":
-                $rowSource = "languages";
-                $rowTitle = "language";
-                break;
-            case "Jazz":
-                $rowSource = "jazzLocations";
-                $rowTitle = "name";
-                break;
-            case "Food":
-                $rowSource = "restaurants";
-                $rowTitle = "name";
-                break;
-            default:
-                $body = false;
-                break;
-        }
-
-        $columnCount = $endHour - $startHour;
-
-
-        if ($head) {
-            $this->generateTableHead($startHour, $columnCount, $eventColumn);
-        }
-
-        if ($body) {
-            $this->generateTableBody($columnCount, $rowTitle, $rowSource, $eventColumn, $event);
-        }
-
-    }
-    //plz move to genTableView or scheduleView
-    public function generateTableHead($startHour, $columnCount, $eventColumn)
-    {
-
-        //start rij
-        $this->startTableRow();
-
-        //alleen voor de schedule pagina
-        if ($eventColumn) {
-            $this->generateTableData("Event", 'eventCell');
-        }
-
-        //linkerhoek
-        $this->generateTableData("Location/Time", 'locationCell');
-
-        //uren
-        for ($columnNumber = 0; $columnNumber <= $columnCount; $columnNumber++) {
-
-            $this->generateTableData($startHour . ":00");
-            $startHour++;
-        }
-
-        //einde rij
-        $this->endTableRow();
-
-    }
-
-    //plz move to genTableView or scheduleView
-    public function generateTableData($text = "", $class = "normalCell", $event = NULL, $rowName = NULL, $rowTitle = NULL)
-    {
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen' . DS . 'TableData' . '.php';
-    }
-
-    //plz move to genTableView or scheduleView
-    public function generateTableBody($columnCount, $rowTitle, $rowSource, $eventColumn, $event)
-    {                 
-
-        $geprint = true;
-       //$object = $this->class . 'View';
-        if (!is_array($this->$rowSource)) {
-            return false;
-        }
-        foreach ($this->$rowSource as $row) {
-            $this->startTableRow();
-
-            if ($eventColumn) {
-                if ($geprint) {
-                    $this->generateTableData($event, 'eventCell');
-                    $geprint = false;
-                } else {
-                    $this->generateTableData("", 'eventCell');
-                }
-            }
-
-            $this->generateTableData($row->$rowTitle, 'locationCell');
-
-            for ($columnNumber = 0; $columnNumber <= $columnCount; $columnNumber++) {
-                $this->generateTableData();
-            }
-
-            $this->endTableRow();
-        }
-    }
-    //plz move to genTableView or scheduleView
-    public function startTableRow()
-    {
-        echo '<tr>';
-    }
-    //plz move to genTableView or scheduleView
-    public function endTableRow()
-    {
-        echo '</tr>';
-    }
-
-    public function checkForTicket($event, $rowName, $rowTitle){
-        if ($event != NULL && $rowName != NULL){
-            $ticketSource = strtolower($event) . "Tickets";
-
-            foreach ($this->$ticketSource as $ticket){
-                if ($ticket[$rowTitle] == $rowName && $ticket['startTime'] == "de tijd"){
-
-                }
-            }
-        }
-    }
-
     public function printTickets() {
         foreach ($_SESSION['Cart'] as $ticket) {
             $startTime = explode(' ', $ticket->startTime);
@@ -201,9 +79,6 @@ class ViewBase {
             echo "</li>" . PHP_EOL;
         }
     }
-
-
-
 
     public function render_curtis($viewName)
     {
@@ -229,9 +104,15 @@ class ViewBase {
             case 'head':
                 return $this->_head;
                 //break;
+            case 'header':
+                return $this->_header;
+            //break;
             case 'body':
                 return $this->_body;
-                //break;     
+                //break;
+            case 'footer':
+                return $this->_footer;
+            //break;
             default:
                 return false;
                 //break;
@@ -268,6 +149,13 @@ class ViewBase {
     {
         $this->_siteTitle = $title;
     }
+
+    public function getHeader()
+    {
+        require $this->_header; //jasper
+    }
+
+    //getFooter -> jasper
 
     public function setLayout(string $path)
     {
