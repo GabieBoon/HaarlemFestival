@@ -17,6 +17,7 @@
     <!-- Scripts -->
     <script src="<?= PROOT ?>public/javascripts/jquery-3.3.1.slim.min.js"></script>
     <script src="<?= PROOT ?>public/javascripts/bootstrap.min.js"></script>
+    <script src="<?= PROOT ?>public/javascripts/jQueryFunctions.js"></script>
 
     <!-- other CSS -->
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/StyleSheet.css" >

@@ -145,7 +145,7 @@ td.locationCell {
     width: 250px;
 }
 
-.ticket{
+.TableTicket{
     background-color: #3083D0 ;
     position: relative;
     z-index: 9;
@@ -155,16 +155,27 @@ td.locationCell {
 
 }
 
-.ticket.Dance {
+.DanceTicket {
     background-color: #3083D0 ;
 }
 
-.ticket.Food {
+.FoodTicket {
     background-color: #F0841B;
 }
-.ticket.Historic {
+.HistoricTicket {
     background-color: #DB1F1F;
 }
-.ticket.Jazz {
+.JazzTicket {
     background-color: #440E62;
+}
+
+.TicketPopup {
+    position: relative;
+    z-index: 10;
+    width: 300px;
+}
+
+.PopupHideBorder {
+    position: relative;
+    z-index: 8;
 }
