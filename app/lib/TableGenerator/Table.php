@@ -155,7 +155,7 @@ class Table {
     private function generateTableData($text = "", $class = "normalCell")
     {
         //maak een cel in de tabel
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen' . DS . 'TableData' . '.php';
+        include ROOT . 'app' . DS . 'Layouts' . DS . 'Tabellen' . DS . 'TableData' . '.php';
     }
 
     private function checkForTicket(){
@@ -182,7 +182,7 @@ class Table {
 
                         $ticketLength = $this->getTicketLength($startTime,$endTime, $startDate, $endDate);
 
-                        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Tabellen' . DS . 'TableBlok.php';
+                        include ROOT . 'app' . DS . 'Layouts' . DS . 'Tabellen' . DS . 'TableBlok.php';
                     }
                 }
             }

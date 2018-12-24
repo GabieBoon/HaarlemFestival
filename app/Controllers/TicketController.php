@@ -11,7 +11,7 @@ class TicketController extends ControllerBase {
 
     public function indexAction(){
 
-        //$this->view->render_curtis('TicketView');
+        //$this->view->renderView('TicketView');
         $this->showPage();
     }
 
@@ -21,18 +21,18 @@ class TicketController extends ControllerBase {
 
     public function confirmAction()
     {
-        $this->view->render_curtis('OrderConfirmView');
+        $this->view->renderView('OrderConfirmView');
     }
 
     public function dataAction()
     {
 
-        $this->view->render_curtis('OrderDataView');
+        $this->view->renderView('OrderDataView');
     }
 
     public function successAction()
     {
-        $this->view->render_curtis('OrderSuccessView');
+        $this->view->renderView('OrderSuccessView');
     }
 
 //    public function clearCartAction(){

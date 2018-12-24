@@ -38,14 +38,16 @@ class UserModel extends ModelBase
     {
         $sql = "select * from User where id = ?";
         $bind = [$userid];
-        return $this->_db->query($sql, $bind)->getFirstResult();
+       // return $this->_db->query($sql, $bind)->getFirstResult();
+        return $this->query($sql, $bind)->getFirstResult();
     }
 
     public function findByUsername($username)
     {
         $sql = "select * from User where userName = ?";
         $bind = [$username];
-        return $this->_db->query($sql, $bind)->getFirstResult();
+        //return $this->_db->query($sql, $bind)->getFirstResult();
+        return $this->query($sql, $bind)->getFirstResult();
     }
 
     public static function currentLoggedInUser()

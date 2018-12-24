@@ -1,11 +1,12 @@
 <?php //head ?>
 <?php $this->start('head'); ?>
+<!-- Food CSS -->
 <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/Foodcss.php" >
 
     <!--  dynamic background image  -->
     <style type="text/css">
         .background-image {
-            background: #FFF url(<?= $this->backgroundImg; ?>);
+            background: #FFF url(<?= $this->getBgImage(); ?>);
         }
     </style>
 

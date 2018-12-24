@@ -17,6 +17,6 @@
             <input type="submit" name="submit_btn" value="Login" class="btn-primary btn-lg btn-block btn"></label>
         </div>
         <div class="text-right">
-            <!-- <a href="<?= PROOT ?>CMS/register" class="text-primary">Register</a> -->
+            
         </div>
     </form>

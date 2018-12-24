@@ -1,14 +1,13 @@
 <?php
 
-define('DS' , DIRECTORY_SEPARATOR);
-define('ROOT' , dirname(__FILE__));
+//require config file
+require_once(__DIR__ . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php');
 
 //laad tools en extra's
-require_once(ROOT . DS . 'config' . DS . 'config.php' );
-require_once(ROOT . DS . 'app' . DS . 'lib' . DS . 'helpers' . DS . 'functions.php');
+require_once(ROOT . 'app' . DS . 'lib' . DS . 'helpers' . DS . 'functions.php');
 
 //router werd hier niet aangeroepen
-require_once(ROOT . DS . 'core' . DS . 'Router.php');
+require_once(ROOT . 'core' . DS . 'Router.php');
 
 
 //autoload alle core klassen

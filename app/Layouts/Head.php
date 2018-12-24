@@ -15,17 +15,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
     <!-- Scripts -->
-    <script src="<?= PROOT ?>public/javascripts/jquery-3.3.1.slim.min.js"></script>
     <script src="<?= PROOT ?>public/javascripts/bootstrap.min.js"></script>
+    <script src="<?= PROOT ?>public/javascripts/jquery-3.3.1.slim.min.js"></script>
     <script src="<?= PROOT ?>public/javascripts/jQueryFunctions.js"></script>
 
     <!-- other CSS -->
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/StyleSheet.css" >
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/headercss.php" >
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/footer.css" >
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/<?= $this->class ?>css.css" >
-
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/Foodcss.php" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/<?= $this->className ?>css.css" >
 
     <title> <?= $this->title ?> </title>
 </head>

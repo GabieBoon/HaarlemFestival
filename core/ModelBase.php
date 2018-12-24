@@ -68,14 +68,13 @@ class ModelBase {
 
     public function __construct()
     {
-        
-        //$this->_getModelName();
         $this->_db = DB::getInstance();
+        $this->_getModelName();
+        
     }
 
     public function query(string $sql, array $bind = [])
     {
-        
         return $this->_db->query($sql, $bind);
     }
 
@@ -102,7 +101,7 @@ class ModelBase {
         }
     }
 
-    protected function _getModelName($table)// herschrijf naar nieuw naming convention
+    protected function _getModelName($table = null)// herschrijf naar nieuw naming convention
     {
         $this->_modelName = get_class($this); //. 'Model';
         // if (condition) {
@@ -149,6 +148,19 @@ class ModelBase {
     // {
     //     return $this->findFirstResult($table, ['conditions' => "id", 'bind' => [$id]]);
     // }
+
+
+    public function makeModel(stdClass $object = null)
+    {
+
+        $modelName = get_class($this); //$this->_getModelName($table);
+        $result = new $modelName($object->userName);
+
+        //$resultsQuery = $this->_db->findFirstResult($table, $params);
+        //$result->getDataFromObj($resultsQuery);
+        return $result;
+    }
+
 
     public function save($table)
     {

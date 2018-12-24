@@ -7,13 +7,11 @@ class FoodController extends ControllerBase {
     {
         parent::__construct($className, $action, true);
         $this->view->setLayout('Default');
+        $this->view->setBgImage('foodbackground.jpg');
+        
     }
 
     public function indexAction(){
-        $this->view->render_curtis('FoodView');
-    }
-
-    public function showPage(){
-        $this->view->showPage();
+        $this->view->renderView('FoodView');
     }
 }
