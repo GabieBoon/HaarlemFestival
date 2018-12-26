@@ -22,17 +22,24 @@ define('DB_PASSWORD', 'YHQAzcGaVm');
 //set default controller
 define('DEFAULT_CONTROLLER', 'Home'); // default controller if there isn't one defined in the url
 
-//set default layout
-define('DEFAULT_LAYOUT', 'Default'); // if no layout is set in the controller use this layout.
+//set default
+define('DEFAULT_NAME', 'Default');
 
 //set site title
 define('SITE_TITLE', 'Haarlem Festival');
 
+//set directory seperator 
+define('DS', DIRECTORY_SEPARATOR);
 
-
+//set absolute root
+define('ROOT', dirname(__DIR__) . DS);
+//define('ROOT', dirname(__FILE__));
+//define('ROOT', __DIR__);
+//define('ROOT', realpath(__DIR__ . '..') );
 
 //set site project root
-define('PROOT', '/haarlem-festival/');  
+define('PROOT', '/haarlem-festival/');  //note the '/' behind the path 
+
 
 
 

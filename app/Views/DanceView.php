@@ -25,7 +25,7 @@ class DanceView extends ViewBase{
     public function showLocations(){
         foreach ($this->danceLocations as $location){
             $title = $location->name;
-            include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'DanceBlok' .'.php';
+            include ROOT . 'app' . DS . 'Layouts' . DS . 'DanceBlok' .'.php';
             //echo $location->name . "<br>";
         }
     }
@@ -36,7 +36,7 @@ class DanceView extends ViewBase{
 
             //debug($title);
 
-            include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'DanceBlok' .'.php';
+            include ROOT . 'app' . DS . 'Layouts' . DS . 'DanceBlok' .'.php';
         }
     }
 

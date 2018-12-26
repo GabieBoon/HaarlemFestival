@@ -3,15 +3,15 @@
 class ControllerBase extends ApplicationBase
 {
 
-    protected $controller, $action, $model;
+    protected $_controller, $_action;//, $_model;
     public $view;
 
     public function __construct($className, $action, bool $diffView = false, string $diffModel = null)
     {
         parent::__construct($className);
 
-        $this->controller = $className . 'Controller';
-        $this->action = $action; //you can run without this, only troubleshooting will be a lot harder when using debugger
+        $this->_controller = $className . 'Controller';
+        $this->_action = $action; //you can run without this, only troubleshooting will be a lot harder when using debugger
 
         if ($diffView) {
             $this->view = new ViewBase($className);
@@ -23,16 +23,13 @@ class ControllerBase extends ApplicationBase
         if (isset($diffModel)) {
             $diffModel = ucwords(strtolower($diffModel));
             $model = $diffModel . 'Model';
-            if (class_exists($model)) {
-                $this->$model = new $model($diffModel);
-            }
         } else {
             $model = $className . 'Model';
-            if (class_exists($model)) {
-                $this->model = new $model();
-            }
         }
-
+        if (class_exists($model)) {
+            //$this->_model = new $model();
+            $this->{$model} = new $model();
+        }
     }
 /*
     protected function loadModel($model)

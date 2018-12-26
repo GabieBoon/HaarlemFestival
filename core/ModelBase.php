@@ -63,13 +63,14 @@ class ModelBase {
 
 // jasper
 
-    protected $_db,  $_modelName, $_softDelete = false, $_columnNames = [];
+    protected $_db, $_modelName, $_softDelete = false, $_columnNames = [];
     public $id;
 
     public function __construct()
     {
         $this->_db = DB::getInstance();
-        //$this->_getModelName();
+        $this->_getModelName();
+        
     }
 
     public function query(string $sql, array $bind = [])
@@ -100,13 +101,18 @@ class ModelBase {
         }
     }
 
-    protected function _getModelName($table)// herschrijf naar nieuw naming convention
+    protected function _getModelName($table = null)// herschrijf naar nieuw naming convention
     {
-        $modelName = ucwords(strtolower($table) . "Model");
-        if (!class_exists($modelName)) {
-            $modelName = ucwords(str_replace(' ', '', ucwords(str_replace('_', '', $table)))) . "Model";
-        }
-        $this->_modelName = $modelName;
+        $this->_modelName = get_class($this); //. 'Model';
+        // if (condition) {
+        //     # code...
+        // }
+        // $modelName = ucwords(strtolower($table) . "Model");
+        // if (get_class($this) != $modelName){//!class_exists($modelName)) {
+        //     $modelName = ucwords(str_replace(' ', '', ucwords(str_replace('_', '', $table)))) . "Model";
+        // }
+        // formatted_print_r(get_class($this));
+        // $this->_modelName = $modelName;
     }
 
     public function fetchColumns($table)
@@ -114,34 +120,47 @@ class ModelBase {
         return $this->_db->fetchColumns($table);
     }
 
-    public function find($table, array $params = [])
-    {
-        $results = [];
-        $resultsQuery = $this->_db->find($table, $params);
+    // public function find($table, array $params = [])
+    // {
+    //     $results = [];
+    //     $resultsQuery = $this->_db->find($table, $params);
 
-        for ($i = 0; $i < count($resultsQuery); $i++) {
-            $modelName = $this->_getModelName($table);
-            $obj = new $this->_modelName($modelName);
-            $obj->getDataFromObj($resultsQuery[$i]);
-            $results[] = $obj;
-        }
-        return $results;
-    }
+    //     for ($i = 0; $i < count($resultsQuery); $i++) {
+    //         $modelName = $this->_getModelName($table);
+    //         $obj = new $this->_modelName($modelName);
+    //         $obj->getDataFromObj($resultsQuery[$i]);
+    //         $results[] = $obj;
+    //     }
+    //     return $results;
+    // }
 
-    public function findFirstResult($table, array $params = [])
+    // public function findFirstResult($table, array $params = [])
+    // {
+    //     $modelName = $this->_getModelName($table);
+    //     $result = new $this->_modelName($modelName);
+    //     $resultsQuery = $this->_db->findFirstResult($table, $params);
+    //     $result->getDataFromObj($resultsQuery);
+    //     return $result;
+
+    // }
+
+    // public function findByID(int $id, $table)
+    // {
+    //     return $this->findFirstResult($table, ['conditions' => "id", 'bind' => [$id]]);
+    // }
+
+
+    public function makeModel(stdClass $object = null)
     {
-        $modelName = $this->_getModelName($table);
-        $result = new $this->_modelName($modelName);
-        $resultsQuery = $this->_db->findFirstResult($table, $params);
-        $result->getDataFromObj($resultsQuery);
+
+        $modelName = get_class($this); //$this->_getModelName($table);
+        $result = new $modelName($object->userName);
+
+        //$resultsQuery = $this->_db->findFirstResult($table, $params);
+        //$result->getDataFromObj($resultsQuery);
         return $result;
-
     }
 
-    public function findByID(int $id, $table)
-    {
-        return $this->findFirstResult($table, ['conditions' => "id", 'bind' => [$id]]);
-    }
 
     public function save($table)
     {

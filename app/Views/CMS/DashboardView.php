@@ -1,18 +1,18 @@
-<?php //set site title ?>
+<!-- set site title -->
 <?php $this->setSiteTitle('CMS Dashboard'); ?>
 
-<?php //head ?>
+<!-- head -->
 <?php $this->start('head'); ?>
 <meta content="test" />
 
 <?php $this->end(); ?>
 
-<?php //body ?>
+<!-- body -->
 <?php $this->start('body'); ?>
+<pre>
+<?php print_r(UserModel::currentLoggedInUser()); ?>
+<?php print_r($_SESSION); ?>
 
-
-
-
-</div>
-
+</pre>
+<?php echo ('Hello World!'); ?>
 <?php $this->end(); ?>

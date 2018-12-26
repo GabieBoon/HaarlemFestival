@@ -33,7 +33,7 @@ class DB //jasper
          */
     }
 
-    public function query(string $sql, array $params = [])
+    public function query(string $sql, array $params = [], $class = false)
     {
         $this->_error = false;
         $this->_query = $this->_pdo->prepare($sql);
@@ -45,7 +45,11 @@ class DB //jasper
             }
 
             if ($this->_query->execute()) {
-                $this->_result = $this->_query->fetchAll(PDO::FETCH_OBJ);
+                if ($class) {
+                    $this->_result = $this->_query->fetchAll(PDO::FETCH_CLASS, $class);
+                } else {
+                    $this->_result = $this->_query->fetchAll(PDO::FETCH_OBJ);
+                }
                 $this->_count = $this->_query->rowCount();
                 $this->_lastInsertedID = $this->_pdo->lastInsertId();
             } else {
@@ -176,94 +180,94 @@ class DB //jasper
          */
     }
 
-    protected function _read($table, array $params = [])
-    {
-        $conditionString = '';
-        $bind = [];
-        $order = '';
-        $limit = '';
+    // protected function _read($table, array $params = [])// omschrijven naar query
+    // {
+    //     $conditionString = '';
+    //     $bind = [];
+    //     $order = '';
+    //     $limit = '';
 
-    //conditions
-        if (isset($params['conditions'])) {
-            if (is_array($params['conditions'])) {
-                for ($i = 0; $i < count($params['conditions']); $i++) {
-                    $conditionString .= ' ' . $params['conditions'][i] . ' AND';
-                }
-                $conditionString = rtrim(trim($conditionString), ' AND');
-            } else {
-                $conditionString = $params['conditions'];
-            }
-            if ($conditionString != '') {
-                $conditionString = ' WHERE ' . $conditionString;
-            }
+    // //conditions
+    //     if (isset($params['conditions'])) {
+    //         if (is_array($params['conditions'])) {
+    //             for ($i = 0; $i < count($params['conditions']); $i++) {
+    //                 $conditionString .= ' ' . $params['conditions'][i] . ' AND';
+    //             }
+    //             $conditionString = rtrim(trim($conditionString), ' AND');
+    //         } else {
+    //             $conditionString = $params['conditions'];
+    //         }
+    //         if ($conditionString != '') {
+    //             $conditionString = ' WHERE ' . $conditionString;
+    //         }
 
-        }
-    //bind
-        if (array_key_exists('bind', $params)) {
-            $bind = $params['bind'];
-        }
-    //order
-        if (array_key_exists('order', $params)) {
-            $order = ' ORDER BY ' . $params['order'];
-        }
-    //limit
-        if (array_key_exists('limit', $params)) {
-            $limit = ' LIMIT ' . $params['limit'];
-        }
+    //     }
+    // //bind
+    //     if (array_key_exists('bind', $params)) {
+    //         $bind = $params['bind'];
+    //     }
+    // //order
+    //     if (array_key_exists('order', $params)) {
+    //         $order = ' ORDER BY ' . $params['order'];
+    //     }
+    // //limit
+    //     if (array_key_exists('limit', $params)) {
+    //         $limit = ' LIMIT ' . $params['limit'];
+    //     }
 
-        $sql = "SELECT * FROM {$table}{$conditionString}{$order}{$limit}";
-        if ($this->query($sql, $bind)) {
+    //     $sql = "SELECT * FROM {$table}{$conditionString}{$order}{$limit}";
+    //     if ($this->query($sql, $bind)) {
 
-            if (!$this->getCount()) {
-                return false;
-            }
-            return true;
-        }
-        return false;
-    }
+    //         if (!$this->getCount()) {
+    //             return false;
+    //         }
+    //         return true;
+    //     }
+    //     return false;
+    // }
 
-    public function find($table, array $params = [])
-    {
-        if ($this->_read($table, $params)) {
-            return $this->getResult();
-        }
-        return false;
+    // public function find($table, array $params = [])
+    // {
+    //     if ($this->_read($table, $params)) {
+    //         return $this->getResult();
+    //     }
+    //     return false;
 
-        /* usage of find()
-         *
-         * $db = DB::getInstance();
-         * $contacts = $db->findFirstResult('Contacts', [
-         *      'conditions' => "surName = ?",
-         *      'bind' => ['Stedema'],
-         *      'order' => "surName, firstName",
-         *      // 'limit' => 3
-         * ]);
-         * 
-         * formatted_var_dump($contacts); //check
-         * 
-         */
-    }
+    //     /* usage of find()
+    //      *
+    //      * $db = DB::getInstance();
+    //      * $contacts = $db->findFirstResult('Contacts', [
+    //      *      'conditions' => "surName = ?",
+    //      *      'bind' => ['Stedema'],
+    //      *      'order' => "surName, firstName",
+    //      *      // 'limit' => 3
+    //      * ]);
+    //      * 
+    //      * formatted_var_dump($contacts); //check
+    //      * 
+    //      */
+    // }
 
-    public function findFirstResult($table, array $params = [])
-    {
-        if ($this->_read($table, $params)) {
-            return $this->getFirstResult();
-        }
-        return false;
+    // public function findFirstResult($table, array $params = [])// omschrijven naar query
+    // {
+    //     if ($this->_read($table, $params)) {
+    //         return $this->getFirstResult();
+    //     }
+    //     return false;
 
-        /* usage
-         *
-         * $db = DB::getInstance();
-         * $contacts = $db->findFirstResult('Contacts', [
-         *      'conditions' => "surName = ?",
-         *      'bind' => ['Stedema'],
-         *      'order' => "surName, firstName"
-         * ]);
-         * 
-         * formatted_var_dump($contacts); //check
-         * 
-         */
-    }
+    //     /* usage
+    //      *
+    //      * $db = DB::getInstance();
+    //      * $contacts = $db->findFirstResult('Contacts', [
+    //      *      'conditions' => "surName = ?",
+    //      *      'bind' => ['Stedema'],
+    //      *      'order' => "surName, firstName"
+    //      * ]);
+    //      * 
+    //      * formatted_var_dump($contacts); //check
+    //      * 
+    //      */
+    // }
 
     public function fetchColumns($table)
     {

@@ -1,56 +1,61 @@
 <?php
 
-class ViewBase {
+class ViewBase
+{
 
-    protected $head, $body, $layout, $title, $class, $backgroundImg;
+    protected $head, $body, $layout, $title, $className;
     protected $_head,
-              $_body,
-              $_siteTitle,
-              $_outputBuffer,
-              $_layout = DEFAULT_LAYOUT;
-    protected $table;
+        $_header = DEFAULT_NAME,
+        $_body,
+        $_footer = DEFAULT_NAME,
+        $_siteTitle = SITE_TITLE,
+        $_outputBuffer,
+        $_layout = DEFAULT_NAME,
+        $_bgImage,
+        $_table;
 
-    public function __construct($class, $siteTitle = SITE_TITLE)
+    public function __construct($className, $siteTitle = SITE_TITLE)
     {
-        $this->class = $class;
-        $this->title = $siteTitle;
-        $this->backgroundImg = PROOT."public/images/foodbackground.jpg";
-
-        include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
-        $this->table = new Table();
+        $this->className = $className;
+        //$this->title = $siteTitle;
+        
+        //include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
+        //$this->_table = new Table();
     }
 
 
 
     //geef de pagina weer
-    public function render($layoutName = NULL){
+    public function render($layoutName = null)
+    {
 
-        if ($layoutName == NULL){
-            $layoutName = $this->class . 'Layout.php';
-        }else {
+        if ($layoutName == null) {
+            $layoutName = $this->className . 'Layout.php';
+        } else {
             $layoutName .= 'Layout.php';
             $layoutName += 'Layout.php';
         }
 
         //head
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Head.php';
+        include ROOT . DS . 'App' . DS . 'Layouts' . DS . 'Head.php';
 
         //header
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Header.php';
+        include ROOT . DS . 'App' . DS . 'Layouts' . DS . 'Header.php';
 
         //content
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . $layoutName;
+        include ROOT . DS . 'App' . DS . 'Layouts' . DS . $layoutName;
 
         //footer
-        include ROOT . DS . 'app' . DS . 'Layouts' . DS . 'Footer.php';
+        include ROOT . DS . 'App' . DS . 'Layouts' . DS . 'Footer.php';
     }
 
     //plz move to helper class..
-    public function getPicture($pictureName){ // desperately in need of some rework
+    public function getPicture($pictureName)
+    { // desperately in need of some rework
 
 
         //plek en pad zijn hetzelfde?
-        $plek = ROOT . DS . 'public' . DS . 'images' . DS . $pictureName ;
+        $plek = ROOT . DS . 'public' . DS . 'images' . DS . $pictureName;
 
         $pad = "/haarlem-festival/public/images/" . $pictureName;
 
@@ -64,9 +69,8 @@ class ViewBase {
 
     }
 
-
-
-    public function printTickets() {
+    public function printTickets()
+    {
         foreach ($_SESSION['Cart'] as $ticket) {
             $startTime = explode(' ', $ticket->startTime);
             $endTime = explode(' ', $ticket->endTime);
@@ -82,23 +86,30 @@ class ViewBase {
         }
     }
 
-
-
-
-    public function render_curtis($viewName)
+    public function renderView(string $viewName)
     {
         $viewArray = explode('/', $viewName);
         $viewString = implode(DS, $viewArray);
 
-        $basePath = ROOT . DS . 'App' . DS . 'Views' . DS;
-        $pathToView = $basePath . $viewString . '.php';
-        $pathToLayout = $basePath . DS . 'Layouts' . DS . $this->_layout . 'Layout.php';
+        $pathToHeader = ROOT . DS . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Includes' . DS . $this->_header . 'Header.php';
+        $this->check_include($pathToHeader);
 
-        if (file_exists($pathToView)) {
-            include($pathToView);
-            include($pathToLayout);
+        $pathToView   = ROOT . DS . 'App' . DS . 'Views' . DS . $viewString . '.php';
+        $this->check_include($pathToView);
+
+        $pathToFooter = ROOT . DS . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Includes' . DS . $this->_footer . 'Footer.php';
+        $this->check_include($pathToFooter);
+
+        $pathToLayout = ROOT . DS . 'App' . DS . 'Views' . DS . 'Layouts' . DS . $this->_layout . 'Layout.php';
+        $this->check_include($pathToLayout);
+    }
+
+    function check_include(string $pathToSomething)
+    {
+        if (file_exists($pathToSomething)) {
+            include($pathToSomething);
         } else {
-            die('The view \"' . $viewName . '\" does not exist.');
+            die('The file \"' . $pathToSomething . '\" does not exist.');
         }
     }
 
@@ -108,17 +119,18 @@ class ViewBase {
         switch ($type) {
             case 'head':
                 return $this->_head;
-                //break;
+            case 'header':
+                return $this->_header;
             case 'body':
                 return $this->_body;
-                //break;     
+            case 'footer':
+                return $this->_footer;
             default:
                 return false;
-                //break;
         }
     }
 
-
+//output buffering
     public function start($type)
     {
         $this->_outputBuffer = $type;
@@ -128,40 +140,71 @@ class ViewBase {
     public function end()
     {
         if ($this->_outputBuffer == 'head') {
-            $this->_head = ob_get_clean();
+            if (isset($this->_head)) {
+                $this->_head .= ob_get_clean();
+            } else {
+                $this->_head = ob_get_clean();
+            }
+        } elseif ($this->_outputBuffer == 'header') {
+            $this->_header = ob_get_clean();
         } elseif ($this->_outputBuffer == 'body') {
             $this->_body = ob_get_clean();
+        } elseif ($this->_outputBuffer == 'footer') {
+            $this->_footer = ob_get_clean();
         } else {
             die('You first have to run the start method!');
         }
     }
 
+    //getters and setters
+
+    //Site title
     public function getSiteTitle()
     {
-        if ($this->_siteTitle == '') {
-            return SITE_TITLE;
-        }
         return $this->_siteTitle;
     }
-
     public function setSiteTitle(string $title)
     {
         $this->_siteTitle = $title;
     }
 
-    public function setLayout(string $path)
+    //Header
+    public function setHeader(string $headerName = DEFAULT_NAME)
     {
-        $this->_layout = $path;
+        $this->_header = $headerName;
+    }
+    
+    //Footer
+    public function setFooter(string $footerName = DEFAULT_NAME)
+    {
+        $this->_footer = $footerName;
+    }
+
+    //layout
+    public function setLayout(string $layoutName = DEFAULT_NAME)
+    {
+        $this->_layout = $layoutName;
+    }
+
+    //BackgroundImage
+    public function setBgImage(string $bgImageName)
+    {
+        $this->_bgImage = $bgImageName;
+    }
+    public function getBgImage()
+    {
+        $pathToBgImage = ROOT . 'Public' . DS . 'Images' . DS . 'Backgrounds' . DS . $this->_bgImage;
+        return $pathToBgImage;
     }
 
     public function insert($path)
     {
-        include ROOT . DS . 'app' . DS . 'views' . DS . $path . '.php';
+        include ROOT . DS . 'App' . DS . 'Views' . DS . $path . '.php';
     }
 
     public function partial($group, $partial)
     {
-        include ROOT . DS . 'app' . DS . 'views' . DS . $group . DS . 'partials' . DS . $partial . '.php';
+        include ROOT . DS . 'App' . DS . 'Views' . DS . $group . DS . 'Partials' . DS . $partial . '.php';
     }
 
 }
