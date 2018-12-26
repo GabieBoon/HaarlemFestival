@@ -5,7 +5,7 @@ class DanceViewFunctions {
     public static function showLocations($locations){
         foreach ($locations as $location){
             $title = $location->name;
-            include ROOT . 'app' . DS . 'Layouts' . DS . 'DanceBlok' .'.php';
+            include ROOT . 'app' . DS . 'Views' . DS . 'Templates' . DS . 'DanceBlok' .'.php';
         }
     }
 
@@ -22,7 +22,7 @@ class DanceViewFunctions {
                 $title .= " " . trim($artist->lastName);
             }
 
-            include ROOT . 'app' . DS . 'Layouts' . DS . 'DanceBlok' .'.php';
+            include ROOT . 'app' . DS . 'Views' . DS . 'Templates' . DS . 'DanceBlok' .'.php';
         }
     }
 

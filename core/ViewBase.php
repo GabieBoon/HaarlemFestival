@@ -11,8 +11,7 @@ class ViewBase
         $_siteTitle = SITE_TITLE,
         $_outputBuffer,
         $_layout = DEFAULT_NAME,
-        $_bgImage,
-        $_table;
+        $_bgImage;
 
     public function __construct($className, $siteTitle = SITE_TITLE)
     {

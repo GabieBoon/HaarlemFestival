@@ -1,20 +1,19 @@
 <?php //head ?>
 <?php $this->start('head'); ?>
 
-<!-- Dance CSS -->
-<link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/Dancecss.css" >
+    <!-- Dance CSS -->
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/Dancecss.css" >
 
-<!--  dynamic background image  -->
-<style type="text/css">
-    .background-image {
-        background: #FFF url(<?= $this->getBgImage(); ?>);
-    }
-</style>
+    <!--  dynamic background image  -->
+    <style type="text/css">
+        .background-image {
+            background: #FFF url(<?= $this->getBgImage(); ?>);
+        }
+    </style>
 
-<!-- jQuery scripts -->
-<script src="<?= PROOT ?>public/javascripts/jQueryDance.js"></script>
-<script src="<?= PROOT ?>public/javascripts/jQuerySchedule.js"></script>
-
+    <!-- jQuery scripts -->
+    <script src="<?= PROOT ?>public/javascripts/jQueryDance.js"></script>
+    <script src="<?= PROOT ?>public/javascripts/jQuerySchedule.js"></script>
 
 <?php $this->end(); ?>
 
