@@ -39,16 +39,10 @@
         <h2>Tickets</h2>
 
         <p>
-        <form action="<?= PROOT ?>Cart/addTicket/1">
-            <button type = "submit"> add ticket to cart</button>
-        </form>
-
-        <form action="<?= PROOT ?>Cart/addTicket/2">
-            <button type = "submit"> add ticket to cart</button>
-        </form>
-
-
+            Check prices for individual concerts in the timetable below. For the real party-people there are also All-Access-Tickets available!
         </p>
+
+        <?=$this->showAllAccessTickets() ?>
 
     </section>
 
@@ -87,6 +81,20 @@
         </div>
 
     </section>
+
+        <div class="Overlay" style="display: none">
+            <div class="OverlayBackground" ></div>
+
+            <div class="OverlayForeground" >
+                <p> overlay tekst</p>
+            </div>
+
+        </div>
+
+
+
+
+
 
 <span class="clearfix"></span>
 </main>
