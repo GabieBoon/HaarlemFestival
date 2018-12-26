@@ -1,12 +1,7 @@
 <main>
 
-
-
-
     <section>
 
-    <!--<img src="/phpfiles/Haarlem-Festival BitBucket/haarlem-festival/phpproject1/images/Dance BW.jpg" alt="Background, dancing people in black and white">
-    -->
     <section class="dancesection">
 
         <h2>About dance</h2>
@@ -90,10 +85,6 @@
             </div>
 
         </div>
-
-
-
-
 
 
 <span class="clearfix"></span>

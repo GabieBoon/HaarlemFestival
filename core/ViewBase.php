@@ -49,26 +49,6 @@ class ViewBase
         include ROOT . DS . 'App' . DS . 'Layouts' . DS . 'Footer.php';
     }
 
-    //plz move to helper class..
-    public function getPicture($pictureName)
-    { // desperately in need of some rework
-
-
-        //plek en pad zijn hetzelfde?
-        $plek = ROOT . DS . 'public' . DS . 'images' . DS . $pictureName;
-
-        $pad = "/haarlem-festival/public/images/" . $pictureName;
-
-
-        // als "plek" .jpg bestaat, return "pad". jpg en anders "pad" . png? waarom geen return "plek"
-        if (file_exists($plek . '.jpg')) {
-            return $pad . '.jpg';
-        } elseif (file_exists($plek . '.png')) {
-            return $pad . '.png';
-        }
-
-    }
-
     public function printTickets()
     {
         foreach ($_SESSION['Cart'] as $ticket) {
