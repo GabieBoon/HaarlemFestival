@@ -15,9 +15,9 @@ class UserSessionModel extends ModelBase
         $userSession = new self();
         if (Cookie::exists(REMEMBER_ME_COOKIE_NAME)) {
 
-            $sql = "select * from UserSession where user_agent = ? AND session = ?";
+            $sql = "SELECT * FROM UserSession WHERE userAgent = ? AND session = ?";
             $bind = [Session::userAgent_no_version(), Cookie::get(REMEMBER_ME_COOKIE_NAME)];
-            $userSession = $userSession->_db->query($sql, $bind)->getFirstResult();
+            $userSession = $userSession->query($sql, $bind)->getFirstResult();
 
             // $table = 'UserSession';
             // $userSession = $userSession->findFirstResult($table, [//omschrijven naar query

@@ -13,7 +13,7 @@ class UserModel extends ModelBase
         $this->_cookieName = REMEMBER_ME_COOKIE_NAME;
         $this->_softDelete = true;
 
-        // $sql = "select * from UserSession where user_agent = ? AND session = ?";
+        // $sql = "select * from UserSession where userAgent = ? AND session = ?";
         // $bind = [Session::userAgent_no_version(), Cookie::get(REMEMBER_ME_COOKIE_NAME)];
         // $userSession = $userSession->_db->query($sql, $bind)->getFirstResult();
 
@@ -71,11 +71,11 @@ class UserModel extends ModelBase
             Cookie::set($this->_cookieName, $hash, REMEMBER_ME_COOKIE_EXPIRY);
             $fields = [
                 'session' => $hash,
-                'user_agent' => $userAgent,
+                'userAgent' => $userAgent,
                 'userId' => $this->id
             ];
-            $this->_db->query("DELETE FROM User_Sessions WHERE userId = ? AND user_agent = ?", [$this->id, $userAgent]);
-            $this->_db->insert('User_Sessions', $fields);
+            $this->query("DELETE FROM UserSession WHERE userId = ? AND userAgent = ?", [$this->id, $userAgent]);
+            $this->insert('UserSession', $fields);
         }
     }
 
@@ -94,7 +94,7 @@ class UserModel extends ModelBase
         //delete stored cookie id from server
         $userSession = UserSessionModel::getFromCookie();
         if ($userSession) {
-            $foo = $userSession->deleteByID($userSession->id);// omschrijven naar query
+            $foo = $this->deleteByID('UserSession',$userSession->id);// omschrijven naar query
         }
 
         //delete local session

@@ -12,14 +12,14 @@ class ViewBase
         $_outputBuffer,
         $_layout = DEFAULT_NAME,
         $_bgImage,
-        $_table;
+        $_table;// maybe change this name to avoid confusion with database table $this->_table
 
     public function __construct($className, $siteTitle = SITE_TITLE)
     {
         $this->className = $className;
         //$this->title = $siteTitle;
         
-        //include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
+        //include ROOT . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
         //$this->_table = new Table();
     }
 
@@ -37,16 +37,16 @@ class ViewBase
         }
 
         //head
-        include ROOT . DS . 'App' . DS . 'Layouts' . DS . 'Head.php';
+        include ROOT . 'App' . DS . 'Layouts' . DS . 'Head.php';
 
         //header
-        include ROOT . DS . 'App' . DS . 'Layouts' . DS . 'Header.php';
+        include ROOT . 'App' . DS . 'Layouts' . DS . 'Header.php';
 
         //content
-        include ROOT . DS . 'App' . DS . 'Layouts' . DS . $layoutName;
+        include ROOT . 'App' . DS . 'Layouts' . DS . $layoutName;
 
         //footer
-        include ROOT . DS . 'App' . DS . 'Layouts' . DS . 'Footer.php';
+        include ROOT . 'App' . DS . 'Layouts' . DS . 'Footer.php';
     }
 
     //plz move to helper class..
@@ -55,7 +55,7 @@ class ViewBase
 
 
         //plek en pad zijn hetzelfde?
-        $plek = ROOT . DS . 'public' . DS . 'images' . DS . $pictureName;
+        $plek = ROOT . 'public' . DS . 'images' . DS . $pictureName;
 
         $pad = "/haarlem-festival/public/images/" . $pictureName;
 
@@ -91,16 +91,16 @@ class ViewBase
         $viewArray = explode('/', $viewName);
         $viewString = implode(DS, $viewArray);
 
-        $pathToHeader = ROOT . DS . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Includes' . DS . $this->_header . 'Header.php';
+        $pathToHeader = ROOT . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Includes' . DS . $this->_header . 'Header.php';
         $this->check_include($pathToHeader);
 
-        $pathToView   = ROOT . DS . 'App' . DS . 'Views' . DS . $viewString . '.php';
+        $pathToView   = ROOT . 'App' . DS . 'Views' . DS . $viewString . '.php';
         $this->check_include($pathToView);
 
-        $pathToFooter = ROOT . DS . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Includes' . DS . $this->_footer . 'Footer.php';
+        $pathToFooter = ROOT . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Includes' . DS . $this->_footer . 'Footer.php';
         $this->check_include($pathToFooter);
 
-        $pathToLayout = ROOT . DS . 'App' . DS . 'Views' . DS . 'Layouts' . DS . $this->_layout . 'Layout.php';
+        $pathToLayout = ROOT . 'App' . DS . 'Views' . DS . 'Layouts' . DS . $this->_layout . 'Layout.php';
         $this->check_include($pathToLayout);
     }
 
@@ -199,12 +199,12 @@ class ViewBase
 
     public function insert($path)
     {
-        include ROOT . DS . 'App' . DS . 'Views' . DS . $path . '.php';
+        include ROOT . 'App' . DS . 'Views' . DS . $path . '.php';
     }
 
     public function partial($group, $partial)
     {
-        include ROOT . DS . 'App' . DS . 'Views' . DS . $group . DS . 'Partials' . DS . $partial . '.php';
+        include ROOT . 'App' . DS . 'Views' . DS . $group . DS . 'Partials' . DS . $partial . '.php';
     }
 
 }

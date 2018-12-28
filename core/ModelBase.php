@@ -187,7 +187,7 @@ class ModelBase {
         return false;
     }
 
-    public function updateByID($table, int $id = null, $fields)
+    public function updateByID(int $id = null, $table, array $fields = [])
     {
         if (isset($fields) || $id != null) {
             return $this->_db->updateByID($id, $table, $fields);
@@ -195,7 +195,7 @@ class ModelBase {
         return false;
 
     }
-    public function deleteByID(int $id = null)
+    public function deleteByID($table, int $id = null)
     {
         //make sure $id is not NULL
         if ($id == null) {
@@ -205,9 +205,9 @@ class ModelBase {
             $id = $this->id;
         }
         if ($this->_softDelete) {
-            return $this->updateByID($id, ['deleted' => 1]);
+            return $this->updateByID($id, $table, ['deleted' => 1]);
         }
-        return $this->_db->deleteByID($id, $this->_table);
+        return $this->_db->deleteByID($id, $table);
     }
 
 

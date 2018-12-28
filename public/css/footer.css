@@ -1,28 +1,26 @@
-footer{
+footer {
     background-color: #555555;
 }
 
-.foot-logo{
+.foot-logo {
     width: 150px;
-    display:block;
-    margin:auto;
-
+    display: block;
+    margin: auto;
 }
 
-
-.contactinfo p{
-    text-align:center;
-    margin:0;
-    color:white;
+.contactinfo p {
+    text-align: center;
+    margin: 0;
+    color: white;
     padding-right: 20px;
 }
 
-.contactinfo-box{
-    padding-top:10px;
-    padding-right:50px;
-    margin:0;
+.contactinfo-box {
+    padding-top: 10px;
+    padding-right: 50px;
+    margin: 0;
     float: right;
-    display:block;
+    display: block;
 }
 
 /* Create three equal columns that floats next to each other */
@@ -39,7 +37,7 @@ footer{
     clear: both;
 }
 
-.CMS-buttons a{
+.CMS-buttons a {
     padding: 10px;
     border-style: solid;
     border-color: white;
@@ -49,26 +47,27 @@ footer{
     font-weight: bold;
 }
 
-.CMS-buttons a:hover{
+.CMS-buttons a:hover {
     background-color: white;
     color: #555555;
 }
 
-.CMS-buttons{
+.CMS-buttons {
     float: right;
-    display:inline-block;
+    /* inlineblock is ignored due to the float right */
+    /* display:inline-block;  */
     padding-right: 20px;
 }
 
-.social-media{
-    padding-top:40px;
+.social-media {
+    padding-top: 40px;
 }
 
-.social-media a{
+.social-media a {
     text-decoration: none;
-    color:white;
+    color: white;
 }
 
-.fab{
-    font-size:20px;
+.fab {
+    font-size: 20px;
 }

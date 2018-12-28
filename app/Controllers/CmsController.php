@@ -3,7 +3,7 @@ class CmsController extends ControllerBase //Jasper
 {
     public function __construct($controller, $action)
     {
-        parent::__construct($controller, $action, true, 'User' );
+        parent::__construct($controller, $action, true, 'User');
         //$this->loadModel('userModel');
         $this->view->setLayout('Cms');
     }
@@ -46,8 +46,9 @@ class CmsController extends ControllerBase //Jasper
                         $remember = false;
                     }
                     //$this->UserModel->login($remember);
-                    $user->login($remember);
-                    Router::redirect('CMS/dashboard');
+                    $user->login($remember);//->getError();
+
+                    Router::redirect('cms/dashboard');
                 } else {
                     $validation->addError("There is an error with your username or password.");
                 }
@@ -55,21 +56,27 @@ class CmsController extends ControllerBase //Jasper
 
         }
         $this->view->displayErrors = $validation->displayErrors();
-        $this->view->renderView('CMS/loginView');
+        $this->view->renderView('cms/loginView');
     }
 
     public function logoutAction()
     {
-        //formatted_print_r(currentUser());
-        if (currentUser()) {
-            currentUser()->logout();
+        //formatted_print_r(UserModel::currentLoggedInUser());
+        $user = UserModel::currentLoggedInUser();
+        if ($user) {
+            $user->logout();
         }
-        Router::redirect('CMS/login');
+        Router::redirect('cms');
     }
 
-    public function dashboardAction()
+    public function dashboardAction($arg = null)
     {
-        $this->view->renderView('CMS/DashboardView');
+        if ($arg == 'deleteSession') {
+            Session::deleteSession(CURRENT_USER_SESSION_NAME);
+            router::redirect('cms');
+        }
+        $this->view->renderView('cms/DashboardView');
+
     }
 }
 ?>

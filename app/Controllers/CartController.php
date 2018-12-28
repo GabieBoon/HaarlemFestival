@@ -13,6 +13,7 @@ class CartController extends ControllerBase
 
         $data = $this->model->addTicket($ticketId);
 
+        
 
         //voeg ticket toe tenzij hij al in het Cart zit
         if ( !array_key_exists($ticketId, $_SESSION['Cart']) ){
@@ -21,6 +22,7 @@ class CartController extends ControllerBase
 
         //please use Router::redirect(); - Jasper
         header('Location: http://localhost' .  PROOT . $_SESSION['LastVisited'] . '/' );
+        //Router::redirect($_SESSION['LastVisited']);
 
     }
 
