@@ -22,7 +22,7 @@
     
     <!-- start Import -->
     <?= $this->content('head'); ?>
-<!-- end Import -->
+    <!-- end Import -->
     <title><?= $this->getSiteTitle(); ?></title>
   </head>
   <body>
