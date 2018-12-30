@@ -22,7 +22,16 @@
 
 <pre>
 <!-- < ?php print_r(UserModel::currentLoggedInUser()); ?> -->
-<?php print_r($_SESSION); ?>
+<?php print_r($_SESSION);
+$arh = apache_request_headers();
+print_r(apache_response_headers());
+ print_r($arh);
+ print_r(get_headers($arh['Referer'])); 
+// print_r(nsapi_request_headers());
+// print_r(nsapi_response_headers());
+ 
+ ?>
+ 
 
 </pre>
 <!-- < ?php echo ('Hello World!'); ?> -->
