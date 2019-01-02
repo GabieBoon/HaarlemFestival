@@ -1,6 +1,7 @@
 <div class="PopupHideBorder">
 
-    <div class="TableTicket <?=$this->event?>Ticket"  id="<?=$this->currentTicket->id?>"  style="width: <?=$ticketLength?>px">
+    <div class="TableTicket <?=$this->event?>Ticket"  id="<?=$this->currentTicket->id?>"
+         style="width: <?=$ticketLength?>px; margin-left: <?=$ticketMargin?>px">
         <?=$this->showTicket()?>
     </div>
 

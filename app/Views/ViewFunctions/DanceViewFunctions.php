@@ -30,7 +30,6 @@ class DanceViewFunctions {
 
     }
 
-    //plz move to helper class..
     public static function getPicture($pictureName)
     { // desperately in need of some rework
 

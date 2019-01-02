@@ -5,6 +5,7 @@ class Table {
     private $day, $startHour, $endHour, $event, $tickets, $eventColumn, $columnCount; //meegegeven vanuit generateTable
     private $rowSource, $rowTitle, $ticketTitle, $ticketFormat, $checkForTickets; //handig om informatie door te geven door de klasse
     private $currentRow, $currentHour, $currentTicket, $foodSessionsPrinted, $historicToursPrinted;  //houd bij welke rij, colom etc je in zit
+    private $cellWidth;
 
     public function generateTable($day, $startHour, $endHour, $event, $head = true, $eventColumn = false, $rowSource = NULL, $tickets = NULL)
     {
@@ -48,6 +49,9 @@ class Table {
                 $body = false;
                 break;
         }
+
+        //bereken de breedte van een cel in de tabel en sla dit op voor later gebruik
+        $this->setCellWidth();
 
 
         if ($head) {
@@ -152,8 +156,13 @@ class Table {
         echo '</tr>' . PHP_EOL; //end + formatting
     }
 
-    private function generateTableData($text = "", $class = "normalCell")
+    private function generateTableData($text = "", $class = "")
     {
+        if ($class != ""){
+           $class = "class= '" . $class . " '" ;
+        }
+
+
         //maak een cel in de tabel
         include ROOT . 'app' . DS . 'Views' . DS . 'Templates' . DS . 'Tabellen' . DS . 'TableData' . '.php';
     }
@@ -178,6 +187,9 @@ class Table {
 
                     if ($startTime[0] == $this->currentHour)
                     {
+
+                        $ticketMargin = $startTime[1] / 60 * $this->cellWidth;
+
                         $this->currentTicket = $ticket;
 
                         $ticketLength = $this->getTicketLength($startTime,$endTime, $startDate, $endDate);
@@ -192,12 +204,6 @@ class Table {
 
     private function getTicketLength($startTime, $endTime, $startDate, $endDate){
 
-        //mag nog dynamisch vanuit de css worden opgehaald
-        $tableWidth = 1250;
-        $locationCellWidth = 250;
-        $eventCellWidth = 100;
-
-
         //verschillende berekeningen voor eindtijd op dezelfde of andere dag
         if ($startDate != $endDate){
 
@@ -208,22 +214,10 @@ class Table {
         }
 
         //zorg dat halve uren etc. ook weergegeven worden
-        $duration = $duration + $endTime[1] / 60;
-
-        //lengte van de urenkolommen
-        $widthOfHourColumns = $tableWidth - $locationCellWidth;
+        $duration = $duration + $endTime[1] / 60 - $startTime[1] / 60;
 
 
-        if ($this->eventColumn){
-            $widthOfHourColumns = $widthOfHourColumns - $eventCellWidth;
-        }
-
-        $cellWidth = floor($widthOfHourColumns / $this->columnCount);
-
-        $cellWidth = $cellWidth - 2; //borders weghalen van de cellWidth
-
-
-        $divWidth = $duration * $cellWidth -3; //begin 1 px na de border, eindig 1 px ervoor
+        $divWidth = $duration * $this->cellWidth -3; //begin 1 px na de border, eindig 1 px ervoor
 
         return $divWidth;
 
@@ -249,7 +243,31 @@ class Table {
 
         echo " €". $this->currentTicket->price;
     }
+
+    private function setCellWidth(){
+        //mag nog dynamisch vanuit de css worden opgehaald
+        $tableWidth = 1250;
+        $locationCellWidth = 250;
+        $eventCellWidth = 100;
+
+        //lengte van de urenkolommen
+        $widthOfHourColumns = $tableWidth - $locationCellWidth;
+
+        if ($this->eventColumn){
+            $widthOfHourColumns = $widthOfHourColumns - $eventCellWidth;
+        }
+
+
+        $cellWidth = floor($widthOfHourColumns / $this->columnCount);
+
+        $cellWidth = $cellWidth - 2; //borders weghalen van de cellWidth
+
+        $this->cellWidth = $cellWidth;
+    }
+
+
 }
+
 
 
 
