@@ -10,7 +10,6 @@ class CmsController extends ControllerBase //Jasper
 
     public function indexAction()
     {
-        
         //formatted_print_r(UserModel::currentLoggedInUser());
         if (UserModel::currentLoggedInUser()) {
             Router::redirect('cms/dashboard');
@@ -36,24 +35,21 @@ class CmsController extends ControllerBase //Jasper
             ]);
             if ($validation->passed()) {
                 $user = $this->UserModel->findByUsername($_POST['username']);
-                $user = $this->UserModel->makeModel($user);
-                if ($user && password_verify(Input::getInput('password'), $user->password)) {
-                    //UserModel::$currentLoggedInUser = $user;
-
+                if ($user && password_verify(Input::getInput('password'), $user->password)) {         
                     if (isset($_POST['remember_me']) && Input::getInput('remember_me')) {
                         $remember = true;
                     } else {
                         $remember = false;
                     }
-                    //$this->UserModel->login($remember);
-                    $user->login($remember);//->getError();
+
+                    $this->UserModel->getUserContactData($user);
+                    $this->UserModel->login($remember);
 
                     Router::redirect('cms/dashboard');
                 } else {
                     $validation->addError("There is an error with your username or password.");
                 }
             }
-
         }
         $this->view->displayErrors = $validation->displayErrors();
         $this->view->renderView('cms/loginView');

@@ -19,17 +19,12 @@ class UserModel extends ModelBase
 
 
         if (isset($userIdentifier)) {
-            //$sql = '';
             if (is_int($userIdentifier)) {
                 $u = $this->findByUserid($userIdentifier);
             } else {
                 $u = $this->findByUsername($userIdentifier);
             }
-            if ($u) {
-                foreach ($u as $key => $val) {
-                    $this->$key = $val;
-                }
-            }
+            $this->getDataFromObj($u);
         }
     }
 
@@ -50,11 +45,22 @@ class UserModel extends ModelBase
         return $this->query($sql, $bind)->getFirstResult();
     }
 
+    public function getUserContactData($user)
+    {
+        $sql = "SELECT User.id AS userId, User.contactId AS contactId, User.userName, User.password, User.role, User.isActive, Contact.firstName, Contact.preposition, Contact.lastName, Contact.emailAdress ".
+                "FROM User ".
+                "JOIN Contact ON User.contactId=Contact.id ".
+                "WHERE User.userName = ?;";
+        $bind = [$user->userName];
+        $user = $this->query($sql, $bind)->getFirstResult();
+
+        $this->getDataFromObj($user);
+    }
+    
+
     public static function currentLoggedInUser()
     {
-        $foo = (!isset(self::$currentLoggedInUser));
-        $faa = (Session::sessionExists(CURRENT_USER_SESSION_NAME)); 
-        if ($foo && $faa) {
+        if ((!isset(self::$currentLoggedInUser)) && (Session::sessionExists(CURRENT_USER_SESSION_NAME))) {
             $u = new UserModel((int)Session::getSession(CURRENT_USER_SESSION_NAME));
             self::$currentLoggedInUser = $u;
         }
@@ -74,7 +80,7 @@ class UserModel extends ModelBase
                 'userAgent' => $userAgent,
                 'userId' => $this->id
             ];
-            $this->query("DELETE FROM UserSession WHERE userId = ? AND userAgent = ?", [$this->id, $userAgent]);
+            //$this->query("DELETE FROM UserSession WHERE userId = ? AND userAgent = ?", [$this->id, $userAgent]);
             $this->insert('UserSession', $fields);
         }
     }
@@ -85,17 +91,20 @@ class UserModel extends ModelBase
         if ($userSession) {
             $user = new self((int)$userSession->userId);
             $user->login();
-            return $user; //self::$currentLoggedInUser;
+            self::$currentLoggedInUser = $user;
+            return $user;
         }
+    }
+
+    public function logoutEverywhere()
+    {
+        $this->query("DELETE FROM UserSession WHERE user_id = ?", [$this->id]);
     }
 
     public function logout()
     {
         //delete stored cookie id from server
-        $userSession = UserSessionModel::getFromCookie();
-        if ($userSession) {
-            $foo = $this->deleteByID('UserSession',$userSession->id);// omschrijven naar query
-        }
+        UserSessionModel::delete();
 
         //delete local session
         Session::deleteSession(CURRENT_USER_SESSION_NAME);
@@ -110,6 +119,13 @@ class UserModel extends ModelBase
         return true;
     }
 
+    public function registerNewUser($params)
+    {
+        $this->assign($params);
+        $this->deleted = 0;
+        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        $this->save();
+    }
 
 
 

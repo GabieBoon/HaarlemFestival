@@ -235,13 +235,13 @@ class ModelBase {
     }
 
 
-    protected function getDataFromObj($result)
+    public function getDataFromObj($result)
     {
         if ($result) {
             foreach ($result as $key => $val) {
                 $this->$key = $val;
             }
-
+           // return $this;
         }
 
     }

@@ -17,8 +17,9 @@ class UserSessionModel extends ModelBase
 
             $sql = "SELECT * FROM UserSession WHERE userAgent = ? AND session = ?";
             $bind = [Session::userAgent_no_version(), Cookie::get(REMEMBER_ME_COOKIE_NAME)];
-            $userSession = $userSession->query($sql, $bind)->getFirstResult();
-
+            $res = $userSession->query($sql, $bind)->getFirstResult();
+            $userSession->getDataFromObj($res);
+            //$userSession->makeModel($res);
             // $table = 'UserSession';
             // $userSession = $userSession->findFirstResult($table, [//omschrijven naar query
             //     'conditions' => "",
@@ -29,6 +30,17 @@ class UserSessionModel extends ModelBase
             return false;
         }
         return $userSession;
+    }
+
+    public static function delete()
+    {
+        $userSession = self::getFromCookie();
+        if ($userSession) {
+            $userSession->deleteByID('UserSession');
+        }
+        //$table, int $id = null;
+        $dbTable = 'UserSession';
+        //$this->deleteByID($dbTable, $this->id);// omschrijven naar query
     }
 }
 
