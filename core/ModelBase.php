@@ -235,10 +235,10 @@ class ModelBase {
     }
 
 
-    public function getDataFromObj($result)
+    public function getDataFromObj($input)
     {
-        if ($result) {
-            foreach ($result as $key => $val) {
+        if ($input) {
+            foreach ($input as $key => $val) {
                 $this->$key = $val;
             }
            // return $this;

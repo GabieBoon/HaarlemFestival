@@ -8,7 +8,7 @@ class DanceViewFunctions {
             include ROOT . 'app' . DS . 'Views' . DS . 'Templates' . DS . 'DanceBlok' .'.php';
         }
     }
-
+    //plz use for loops.. https://phpbench.com/
     public static function showArtists($artists){
         foreach ($artists as $artist){
 

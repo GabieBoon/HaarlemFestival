@@ -139,7 +139,7 @@ class DB //jasper
          * 
          * $db = DB::getInstance();
          * $targetDB = 'Contacts';
-         * $ID = 1
+         * $id = 1
          * $fields = [              //!these are only the mandatory fields!
          *    'firstName' => '',
          *    'surName' => '',
@@ -153,7 +153,7 @@ class DB //jasper
          *    'city' => '',
          *    'country' => ''
          * ];
-         * $contacts = $db->updateByID($ID, $targetDB, $fields);
+         * $contacts = $db->updateByID($id, $targetDB, $fields);
          * 
          * formatted_var_dump($contacts); //check
          * 
@@ -172,7 +172,7 @@ class DB //jasper
          * 
          * $db = DB::getInstance();
          * $targetDB = 'Contacts';
-         * $ID = 1;
+         * $id = 1;
          * 
          * $contacts = $db->deleteByID($id, $targetDB);
          * 

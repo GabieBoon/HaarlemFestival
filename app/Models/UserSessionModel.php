@@ -26,7 +26,7 @@ class UserSessionModel extends ModelBase
             //     'bind' => 
             // ]);
         }
-        if (!$userSession) {
+        if (!isset($userSession->userId)) {
             return false;
         }
         return $userSession;

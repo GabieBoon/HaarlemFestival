@@ -3,6 +3,7 @@
 class UserModel extends ModelBase
 {
     private $_isLoggedIn, $_sessionName, $_cookieName;
+    public $userId = null;
     public static $currentLoggedInUser = null;
 
     public function __construct($userIdentifier = null)
@@ -25,7 +26,13 @@ class UserModel extends ModelBase
                 $u = $this->findByUsername($userIdentifier);
             }
             $this->getDataFromObj($u);
-        }
+            //$this->getUserContactData($u);
+        }//else if (isset(self::$currentLoggedInUser)) {
+            # code...
+        //}else {
+            # code...
+       // }
+
     }
 
 
@@ -70,7 +77,7 @@ class UserModel extends ModelBase
 
     public function login(bool $rememberMe = false)
     {
-        Session::setSession($this->_sessionName, $this->id);
+        Session::setSession($this->_sessionName, $this->userId);
         if ($rememberMe) {
             $hash = md5(uniqid() . rand(0, 100));
             $userAgent = Session::userAgent_no_version();

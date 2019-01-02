@@ -19,8 +19,9 @@ class CmsController extends ControllerBase //Jasper
 
     public function loginAction()
     {
-        $validation = new Validate();
+        
         if ($_POST) {
+            $validation = new Validate();
             //form validation
             $validation->check($_POST, [
                 'username' => [
@@ -50,8 +51,9 @@ class CmsController extends ControllerBase //Jasper
                     $validation->addError("There is an error with your username or password.");
                 }
             }
+            $this->view->displayErrors = $validation->displayErrors();
         }
-        $this->view->displayErrors = $validation->displayErrors();
+        
         $this->view->renderView('cms/loginView');
     }
 

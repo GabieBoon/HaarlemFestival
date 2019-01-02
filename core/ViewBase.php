@@ -83,6 +83,7 @@ class ViewBase
         $this->check_include($pathToLayout);
     }
 
+    //miss naar helper?
     function check_include(string $pathToSomething)
     {
         if (file_exists($pathToSomething)) {
