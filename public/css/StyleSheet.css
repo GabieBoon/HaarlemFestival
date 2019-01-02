@@ -133,9 +133,6 @@ table {
     table-layout: fixed;
 }
 
-td.normalCell {
-
-}
 
 td.eventCell {
     width: 100px;
@@ -146,7 +143,6 @@ td.locationCell {
 }
 
 .TableTicket{
-    background-color: #3083D0 ;
     position: relative;
     z-index: 9;
     box-sizing: border-box;

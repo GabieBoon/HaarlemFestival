@@ -1,1 +1,1 @@
-<td class="<?=$class ?>"> <?= $text ?> <?=$this->CheckForTicket()?> </td>
+<td <?=$class ?>> <?= $text ?> <?=$this->CheckForTicket()?> </td>

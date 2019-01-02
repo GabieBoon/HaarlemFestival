@@ -25,7 +25,7 @@
     <section>
 
 
-        <section class="dancesection">
+        <section class="DanceSection">
 
             <h2>About dance</h2>
 
@@ -37,7 +37,7 @@
             </p>
         </section>
 
-        <section class="dancesection">
+        <section class="DanceSection">
             <h2>Artists</h2>
             <p>
                 <?= DanceViewFunctions::showArtists($this->danceArtists); ?>
@@ -45,7 +45,7 @@
 
         </section>
 
-        <section class="dancesection">
+        <section class="DanceSection">
             <h2>Locaties</h2>
             <p>
                 <?= DanceViewFunctions::showLocations($this->danceLocations); ?>
@@ -53,7 +53,7 @@
 
         </section>
 
-        <section class="dancesection">
+        <section class="DanceSection">
             <h2>Tickets</h2>
 
             <p>
@@ -64,7 +64,7 @@
 
         </section>
 
-        <section class="dancesection" id="schedule">
+        <section class="DanceSection" id="schedule">
             <h2>Schedule</h2>
 
             <nav>
