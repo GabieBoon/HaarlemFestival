@@ -172,7 +172,7 @@ class ViewBase
     }
     public function getBgImage()
     {
-        $pathToBgImage = ROOT . 'Public' . DS . 'Images' . DS . 'Backgrounds' . DS . $this->_bgImage;
+        $pathToBgImage = PROOT . 'Public/Images/Backgrounds/' . $this->_bgImage;
         return $pathToBgImage;
     }
 

@@ -8,7 +8,6 @@ class FoodController extends ControllerBase {
         parent::__construct($className, $action, true);
         $this->view->setLayout('Default');
         $this->view->setBgImage('foodbackground.jpg');
-        
     }
 
     public function indexAction(){
