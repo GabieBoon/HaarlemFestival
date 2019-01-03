@@ -9,7 +9,7 @@ $foodColor = "#F0841B";
     padding: 10px;
     margin-left: 17.5%;
     margin-right: 17.5%;
-    margin-top: -30px;
+    <!-- margin-top: -30px; -->
     overflow: auto;
     z-index: 20;
     text-align: center;
@@ -17,7 +17,7 @@ $foodColor = "#F0841B";
 
 .background-image{
     background-size:cover;
-    background-repeat:no-repeat;
+    background-repeat:no-repeat ;
     background-position:center center;
 }
 

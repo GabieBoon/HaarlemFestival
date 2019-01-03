@@ -3,12 +3,7 @@
 <!-- Food CSS -->
 <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/Foodcss.php" >
 
-    <!--  dynamic background image  -->
-    <style type="text/css">
-        .background-image {
-            background: #FFF url(<?= $this->getBgImage(); ?>);
-        }
-    </style>
+<?= $this->getBgImage(); ?>
 
 <?php $this->end(); ?>
 

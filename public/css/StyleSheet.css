@@ -15,7 +15,7 @@ html, body {
 }
 
 /* ===== header css ===== */
-
+/* 
 #test {
     background-color: #797979;
     height: 150px;
@@ -31,7 +31,7 @@ html, body {
 }
 
 .nav-wrapper {
-    /* 100 view width -  logo width  */
+    / 100 view width -  logo width  /
     width: calc(100vw - 150px - 20px);
     float: right;
     height: 50px;
@@ -112,8 +112,9 @@ html, body {
 
 select .language-selection option[value="nederlands"] {
     background-image: url(/haarlem-festival/public/images/languages/nederlands.png);
-    /*background: rgba(200, 200, 200, 0.3);*/
-}
+    /background: rgba(200, 200, 200, 0.3);/
+} 
+*/
 
 /* TABLE */
 

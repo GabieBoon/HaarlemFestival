@@ -1,7 +1,10 @@
 /* GENERAL */
 
 .DanceSection {
-    width: 900px;
+    width: 45vw;
+    min-width: 700px;
+    height: auto;
+    /* width: 900px; */
     background-color: rgba(242, 242, 242, 0.75);
     border-style: solid;
     border-color: #797979;
@@ -11,18 +14,25 @@
     float: left;
 }
 
+.DanceSection p {
+    word-wrap: break-word;
+    font-size: 24px;
+    margin: 10px 50px;
+}
+
 #schedule {
     width: 1820px;
     margin-bottom: 0px;
 }
 
 main {
-    width: 1920px;
+    width: 100vw;
+    /* width: 1920px; */
     box-sizing: border-box;
-    padding: 40px 40px 0px;
-    margin: 0px;
-    background: url(/haarlem-festival/public/images/Dance%20BW.jpg);
-    background-size: cover;
+    padding: 40px;
+    margin: 0 auto;
+    /* background: url(/haarlem-festival/public/images/Dance%20BW.jpg); */
+    /* background-size: cover; */
 }
 
 h2 {
@@ -30,12 +40,12 @@ h2 {
     margin-left: 100px;
 }
 
-p {
-    font-size: 24px;
-    width: 760px;
-    align-content: center;
-    margin-left: 70px;
-}
+/* p { */
+    /* font-size: 24px; */
+    /* width: 760px; */
+    /* align-content: center; */
+    /* margin-left: 70px; */
+/* } */
 
 /* BLOKKEN */
 
@@ -73,20 +83,23 @@ p {
     background-color: #bcbcbc;
 }
 
-.Overlay {
-
-}
+.Overlay {}
 
 .OverlayBackground {
-    position: absolute; /* Sit on top of the page content */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
+    position: absolute;
+    /* Sit on top of the page content */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(242, 242, 242, 0.85); /* Black background with opacity */
-    z-index: 20; /* Specify a stack order in case you're using a different order for other elements */
+    background-color: rgba(242, 242, 242, 0.85);
+    /* Black background with opacity */
+    z-index: 20;
+    /* Specify a stack order in case you're using a different order for other elements */
 }
 
 .OverlayForeground {
@@ -98,4 +111,3 @@ p {
     margin-top: 10px;
     height: 90%;
 }
-

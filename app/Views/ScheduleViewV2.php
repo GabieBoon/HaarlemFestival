@@ -4,12 +4,7 @@
     <!-- Schedule CSS -->
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/Schedulecss.css" >
 
-    <!--  dynamic background image  -->
-    <style type="text/css">
-        .background-image {
-            background: #FFF url(<?= $this->getBgImage(); ?>);
-        }
-    </style>
+<?= $this->getBgImage(); ?>
 
     <!-- jQuery scripts -->
     <script src="<?= PROOT ?>public/javascripts/jQuerySchedule.js"></script>

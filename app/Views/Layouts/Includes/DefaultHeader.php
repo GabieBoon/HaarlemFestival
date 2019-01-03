@@ -5,7 +5,7 @@
 <?php $this->end(); ?>
 
 <?php $this->start('header'); ?>
-<header class="<?= $this->className?>">
+<header class="<?= $this->_className?>">
     <a href="<?= PROOT ?>">
         <img
              class="nav-logo <?php if($_SESSION['CurrentPage'] == 'Home'){echo 'hide';} ?>"

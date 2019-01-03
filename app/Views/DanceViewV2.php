@@ -4,12 +4,7 @@
     <!-- Dance CSS -->
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/Dancecss.css" >
 
-    <!--  dynamic background image  -->
-    <style type="text/css">
-        .background-image {
-            background: #FFF url(<?= $this->getBgImage(); ?>);
-        }
-    </style>
+<?= $this->getBgImage(); ?>
 
     <!-- jQuery scripts -->
     <script src="<?= PROOT ?>public/javascripts/jQueryDance.js"></script>
@@ -20,7 +15,7 @@
 <?php //body ?>
 <?php $this->start('body'); ?>
 
-<main>
+<main class="background-image">
 
     <section>
 

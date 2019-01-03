@@ -3,8 +3,9 @@
 class ViewBase
 {
 
-    protected $head, $body, $layout, $title, $className;
-    protected $_head,
+    protected $head, $body, $layout, $title;
+    protected $_className,
+        $_head,
         $_header = DEFAULT_NAME,
         $_body,
         $_footer = DEFAULT_NAME,
@@ -13,9 +14,9 @@ class ViewBase
         $_layout = DEFAULT_NAME,
         $_bgImage;
 
-    public function __construct($className, $siteTitle = SITE_TITLE)
+    public function __construct($_className, $siteTitle = SITE_TITLE)
     {
-        $this->className = $className;
+        $this->_className = $_className;
         //$this->title = $siteTitle;
         
         //include ROOT . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
@@ -29,7 +30,7 @@ class ViewBase
     {
 
         if ($layoutName == null) {
-            $layoutName = $this->className . 'Layout.php';
+            $layoutName = $this->_className . 'Layout.php';
         } else {
             $layoutName .= 'Layout.php';
             $layoutName += 'Layout.php';
@@ -73,7 +74,7 @@ class ViewBase
         $pathToHeader = ROOT . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Includes' . DS . $this->_header . 'Header.php';
         $this->check_include($pathToHeader);
 
-        $pathToView   = ROOT . 'App' . DS . 'Views' . DS . $viewString . '.php';
+        $pathToView = ROOT . 'App' . DS . 'Views' . DS . $viewString . '.php';
         $this->check_include($pathToView);
 
         $pathToFooter = ROOT . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Includes' . DS . $this->_footer . 'Footer.php';
@@ -153,6 +154,39 @@ class ViewBase
     {
         $this->_header = $headerName;
     }
+
+    // public function getHeaderColour($className = null)
+    // {
+    //     //header("Content-type: text/css; charset: UTF-8");
+    //     if (!isset($className)) {
+    //         $className = $this->_className;
+    //     }
+    //     switch (ucfirst($className)) {
+    //         case 'Dance':
+    //             $activeColour = "#3083D0";
+    //             break;
+    //         case 'Jazz':
+    //             $activeColour = "#440E62";
+    //             break;
+    //         case 'Historic':
+    //             $activeColour = "#DB1F1F";
+    //             break;
+    //         case 'Food':
+    //             $activeColour = "#F0841B";
+    //             break;
+    //         case 'Schedule':
+    //             $activeColour = "#DCC500";
+    //             break;
+    //         case 'Cart':
+    //             $activeColour = "#849A7D";
+    //             break;
+    //         default:
+    //             $activeColour = "#797979";
+    //             break;
+    //     }
+    //     echo $activeColour;
+    //     //return $activeColour;
+    // }
     
     //Footer
     public function setFooter(string $footerName = DEFAULT_NAME)
@@ -174,7 +208,17 @@ class ViewBase
     public function getBgImage()
     {
         $pathToBgImage = PROOT . 'Public/Images/Backgrounds/' . $this->_bgImage;
-        return $pathToBgImage;
+        echo ('
+            <!--dynamic background image -->
+            <style type = "text/css">
+                .background-image {
+                    background:#FFF url(' . $pathToBgImage . ');
+                    background-size:cover;
+                    background-repeat:no-repeat ;
+                    background-position:center center;
+                }
+            </style>
+        ');
     }
 
     public function insert($path)

@@ -21,8 +21,8 @@ display: none;
 }
 
 header{
-    background-color: <?php echo $activeColor?>;
-    height:175px;
+    <!-- background-color: < ?php echo $activeColor ?> !important; -->
+    height:150px;
 }
 
 .nav-logo{
@@ -30,10 +30,11 @@ header{
 }
 
 .nav-wrapper {
-    width:calc(100vw - 150px - 20px);
-    float:right;
-    height:50px;
-    margin-top:50px;
+width: calc(99vw - 150px - 20px);
+float: right;
+height: 100px;
+top: 50px;
+position: relative;
 }
 
 .nav-wrapper ul{
@@ -91,58 +92,58 @@ header{
 }
 
 .dance-btn a{
-    box-shadow:  5px 5px <?php echo $danceColor?>;
+    box-shadow:  5px 5px <?php echo $danceColor ?>;
     color: #3083D0;
 }
 
 .dance-btn a:hover{
-    background-color: <?php echo $danceColor?>;
+    background-color: <?php echo $danceColor ?>;
 }
 
 .jazz-btn a{
-    box-shadow:  5px 5px <?php echo $jazzColor?>;
-    color: <?php echo $jazzColor?>;
+    box-shadow:  5px 5px <?php echo $jazzColor ?>;
+    color: <?php echo $jazzColor ?>;
 }
 
 .jazz-btn a:hover{
-    background-color: <?php echo $jazzColor?>;
+    background-color: <?php echo $jazzColor ?>;
 }
 
 .historic-btn a{
-    box-shadow:  5px 5px <?php echo $historicColor?>;
-    color: <?php echo $historicColor?>;
+    box-shadow:  5px 5px <?php echo $historicColor ?>;
+    color: <?php echo $historicColor ?>;
 }
 
 .historic-btn a:hover{
-    background-color: <?php echo $historicColor?>;
+    background-color: <?php echo $historicColor ?>;
 }
 
 .food-btn a{
-    box-shadow: 5px 5px <?php echo $foodColor?>;
-    color: <?php echo $foodColor?>;
+    box-shadow: 5px 5px <?php echo $foodColor ?>;
+    color: <?php echo $foodColor ?>;
 }
 
 .food-btn a:hover{
-    background-color: <?php echo $foodColor?>;
+    background-color: <?php echo $foodColor ?>;
 }
 
 .schedule-btn a{
-    box-shadow: 5px 5px <?php echo $scheduleColor?>;
-    color: <?php echo $scheduleColor?>;
+    box-shadow: 5px 5px <?php echo $scheduleColor ?>;
+    color: <?php echo $scheduleColor ?>;
 }
 
 .schedule-btn a:hover{
-    background-color: <?php echo $scheduleColor?>;
+    background-color: <?php echo $scheduleColor ?>;
 }
 
 .cart-btn a{
-    box-shadow: 5px 5px <?php echo $cartColor?>;
-    color: <?php echo $cartColor?>;
+    box-shadow: 5px 5px <?php echo $cartColor ?>;
+    color: <?php echo $cartColor ?>;
     width: 50px;
 }
 
 .cart-btn a:hover{
-    background-color: <?php echo $cartColor?>;
+    background-color: <?php echo $cartColor ?>;
 }
 
 .language-selection {
@@ -161,38 +162,46 @@ select .language-selection option[value="nederlands"]{
     border-color: white;
     box-shadow:  5px 5px white;
     color: white;
-    background-color: <?php echo $activeColor?> !important;
+    background-color: <?php echo $activeColor ?> !important;
 }
 
 
 .Dance{
-    background-color: <?php echo $danceColor?>;
+    background-color: <?= $danceColor ?>;
+}
+
+.Jazz{
+    background-color: <?= $jazzColor ?>;
+}
+
+.Historic{
+    background-color: <?= $historicColor ?>;
 }
 
 .Food{
-    background-color: <?php echo $foodColor?>;
+    background-color: <?= $foodColor ?>;
 }
 
 .Ticket{
-    background-color: <?= $cartColor?>;
+    background-color: <?= $cartColor ?>;
 }
 
 .Orderdata{
-background-color: <?= $cartColor?>;
+background-color: <?= $cartColor ?>;
 }
 
 .Orderconfirm{
-background-color: <?= $cartColor?>;
+background-color: <?= $cartColor ?>;
 }
 
 .Ordersuccess{
-background-color: <?= $cartColor?>;
+background-color: <?= $cartColor ?>;
 }
 
 .Home{
-    background-color: <?php echo $headerStandardColor?>;
+    background-color: <?php echo $headerStandardColor ?>;
 }
 
 .Schedule{
-    background-color: <?php echo $scheduleColor?>
+    background-color: <?php echo $scheduleColor ?>
 }
