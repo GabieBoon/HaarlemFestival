@@ -17,6 +17,7 @@
 
 <h3> Your role is <?= strtolower($user->role); ?></h3>
 <a href="<?= PROOT ?>cms/logout" role="button" class="btn btn-primary">Logout</a>
+<a href="<?= PROOT ?>cms/dashboard/deleteUserSession" role="button" class="btn btn-warning">Delete User Session</a>
 <a href="<?= PROOT ?>cms/dashboard/deleteSession" role="button" class="btn btn-danger">Delete Session</a>
 <!-- <a href="< ?= PROOT ?>cms" role="button" class="btn btn-danger">-> cms</a> -->
 
@@ -25,7 +26,7 @@
 <pre>
 <!-- < ?php print_r(UserModel::currentLoggedInUser()); ?> -->
 <?php 
-// print_r($_SESSION);
+ print_r($_SESSION);
 // $arh = apache_request_headers();
 // print_r(apache_response_headers());
 //  print_r($arh);

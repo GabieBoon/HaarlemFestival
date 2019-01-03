@@ -2,7 +2,7 @@
 <?php $this->start('head'); ?>
 
     <!-- Dance CSS -->
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/Dancecss.css" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/DanceCss.css" >
 
 <?= $this->getBgImage(); ?>
 

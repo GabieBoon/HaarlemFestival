@@ -22,6 +22,8 @@ class Session //jasper
     {
         if (self::sessionExists($name)) {
             unset($_SESSION[$name]);
+        }elseif ($name == 'ALL') {
+            $_SESSION  = array();
         }
     }
     public static function userAgent_no_version()

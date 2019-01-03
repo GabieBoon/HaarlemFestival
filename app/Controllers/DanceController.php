@@ -5,7 +5,7 @@ class DanceController extends ControllerBase {
     //voer de functionaliteit van ControllerBase uit
     public function __construct($controller, $action)
     {
-        parent::__construct($controller, $action, true);
+        parent::__construct($controller, $action);
         $this->view->setBgImage('Dance_BW.jpg');
     }
 

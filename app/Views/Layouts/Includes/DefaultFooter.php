@@ -1,6 +1,6 @@
  <?php $this->start('head'); ?>
  <!-- Footer CSS -->
-  <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/footer.css" >
+  <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/DefaultFooterCss.css" >
 <?php $this->end(); ?>
 
 <?php $this->start('footer'); ?>

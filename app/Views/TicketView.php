@@ -1,26 +1,24 @@
 <?php
 
-class TicketView extends ViewBase{
+// class TicketView extends ViewBase{
 
-    public function __construct($class)
-    {
-        parent::__construct($class);
-    }
+//     public function __construct($class)
+//     {
+//         parent::__construct($class);
+//     }
 
-    public function helloWorld(){
-        echo "Hello World";
-    }
+//     public function helloWorld(){
+//         echo "Hello World";
+//     }
 
-    public function showPage(){
+//     public function showPage(){
 
-        //var_dump($_SESSION) ;
+//         //var_dump($_SESSION) ;
 
-        $this->render();
-    }
+//         $this->render();
+//     }
 
-    public function getCart(){
-        foreach ($_SESSION['Cart'] as $ticketId => $ticket){
-            var_dump($ticket);
-        }
-    }
-}
+//     public function getCart(){
+
+//     }
+// }

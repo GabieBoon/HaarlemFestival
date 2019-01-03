@@ -7,28 +7,10 @@ class CartModel extends ModelBase
         parent::__construct();
     }
 
-    public function addTicket($ticketId)
+    public function getTicketDataById(int $ticketId)
     {
         $sql = "SELECT * FROM Ticket WHERE id = ?";
-        return $this->_db->query($sql, [$ticketId])->getResult();
+        return $this->query($sql, [$ticketId])->getFirstResult();
     }
 
-
-    //old test code
-    public function dbTest()
-    {
-        $sql = "SELECT * FROM test ";
-        $result = $this->conn->query($sql);
-
-        $data = [];
-
-        foreach ($result as $row) {
-            //echo $row['id'] . " ";
-            //echo $row['testcol'] . " ";
-
-            $data[] = $row['id'] . " " . $row['testcol'] . " ";
-        }
-
-        return $data;
-    }
 }

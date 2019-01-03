@@ -166,42 +166,34 @@ select .language-selection option[value="nederlands"]{
 }
 
 
-.Dance{
+Header.Dance{
     background-color: <?= $danceColor ?>;
 }
 
-.Jazz{
+Header.Jazz{
     background-color: <?= $jazzColor ?>;
 }
 
-.Historic{
+Header.Historic{
     background-color: <?= $historicColor ?>;
 }
 
-.Food{
+Header.Food{
     background-color: <?= $foodColor ?>;
 }
 
-.Ticket{
+Header.Cart{
     background-color: <?= $cartColor ?>;
 }
 
-.Orderdata{
+Header.Order{
 background-color: <?= $cartColor ?>;
 }
 
-.Orderconfirm{
-background-color: <?= $cartColor ?>;
-}
-
-.Ordersuccess{
-background-color: <?= $cartColor ?>;
-}
-
-.Home{
+Header.Home{
     background-color: <?php echo $headerStandardColor ?>;
 }
 
-.Schedule{
+Header.Schedule{
     background-color: <?php echo $scheduleColor ?>
 }

@@ -7,26 +7,37 @@ class CartController extends ControllerBase
     public function __construct($className, $action)
     {
         parent::__construct($className, $action);
+        
+        //these are editable
+        // $this->view->setLayout('Default');
+        // $this->view->setHeader('Default');
+        // $this->view->setFooter('Default');
+        // $this->view->setSiteTitle('Wanna buy some tickets?');
+        // $this->view->setBgImage('cartBackground.jpg');
+    }
+
+    public function indexAction()
+    {
+        $this->view->renderView('CartView');
     }
 
     public function addTicketAction($ticketId){
 
-        $data = $this->model->addTicket($ticketId);
-
-        
+        $data = $this->CartModel->getTicketDataById($ticketId);
+        $this->CartModel->getDataFromObj($data);
 
         //voeg ticket toe tenzij hij al in het Cart zit
         if ( !array_key_exists($ticketId, $_SESSION['Cart']) ){
-            $_SESSION['Cart'][$ticketId] = $data[0];
+            $_SESSION['Cart'][$ticketId] = $data;
+            $_SESSION['Cart'][$ticketId]->amount = 1;
+        }else {
+            $_SESSION['Cart'][$ticketId]->amount += 1;
         }
+        //else 
 
         //please use Router::redirect(); - Jasper
-        header('Location: http://localhost' .  PROOT . $_SESSION['LastVisited'] . '/' );
-        //Router::redirect($_SESSION['LastVisited']);
-
-    }
-
-    public function viewCart(){
+        //header('Location: http://localhost' .  PROOT . $_SESSION['LastVisited'] . '/' );
+        Router::redirect($_SESSION['LastVisited']);
 
     }
 

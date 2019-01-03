@@ -1,8 +1,8 @@
-<?php //head ?>
+ <!-- head  -->
 <?php $this->start('head'); ?>
 
     <!-- Schedule CSS -->
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/Schedulecss.css" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/ScheduleCss.css" >
 
 <?= $this->getBgImage(); ?>
 
@@ -12,7 +12,7 @@
 
 <?php $this->end(); ?>
 
-<?php //body ?>
+<!-- body -->
 <?php $this->start('body'); ?>
 
     <nav>

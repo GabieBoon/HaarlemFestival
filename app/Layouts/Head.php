@@ -20,7 +20,7 @@
 
     <!-- other CSS -->
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/StyleSheet.css" >
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/<?= $this->className ?>css.css" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/<?= $this->className ?>Css.css" >
 
     <title> <?= $this->title ?> </title>
 </head>

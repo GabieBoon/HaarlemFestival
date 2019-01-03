@@ -6,18 +6,18 @@ class ControllerBase extends ApplicationBase
     protected $_controller, $_action;//, $_model;
     public $view;
 
-    public function __construct($className, $action, bool $diffView = false, string $diffModel = null)
+    public function __construct($className, $action, bool $oldView = false, string $diffModel = null)
     {
-        parent::__construct($className);
+        parent::__construct($className, $action);
 
         $this->_controller = $className . 'Controller';
         $this->_action = $action; //you can run without this, only troubleshooting will be a lot harder when using debugger
 
-        if ($diffView) {
-            $this->view = new ViewBase($className);
-        } else {
+        if ($oldView) {
             $view = $className . 'View';
             $this->view = new $view($className);
+        } else {
+            $this->view = new ViewBase($className);
         }
 
         if (isset($diffModel)) {

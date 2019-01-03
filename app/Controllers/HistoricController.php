@@ -1,6 +1,6 @@
 <?php
 
-class JazzController extends ControllerBase {
+class HistoricController extends ControllerBase {
 
     //voer de functionaliteit van ControllerBase uit
     public function __construct($className, $action)
@@ -11,11 +11,11 @@ class JazzController extends ControllerBase {
         // $this->view->setLayout('Default');
         // $this->view->setHeader('Default');
         // $this->view->setFooter('Default');
-        // $this->view->setSiteTitle('Do you like Jazz?');
-        // $this->view->setBgImage('jazzbackground.jpg');
+        // $this->view->setSiteTitle('By order of the Peaky -fucking- Blinders');
+        // $this->view->setBgImage('Historicbackground.jpg');
     }
 
     public function indexAction(){
-        $this->view->renderView('JazzView');
+        $this->view->renderView('HistoricView');
     }
 }

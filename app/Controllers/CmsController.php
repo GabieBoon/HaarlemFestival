@@ -3,7 +3,7 @@ class CmsController extends ControllerBase //Jasper
 {
     public function __construct($controller, $action)
     {
-        parent::__construct($controller, $action, true, 'user');
+        parent::__construct($controller, $action, false, 'user');
         //$this->loadModel('userModel');
         $this->view->setLayout('Cms');
     }
@@ -69,8 +69,11 @@ class CmsController extends ControllerBase //Jasper
 
     public function dashboardAction($arg = null)
     {
-        if ($arg == 'deleteSession') {
+        if ($arg == 'deleteUserSession') {
             Session::deleteSession(CURRENT_USER_SESSION_NAME);
+            router::redirect('cms');
+        }elseif ($arg == 'deleteSession') {
+            Session::deleteSession('ALL');
             router::redirect('cms');
         }
 

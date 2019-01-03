@@ -1,12 +1,13 @@
 <?php
 
-Class Router{
+class Router
+{
 
 
 //jasper
 
     // naming convention moet ff worden aangepast
-    public static function route($url) 
+    public static function route($url)
     {
         //set controller
         if (isset($url[0]) && ($url[0] != '')) {
@@ -47,12 +48,24 @@ Class Router{
         if (!headers_sent()) {
             header('Location: ' . PROOT . $location);
             exit();
-
         } else {
             echo '<script type="text/javascript"> window.location.href="' . PROOT . $location . ';"</script>';
             echo '<noscript> <meta http-equiv="refresh" content="0";url="' . $location . '"/> </noscript>';
             exit;
         }
+    }
+
+    public static function formatCurrentPage(string $className, string $action = '')
+    {
+        $className = strtolower($className);
+
+        if ($action != '') {
+            $action = lcfirst(str_replace('Action', '', $action));
+            if ($action == 'index') {
+                $action= '';
+            }
+        }
+        return $className . '/' . $action;
     }
 
 
