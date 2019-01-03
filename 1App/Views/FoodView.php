@@ -1,7 +1,7 @@
 <?php //head ?>
 <?php $this->start('head'); ?>
 <!-- Food CSS -->
-<link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/FoodCss.php" >
+<link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/FoodCss.php" >
 
 <?= $this->getBgImage(); ?>
 

@@ -1,6 +1,6 @@
 <?php $this->start('head'); ?><!-- start head -->
 
-<link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/HistoricCss.css" ><!-- Historic CSS -->
+<link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/HistoricCss.css" ><!-- Historic CSS -->
 
 <?= $this->getBgImage(); ?><!-- get backgroundImage //if one is set -->
 

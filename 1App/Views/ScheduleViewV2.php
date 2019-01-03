@@ -2,12 +2,12 @@
 <?php $this->start('head'); ?>
 
     <!-- Schedule CSS -->
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/ScheduleCss.css" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/ScheduleCss.css" >
 
 <?= $this->getBgImage(); ?>
 
     <!-- jQuery scripts -->
-    <script src="<?= PROOT ?>public/javascripts/jQuerySchedule.js"></script>
+    <script src="<?= PROOT ?>Public/JavaScripts/JQuerySchedule.js"></script>
 
 
 <?php $this->end(); ?>

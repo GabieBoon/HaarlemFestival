@@ -2,13 +2,13 @@
 <?php $this->start('head'); ?>
 
     <!-- Dance CSS -->
-    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/DanceCss.css" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/DanceCss.css" >
 
 <?= $this->getBgImage(); ?>
 
     <!-- jQuery scripts -->
-    <script src="<?= PROOT ?>public/javascripts/jQueryDance.js"></script>
-    <script src="<?= PROOT ?>public/javascripts/jQuerySchedule.js"></script>
+    <script src="<?= PROOT ?>Public/JavaScripts/JQueryDance.js"></script>
+    <script src="<?= PROOT ?>Public/JavaScripts/JQuerySchedule.js"></script>
 
 <?php $this->end(); ?>
 

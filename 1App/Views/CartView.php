@@ -1,6 +1,6 @@
 <?php $this->start('head'); ?><!-- start head -->
 
-<link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/CartCss.css" ><!-- Cart CSS -->
+<link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/CartCss.css" ><!-- Cart CSS -->
 
 <?= $this->getBgImage(); ?><!-- get backgroundImage //if one is set -->
 

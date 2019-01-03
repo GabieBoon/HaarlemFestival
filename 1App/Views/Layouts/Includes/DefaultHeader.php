@@ -1,7 +1,7 @@
 
 <?php $this->start('head'); ?>
 <!-- Header CSS -->
-     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>public/css/DefaultHeaderCss.php" >
+     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/DefaultHeaderCss.php" >
 <?php $this->end(); ?>
 
 <?php $this->start('header'); ?>
