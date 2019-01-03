@@ -3,7 +3,6 @@
 class UserModel extends ModelBase
 {
     private $_isLoggedIn, $_sessionName, $_cookieName;
-    public $userId = null;
     public static $currentLoggedInUser = null;
 
     public function __construct($userIdentifier = null)
@@ -20,64 +19,89 @@ class UserModel extends ModelBase
 
 
         if (isset($userIdentifier)) {
-            if (is_int($userIdentifier)) {
-                $u = $this->findByUserid($userIdentifier);
-            } else {
-                $u = $this->findByUsername($userIdentifier);
-            }
-            $this->getDataFromObj($u);
-            //$this->getUserContactData($u);
-        }//else if (isset(self::$currentLoggedInUser)) {
+            $user = $this->getUserData($userIdentifier, true, true);
+
+            //$this->getDataFromObj($user);
+            
+        //}else if (isset(self::$currentLoggedInUser)) {
             # code...
         //}else {
             # code...
-       // }
-
+        }
     }
 
-
-    public function findByUserid($userid)
+    public function getUserData($userIdentifier, bool $getDataFromObj = false, bool $getContactData = false)//maybe remove the constants
     {
-        $sql = "select * from User where id = ?";
+        if (is_int($userIdentifier)) {
+            $user = $this->getUserByUserid($userIdentifier);
+        } else {
+            $user = $this->getUserByUsername($userIdentifier);
+        }
+        if ($user && $getContactData) {
+            $user = $this->getContactDataByUserObj($user);
+        }
+        if ($user && $getDataFromObj) {
+            $this->getDataFromObj($user);
+        }
+        return $user;
+    }
+
+    //$user = $this->getUserData ($userIdentifier, false, true);
+
+    public function getUserByUserid($userid, bool $getDataFromObj = false)
+    {
+        $sql = "SELECT * FROM User WHERE id = ?";
         $bind = [$userid];
-       // return $this->_db->query($sql, $bind)->getFirstResult();
-        return $this->query($sql, $bind)->getFirstResult();
-    }
-
-    public function findByUsername($username)
-    {
-        $sql = "select * from User where userName = ?";
-        $bind = [$username];
-        //return $this->_db->query($sql, $bind)->getFirstResult();
-        return $this->query($sql, $bind)->getFirstResult();
-    }
-
-    public function getUserContactData($user)
-    {
-        $sql = "SELECT User.id AS userId, User.contactId AS contactId, User.userName, User.password, User.role, User.isActive, Contact.firstName, Contact.preposition, Contact.lastName, Contact.emailAdress ".
-                "FROM User ".
-                "JOIN Contact ON User.contactId=Contact.id ".
-                "WHERE User.userName = ?;";
-        $bind = [$user->userName];
         $user = $this->query($sql, $bind)->getFirstResult();
-
-        $this->getDataFromObj($user);
+        if ($getDataFromObj) {
+            $this->getDataFromObj($user);
+        }
+        return $user;
     }
-    
+
+    public function getUserByUsername($username, bool $getDataFromObj = false)
+    {
+        $sql = "SELECT * FROM User WHERE userName = ?";
+        $bind = [$username];
+        $user = $this->query($sql, $bind)->getFirstResult();
+        if ($getDataFromObj) {
+            $this->getDataFromObj($user);
+        }
+        return $user;
+    }
+
+    public function getContactDataByUserObj(stdClass $user)
+    {
+        $sql = "SELECT * FROM User AS U JOIN Contact AS C ON U.contactId = C.id WHERE U.userName = ? AND U.id = ?;";
+        $bind = [$user->userName, $user->id];
+        $user = $this->query($sql, $bind)->getFirstResult();
+        return $user;
+    }
+
+    public function getContactDataById(int $id)
+    {
+        $sql = "SELECT * FROM Contact WHERE Contact.id = ?;";
+        $bind = [$id];
+        $user = $this->query($sql, $bind)->getFirstResult();
+    }
 
     public static function currentLoggedInUser()
     {
-        if ((!isset(self::$currentLoggedInUser)) && (Session::sessionExists(CURRENT_USER_SESSION_NAME))) {
-            $u = new UserModel((int)Session::getSession(CURRENT_USER_SESSION_NAME));
-            self::$currentLoggedInUser = $u;
+        $user = self::$currentLoggedInUser;
+        if ((!$user) && (Session::sessionExists(CURRENT_USER_SESSION_NAME))) {
+            $user = new self((int)Session::getSession(CURRENT_USER_SESSION_NAME));
+            self::$currentLoggedInUser = $user;
         }
-        return self::$currentLoggedInUser;
+        return $user;
     }
 
 
     public function login(bool $rememberMe = false)
     {
-        Session::setSession($this->_sessionName, $this->userId);
+        if (isset($this->userId)) {
+            $this->id = $this->userId;
+        }
+        Session::setSession($this->_sessionName, $this->id);
         if ($rememberMe) {
             $hash = md5(uniqid() . rand(0, 100));
             $userAgent = Session::userAgent_no_version();
@@ -133,6 +157,13 @@ class UserModel extends ModelBase
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         $this->save();
     }
+
+
+
+
+
+
+
 
 
 

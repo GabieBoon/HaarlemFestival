@@ -33,5 +33,9 @@ class DanceModel extends ModelBase{
     public function getAllAccessTicketsDance(){
         $sql = "SELECT * FROM `Ticket` where isAllAccessTicket = true and event = 'Dance'";
         return $this->_db->query($sql)->getResult();
+
+        //$sql = "SELECT * FROM `Ticket` where isAllAccessTicket = ? and event = ?";
+        //$bind = [true, 'Dance'];
+        //return $this->_db->query($sql, $bind)->getResult();
     }
 }

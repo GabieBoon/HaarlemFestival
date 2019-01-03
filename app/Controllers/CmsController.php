@@ -3,7 +3,7 @@ class CmsController extends ControllerBase //Jasper
 {
     public function __construct($controller, $action)
     {
-        parent::__construct($controller, $action, true, 'User');
+        parent::__construct($controller, $action, true, 'user');
         //$this->loadModel('userModel');
         $this->view->setLayout('Cms');
     }
@@ -19,9 +19,13 @@ class CmsController extends ControllerBase //Jasper
 
     public function loginAction()
     {
-        
+        if (UserModel::currentLoggedInUser()) {
+            Router::redirect('cms/dashboard');
+        }
+
+        $validation = new Validate();
         if ($_POST) {
-            $validation = new Validate();
+            
             //form validation
             $validation->check($_POST, [
                 'username' => [
@@ -35,25 +39,21 @@ class CmsController extends ControllerBase //Jasper
                 ]
             ]);
             if ($validation->passed()) {
-                $user = $this->UserModel->findByUsername($_POST['username']);
-                if ($user && password_verify(Input::getInput('password'), $user->password)) {         
+                $user = $this->UserModel->getUserByUsername($_POST['username'], true); //$user = new UserModel($_POST['username']);
+                if ($user && password_verify(Input::getInput('password'), $user->password)) {
                     if (isset($_POST['remember_me']) && Input::getInput('remember_me')) {
                         $remember = true;
                     } else {
                         $remember = false;
                     }
-
-                    $this->UserModel->getUserContactData($user);
                     $this->UserModel->login($remember);
-
                     Router::redirect('cms/dashboard');
                 } else {
                     $validation->addError("There is an error with your username or password.");
                 }
             }
-            $this->view->displayErrors = $validation->displayErrors();
         }
-        
+        $this->view->displayErrors = $validation->displayErrors();
         $this->view->renderView('cms/loginView');
     }
 
@@ -73,6 +73,13 @@ class CmsController extends ControllerBase //Jasper
             Session::deleteSession(CURRENT_USER_SESSION_NAME);
             router::redirect('cms');
         }
+
+        $user = UserModel::currentLoggedInUser();
+
+        if (!$user) {
+            Router::redirect('cms');
+        }
+        $this->view->UserModel = $user;
         $this->view->renderView('cms/DashboardView');
 
     }

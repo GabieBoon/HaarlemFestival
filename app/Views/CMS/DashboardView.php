@@ -9,8 +9,9 @@
 
 <!-- body -->
 <?php $this->start('body'); ?>
+<?php $user = $this->UserModel;?>
+
 <div class="col-md-6 col-md-offset-3 container bg-light p-3">
-<?php $user = UserModel::currentLoggedInUser();?>
 <h1 class="text-center">welcome <?= $user->firstName;?> <?= $user->preposition; ?> <?= $user->lastName; ?></h1>
 <h2 class="text-center">Logged in under: <?= $user->userName;?></h2>
 
@@ -23,11 +24,12 @@
 
 <pre>
 <!-- < ?php print_r(UserModel::currentLoggedInUser()); ?> -->
-<?php print_r($_SESSION);
-$arh = apache_request_headers();
-print_r(apache_response_headers());
- print_r($arh);
- print_r(get_headers($arh['Referer'])); 
+<?php 
+// print_r($_SESSION);
+// $arh = apache_request_headers();
+// print_r(apache_response_headers());
+//  print_r($arh);
+//  print_r(get_headers($arh['Referer'])); 
 // print_r(nsapi_request_headers());
 // print_r(nsapi_response_headers());
  
