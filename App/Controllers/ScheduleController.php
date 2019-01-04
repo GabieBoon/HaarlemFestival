@@ -42,7 +42,7 @@ class ScheduleController extends ControllerBase {
         include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
         $this->view->table = new Table();
 
-        $this->view->renderView("ScheduleViewV2");
+        $this->view->renderView("Schedule/ScheduleViewV2");
     }
 
 }

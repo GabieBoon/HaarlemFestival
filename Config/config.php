@@ -32,7 +32,7 @@ define('SITE_TITLE', 'Haarlem Festival');
 define('DS', DIRECTORY_SEPARATOR);
 
 //set absolute root
-define('ROOT', dirname(__DIR__) . DS); //dirname of the config.php file dir -> ../__DIR__
+define('ROOT', dirname(__DIR__) . DS); //dirname of the config.php file dir AKA ../__DIR__
 
 //set site project root
 define('PROOT', '/haarlem-festival/');  //note the '/' behind the path 

@@ -11,6 +11,7 @@
 <?php $this->start('body'); ?>
 <?php $user = $this->UserModel;?>
 
+
 <div class="col-md-6 col-md-offset-3 container bg-light p-3">
 <h1 class="text-center">welcome <?= $user->firstName;?> <?= $user->preposition; ?> <?= $user->lastName; ?></h1>
 <h2 class="text-center">Logged in under: <?= $user->userName;?></h2>

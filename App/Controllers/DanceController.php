@@ -1,6 +1,7 @@
 <?php
 
-class DanceController extends ControllerBase {
+class DanceController extends ControllerBase
+{
 
     //voer de functionaliteit van ControllerBase uit
     public function __construct($controller, $action)
@@ -9,8 +10,8 @@ class DanceController extends ControllerBase {
         $this->view->setBgImage('Dance_BW.jpg');
     }
 
-    public function indexAction(){
-
+    public function indexAction()
+    {
         $this->showPageV2();
     }
 
@@ -23,7 +24,8 @@ class DanceController extends ControllerBase {
 //        $this->view->showPage($danceArtists, $danceLocations, $danceTickets, $allAccessTickets);
 //    }
 
-    public function showPageV2(){
+    public function showPageV2()
+    {
         $this->view->danceArtists = $this->DanceModel->getDanceArtists();
         $this->view->danceLocations = $this->DanceModel->getLocations("Dance");
         $this->view->danceTickets = $this->DanceModel->getDanceTickets();
@@ -32,9 +34,9 @@ class DanceController extends ControllerBase {
         include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
         $this->view->table = new Table();
 
-        include ROOT . DS . 'app' . DS . 'Views' . DS . 'ViewFunctions' . DS . 'DanceViewFunctions.php';
+        include ROOT . DS . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'ViewFunctions' . DS . 'DanceViewFunctions.php';
 
-        $this->view->renderView("DanceViewV2");
+        $this->view->renderView("Dance/DanceViewV2");
     }
 
 }

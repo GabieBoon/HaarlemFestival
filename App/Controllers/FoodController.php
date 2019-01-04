@@ -11,6 +11,6 @@ class FoodController extends ControllerBase {
     }
 
     public function indexAction(){
-        $this->view->renderView('FoodView');
+        $this->view->renderView('Food/FoodView');
     }
 }

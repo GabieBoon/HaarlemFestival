@@ -16,6 +16,6 @@ class HistoricController extends ControllerBase {
     }
 
     public function indexAction(){
-        $this->view->renderView('HistoricView');
+        $this->view->renderView('Historic/HistoricView');
     }
 }

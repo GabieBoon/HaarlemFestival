@@ -71,13 +71,13 @@ class ViewBase
         $viewArray = explode('/', $viewName);
         $viewString = implode(DS, $viewArray);
 
-        $pathToHeader = ROOT . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Includes' . DS . $this->_header . 'Header.php';
+        $pathToHeader = ROOT . 'app' . DS . 'Views'. DS . 'Includes' . DS . $this->_header . 'Header.php';
         $this->check_include($pathToHeader);
 
         $pathToView = ROOT . 'App' . DS . 'Views' . DS . $viewString . '.php';
         $this->check_include($pathToView);
 
-        $pathToFooter = ROOT . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Includes' . DS . $this->_footer . 'Footer.php';
+        $pathToFooter = ROOT . 'app' . DS . 'Views' . DS . 'Includes' . DS . $this->_footer . 'Footer.php';
         $this->check_include($pathToFooter);
 
         $pathToLayout = ROOT . 'App' . DS . 'Views' . DS . 'Layouts' . DS . $this->_layout . 'Layout.php';

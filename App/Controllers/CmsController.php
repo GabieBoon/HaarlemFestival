@@ -83,7 +83,7 @@ class CmsController extends ControllerBase //Jasper
             Router::redirect('cms');
         }
         $this->view->UserModel = $user;
-        $this->view->renderView('cms/DashboardView');
+        $this->view->renderView('cms/DashboardView2');
 
     }
 }

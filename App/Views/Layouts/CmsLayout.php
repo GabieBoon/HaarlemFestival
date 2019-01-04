@@ -26,6 +26,7 @@
 
 
     <?= $this->content('body'); ?>
+    <?= $this->content('sidebar'); ?>
 
   </body>
 </html>

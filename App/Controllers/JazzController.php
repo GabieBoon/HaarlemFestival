@@ -16,6 +16,6 @@ class JazzController extends ControllerBase {
     }
 
     public function indexAction(){
-        $this->view->renderView('JazzView');
+        $this->view->renderView('Jazz/JazzView');
     }
 }

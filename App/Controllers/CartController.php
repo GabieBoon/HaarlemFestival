@@ -18,7 +18,7 @@ class CartController extends ControllerBase
 
     public function indexAction()
     {
-        $this->view->renderView('CartView');
+        $this->view->renderView('Cart/CartView');
     }
 
     public function addTicketAction($ticketId){
