@@ -31,8 +31,10 @@ class DanceViewFunctions
 
     public static function showAllAccessTickets($tickets)
     {
-
-    }
+        foreach ($tickets as $ticket) {
+            include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'AllAccessTicketRow' . '.php';
+        }
+    } 
 
     //miss zelfs beter om deze in router te gooien, komt later wel
     public static function getPicture($pictureName)
