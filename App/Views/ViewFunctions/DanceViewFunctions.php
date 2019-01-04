@@ -27,7 +27,9 @@ class DanceViewFunctions {
     }
 
     public static function showAllAccessTickets($tickets){
-
+        foreach ($tickets as $ticket){
+           include ROOT . 'app' . DS . 'Views' . DS . 'Templates' . DS . 'AllAccessTicketRow' .'.php';
+        }
     }
 
     public static function getPicture($pictureName)
