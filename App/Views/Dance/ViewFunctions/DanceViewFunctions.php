@@ -11,7 +11,7 @@ class DanceViewFunctions
     }
     
     //plz use for loops.. https://phpbench.com/  :)
-    public static function showArtists($artists)
+    public static function showArtists($artists) 
     {
         foreach ($artists as $artist) {
 
@@ -40,6 +40,8 @@ class DanceViewFunctions
     public static function getPicture($pictureName)
     { // desperately in need of some rework
 
+        // $pictureArray = explode('/', $pictureName);
+        // $pictureString = implode(DS, $pictureArray);
 
         //plek en pad zijn hetzelfde?
         $plek = ROOT . DS . 'public' . DS . 'images' . DS . $pictureName;

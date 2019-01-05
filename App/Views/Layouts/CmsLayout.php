@@ -1,3 +1,5 @@
+
+<?php $this->insert('CMS/Includes/Sidebar'); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,9 +26,8 @@
   </head>
   <body>
 
-
-    <?= $this->content('body'); ?>
-    <?= $this->content('sidebar'); ?>
+  <?= $this->content('sidebar'); ?>
+  <?= $this->content('body'); ?>
 
   </body>
 </html>

@@ -5,14 +5,13 @@ class ViewBase
 
     protected $head, $body, $layout, $title;
     protected $_className,
-        $_head,
-        $_header = DEFAULT_NAME,
-        $_body,
-        $_footer = DEFAULT_NAME,
+        //$_header = DEFAULT_NAME,
+        //$_footer = DEFAULT_NAME,
         $_siteTitle = SITE_TITLE,
         $_outputBuffer,
         $_layout = DEFAULT_NAME,
         $_bgImage;
+        //$_layoutMap;
 
     public function __construct($_className, $siteTitle = SITE_TITLE)
     {
@@ -26,28 +25,28 @@ class ViewBase
 
 
     //geef de pagina weer
-    public function render($layoutName = null)
-    {
+    // public function render($layoutName = null)
+    // {
 
-        if ($layoutName == null) {
-            $layoutName = $this->_className . 'Layout.php';
-        } else {
-            $layoutName .= 'Layout.php';
-            $layoutName += 'Layout.php';
-        }
+    //     if ($layoutName == null) {
+    //         $layoutName = $this->_className . 'Layout.php';
+    //     } else {
+    //         $layoutName .= 'Layout.php';
+    //         $layoutName += 'Layout.php';
+    //     }
 
-        //head
-        include ROOT . 'App' . DS . 'Layouts' . DS . 'Head.php';
+    //     //head
+    //     include ROOT . 'App' . DS . 'Layouts' . DS . 'Head.php';
 
-        //header
-        include ROOT . 'App' . DS . 'Layouts' . DS . 'Header.php';
+    //     //header
+    //     include ROOT . 'App' . DS . 'Layouts' . DS . 'Header.php';
 
-        //content
-        include ROOT . 'App' . DS . 'Layouts' . DS . $layoutName;
+    //     //content
+    //     include ROOT . 'App' . DS . 'Layouts' . DS . $layoutName;
 
-        //footer
-        include ROOT . 'App' . DS . 'Layouts' . DS . 'Footer.php';
-    }
+    //     //footer
+    //     include ROOT . 'App' . DS . 'Layouts' . DS . 'Footer.php';
+    // }
 
     public function printTickets()
     {
@@ -68,24 +67,14 @@ class ViewBase
 
     public function renderView(string $viewName)
     {
-        $viewArray = explode('/', $viewName);
-        $viewString = implode(DS, $viewArray);
+        //view
+        $this->check_include(ROOT . 'App' . DS . 'Views' . DS . $this->sanitizePath($viewName) . '.php'); 
 
-        $pathToHeader = ROOT . 'app' . DS . 'Views'. DS . 'Includes' . DS . $this->_header . 'Header.php';
-        $this->check_include($pathToHeader);
-
-        $pathToView = ROOT . 'App' . DS . 'Views' . DS . $viewString . '.php';
-        $this->check_include($pathToView);
-
-        $pathToFooter = ROOT . 'app' . DS . 'Views' . DS . 'Includes' . DS . $this->_footer . 'Footer.php';
-        $this->check_include($pathToFooter);
-
-        $pathToLayout = ROOT . 'App' . DS . 'Views' . DS . 'Layouts' . DS . $this->_layout . 'Layout.php';
-        $this->check_include($pathToLayout);
+        //layout
+        $this->check_include(ROOT . 'App' . DS . 'Views' . DS . 'Layouts' . DS . $this->_layout . 'Layout.php'); 
     }
 
-    //miss naar helper?
-    function check_include(string $pathToSomething)
+    public function check_include(string $pathToSomething)
     {
         if (file_exists($pathToSomething)) {
             include($pathToSomething);
@@ -97,18 +86,11 @@ class ViewBase
     //basically a getter / setter
     public function content($type)
     {
-        switch ($type) {
-            case 'head':
-                return $this->_head;
-            case 'header':
-                return $this->_header;
-            case 'body':
-                return $this->_body;
-            case 'footer':
-                return $this->_footer;
-            default:
-                return false;
+        $type = "_" . $type;
+        if (isset($this->$type)) {
+            return $this->$type;
         }
+        return false;
     }
 
 //output buffering
@@ -120,24 +102,42 @@ class ViewBase
 
     public function end()
     {
-        if ($this->_outputBuffer == 'head') {
-            if (isset($this->_head)) {
-                $this->_head .= ob_get_clean();
-            } else {
-                $this->_head = ob_get_clean();
-            }
-        } elseif ($this->_outputBuffer == 'header') {
-            $this->_header = ob_get_clean();
-        } elseif ($this->_outputBuffer == 'body') {
-            $this->_body = ob_get_clean();
-        } elseif ($this->_outputBuffer == 'footer') {
-            $this->_footer = ob_get_clean();
+        $type = "_" . $this->_outputBuffer;
+        if (isset($this->$type) && ($this->$type != DEFAULT_NAME)) {
+            $this->$type .= ob_get_clean();
         } else {
-            die('You first have to run the start method!');
+            $this->$type = ob_get_clean();
         }
     }
 
     //getters and setters
+
+    public function setVar(string $varName, $value)
+    {
+        $this->{$varName} = $value;
+    }
+
+    public function assign(string $varName, $value)
+    {
+        $this->data[$varName] = $value;
+    }
+
+    // public function layoutMap(array $layoutMap)
+    // {
+    //     if (!isset($layoutMap)) {
+    //         $layoutMap = array([
+    //             'head' => null,
+    //             'header' => DEFAULT_NAME,
+    //             'body' => null,
+    //             'footer' => DEFAULT_NAME,
+    //             'layout' => DEFAULT_NAME,
+    //             'bgImage' => null
+    //         ]);
+    //     }
+    //     $this->_layoutMap = $layoutMap;
+    // }
+
+
 
     //Site title
     public function getSiteTitle()
@@ -150,10 +150,10 @@ class ViewBase
     }
 
     //Header
-    public function setHeader(string $headerName = DEFAULT_NAME)
-    {
-        $this->_header = $headerName;
-    }
+    // public function setHeader(string $headerName)
+    // {
+    //     $this->_header = $headerName;
+    // }
 
     // public function getHeaderColour($className = null)
     // {
@@ -189,13 +189,13 @@ class ViewBase
     // }
     
     //Footer
-    public function setFooter(string $footerName = DEFAULT_NAME)
-    {
-        $this->_footer = $footerName;
-    }
+    // public function setFooter(string $footerName)
+    // {
+    //     $this->_footer = $footerName;
+    // }
 
     //layout
-    public function setLayout(string $layoutName = DEFAULT_NAME)
+    public function setLayout(string $layoutName)
     {
         $this->_layout = $layoutName;
     }
@@ -223,12 +223,20 @@ class ViewBase
 
     public function insert($path)
     {
-        include ROOT . 'App' . DS . 'Views' . DS . $path . '.php';
+        $this->check_include(ROOT . 'App' . DS . 'Views' . DS . $this->sanitizePath($path) . '.php');
     }
 
     public function partial($group, $partial)
     {
-        include ROOT . 'App' . DS . 'Views' . DS . $group . DS . 'Partials' . DS . $partial . '.php';
+        $this->check_include(ROOT . 'App' . DS . 'Views' . DS . $group . DS . 'Partials' . DS . $partial . '.php');
     }
+
+    public function sanitizePath(string $path)
+    {
+        $pathArray = explode('/', $path);
+        return implode(DS, $pathArray);
+    }
+
+
 
 }

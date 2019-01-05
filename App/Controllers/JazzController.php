@@ -8,9 +8,6 @@ class JazzController extends ControllerBase {
         parent::__construct($className, $action);
 
         //these are editable
-        // $this->view->setLayout('Default');
-        // $this->view->setHeader('Default');
-        // $this->view->setFooter('Default');
         // $this->view->setSiteTitle('Do you like Jazz?');
         // $this->view->setBgImage('jazzbackground.jpg');
     }

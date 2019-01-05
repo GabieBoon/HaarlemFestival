@@ -9,9 +9,6 @@ class OrderController extends ControllerBase
         parent::__construct($className, $action);
         
         //these are editable
-        // $this->view->setLayout('Default');
-        // $this->view->setHeader('Default');
-        // $this->view->setFooter('Default');
         // $this->view->setSiteTitle('Wanna buy some tickets?');
         // $this->view->setBgImage('cartBackground.jpg');
     }

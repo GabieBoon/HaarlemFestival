@@ -8,9 +8,6 @@ class HistoricController extends ControllerBase {
         parent::__construct($className, $action);
 
         //these are editable
-        // $this->view->setLayout('Default');
-        // $this->view->setHeader('Default');
-        // $this->view->setFooter('Default');
         // $this->view->setSiteTitle('By order of the Peaky -fucking- Blinders');
         // $this->view->setBgImage('Historicbackground.jpg');
     }

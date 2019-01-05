@@ -1,3 +1,5 @@
+    <?php $this->insert('Includes/Event/EventHeader'); ?>
+    <?php $this->insert('Includes/Event/EventFooter'); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -27,10 +29,8 @@
   </head>
   <body>
 
-    <?= $this->content('header'); ?>    
-    
-    <?= $this->content('body'); ?>   
-    
+    <?= $this->content('header'); ?>   
+    <?= $this->content('body'); ?>
     <?= $this->content('footer'); ?>
 
   </body>

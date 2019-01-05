@@ -3,13 +3,15 @@
 
 <!-- head -->
 <?php $this->start('head'); ?>
-<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/CmsCss.css"><!-- Cms CSS -->
+<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/StyleSheet.css"><!-- Cms CSS -->
 
 
 <?php $this->end(); ?>
 
 <!-- body -->
 <?php $this->start('body'); ?>
+
+
 
 <?php $user = $this->UserModel;?>
 

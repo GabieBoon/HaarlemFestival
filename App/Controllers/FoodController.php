@@ -6,7 +6,7 @@ class FoodController extends ControllerBase {
     public function __construct($className, $action)
     {
         parent::__construct($className, $action);
-        $this->view->setLayout('Default');
+        $this->view->setLayout('Event');
         $this->view->setBgImage('foodbackground.jpg');
     }
 

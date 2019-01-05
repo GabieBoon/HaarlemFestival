@@ -23,7 +23,7 @@ define('DB_PASSWORD', 'YHQAzcGaVm');
 define('DEFAULT_CONTROLLER', 'Home'); // default controller if there isn't one defined in the url
 
 //set default
-define('DEFAULT_NAME', 'Default');
+define('DEFAULT_NAME', 'Event');
 
 //set site title
 define('SITE_TITLE', 'Haarlem Festival');
