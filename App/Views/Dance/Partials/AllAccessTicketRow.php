@@ -1,0 +1,1 @@
+<div> <?=$ticket->startTime?></div>
