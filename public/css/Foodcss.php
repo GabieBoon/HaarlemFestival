@@ -7,18 +7,17 @@ $foodColor = "#F0841B";
 .food-content-box{
     background-color: rgba(242,242,242,0.95);
     padding: 10px;
-    margin-left: 17.5%;
-    margin-right: 17.5%;
-    margin-top: -30px;
+    margin:0 auto;
     overflow: auto;
     z-index: 20;
     text-align: center;
+    max-width: 1000px;
 }
 
 .background-image{
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position:center center;
+    background-size:cover !important;
+    background-repeat:no-repeat !important;
+    background-position:center center !important;
 }
 
 .food-content{
