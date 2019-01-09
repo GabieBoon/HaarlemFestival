@@ -63,7 +63,7 @@ class DB //jasper
          * $db = DB::getInstance();
          * 
          * $sql = "SELECT * FROM Contacts WHERE firstName = ?";
-         * $bind = ['Jasper']; //make sure binds are an array eventho there is only one value, seperate values with comma's
+         * $bind = ['Jasper']; //make sure binds are an array even tho there is only one value, seperate values with comma's
          * $contacts = $db->query($sql, $bind);
          * 
          * formatted_var_dump($contacts); //check

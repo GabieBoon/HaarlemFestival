@@ -30,18 +30,22 @@ class ScheduleModel extends ModelBase
 
     public function getDanceTickets(){
         $sql = "SELECT t.id, t.price, t.startTime, t.endTime, t.ticketsAvailable, t.event, t.isAllAccessTicket, v.name as venue, 
-                a.firstName, a.preposition, a.lastName FROM Ticket as t 
+                a.firstName, a.preposition, a.lastName, a.stageName FROM Ticket as t 
                 join DanceTicket as dt on t.id = dt.ticketId 
                 join Venue as v on dt.venueId = v.id 
                 join DanceTicketArtist as dta on t.id = dta.DanceTicketId 
                 join DanceArtist as da on da.id = dta.danceArtistId 
                 join Artist as a on a.id = da.artistId";
-        return $this->_db->query($sql)->getResult();
+        $tickets = $this->_db->query($sql)->getResult();
+
+        $tickets = $this->ArraysVoorKoppeltabellen($tickets);
+
+        return $tickets;
     }
 
     public function getJazzTickets(){
         $sql = "SELECT t.id, t.price, t.startTime, t.endTime, t.ticketsAvailable, t.event, t.isAllAccessTicket, v.name as venue, 
-                a.firstName, a.preposition, a.lastName FROM Ticket as t 
+                a.firstName, a.preposition, a.lastName, a.stageName FROM Ticket as t 
                 join JazzTicket as jt on t.id = jt.ticketId 
                 join Venue as v on v.id = jt.venueId join Artist as a on a.id = jt.artistId";
         return $this->_db->query($sql)->getResult();

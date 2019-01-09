@@ -15,15 +15,16 @@ class DanceViewFunctions
     {
         foreach ($artists as $artist) {
 
-            $title = rtrim($artist->firstName);
-
-            if ($artist->preposition != null) {
-                $title .= " " . trim($artist->preposition);
-            }
-
-            if ($artist->lastName != null) {
-                $title .= " " . trim($artist->lastName);
-            }
+            $title = $artist->stageName;
+//            $title = rtrim($artist->firstName);
+//
+//            if ($artist->preposition != null) {
+//                $title .= " " . trim($artist->preposition);
+//            }
+//
+//            if ($artist->lastName != null) {
+//                $title .= " " . trim($artist->lastName);
+//            }
 
             include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';
         }

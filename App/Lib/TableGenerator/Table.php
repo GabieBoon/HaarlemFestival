@@ -26,19 +26,19 @@ class Table {
         //set waarden die voor elk event verschillend zijn
         switch ($event) {
             case "Dance":
-                $this->rowTitle = "name";
-                $this->ticketTitle = "venue";
-                $this->ticketFormat = ['firstName','preposition','lastName'];
+                $this->rowTitle = "name"; //denk in tabel venue heet het name
+                $this->ticketTitle = "venue"; //denk in tabel tickets heet het venue
+                $this->ticketFormat = "stageName";
                 break;
             case "Historic":
                 $this->rowTitle = "language";
-                $this->ticketTitle = "startLocation";
+                $this->ticketTitle = "language";
                 $this->ticketFormat = ['Morning Tour','Midday Tour','Evening Tour'];
                 break;
             case "Jazz":
                 $this->rowTitle = "name";
                 $this->ticketTitle = "venue";
-                $this->ticketFormat = ['firstName','preposition','lastName'];
+                $this->ticketFormat = "stageName";
                 break;
             case "Food":
                 $this->rowTitle = "name";
@@ -182,12 +182,11 @@ class Table {
                 $endDate = explode('-', $endDateTime[0]);
                 $endTime = explode(':', $endDateTime[1]);
 
-                if ($ticket->$ticketTitle == $this->currentRow->$title && $startDate[2] == $this->day){
 
+                if ($ticket->$ticketTitle == $this->currentRow->$title && $startDate[2] == $this->day){
 
                     if ($startTime[0] == $this->currentHour)
                     {
-
                         $ticketMargin = $startTime[1] / 60 * $this->cellWidth;
 
                         $this->currentTicket = $ticket;
@@ -236,9 +235,18 @@ class Table {
         else{
             $format = $this->ticketFormat;
 
-            foreach ($format as $item){
-                echo $this->currentTicket->$item;
+            if (is_array($this->currentTicket->$format)){
+
+                echo "Back to Back: ";
+
+                foreach ($this->currentTicket->$format as $stageName){
+                    echo $stageName . " / "; //fixen met / aan het einde
+                }
             }
+            else{
+                echo $this->currentTicket->$format;
+            }
+
         }
 
         echo " €". $this->currentTicket->price;
