@@ -9,7 +9,7 @@ class HistoricController extends ControllerBase {
 
         //these are editable
         // $this->view->setSiteTitle('By order of the Peaky -fucking- Blinders');
-         $this->view->setBgImage('HistoricBackground.png');
+         $this->view->setBgImage('Historic/HistoricBackground.png');
     }
 
     public function indexAction(){
