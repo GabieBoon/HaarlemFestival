@@ -1,7 +1,7 @@
-
 <?php $this->start('head'); ?>
 <!-- Header CSS -->
 <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/DefaultHeaderCss.php" >
+<link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/JazzHeaderCss.php" >
 <?php $this->end(); ?>
 
 <?php $this->start('header'); ?>
@@ -34,4 +34,14 @@
         </ul>
     </nav>
 </header>
+<section class="j-subnav">
+    <nav>
+        <ul>
+            <li><a href="<?= PROOT ?>jazz/about">ABOUT</a></li>
+            <li><a href="<?= PROOT ?>jazz/artists">ARTISTS</a></li>
+            <li><a href="<?= PROOT ?>jazz/schedule">SCHEDULE</a></li>
+            <li><a href="<?= PROOT ?>jazz/locations">LOCATIONS</a></li>
+        </ul>
+    </nav>
+</section>
 <?php $this->end(); ?>
