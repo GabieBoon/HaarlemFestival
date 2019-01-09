@@ -28,7 +28,7 @@ class Table {
             case "Dance":
                 $this->rowTitle = "name";
                 $this->ticketTitle = "venue";
-                $this->ticketFormat = ['firstName','preposition','lastName'];
+                $this->ticketFormat = "stageName";
                 break;
             case "Historic":
                 $this->rowTitle = "language";
@@ -38,7 +38,7 @@ class Table {
             case "Jazz":
                 $this->rowTitle = "name";
                 $this->ticketTitle = "venue";
-                $this->ticketFormat = ['firstName','preposition','lastName'];
+                $this->ticketFormat = "stageName";
                 break;
             case "Food":
                 $this->rowTitle = "name";
@@ -236,9 +236,18 @@ class Table {
         else{
             $format = $this->ticketFormat;
 
-            foreach ($format as $item){
-                echo $this->currentTicket->$item;
+            if (is_array($this->currentTicket->$format)){
+
+                echo "Back to Back: ";
+
+                foreach ($this->currentTicket->$format as $stageName){
+                    echo $stageName . " / "; //fixen met / aan het einde
+                }
             }
+            else{
+                echo $this->currentTicket->$format;
+            }
+
         }
 
         echo " €". $this->currentTicket->price;

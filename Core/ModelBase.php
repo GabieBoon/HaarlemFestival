@@ -246,5 +246,65 @@ class ModelBase {
     }
 
 
+//    Veranderd data van:   Afrojack    House     naar      Afrojack    House
+//                          Tiësto      House               Tiësto      [House, Trance]
+//                          Tiësto      Trance
+//
+    public function ArraysVoorKoppeltabellen($objects){
+
+        $deleteObjects = [];
+
+        //loop door alle objecten
+        foreach ($objects as $object){
+
+            //vergelijk elk object met elk ander object
+            foreach ($objects as $compareObject){
+
+                //indien twee objecten dezelfde id hebben moeten ze worden vergeleken
+                if ($object->id == $compareObject->id){
+
+                    $flawed = false;
+
+                    //Als er property's niet overeenkomen, maak dan een array van de waarden
+                    foreach ($object as $property => $propertyValue){
+
+                        if ($object->$property != $compareObject->$property){
+
+                            $flawed = true;
+
+                            if (is_array($object->$property)){
+
+                                $object->$property[] = $compareObject->$property;
+                            }
+                            else{
+                                $object->$property = [$object->$property, $compareObject->$property];
+                            }
+                        }
+                    }
+
+                    //dubbele waarden moeten verwijderd worden
+                    if ($flawed){
+                        $objectKey = array_search($object, $objects);
+                        $compareObjectKey = array_search($compareObject, $objects);
+
+                        //stel $objects[0] en $objects[3] hebben dezelfde id, er is een array gemaakt van 0, dus 3 moet verwijderd.
+                        //Als je later bij 3 aankomt hoeft niet 0 ook nog verwijderd. Sla 3 op om te verwijderen en negeer 3 hierna.
+                        if (array_search($objectKey, $deleteObjects) === false){
+
+                            $deleteObjects[] = $compareObjectKey;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        //verwijder alle dubbele data
+        foreach ($deleteObjects as $delete){
+            unset($objects[$delete]);
+        }
+
+        return $objects;
+    }
 
 }
