@@ -11,6 +11,12 @@ class FoodController extends ControllerBase {
     }
 
     public function indexAction(){
+        $this->view->restaurantInfo = $this->FoodModel->getRestaurantInfo();
+
         $this->view->renderView('Food/FoodView');
+    }
+
+    public function viewRestaurantInfo(){
+
     }
 }
