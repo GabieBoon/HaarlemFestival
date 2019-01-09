@@ -1,0 +1,19 @@
+.background-image{
+    background-size:cover;
+    background-repeat:no-repeat ;
+    background-position:center center;
+
+}
+
+.Home1{
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    max-width: 1000px;
+
+}
+
+.para1 img{
+    float:right;
+    width: 180px;
+    height: 100px;
+}

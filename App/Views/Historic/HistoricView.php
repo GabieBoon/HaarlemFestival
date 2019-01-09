@@ -9,9 +9,9 @@
 <?php $this->start('body'); ?><!-- start body -->
 
 <div class="background-image">
-    <section>
-        <h1 id="titel">Day trip to Haarlem center and surroundings</h1>
-        <p id="para1">
+    <section class="Home1">
+        <h1 class="titel">Day trip to Haarlem center and surroundings</h1>
+        <p class="para1">
             Do you want to know more about the history of the
             city? Or did you come to Haarlem to shop
             extensively? Your boredom is simply not an option
@@ -22,7 +22,7 @@
             inside the imposing Grote or St. Bavokerk and
             admire its organ that Mozart once played.
             <br />
-            <img src="<?= PROOT ?>public/images/Historic/bavokerk-haarlem.jpg" alt="test">
+            <img src="<?= PROOT ?>public/images/Backgrounds/Historic/bavokerk-haarlem.jpg" alt="test">
         </p>
 
         <h1 id="titel">Walking through Haarlem</h1>
@@ -34,7 +34,7 @@
             you  the hottest and most interesting
             facts worth knowing about this beautiful city.
             <br />
-            <img src="<?= PROOT ?>public/images/Historic/fotogracht.jpg" alt="test">
+            <img src="<?= PROOT ?>public/images/Backgrounds/Historic/fotogracht.jpg" alt="test">
         </p>
 
     </section>
