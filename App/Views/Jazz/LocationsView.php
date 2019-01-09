@@ -9,7 +9,7 @@
 <?php $this->start('body'); ?><!-- start body -->
 
 <!-- <div class="background-image"> -->
-<div class='alert'>hier gaat alle html</div>
+<div class='alert'>LOCATIONS</div>
 <!-- </div> -->
 <!-- < ?= $this->getHeaderColour(); ?> -->
 
