@@ -8,7 +8,6 @@ class JazzController extends ControllerBase {
         parent::__construct($className, $action);
 
         //these are editable
-        $this->view->setLayout('Jazz');
         $this->view->setSiteTitle('Jazz - Haarlem Festival');
         $this->view->setBgImage('jazzbg.jpg');
     }
