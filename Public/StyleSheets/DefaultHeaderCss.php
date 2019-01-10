@@ -1,7 +1,6 @@
 <?php
 header("Content-type: text/css; charset: UTF-8");
 
-
 // main colors events
 $foodColor = "#F0841B";
 $danceColor = "#3083D0";
@@ -9,7 +8,6 @@ $jazzColor = "#440E62";
 $historicColor = "#DB1F1F";
 $scheduleColor = "#DCC500";
 $cartColor = "#849A7D";
-$activeColor = "";
 
 // header background color
 $headerStandardColor = "#797979";
@@ -156,13 +154,58 @@ select .language-selection option[value="nederlands"]{
     /*background: rgba(200, 200, 200, 0.3);*/
 }
 
-.active a {
+.activeDance a {
     width: 125px;
     border-style: solid;
     border-color: white;
     box-shadow:  5px 5px white;
     color: white;
-    background-color: <?php echo $activeColor ?> !important;
+    background-color: <?= $danceColor ?> !important;
+}
+
+.activeFood a {
+width: 125px;
+border-style: solid;
+border-color: white;
+box-shadow:  5px 5px white;
+color: white;
+background-color: <?= $foodColor ?> !important;
+}
+
+.activeJazz a {
+width: 125px;
+border-style: solid;
+border-color: white;
+box-shadow:  5px 5px white;
+color: white;
+background-color: <?= $jazzColor ?> !important;
+}
+
+.activeHistoric a {
+width: 125px;
+border-style: solid;
+border-color: white;
+box-shadow:  5px 5px white;
+color: white;
+background-color: <?= $historicColor ?> !important;
+}
+
+.activeSchedule a {
+width: 125px;
+border-style: solid;
+border-color: white;
+box-shadow:  5px 5px white;
+color: white;
+background-color: <?= $scheduleColor ?> !important;
+}
+
+.activeTicket a {
+width: 125px;
+border-style: solid;
+border-color: white;
+box-shadow:  5px 5px white;
+color: white;
+background-color: <?= $cartColor ?> !important;
 }
 
 

@@ -56,7 +56,13 @@ footer {
     float: right;
     /* inlineblock is ignored due to the float right */
     /* display:inline-block;  */
-    padding-right: 20px;
+    /*padding-right: 20px;*/
+    margin-right:50px;
+    list-style: none;
+}
+
+.CMS-buttons li{
+    display:inline-block;
 }
 
 .social-media {
@@ -70,4 +76,8 @@ footer {
 
 .fab {
     font-size: 20px;
+}
+
+.row{
+    margin:0;
 }
