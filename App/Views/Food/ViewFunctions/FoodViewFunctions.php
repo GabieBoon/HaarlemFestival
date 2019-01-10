@@ -10,6 +10,5 @@ class FoodViewFunctions
             include ROOT . 'app' . DS . 'Views' . DS . 'Food' . DS . 'Partials' . DS . 'RestaurantBlock' . '.php';
         }
     }
-
 }
 ?>

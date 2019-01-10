@@ -1,0 +1,17 @@
+.food-content-box{
+    text-align: left;
+}
+
+.restaurantImage{
+    float:right;
+    width: 300px;
+    height: 200px;
+}
+
+.restaurantDetails p {
+    display: inline;
+}
+
+.restaurantDetail{
+    margin-bottom:20px;
+}

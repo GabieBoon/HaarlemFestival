@@ -1,18 +1,18 @@
-<?php
+<?php //head ?>
+<?php $this->start('head'); ?>
+    <!-- Food CSS -->
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/HomeCss.css" >
 
-class HomeView extends ViewBase{
+<?= $this->getBgImage(); ?>
 
-    public function __construct($class)
-    {
-        parent::__construct($class);
-    }
+<?php $this->end(); ?>
 
-    public function helloWorld(){
-        echo "Hello World";
-    }
+<?php //body ?>
+<?php $this->start('body'); ?>
 
-    public function showPage(){
-        $this->render();
-        //$this->renderView('Home/HomeView');
-    }
-}
+    <div class="background-image">
+        <img class="logo-center" src="<?= PROOT ?>public/images/HaarlemFestival-Logo-WT.png" alt="Haarlem Festival Logo"/>
+    </div>
+
+
+<?php $this->end(); ?>

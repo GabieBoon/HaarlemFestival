@@ -14,5 +14,4 @@ class FoodModel extends ModelBase{
                 JOIN FoodType AS FT on RFT.foodTypeId = FT.id";
         return $this->_db->query($sql)->getResult();
     }
-
 }

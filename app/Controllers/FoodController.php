@@ -17,4 +17,8 @@ class FoodController extends ControllerBase {
 
         $this->view->renderView('Food/FoodView');
     }
+
+    public function restaurantAction() {
+        $this->view->renderView('Food/RestaurantView');
+    }
 }
