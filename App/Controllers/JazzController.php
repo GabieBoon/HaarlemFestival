@@ -29,8 +29,8 @@ class JazzController extends ControllerBase {
         }
     }
 
-    public function scheduleAction() {
-        $this->view->renderView('Jazz/ScheduleView');
+    public function ticketsAction() {
+        $this->view->renderView('Jazz/TicketsView');
     }
 
     public function locationsAction() {
