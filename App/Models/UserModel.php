@@ -88,16 +88,41 @@ class UserModel extends ModelBase
     public static function currentLoggedInUser()
     {
         $user = self::$currentLoggedInUser;
-
-        if (!$user) {
-            if (Session::sessionExists(CURRENT_USER_SESSION_NAME)) {
-                $user = new self((int)Session::getSession(CURRENT_USER_SESSION_NAME));
-                self::$currentLoggedInUser = $user;
-            }else {
-                router::redirect('cms/login');// /returnToSender
-            }
+        if ((!$user) && (Session::sessionExists(CURRENT_USER_SESSION_NAME))) {
+            $user = new self((int)Session::getSession(CURRENT_USER_SESSION_NAME));
+            self::$currentLoggedInUser = $user;
         }
         return $user;
+    }
+
+    public static function checkLoginState($returnToSender = true, string $diffDestination = null) //AndRoute
+    {
+        //check if destination is blacklisted
+        function checkBlacklist($destination)
+        {
+            $blackList = ['cms/login', 'cms/dashboard'];
+            $count = count($blackList);
+            $lc_destination = strtolower($destination);
+            for ($i = 0; $i < $count; $i++) {
+                if ($lc_destination === $blackList[$i]) {
+                    router::redirect('cms/login');
+                }
+            }
+        }
+
+        //get user
+        $user = self::currentLoggedInUser();
+        if ($user) {
+            return $user;
+        }elseif ($returnToSender) {
+            checkBlacklist($_SESSION['LastVisited']);
+            router::redirect('cms/login?dest=' . $_SESSION['LastVisited']);
+        } elseif ($diffDestination != null) {
+            checkBlacklist($diffDestination);
+            router::redirect('cms/login?dest=' . $diffDestination);
+        } else {
+            router::redirect('cms/login');
+        }
     }
 
 
@@ -121,7 +146,8 @@ class UserModel extends ModelBase
         }
     }
 
-    public static function loginUserFromCookie () {
+    public static function loginUserFromCookie()
+    {
         $userSession = UserSessionModel::getFromCookie();
         if ($userSession) {
             $user = new self((int)$userSession->userId);
@@ -131,12 +157,12 @@ class UserModel extends ModelBase
         }
     }
 
-        public function logoutEverywhere()
+    public function logoutEverywhere()
     {
         $this->query("DELETE FROM UserSession WHERE user_id = ?", [$this->id]);
     }
 
-    public function logout()
+    public function logout(string $destinationAfterLogout = null)
     {
         //delete stored cookie id from server
         UserSessionModel::delete();
@@ -151,7 +177,12 @@ class UserModel extends ModelBase
 
         //set current logged in user to null
         self::$currentLoggedInUser = null;
-        return true;
+
+        if ($destinationAfterLogout != null) {
+            Router::redirect($destinationAfterLogout);
+        }
+        Router::redirect('cms/login');
+    // return true;
     }
 
     public function registerNewUser($params)

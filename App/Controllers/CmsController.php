@@ -11,14 +11,14 @@ class CmsController extends ControllerBase //Jasper
     public function indexAction()
     {
         //formatted_print_r(UserModel::currentLoggedInUser());
-        if (UserModel::currentLoggedInUser()) {
+        if (UserModel::checkLoginState(false)) {
             Router::redirect('cms/dashboard');
         }
-        Router::redirect('cms/login');
     }
 
-    public function loginAction($args = null)
+    public function loginAction()
     {
+        //checking currentLoggedInUser instead of loginState bc otherwise it'll loop 
         if (UserModel::currentLoggedInUser()) {
             Router::redirect('cms/dashboard');
         }
@@ -46,9 +46,11 @@ class CmsController extends ControllerBase //Jasper
                     } else {
                         $remember = false;
                     }
+                    
                     $this->UserModel->login($remember);
-                    if ($args === 'returnToSender') {
-                        Router::redirect($_SESSION['LastVisited']);
+
+                    if (isset($_GET['dest'])) {
+                        Router::redirect($_GET['dest']);
                     }
                     Router::redirect('cms/dashboard');
 
@@ -63,12 +65,16 @@ class CmsController extends ControllerBase //Jasper
 
     public function logoutAction()
     {
+
+       UserModel::checkLoginState(false)->logout();
+        //$user->logout();
+
         //formatted_print_r(UserModel::currentLoggedInUser());
-        $user = UserModel::currentLoggedInUser();
-        if ($user) {
-            $user->logout();
-        }
-        Router::redirect('cms');
+        // $user = UserModel::currentLoggedInUser();
+        // if ($user) {
+        //     $user->logout();
+        // }
+        // Router::redirect('cms');
     }
 
     public function dashboardAction($arg = null)
@@ -81,11 +87,11 @@ class CmsController extends ControllerBase //Jasper
             router::redirect('cms');
         }
 
-        $user = UserModel::currentLoggedInUser();
+        $user = UserModel::checkLoginState();
 
-        if (!$user) {
-            Router::redirect('cms');
-        }
+        // if (!$user) {
+        //     Router::redirect('cms');
+        // }
         $this->view->UserModel = $user;
         $this->view->renderView('cms/DashboardView2');
 
