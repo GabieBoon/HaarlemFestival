@@ -304,6 +304,9 @@ class ModelBase {
             unset($objects[$delete]);
         }
 
+        //hernummert de array, zodat missende waarden later geen problemen veroorzaken
+        $objects = array_values($objects);
+
         return $objects;
     }
 
