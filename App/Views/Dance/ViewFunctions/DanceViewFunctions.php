@@ -14,17 +14,8 @@ class DanceViewFunctions
     public static function showArtists($artists) 
     {
         foreach ($artists as $artist) {
-
+            
             $title = $artist->stageName;
-//            $title = rtrim($artist->firstName);
-//
-//            if ($artist->preposition != null) {
-//                $title .= " " . trim($artist->preposition);
-//            }
-//
-//            if ($artist->lastName != null) {
-//                $title .= " " . trim($artist->lastName);
-//            }
 
             include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';
         }

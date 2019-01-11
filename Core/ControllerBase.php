@@ -44,4 +44,33 @@ class ControllerBase extends ApplicationBase
         }
     }
 */
+
+    public function utf8_encodeObjectArray($data){
+        if (is_array($data)){
+            for ($i = 0; $i < count($data); $i++){
+
+                if (is_object($data[$i])){
+                    foreach ($data[$i] as $classProperty => $classPropertyValue){
+
+                        if (is_array($data[$i]->$classProperty)){
+
+                            for ($j = 0; $j < count($data[$i]->$classProperty); $j++){
+                                $data[$i]->$classProperty[$j] = utf8_encode($data[$i]->$classProperty[$j]);
+                            }
+
+                        }
+                        else{
+                            $data[$i]->$classProperty = utf8_encode($data[$i]->$classProperty);
+                        }
+
+                    }
+                }
+
+            }
+            return $data;
+        }
+        else{
+            return $data;
+        }
+    }
 }

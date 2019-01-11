@@ -20,8 +20,13 @@ class JazzController extends ControllerBase {
         self::indexAction(); //zodat jazz/about ook werkt
     }
 
-    public function artistsAction() {
-        $this->view->renderView('Jazz/ArtistsView');
+    public function artistsAction($page) {
+        if (is_null($page)) {
+            //TODO: go to page 1 when page is not specified
+            $this->view->renderView('Jazz/ArtistsView');
+        } else {
+            $this->view->renderView('Jazz/ArtistsView');
+        }
     }
 
     public function scheduleAction() {
