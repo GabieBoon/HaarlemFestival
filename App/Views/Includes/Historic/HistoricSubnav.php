@@ -1,5 +1,5 @@
 <?php $this->start('head'); ?>
-<link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/HisSubnavCss.php" ><!-- Jazz Subnav CSS -->
+<link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/HisSubnavCss.css" ><!-- Jazz Subnav CSS -->
 <?php $this->end(); ?>
 
 <?php $this->start('hissubnav'); ?>
