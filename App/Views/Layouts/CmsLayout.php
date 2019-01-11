@@ -1,5 +1,4 @@
-
-<?php $this->insert('CMS/Includes/Sidebar'); ?>
+<?php if ($this->_action != 'login') {$this->insert('CMS/Includes/Sidebar'); }?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,7 +25,8 @@
   </head>
   <body>
 
-  <?= $this->content('sidebar'); ?>
+  <?= $this->content('sidebar');?>
+
   <?= $this->content('body'); ?>
 
   </body>

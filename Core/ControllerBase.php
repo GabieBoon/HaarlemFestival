@@ -17,7 +17,7 @@ class ControllerBase extends ApplicationBase
             $view = $className . 'View';
             $this->view = new $view($className);
         } else {
-            $this->view = new ViewBase($className);
+            $this->view = new ViewBase($className, $action);
         }
 
         if (isset($diffModel)) {

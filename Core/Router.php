@@ -32,7 +32,7 @@ class Router
         $queryParams = $url;
 
         if (method_exists($controllerName, $actionName)) {
-            $dispatch = new $controllerName($className, $actionName);
+            $dispatch = new $controllerName($className, $action);
             call_user_func_array([$dispatch, $actionName], $queryParams);
         } else {
             die('That method does not exist in the controller "' . $controllerName . '"');
@@ -58,15 +58,16 @@ class Router
     public static function formatCurrentPage(string $className, string $action = '')
     {
         $className = strtolower($className);
-
-        if ($action != '') {
-            $action = lcfirst(str_replace('Action', '', $action));
-            if ($action == 'index') {
-                $action= '';
-            }
-        }
         return $className . '/' . $action;
     }
+
+    // public static function formatAction($action)
+    // {
+    //     $action = lcfirst(str_replace('Action', '', $action));
+    //     if ($action == 'index') {
+    //         $action = '';
+    //     }
+    // }
 
 
 

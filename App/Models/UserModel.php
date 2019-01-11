@@ -88,9 +88,14 @@ class UserModel extends ModelBase
     public static function currentLoggedInUser()
     {
         $user = self::$currentLoggedInUser;
-        if ((!$user) && (Session::sessionExists(CURRENT_USER_SESSION_NAME))) {
-            $user = new self((int)Session::getSession(CURRENT_USER_SESSION_NAME));
-            self::$currentLoggedInUser = $user;
+
+        if (!$user) {
+            if (Session::sessionExists(CURRENT_USER_SESSION_NAME)) {
+                $user = new self((int)Session::getSession(CURRENT_USER_SESSION_NAME));
+                self::$currentLoggedInUser = $user;
+            }else {
+                router::redirect('cms/login');// /returnToSender
+            }
         }
         return $user;
     }
@@ -116,8 +121,7 @@ class UserModel extends ModelBase
         }
     }
 
-    public static function loginUserFromCookie()
-    {
+    public static function loginUserFromCookie () {
         $userSession = UserSessionModel::getFromCookie();
         if ($userSession) {
             $user = new self((int)$userSession->userId);
@@ -127,7 +131,7 @@ class UserModel extends ModelBase
         }
     }
 
-    public function logoutEverywhere()
+        public function logoutEverywhere()
     {
         $this->query("DELETE FROM UserSession WHERE user_id = ?", [$this->id]);
     }
