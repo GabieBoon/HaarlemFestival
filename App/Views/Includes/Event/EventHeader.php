@@ -19,7 +19,7 @@
         </ul>
         <ul class="nav-right">
             <li class="<?php if($this->_className == 'Schedule'){echo 'activeSchedule';} ?> schedule-btn nav-btn"><a href="<?= PROOT ?>schedule/">Schedule</a></li>
-            <li class="<?php if($this->_className == ('Cart' || 'Order')){echo 'activeTicket';} ?> cart-btn nav-btn"><a class="cart-icon" href="<?= PROOT ?>cart/"><i class="fas fa-shopping-cart"></i></a></li>
+            <li class="<?php if($this->_className == 'Cart' ){echo 'activeTicket';}elseif($this->_className == 'Order'){echo 'activeTicket';} ?> cart-btn nav-btn"><a class="cart-icon" href="<?= PROOT ?>cart/"><i class="fas fa-shopping-cart"></i></a></li>
 
             <li class="nav-btn">
                 <select class="language-selection">
