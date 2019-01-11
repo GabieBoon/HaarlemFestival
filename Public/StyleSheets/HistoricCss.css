@@ -9,11 +9,18 @@
     background-color: #FFFFFF;
     margin: 0 auto;
     max-width: 1000px;
+    margin-top: 20px;
 
 }
 
 .para1 img{
     float:right;
-    width: 180px;
-    height: 100px;
+    width: 700px;
+    height: 500px;
+}
+
+.para2 img{
+    float:left;
+    width: 700px;
+    height: 500px;
 }

@@ -26,10 +26,11 @@ class DanceController extends ControllerBase
 
     public function showPageV2()
     {
-        $this->view->danceArtists = $this->DanceModel->getDanceArtists();
-        $this->view->danceLocations = $this->DanceModel->getLocations("Dance");
-        $this->view->danceTickets = $this->DanceModel->getDanceTickets();
-        $this->view->allAccessTickets = $this->DanceModel->getAllAccessTicketsDance();
+
+        $this->view->danceArtists = $this->utf8_encodeObjectArray($this->DanceModel->getDanceArtists());
+        $this->view->danceLocations = $this->utf8_encodeObjectArray($this->DanceModel->getLocations("Dance"));
+        $this->view->danceTickets = $this->utf8_encodeObjectArray($this->DanceModel->getDanceTickets());
+        $this->view->allAccessTickets = $this->utf8_encodeObjectArray($this->DanceModel->getAllAccessTicketsDance());
 
         include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
         $this->view->table = new Table();

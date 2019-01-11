@@ -22,77 +22,7 @@
             <div class="restaurant-list">
                 <h4>Restaurants</h4>
 
-                <div class="restaurant-item">
-                    <img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="test">
-                    <p>The Golden Bull</p>
-                    <p>A cozy restaurant with various meat dishes.</p>
-                    <p>Kitchen: Steakhouse, Argentinian, European</p>
-                    <p>Stars: ⋆⋆⋆</p>
-                    <h5>view restaurant</h5>
-                </div>
-
-                <div class="restaurant-item">
-                    <img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="test">
-                    <p>Urban Frenchy Bistro Toujours</p>
-                    <p>Classic French dishes with an American twist.</p>
-                    <p>Kitchen: Dutch, fish and seafood, European</p>
-                    <p>Stars: ⋆⋆⋆</p>
-                    <h5>view restaurant</h5>
-                </div>
-
-                <div class="restaurant-item">
-                    <img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="test">
-                    <p>The Golden Bull</p>
-                    <p>A cozy restaurant with various meat dishes.</p>
-                    <p>Kitchen: Steakhouse, Argentinian, European</p>
-                    <p>Stars: ⋆⋆⋆</p>
-                    <h5>view restaurant</h5>
-                </div>
-
-                <div class="restaurant-item">
-                    <img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="test">
-                    <p>The Golden Bull</p>
-                    <p>A cozy restaurant with various meat dishes.</p>
-                    <p>Kitchen: Steakhouse, Argentinian, European</p>
-                    <p>Stars: ⋆⋆⋆</p>
-                    <h5>view restaurant</h5>
-                </div>
-
-                <div class="restaurant-item">
-                    <img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="test">
-                    <p>The Golden Bull</p>
-                    <p>A cozy restaurant with various meat dishes.</p>
-                    <p>Kitchen: Steakhouse, Argentinian, European</p>
-                    <p>Stars: ⋆⋆⋆</p>
-                    <h5>view restaurant</h5>
-                </div>
-
-                <div class="restaurant-item">
-                    <img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="test">
-                    <p>The Golden Bull</p>
-                    <p>A cozy restaurant with various meat dishes.</p>
-                    <p>Kitchen: Steakhouse, Argentinian, European</p>
-                    <p>Stars: ⋆⋆⋆</p>
-                    <h5>view restaurant</h5>
-                </div>
-
-                <div class="restaurant-item">
-                    <img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="test">
-                    <p>The Golden Bull</p>
-                    <p>A cozy restaurant with various meat dishes.</p>
-                    <p>Kitchen: Steakhouse, Argentinian, European</p>
-                    <p>Stars: ⋆⋆⋆</p>
-                    <h5>view restaurant</h5>
-                </div>
-
-                <div class="restaurant-item">
-                    <img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="test">
-                    <p>The Golden Bull</p>
-                    <p>A cozy restaurant with various meat dishes.</p>
-                    <p>Kitchen: Steakhouse, Argentinian, European</p>
-                    <p>Stars: ⋆⋆⋆</p>
-                    <h5>view restaurant</h5>
-                </div>
+                <?= FoodViewFunctions::viewRestaurantInfo($this->restaurantInfo); ?>
             </div>
         </div>
     </article>

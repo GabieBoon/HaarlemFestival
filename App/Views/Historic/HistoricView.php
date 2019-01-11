@@ -22,11 +22,11 @@
             inside the imposing Grote or St. Bavokerk and
             admire its organ that Mozart once played.
             <br />
-            <img src="<?= PROOT ?>public/images/Backgrounds/Historic/bavokerk-haarlem.jpg" alt="test">
+            <img src="<?= PROOT ?>public/images/Historic/bavokerk-haarlem.jpg" alt="test">
         </p>
 
-        <h1 id="titel">Walking through Haarlem</h1>
-        <p id="para2">
+        <h1 class="titel">Walking through Haarlem</h1>
+        <p class="para2">
             Be surprised during a walk along
             unique spots in the Haarlem city center.
             From hidden courtyards to large churches.
@@ -34,7 +34,7 @@
             you  the hottest and most interesting
             facts worth knowing about this beautiful city.
             <br />
-            <img src="<?= PROOT ?>public/images/Backgrounds/Historic/fotogracht.jpg" alt="test">
+            <img src="<?= PROOT ?>public/images/Historic/fotogracht.jpg" alt="test">
         </p>
 
     </section>

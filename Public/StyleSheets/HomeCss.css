@@ -1,0 +1,23 @@
+.nav-logo {
+    visibility: hidden;
+}
+
+.background-image{
+    background-size:cover;
+    background-repeat:no-repeat ;
+    background-position:center center;
+}
+
+.logo-center{
+    width:500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-left{
+    margin-left: -150px !important;
+}
+
+
+
