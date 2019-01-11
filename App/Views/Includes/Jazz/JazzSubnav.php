@@ -5,11 +5,11 @@
 <?php $this->start('subnav'); ?>
 <section class="j-subnav">
     <nav class="text-center">
-        <ul>
-            <li><a href="<?= PROOT ?>jazz/about">ABOUT</a></li>
-            <li><a href="<?= PROOT ?>jazz/artists">ARTISTS</a></li>
-            <li><a href="<?= PROOT ?>jazz/schedule">SCHEDULE</a></li>
-            <li><a href="<?= PROOT ?>jazz/locations">LOCATIONS</a></li>
+        <ul class="mb-0 pl-0">
+            <li><a class="" href="<?= PROOT ?>jazz/about">About</a></li>
+            <li><a class="" href="<?= PROOT ?>jazz/artists/1">Artists</a></li>
+            <li><a class="" href="<?= PROOT ?>jazz/schedule">Schedule</a></li>
+            <li><a class="" href="<?= PROOT ?>jazz/locations">Locations</a></li>
         </ul>
     </nav>
 </section>
