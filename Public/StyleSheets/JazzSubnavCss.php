@@ -8,6 +8,10 @@ header("Content-type: text/css; charset: UTF-8");
     background-color:#440E62;
     margin: 0 640px;
     padding: 6px 0;
+<!--    border-top: 64px solid #333;-->
+<!--    border-left: 48px solid transparent;-->
+<!--    border-right: 48px solid transparent;-->
+<!--    height: 0;-->
 }
 
 .j-subnav nav {
@@ -34,7 +38,8 @@ header("Content-type: text/css; charset: UTF-8");
 .j-subnav nav ul li a {
     color: #FFF;
     text-transform: uppercase;
-    font-size: 1.4em;
+    font-family: 'Broadway';
+    font-size: 1.6em;
     opacity: 0.6;
 }
 
@@ -44,5 +49,5 @@ header("Content-type: text/css; charset: UTF-8");
 }
 
 .j-active {
-    opacity: 1;
+    opacity: 1 !important;
 }

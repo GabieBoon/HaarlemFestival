@@ -1,4 +1,4 @@
-<?php $this->insert('Includes/Jazz/JazzSubnav'); ?>
+<?php $this->insert('Jazz/JazzSubnav'); ?>
 
 <?php $this->start('head'); ?><!-- start head -->
 
@@ -10,11 +10,13 @@
 
 <?php $this->start('body'); ?><!-- start body -->
 
-<?= $this->content('subnav'); ?>
+<div class="background-image j-bg">
+    <?= $this->content('subnav'); ?>
 
-<!-- <div class="background-image"> -->
-<div class='alert'>LOCATIONS</div>
-<!-- </div> -->
+    <main class="j-content text-center">
+        <h1>Performance venues</h1>
+    </main>
+</div>
 <!-- < ?= $this->getHeaderColour(); ?> -->
 
 <?php $this->end(); ?><!-- end body -->
