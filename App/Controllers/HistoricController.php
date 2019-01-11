@@ -15,4 +15,16 @@ class HistoricController extends ControllerBase {
     public function indexAction(){
         $this->view->renderView('Historic/HistoricView');
     }
+
+    public function aboutAction() {
+        self::indexAction();
+    }
+
+    public function locationsAction() {
+        $this->view->renderView('Historic/HisLocationsView');
+    }
+
+    public function scheduleAction() {
+        $this->view->renderView('Historic/HisScheduleView');
+    }
 }

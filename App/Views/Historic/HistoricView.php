@@ -1,3 +1,5 @@
+<?php $this->insert('Includes/Historic/HistoricSubnav'); ?>
+
 <?php $this->start('head'); ?><!-- start head -->
 
 <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/HistoricCss.css" ><!-- Historic CSS -->
@@ -9,6 +11,7 @@
 <?php $this->start('body'); ?><!-- start body -->
 
 <div class="background-image">
+    <?= $this->content('hissubnav'); ?>
     <section class="Home1">
         <h1 class="titel1">Day trip to Haarlem center and surroundings</h1>
         <p class="para1">
