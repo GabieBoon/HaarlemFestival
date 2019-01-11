@@ -5,17 +5,19 @@ class ViewBase
 
     protected $head, $body, $layout, $title;
     protected $_className,
-        //$_header = DEFAULT_NAME,
-        //$_footer = DEFAULT_NAME,
-        $_siteTitle = SITE_TITLE,
-        $_outputBuffer,
-        $_layout = DEFAULT_NAME,
-        $_bgImage;
-        //$_layoutMap;
+              $_action,
+              //$_header = DEFAULT_NAME,
+              //$_footer = DEFAULT_NAME,
+              $_siteTitle = SITE_TITLE,
+              $_outputBuffer,
+              $_layout = DEFAULT_NAME,
+              $_bgImage;
+              //$_layoutMap;
 
-    public function __construct($_className, $siteTitle = SITE_TITLE)
+    public function __construct($_className, $_action)
     {
         $this->_className = $_className;
+        $this->_action = $_action;
         //$this->title = $siteTitle;
         
         //include ROOT . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';

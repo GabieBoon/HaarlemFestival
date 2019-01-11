@@ -22,10 +22,12 @@ function formatted_var_dump($data)
     die();
 }
 
-function sanitize($dirty)
-{
-    return htmlentities($dirty, ENT_QUOTES, 'UTF-8');
-}
+// duplicate of method in input.php
+// instead use input::sanitize
+// function sanitize($dirty)
+// {
+//     return htmlentities($dirty, ENT_QUOTES, 'UTF-8');
+// }
 
 // function currentUser(){
 //     return UserModel::currentLoggedInUser();

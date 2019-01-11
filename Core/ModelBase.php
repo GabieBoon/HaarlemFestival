@@ -226,7 +226,7 @@ class ModelBase {
         if (isset($params)) {
             foreach ($params as $key => $val) {
                 if (in_array($key, $this->_columnNames)) {
-                    $this->$key = sanitize($val);
+                    $this->$key = Input::sanitize($val);
                 }
             }
             return true;
@@ -250,6 +250,18 @@ class ModelBase {
 //                          Tiësto      House               Tiësto      [House, Trance]
 //                          Tiësto      Trance
 //
+
+// select da.rank, a.stageName, a.firstName, a.preposition, a.lastName,  group_concat(DISTINCT ms.musicStyle ORDER BY ms.musicStyle DESC SEPARATOR ', ') as 'musicStyleArray'
+// from DanceArtist as da
+//    join Artist as a on da.artistId = a.id
+//    join DanceArtistMusicStyle as dams on da.id = dams.danceArtistId
+//  join MusicStyle as ms on dams.musicStyleId = ms.id
+// group by a.stageName;
+
+// select  dta.id, dta.DanceTicketId,  group_concat(DISTINCT dta.danceArtistId ORDER BY dta.danceArtistId DESC SEPARATOR ', ') as 'danceArtist'
+// from DanceTicketArtist as dta
+// group by dta.danceTicketId;
+
     public function ArraysVoorKoppeltabellen($objects){
 
         $deleteObjects = [];
