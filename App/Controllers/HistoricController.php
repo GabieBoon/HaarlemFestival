@@ -9,7 +9,7 @@ class HistoricController extends ControllerBase {
 
         //these are editable
          $this->view->setSiteTitle('Historic - Haarlem Festival');
-         $this->view->setBgImage('Historic/HistoricBackground.png');
+         $this->view->setBgImage('HistoricBackground.png');
     }
 
     public function indexAction(){
