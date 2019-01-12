@@ -8,10 +8,6 @@ header("Content-type: text/css; charset: UTF-8");
     background-color:#440E62;
     margin: 0 640px;
     padding: 6px 0;
-<!--    border-top: 64px solid #333;-->
-<!--    border-left: 48px solid transparent;-->
-<!--    border-right: 48px solid transparent;-->
-<!--    height: 0;-->
 }
 
 .j-subnav nav {
@@ -23,7 +19,7 @@ header("Content-type: text/css; charset: UTF-8");
 }
 
 .j-subnav nav ul li {
-    display: inline-block;
+    display: inline;
     margin: 0 12px;
 }
 
@@ -50,4 +46,20 @@ header("Content-type: text/css; charset: UTF-8");
 
 .j-active {
     opacity: 1 !important;
+}
+
+.j-subnav div {
+    width: 0;
+    height: 0;
+    border: 24px solid #440E62;
+}
+
+.j-subnav-left {
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+
+.j-subnav.right {
+    border-bottom-color: transparent;
+    border-right-color: transparent;
 }

@@ -49,6 +49,37 @@ header("Content-type: text/css; charset: UTF-8");
     color: #440E62;
 }
 
+.j-artist-pag {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0 auto;
+}
+
+.j-artist-pag li {
+    display: inline;
+    margin: 0 6px;
+}
+
+.j-artist-pag li a {
+    color: #440E62;
+}
+
+.j-artist-pag li:first-of-type a:hover {
+    text-decoration: none;
+}
+
+.j-artist-pag li:last-of-type a:hover {
+    text-decoration: none;
+}
+
+.j-artist-pag-active {
+    font-weight: bold;
+}
+
+.row:last-of-type {
+    margin-bottom: 0;
+}
+
 .j-bg {
     padding-bottom: 24px;
 }

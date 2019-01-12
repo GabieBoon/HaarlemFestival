@@ -67,8 +67,16 @@ if ($pageNumber == 1) {
 
             ?>
         </section>
+        <section class="row">
+            <ul class="j-artist-pag">
+                <li><a href="<?php if($pageNumber - 1 >= 1){echo(PROOT . 'jazz/artists/' . ($pageNumber - 1));}else{echo(PROOT . 'jazz/artists/1');} ?>"><</a></li>
+                <li><a class="<?php if($pageNumber == 1){echo('j-artist-pag-active');} ?>" href="<?= PROOT ?>jazz/artists/1">1</a></li>
+                <li><a class="<?php if($pageNumber == 2){echo('j-artist-pag-active');} ?>" href="<?= PROOT ?>jazz/artists/2">2</a></li>
+                <li><a class="<?php if($pageNumber == 3){echo('j-artist-pag-active');} ?>" href="<?= PROOT ?>jazz/artists/3">3</a></li>
+                <li><a href="<?php if($pageNumber + 1 <= 3){echo(PROOT . 'jazz/artists/' . ($pageNumber + 1));}else{echo(PROOT . 'jazz/artists/3');} ?>">></a></li>
+            </ul>
+        </section>
     </main>
 </div>
-<!-- < ?= $this->getHeaderColour(); ?> -->
 
 <?php $this->end(); ?><!-- end body -->
