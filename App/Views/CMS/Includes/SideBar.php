@@ -1,24 +1,27 @@
 <?php $this->insert('CMS/Includes/Menu'); ?>
 <!-- head -->
 <?php $this->start('head'); ?>
-<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/Menu.css"><!-- Cms CSS -->
+<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/StyleSheet.css"><!-- Cms CSS -->
+<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/Sidebar.css"><!-- Cms CSS -->
+<!-- <link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/Menu.css">Cms CSS -->
 
 
 <?php $this->end(); ?>
 
 <!-- body -->
-<?php $this->start('body'); ?>
+<?php $this->start('sidebar'); ?>
 
 <?php
 $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
 
 ?>
-<?= $this->content('menu'); ?>
-<!-- menu (Group) -->
-    <div style="display:none; id="u412" class="ax_default" data-label="menu" data-left="0" data-top="0" data-width="200" data-height="1200">
+<!-- < ?= $this->content('menu'); ?> -->
+
+<!-- sidebar (Group) -->
+<section id="u412" >
 
         <!-- Rectangle (Rectangle) -->
-        <div id="u413" class="ax_default shape" data-label="Rectangle">
+        <div id="u413">
             <div id="u413_div"></div>
         </div>
 
@@ -27,33 +30,7 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
         <div id="u414" class="ax_default" data-left="0" data-top="223" data-width="200" data-height="399">
 
 
-  <!-- < ?= $this->content('menu'); ?> -->
-
-
-            <!-- spacers (Group) -->
-            <div id="u450" class="ax_default ax_default_hidden" data-label="spacers" style="display:none; visibility: hidden"
-                data-left="0" data-top="0" data-width="0" data-height="0">
-
-                <!-- Unnamed (Rectangle) -->
-                <div id="u451" class="ax_default box_1">
-                    <div id="u451_div"></div>
-                </div>
-
-                <!-- Unnamed (Rectangle) -->
-                <div id="u452" class="ax_default box_1">
-                    <div id="u452_div"></div>
-                </div>
-
-                <!-- Unnamed (Rectangle) -->
-                <div id="u453" class="ax_default box_1">
-                    <div id="u453_div"></div>
-                </div>
-
-                <!-- Unnamed (Rectangle) -->
-                <div id="u454" class="ax_default box_1">
-                    <div id="u454_div"></div>
-                </div>
-            </div>
+  <?= $this->content('menu'); ?>
 
             <!-- loggedInUserInfo (Group) -->
             <div id="u455" class="ax_default" data-label="loggedInUserInfo" data-left="0" data-top="223" data-width="200"
@@ -96,6 +73,6 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
         <div id="u461" class="ax_default image">
             <img id="u461_img" class="img " src="<?= $pathToImageFolder . 'HaarlemFestival-Logo-WT.svg'; ?>">
         </div>
-    </div>
+</section>
 
 <?php $this->end(); ?>

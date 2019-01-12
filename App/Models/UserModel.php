@@ -95,7 +95,7 @@ class UserModel extends ModelBase
         return $user;
     }
 
-    public static function checkLoginState($returnToSender = true, string $diffDestination = null) //AndRoute
+    public static function checkLoginState(bool $returnToSender = true, string $diffDestination = '') //AndRoute
     {
         //check if destination is blacklisted
         function checkBlacklist($destination)
@@ -117,7 +117,7 @@ class UserModel extends ModelBase
         }elseif ($returnToSender) {
             checkBlacklist($_SESSION['LastVisited']);
             router::redirect('cms/login?dest=' . $_SESSION['LastVisited']);
-        } elseif ($diffDestination != null) {
+        } elseif ($diffDestination != '') {
             checkBlacklist($diffDestination);
             router::redirect('cms/login?dest=' . $diffDestination);
         } else {

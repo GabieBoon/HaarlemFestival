@@ -77,7 +77,7 @@ class CmsController extends ControllerBase //Jasper
         // Router::redirect('cms');
     }
 
-    public function dashboardAction($arg = null)
+    public function dashboardAction($arg = '')
     {
         if ($arg == 'deleteUserSession') {
             Session::deleteSession(CURRENT_USER_SESSION_NAME);
@@ -100,7 +100,7 @@ class CmsController extends ControllerBase //Jasper
 
 
 
-    public function statisticsAction($event = null)
+    public function statisticsAction($event = '')
     {
         if ($event == 'this') {
 
@@ -109,28 +109,28 @@ class CmsController extends ControllerBase //Jasper
         }
         
         $this->view->UserModel = UserModel::checkLoginState();
-        $this->view->renderView('cms/StatisticsView');
+        $this->view->renderView('CMS/StatisticsView');
     }
 
-    public function editAction($type, $event = null)
+    public function editAction($type, $event = 'Event')
     {
-        $this->view->event = $event;
+        $this->view->event = CmsModel::CheckEvent($event);
         $this->view->UserModel = UserModel::checkLoginState();
 
 
 
         $lc_type = strtolower($type);
         if ($lc_type == 'timetable') {
-            $this->view->renderView('cms/EditTimetableView');
+            $this->view->renderView('CMS/EditTimetableView');
         } elseif ($lc_type == 'event') {
-            $this->view->renderView('cms/EditEventView');
+            $this->view->renderView('CMS/EditEventView');
         }
         
     }
 
-    public function manageUsersAction($type, $event = null)
+    public function manageUsersAction($type=null, $event = '')
     {
-        if ($event != null) {
+        if ($event != '') {
 
 
         }
@@ -145,12 +145,12 @@ class CmsController extends ControllerBase //Jasper
 
 
         $this->view->UserModel = UserModel::checkLoginState();
-        $this->view->renderView('cms/statisticsView');
+        $this->view->renderView('CMS/ManageUsersView');
     }
 
-    public function settingsAction($type, $event = null)
+    public function settingsAction($type = null, $event = '')
     {
-        if ($event != null) {
+        if ($event != '') {
 
 
         }
@@ -165,9 +165,8 @@ class CmsController extends ControllerBase //Jasper
 
 
         $this->view->UserModel = UserModel::checkLoginState();
-        $this->view->renderView('cms/statisticsView');
+        $this->view->renderView('CMS/SettingsView');
     }
-
 
 }
 ?>
