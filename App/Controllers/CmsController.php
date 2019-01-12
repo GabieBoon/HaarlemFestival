@@ -46,7 +46,7 @@ class CmsController extends ControllerBase //Jasper
                     } else {
                         $remember = false;
                     }
-                    
+
                     $this->UserModel->login($remember);
 
                     if (isset($_GET['dest'])) {
@@ -66,7 +66,7 @@ class CmsController extends ControllerBase //Jasper
     public function logoutAction()
     {
 
-       UserModel::checkLoginState(false)->logout();
+        UserModel::checkLoginState(false)->logout();
         //$user->logout();
 
         //formatted_print_r(UserModel::currentLoggedInUser());
@@ -82,22 +82,91 @@ class CmsController extends ControllerBase //Jasper
         if ($arg == 'deleteUserSession') {
             Session::deleteSession(CURRENT_USER_SESSION_NAME);
             router::redirect('cms');
-        }elseif ($arg == 'deleteSession') {
+        } elseif ($arg == 'deleteSession') {
             Session::deleteSession('ALL');
             router::redirect('cms');
         }
 
-        $user = UserModel::checkLoginState();
-
-        // if (!$user) {
-        //     Router::redirect('cms');
-        // }
-        $this->view->UserModel = $user;
+        $this->view->UserModel = UserModel::checkLoginState();
         $this->view->renderView('cms/DashboardView2');
 
     }
+    // Dashboard
+    // Statistics
+    // Edit Timetable
+    // Edit Event Pages
+    // ManageUsers
+    // Settings
 
 
+
+    public function statisticsAction($event = null)
+    {
+        if ($event == 'this') {
+
+        } elseif ($event == 'that') {
+
+        }
+        
+        $this->view->UserModel = UserModel::checkLoginState();
+        $this->view->renderView('cms/StatisticsView');
+    }
+
+    public function editAction($type, $event = null)
+    {
+        $this->view->event = $event;
+        $this->view->UserModel = UserModel::checkLoginState();
+
+
+
+        $lc_type = strtolower($type);
+        if ($lc_type == 'timetable') {
+            $this->view->renderView('cms/EditTimetableView');
+        } elseif ($lc_type == 'event') {
+            $this->view->renderView('cms/EditEventView');
+        }
+        
+    }
+
+    public function manageUsersAction($type, $event = null)
+    {
+        if ($event != null) {
+
+
+        }
+
+        $lc_type = strtolower($type);
+        if ($lc_type == 'timetable') {
+
+        } elseif ($lc_type == 'event') {
+
+        }
+
+
+
+        $this->view->UserModel = UserModel::checkLoginState();
+        $this->view->renderView('cms/statisticsView');
+    }
+
+    public function settingsAction($type, $event = null)
+    {
+        if ($event != null) {
+
+
+        }
+
+        $lc_type = strtolower($type);
+        if ($lc_type == 'timetable') {
+
+        } elseif ($lc_type == 'event') {
+
+        }
+
+
+
+        $this->view->UserModel = UserModel::checkLoginState();
+        $this->view->renderView('cms/statisticsView');
+    }
 
 
 }
