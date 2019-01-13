@@ -21,7 +21,6 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
 ?>
 
 <div id="base">
-
     <!-- Unnamed (Rectangle) -->
     <div id="u462">
         <div id="u462_div"></div>
@@ -31,8 +30,6 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
             
         </div>
     </div>
-
-    
 </div>
 
 

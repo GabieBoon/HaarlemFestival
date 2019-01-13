@@ -37,11 +37,9 @@ class Router
         } else {
             die('That method does not exist in the controller "' . $controllerName . '"');
         }
-
-
-
-
     }
+
+
 
     public static function redirect(string $location = '')
     {
@@ -70,7 +68,22 @@ class Router
     // }
 
 
+    public static function getUrlAsArray()
+    {
+        if (isset($_SERVER['PATH_INFO'])) {
+            return explode('/', ltrim($_SERVER['PATH_INFO'], '/'));
+        } else {
+            return [];
+        }
+    }
 
-
+    public static function getUrlAsString()
+    {
+        if (isset($_SERVER['PATH_INFO'])) {
+            return ltrim($_SERVER['PATH_INFO'], '/');
+        } else {
+            return '';
+        }
+    }
 
 }

@@ -1,12 +1,9 @@
 body {
     margin: 0;
-    background-image: none;
-    position: static;
-    left: auto;
-    width: 99vw;
-    margin-left: 0;
-    margin-right: 0;
-    text-align: left
+    padding:0;
+    width: 100%;
+    height:100%;
+    text-align: left;
 }
 
 #base {
@@ -14,7 +11,7 @@ body {
     z-index: 0
 }
 
-#u0_div {
+/* #u0_div {
     border-width: 0;
     position: absolute;
     left: 0;
@@ -40,7 +37,7 @@ body {
     top: 0;
     width: 99vw;
     height: 1200px
-}
+} */
 
 #u0_text {
     border-width: 0;

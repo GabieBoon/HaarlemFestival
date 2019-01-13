@@ -39,12 +39,15 @@ spl_autoload_register(function ($fullClassName)
 //session start
 session_start(); 
 
-if (isset($_SERVER['PATH_INFO'])) { //als er extra na de sitenaam sla dit op in variabele URL
-    $url = explode('/', ltrim($_SERVER['PATH_INFO'], '/'));
-}
-else{
-    $url = [];
-}
+
+$url = Router::getUrlAsArray();
+
+// if (isset($_SERVER['PATH_INFO'])) { //als er extra na de sitenaam sla dit op in variabele URL
+//     $url = explode('/', ltrim($_SERVER['PATH_INFO'], '/'));
+// }
+// else{
+//     $url = [];
+// }
 
 
 if (!Session::sessionExists(CURRENT_USER_SESSION_NAME) && Cookie::exists(REMEMBER_ME_COOKIE_NAME)) {
