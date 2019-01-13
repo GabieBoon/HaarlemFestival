@@ -5,11 +5,11 @@ $pageNumber = explode('/', ltrim($_SERVER['PATH_INFO'], '/'))[2];
 $artists = array();
 
 if ($pageNumber == 1) {
-    $artists = array('Chris Allen', 'Evolve', 'Fox & The Mayors', 'Gare du Nord', 'Gumbo Kings', 'Han Bennink');
+    $artists = array('Chris Alain', 'Evolve', 'Fox & The Mayors', 'Gare du Nord', 'Gumbo Kings', 'Han Bennink');
 } elseif ($pageNumber == 2) {
     $artists = array('Jonna Fraser', 'Lilith Merlot', 'Myles Sanko', 'Ntjam Rosie', 'Rilan & The Bombardiers', 'Ruis Soundsystem');
 } else {
-    $artists = array('Jonna Fraser', 'Lilith Merlot', 'Myles Sanko', 'Ntjam Rosie', 'Rilan & The Bombardiers', 'Ruis Soundsystem');
+    $artists = array('Soul Six', 'The Family XL', 'The Nordanians', 'Tom Thomson', 'Uncle Sue', 'Wicked Jazz Sounds');
 }
 
 ?>

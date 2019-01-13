@@ -51,6 +51,7 @@ header("Content-type: text/css; charset: UTF-8");
 .j-subnav div {
     width: 0;
     height: 0;
+    margin: 0;
     border: 24px solid #440E62;
 }
 

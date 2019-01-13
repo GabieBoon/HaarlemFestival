@@ -14,6 +14,7 @@ header("Content-type: text/css; charset: UTF-8");
 .j-content h1 {
     text-transform: uppercase;
     margin-bottom: 36px;
+    font-weight: bold;
 }
 
 .j-about {
@@ -27,6 +28,10 @@ header("Content-type: text/css; charset: UTF-8");
 
 .j-content .row {
     margin-bottom: 36px;
+}
+
+.j-content .row .col iframe {
+    box-shadow: 0 0 8px #888;
 }
 
 .j-artist-link:hover {
