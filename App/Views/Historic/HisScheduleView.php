@@ -1,5 +1,5 @@
 
-<?php $this->insert('Includes/Historic/HistoricSubnav'); ?>
+<?php $this->insert('Historic/Includes/HistoricSubnav'); ?>
 
 <?php $this->start('head'); ?><!-- start head -->
 

@@ -1,4 +1,9 @@
 .hissubnav{
     background-color:#DB1F1F;
-
+    max-width: 300px;
+    margin: 0 auto;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
 }
