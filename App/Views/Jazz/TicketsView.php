@@ -14,7 +14,7 @@
     <?= $this->content('subnav'); ?>
 
     <main class="j-content text-center">
-        <h1>Event timetable</h1>
+        <h1>Order tickets</h1>
     </main>
 </div>
 <!-- < ?= $this->getHeaderColour(); ?> -->
