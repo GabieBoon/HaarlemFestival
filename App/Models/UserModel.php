@@ -193,6 +193,11 @@ class UserModel extends ModelBase
         $this->save();
     }
 
+    public function getFullName()
+    {
+        return ucfirst($this->firstName) . ' ' . $this->preposition . ' ' . ucfirst($this->lastName);
+    }
+
 
 
 

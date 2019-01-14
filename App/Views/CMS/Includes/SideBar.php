@@ -22,10 +22,21 @@ $pathToImageFolder = PROOT . 'Public/Images/';
     <img id="logo" src="<?= $pathToImageFolder . 'HaarlemFestival-Logo-WT.svg'; ?>">
 
     <div id="loggedInUserInfoWrapper">
-        <img id="avatar" src="<?= $pathToImageFolder . 'CMS/user-solid.svg'; ?>">
-        <h3 id="userName">Administrator</h3>
-        <a id="logoutBtn" href="cms/logout">Logout</a>
 
+
+        <div id="loggedInUserInfo-header">
+            <!--  -->
+            <!-- <span>Logged in as:</span> -->
+            <h4 id="fullName"><?= $this->UserModel->getFullName(); ?></h4>
+        </div>
+        <div id="loggedInUserInfo-Left">
+            <img id="avatar" src="<?= $pathToImageFolder . 'CMS/user-solid.svg'; ?>">
+        </div>
+        <div id="loggedInUserInfo-Right">
+            <p><?= $this->UserModel->role ?></p>
+            <a id="logoutBtn" href="<?= PROOT ?>cms/logout">Logout</a>
+        </div>
+        <span class="clearFix"></span>
 
     </div>
 

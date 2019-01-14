@@ -8,20 +8,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?= PROOT ?>Public/StyleSheets/Bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+
+    <?php
+    // These comments are in php so they'll be serverside.
+    // The 3rd party vendor libraries can be found in Public/Vendor.
+    // Versions are kept in '_versions.txt'.
+    ?>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="<?= PROOT ?>Public/Vendor/Bootstrap/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <script src="<?= PROOT ?>Public/Vendor/Extensions/Bootstrap.min.js"></script>
+
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="<?= PROOT ?>Public/Vendor/Fontawesome/css/all.min.css" > 
     
+    <!-- Scripts -->
+    <script src="<?= PROOT ?>Public/Vendor/jQuery/jQuery.min.js"></script>
+        
     <!-- other CSS -->
-    <link rel="stylesheet" href="<?= PROOT ?>Public/StyleSheets/Custom.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/StyleSheet.css" >
     
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <!-- <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1" crossorigin="anonymous"></script> -->
-
-    <!-- Scripts -->
-    <script src="<?= PROOT ?>Public/JavaScripts/JQuery-3.3.1.slim.min.js"></script>
-    <script src="<?= PROOT ?>Public/JavaScripts/Bootstrap.min.js"></script>
     
     <!-- start Import -->
     <?= $this->content('head'); ?>

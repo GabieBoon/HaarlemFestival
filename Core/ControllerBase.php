@@ -44,33 +44,36 @@ class ControllerBase extends ApplicationBase
         }
     }
 */
-
+  
+    // is gefixt, alleen moet alle references nog worden opgeruimt
     public function utf8_encodeObjectArray($data){
-        if (is_array($data)){
-            for ($i = 0; $i < count($data); $i++){
+        return $data;
+    //     if (is_array($data)){
+    //         $count = count($data);
+    //         for ($i = 0; $i < $count; $i++){
+    //             $stdClass = $data[$i];
+    //             if (is_object($stdClass)){
+                    
+    //                 foreach ($stdClass as $classProperty => $classPropertyValue){
+    //                     if (is_array($stdClass->$classProperty)){
 
-                if (is_object($data[$i])){
-                    foreach ($data[$i] as $classProperty => $classPropertyValue){
+    //                         for ($j = 0; $j < count($stdClass->$classProperty); $j++){
+    //                             $stdClass->$classProperty[$j] = utf8_encode($stdClass->$classProperty[$j]);
+    //                         }
 
-                        if (is_array($data[$i]->$classProperty)){
+    //                     }
+    //                     else{
+    //                         $stdClass->$classProperty = utf8_encode($stdClass->$classProperty);
+    //                     }
 
-                            for ($j = 0; $j < count($data[$i]->$classProperty); $j++){
-                                $data[$i]->$classProperty[$j] = utf8_encode($data[$i]->$classProperty[$j]);
-                            }
+    //                 }
+    //             }
 
-                        }
-                        else{
-                            $data[$i]->$classProperty = utf8_encode($data[$i]->$classProperty);
-                        }
-
-                    }
-                }
-
-            }
-            return $data;
-        }
-        else{
-            return $data;
-        }
+    //         }
+    //         return $data;
+    //     }
+    //     else{
+    //         return $data;
+    //     }
     }
 }

@@ -33,12 +33,52 @@
     border-bottom: 1px solid #c9c9c9;
     height: auto;
     width: inherit;
+    color: #fff;
+    display: flex;
+    flex-flow: row wrap;
 }
 
-#avatar {
+#loggedInUserInfo-header {
     position: relative;
-    margin: 0 5px;
+    width: inherit;
+    /* flex: 0 100%; */
+}
+
+#loggedInUserInfo-Left {
+    position: relative;
+    margin-left: 5px;
     width: 50px;
+    /* flex: 1 0 50px; */
+    /* display: inline; */
+}
+
+#loggedInUserInfo-Right {
+    position: relative;
+    font-style: normal;
+    margin: 0 auto;
+    text-align: right;
+    /* flex: 1; */
+    /* clear: right;  */
+}
+
+#avatar {}
+
+#fullName {
+    font-size: 1vw;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#logoutBtn {
+    color: #0099ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#logoutBtn:hover {
+    color: #4DB9E8;
+    text-decoration: underline;
 }
 
 .hRule {
@@ -98,18 +138,4 @@
     top: 2px;
     width: 40px;
     white-space: nowrap
-}
-
-#logoutBtn {
-    display: inline;
-}
-
-#userName {
-    font-size: 1.25rem;
-    position: relative;
-    font-style: normal;
-    color: #fff;
-    white-space: nowrap;
-    display: inline;
-    top: 0;
 }

@@ -12,29 +12,29 @@
 $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
 
 
-function deterActiveMenuItem($menuItem)
-{
-    $lc_menuItem = strtolower($menuItem);
-    $url = Router::getUrlAsArray();
+// function deterActiveMenuItem($menuItem)
+// {
+//     $lc_menuItem = strtolower($menuItem);
+//     $url = Router::getUrlAsArray();
  
 
 
-    $ucf_event = ucfirst($event);
-    if ($ucf_event === 'Dance') {
-            //Router::redirect('cms/edit/event/dance');
-        return $event;
-    } elseif ($ucf_event === 'Jazz') {
-        return $event;
-    } elseif ($ucf_event === 'Food') {
-        return $event;
-    } elseif ($ucf_event === 'Historic') {
-        return $event;
-    } else {
-        return 'Event';
-    }
+//     $ucf_event = ucfirst($event);
+//     if ($ucf_event === 'Dance') {
+//             //Router::redirect('cms/edit/event/dance');
+//         return $event;
+//     } elseif ($ucf_event === 'Jazz') {
+//         return $event;
+//     } elseif ($ucf_event === 'Food') {
+//         return $event;
+//     } elseif ($ucf_event === 'Historic') {
+//         return $event;
+//     } else {
+//         return 'Event';
+//     }
 
-    return '';
-}
+//     return '';
+// }
 
 
 function getMenuItem(string $path, bool $isSubMenuItem = false)
@@ -52,13 +52,6 @@ return 'href = "'. PROOT . $path . '" class="' . $menuItemClass .  $currentPage 
 }
 
 ?>
-
-
-
-
-
-
- 
 
 
 <!-- Menu (Group) -->
