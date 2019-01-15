@@ -136,3 +136,8 @@
     justify-self: end;
     border: 1px solid #000;
 }
+.endtekst{
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    max-width: 70%;
+}
