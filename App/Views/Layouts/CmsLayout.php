@@ -14,7 +14,7 @@
 ?>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="<?= PROOT ?>Public/Vendor/Bootstrap/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
-    <script src="<?= PROOT ?>Public/Vendor/Extensions/Bootstrap.min.js"></script>
+    <script src="<?= PROOT ?>Public/Vendor/Bootstrap/js/Bootstrap.min.js"></script>
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="<?= PROOT ?>Public/Vendor/Fontawesome/css/all.min.css" > 

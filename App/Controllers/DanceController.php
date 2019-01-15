@@ -12,25 +12,15 @@ class DanceController extends ControllerBase
 
     public function indexAction()
     {
-        $this->showPageV2();
+        $this->showPage();
     }
 
-//    public function showPage(){
-//        $danceArtists = $this->DanceModel->getDanceArtists();
-//        $danceLocations = $this->DanceModel->getLocations("Dance");
-//        $danceTickets = $this->DanceModel->getDanceTickets();
-//        $allAccessTickets = $this->DanceModel->getAllAccessTicketsDance();
-//
-//        $this->view->showPage($danceArtists, $danceLocations, $danceTickets, $allAccessTickets);
-//    }
-
-    public function showPageV2()
+    public function showPage()
     {
-
-        $this->view->danceArtists = $this->utf8_encodeObjectArray($this->DanceModel->getDanceArtists());
-        $this->view->danceLocations = $this->utf8_encodeObjectArray($this->DanceModel->getLocations("Dance"));
-        $this->view->danceTickets = $this->utf8_encodeObjectArray($this->DanceModel->getDanceTickets());
-        $this->view->allAccessTickets = $this->utf8_encodeObjectArray($this->DanceModel->getAllAccessTicketsDance());
+        $this->view->danceArtists = $this->DanceModel->getDanceArtists();
+        $this->view->danceLocations = $this->DanceModel->getLocations("Dance");
+        $this->view->danceTickets = $this->DanceModel->getDanceTickets();
+        $this->view->allAccessTickets = $this->DanceModel->getAllAccessTicketsDance();
 
         include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
         $this->view->table = new Table();
