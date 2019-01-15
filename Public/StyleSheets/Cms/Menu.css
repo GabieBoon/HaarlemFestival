@@ -1,11 +1,11 @@
-#menu {
+#menuWrapper {
     position: relative;
     width: 200px;
     margin: 0;
     padding: 0;
 }
 
-#menu ul{
+#menu {
     width: inherit;
     margin: 0;
     padding: 0;
@@ -15,6 +15,10 @@
     list-style: none;
 }
 
+#menu>li {
+    margin-bottom: 10px;
+}
+
 #menu a {
     text-decoration: none;
     color: inherit;
@@ -22,27 +26,38 @@
 
 #menu .menuItem {
     display: block;
-    position: relative;
     background-color: rgba(201, 201, 201, 1);
-    margin-bottom: 10px;
     padding-left: 10px;
-    top: 382px;
+    position: relative;
     width: inherit;
     height: 50px;
     line-height: 50px;
     font-size: 16px;
 }
 
-#menu .subMenuItem {
+#menu li>ul {
     display: none;
-    position: relative;
+    margin: 0;
+    padding: 0;
 }
 
-#menu .menuItem:hover {
+#menu li>ul>li>a, #menu .subMenuItem {
+    display: block;
+    position: relative;
+    background-color: #e4e4e4;
+
+    padding-left: 10px;
+    width: inherit;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+}
+
+#menu .menuItem:hover, #menu .subMenuItem:hover {
     background-color: rgba(221, 221, 221, 1);
 }
 
-#menu .menuItem.currentPage {
+#menu .currentPage {
     background-color: rgba(241, 241, 241, 1);
     box-sizing: border-box;
     border-right-width: 5px;
@@ -52,10 +67,6 @@
 }
 
 #menu .menuIcon {
-    /* width: 35px;
-    vertical-align: middle;
-    height: 35px;
-    margin-right: 10px; */
     width: 50px;
     vertical-align: top;
 }
@@ -64,11 +75,6 @@
     font-size: 35px;
     line-height: 50px;
 }
-
-/* #menu .menuIcon.layer-1 {
-    width: 50px;
-    vertical-align: top;
-} */
 
 #menu .menuIcon.layer-2 {
     width: auto;
@@ -81,20 +87,9 @@
 
 #menu .menuIcon.layer-2::before {
     font-size: 17.5px;
-    /* line-height: 50px; */
-    /* height: 25px; */
-    /* text-shadow: -3px 0 #C9C9C9, 0 3px #C9C9C9, 3px 0 #C9C9C9, 0 -3px #C9C9C9; */
 }
 
-#menu li p {
-    border-width: 0;
-    position: absolute;
-    left: 50;
-    top: 0;
-    width: 0;
-    visibility: hidden;
-    word-wrap: break-word
-}
+
 
 #u415 {
     border-width: 0;

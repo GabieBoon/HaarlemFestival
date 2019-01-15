@@ -22,6 +22,7 @@
     <!-- Scripts -->
     <script src="<?= PROOT ?>Public/Vendor/jQuery/jQuery.min.js"></script>
     <script src="<?= PROOT ?>Public/Vendor/Fitty/fitty.min.js"></script>
+    <script src="<?= PROOT ?>Public/JavaScriptS/jQueryCms.js"></script>
     
 
     <?= $this->content('head'); ?>

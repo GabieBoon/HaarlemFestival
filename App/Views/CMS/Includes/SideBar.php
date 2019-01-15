@@ -1,9 +1,10 @@
+
 <?php $this->insert('CMS/Includes/Menu'); ?>
 <!-- head -->
 <?php $this->start('head'); ?>
-<!-- <link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/StyleSheet.css">Cms CSS -->
+
 <link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/Sidebar.css"><!-- Cms CSS -->
-<!-- <link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/Menu.css">Cms CSS -->
+
 
 
 <?php $this->end(); ?>
@@ -27,10 +28,11 @@ $pathToImageFolder = PROOT . 'Public/Images/';
         <div id="loggedInUserInfo-header">
             <!--  -->
             <!-- <span>Logged in as:</span> -->
-            <h4 id="fullName"><?= $this->UserModel->getFullName(); ?></h4>
+            <text id="fullName"><?= $this->UserModel->getFullName(); ?></text>
+            <script> fitty('text#fullName');</script>
         </div>
         <div id="loggedInUserInfo-Left">
-            <img id="avatar" src="<?= $pathToImageFolder . 'CMS/user-solid.svg'; ?>">
+            <?= $this->UserModel->getAvatar();?>
         </div>
         <div id="loggedInUserInfo-Right">
             <p><?= $this->UserModel->role ?></p>
