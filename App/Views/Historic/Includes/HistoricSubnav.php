@@ -4,10 +4,11 @@
 
 <?php $this->start('hissubnav'); ?>
 <section class="hissubnav">
-    <nav class="subnav">
-        <a class="" href="<?= PROOT ?>Historic/about">About</a>
-        <a class="" href="<?= PROOT ?>Historic/locations">Locations</a>
-        <a class="" href="<?= PROOT ?>Historic/schedule">Schedule</a>
-    </nav>
+    <p class="subnav">
+        &nbsp;
+        <a class="<?php if($subPage == 'about'  || $subPage == null) {echo 'active';} ?>" href="<?= PROOT ?>Historic/about">About</a> &nbsp;
+        <a class="<?php if($subPage == 'artists') {echo 'active';} ?>" href="<?= PROOT ?>Historic/locations">Locations</a> &nbsp;
+        <a class="<?php if($subPage == 'artists') {echo 'active';} ?>" href="<?= PROOT ?>Historic/schedule">Schedule</a> &nbsp;
+    </p>
 </section>
 <?php $this->end(); ?>
