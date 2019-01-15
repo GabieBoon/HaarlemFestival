@@ -64,3 +64,7 @@ header("Content-type: text/css; charset: UTF-8");
     border-bottom-color: transparent;
     border-right-color: transparent;
 }
+
+.j-subnav-tickets {
+    text-shadow: 0 0 28px rgba(255, 255, 255, .8);
+}

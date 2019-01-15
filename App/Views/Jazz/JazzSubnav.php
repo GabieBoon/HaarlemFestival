@@ -11,7 +11,7 @@
         <ul class="mb-0 pl-0">
             <li><a class="<?php if($subPage == 'about'  || $subPage == null) {echo 'j-active';} ?>" href="<?= PROOT ?>jazz/about">About</a></li>
             <li><a class="<?php if($subPage == 'artists') {echo 'j-active';} ?>" href="<?= PROOT ?>jazz/artists/1">Artists</a></li>
-            <li><a class="<?php if($subPage == 'tickets') {echo 'j-active';} ?>" href="<?= PROOT ?>jazz/tickets">Tickets</a></li>
+            <li><a class="j-subnav-tickets<?php if($subPage == 'tickets') {echo ' j-active';} ?>" href="<?= PROOT ?>jazz/tickets">Tickets</a></li>
             <li><a class="<?php if($subPage == 'locations') {echo 'j-active';} ?>" href="<?= PROOT ?>jazz/locations">Locations</a></li>
         </ul>
     </nav>

@@ -42,8 +42,8 @@ function encodeURIComponent($str) {
                         2013 DN<br>
                         Haarlem<br>
                         <a href="mailto:info@patronaat.nl">info@patronaat.nl</a><br>
-                        <a href="tel:023-5175850">023 - 517 58 50</a><br>
-                        <a href="tel:023-5175858">023 - 517 58 58</a>
+                        <a href="tel:0235175850">023 517 58 50</a><br>
+                        <a href="tel:0235175858">023 517 58 58</a>
                     </div>
                 </address>
                 <!-- Google Maps embed for Patronaat -->
