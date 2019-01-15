@@ -114,7 +114,7 @@ class UserModel extends ModelBase
         $user = self::currentLoggedInUser();
         if ($user) {
             return $user;
-        }elseif ($returnToSender) {
+        } elseif ($returnToSender) {
             checkBlacklist($_SESSION['LastVisited']);
             router::redirect('cms/login?dest=' . $_SESSION['LastVisited']);
         } elseif ($diffDestination != '') {
@@ -190,12 +190,18 @@ class UserModel extends ModelBase
         $this->assign($params);
         $this->deleted = 0;
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        // formatted_print_r($this->password);
         $this->save();
     }
 
     public function getFullName()
     {
         return ucfirst($this->firstName) . ' ' . $this->preposition . ' ' . ucfirst($this->lastName);
+    }
+    public function getAvatar()
+    {
+        $fileContents = file_get_contents(ROOT . 'Public' . DS . 'Images' . DS . 'CMS' . DS . 'user-solid.svg');
+        return '<span id="avatar" style="color:' . $this->color . ';">' . $fileContents . '</span>';
     }
 
 

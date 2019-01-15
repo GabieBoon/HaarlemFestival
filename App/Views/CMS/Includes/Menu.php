@@ -55,8 +55,8 @@ return 'href = "'. PROOT . $path . '" class="' . $menuItemClass .  $currentPage 
 
 
 <!-- Menu (Group) -->
-<nav id="menu">
-    <ul>
+<nav id="menuWrapper">
+    <ul id="menu">
         <li><a <?= getMenuItem('cms/dashboard'); ?>><i class="menuIcon fas fa-tachometer-alt"></i>Dashboard</a></li>
         <li><a <?= getMenuItem('cms/statistics'); ?>><i class="menuIcon fas fa-chart-line"></i>Statistics</a>
             <ul>
@@ -80,9 +80,9 @@ return 'href = "'. PROOT . $path . '" class="' . $menuItemClass .  $currentPage 
         <li><a <?= getMenuItem('cms/edit/event'); ?>><i class="menuIcon fas fa-edit"></i>Edit Event Pages</a>
             <ul>
                 <li><a <?= getMenuItem('cms/edit/event/dance', true); ?>>Dance</a></li>
-                <li><a <?= getMenuItem('cms/edit/event/dance', true); ?>>Jazz</a></li>
-                <li><a <?= getMenuItem('cms/edit/event/dance', true); ?>>Food</a></li>
-                <li><a <?= getMenuItem('cms/edit/event/dance', true); ?>>Historic</a></li>
+                <li><a <?= getMenuItem('cms/edit/event/jazz', true); ?>>Jazz</a></li>
+                <li><a <?= getMenuItem('cms/edit/event/food', true); ?>>Food</a></li>
+                <li><a <?= getMenuItem('cms/edit/event/historic', true); ?>>Historic</a></li>
             </ul>
         </li>
         <li><a <?= getMenuItem('cms/manageusers'); ?>><i class="menuIcon fas fa-users-cog"></i>ManageUsers</a></li>

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="<?= PROOT ?>Public/Vendor/Fontawesome/css/all.min.css" > 
     
 
+    <script src="<?= PROOT ?>Public/JavaScriptS/jQueryCms.js"></script>
     
 
     <?= $this->content('head'); ?>

@@ -25,7 +25,8 @@ class CmsController extends ControllerBase //Jasper
 
         $validation = new Validate();
         if ($_POST) {
-            
+            // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            // formatted_print_r($password);
             //form validation
             $validation->check($_POST, [
                 'username' => [
