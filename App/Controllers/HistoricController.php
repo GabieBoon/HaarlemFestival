@@ -25,6 +25,13 @@ class HistoricController extends ControllerBase {
     }
 
     public function scheduleAction() {
+
+        $this->view->languages = $this->utf8_encodeObjectArray($this->HistoricModel->getLanguages());
+        $this->view->historicTickets = $this->utf8_encodeObjectArray($this->HistoricModel->getHistoricTickets());
+
+        include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
+        $this->view->table = new Table();
+
         $this->view->renderView('Historic/HisScheduleView');
     }
 }
