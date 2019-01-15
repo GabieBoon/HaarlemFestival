@@ -1,4 +1,59 @@
 .hissubnav{
+    background-color:transparent;
+    width: 275px;
+    height: 40px;
+    margin: 0 auto;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+
+}
+.subnav{
+    position: relative;
+    z-index: 12;
+}
+
+.subnav a{
+    color: #FFF;
+    opacity: 0.5;
+}
+
+.active {
+    opacity: 1 !important;
+}
+
+
+.subnav a:hover {
+    text-decoration: none;
+    color: #FFF;
+    opacity: 1;
+}
+
+.hissubnav::before,
+.hissubnav::after{
+    position: absolute;
+    content: '';
+    width: 15%;
+    height: 40px;
+    min-width: 250px;
+    background: #FFFFFF;
+    z-index: 1;
+}
+
+.hissubnav::before{
+    left: 40%;
+    transform: skew(20deg);
     background-color:#DB1F1F;
 
 }
+
+.hissubnav::after{
+    right: 40%;
+    top: 150px;
+    transform: skew(160deg);
+    background-color:#DB1F1F;
+}
+
+
+

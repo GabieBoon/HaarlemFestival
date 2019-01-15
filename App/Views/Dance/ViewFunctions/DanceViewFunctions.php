@@ -14,7 +14,7 @@ class DanceViewFunctions
     public static function showArtists($artists) 
     {
         foreach ($artists as $artist) {
-            
+
             $title = $artist->stageName;
 
             include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';

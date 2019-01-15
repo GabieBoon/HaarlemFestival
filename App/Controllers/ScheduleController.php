@@ -10,7 +10,7 @@ class ScheduleController extends ControllerBase {
 
     public function indexAction(){
 
-        $this->showPageV2();
+        $this->showPage();
     }
 
 //    public function showPage(){
@@ -28,16 +28,16 @@ class ScheduleController extends ControllerBase {
 //        $this->view->showPage($danceArtists, $danceLocations, $jazzLocations, $restaurants, $languages, $danceTickets, $foodTickets, $historicTickets, $jazzTickets);
 //    }
 
-    public function showPageV2(){
-        $this->view->danceLocations = $this->utf8_encodeObjectArray($this->ScheduleModel->getLocations("Dance"));
-        $this->view->jazzLocations = $this->utf8_encodeObjectArray($this->ScheduleModel->getLocations("Jazz"));
-        $this->view->restaurants = $this->utf8_encodeObjectArray($this->ScheduleModel->getLocations("Food"));
-        $this->view->languages = $this->utf8_encodeObjectArray($this->ScheduleModel->getLanguages());
+    public function showPage(){
+        $this->view->danceLocations = $this->ScheduleModel->getLocations("Dance");
+        $this->view->jazzLocations = $this->ScheduleModel->getLocations("Jazz");
+        $this->view->restaurants = $this->ScheduleModel->getLocations("Food");
+        $this->view->languages = $this->ScheduleModel->getLanguages();
 
-        $this->view->danceTickets = $this->utf8_encodeObjectArray($this->ScheduleModel->getDanceTickets());
-        $this->view->foodTickets = $this->utf8_encodeObjectArray($this->ScheduleModel->getFoodTickets());
-        $this->view->historicTickets = $this->utf8_encodeObjectArray($this->ScheduleModel->getHistoricTickets());
-        $this->view->jazzTickets = $this->utf8_encodeObjectArray($this->ScheduleModel->getJazzTickets());
+        $this->view->danceTickets = $this->ScheduleModel->getDanceTickets();
+        $this->view->foodTickets = $this->ScheduleModel->getFoodTickets();
+        $this->view->historicTickets = $this->ScheduleModel->getHistoricTickets();
+        $this->view->jazzTickets = $this->ScheduleModel->getJazzTickets();
 
         include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
         $this->view->table = new Table();

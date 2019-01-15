@@ -12,16 +12,18 @@
     // The 3rd party vendor libraries can be found in Public/Vendor.
     // Versions are kept in '_versions.txt'.
 ?>
+    <!-- Scripts -->
+    <script src="<?= PROOT ?>Public/Vendor/jQuery/jQuery.min.js"></script>
+    <script src="<?= PROOT ?>Public/Vendor/Fitty/fitty.min.js"></script>
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="<?= PROOT ?>Public/Vendor/Bootstrap/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
-    <script src="<?= PROOT ?>Public/Vendor/Extensions/Bootstrap.min.js"></script>
+    <script src="<?= PROOT ?>Public/Vendor/Bootstrap/js/Bootstrap.min.js"></script>
 
     <!-- Font awesome -->
     <link rel="stylesheet" href="<?= PROOT ?>Public/Vendor/Fontawesome/css/all.min.css" > 
     
-    <!-- Scripts -->
-    <script src="<?= PROOT ?>Public/Vendor/jQuery/jQuery.min.js"></script>
-    <script src="<?= PROOT ?>Public/Vendor/Fitty/fitty.min.js"></script>
+
     <script src="<?= PROOT ?>Public/JavaScriptS/jQueryCms.js"></script>
     
 

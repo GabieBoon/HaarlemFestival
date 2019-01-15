@@ -8,14 +8,13 @@
 .Home1 {
     background: rgba(255, 255, 255, .9);
     padding: 40px;
-    display: inline-block;
+    /*display: inline-block;*/
     width: 1000px;
     /*border: 1px solid #000;*/
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-top: 30px;
-    margin-bottom: 30px;
+    /*margin-top: 30px;
+    margin-bottom: 30px;*/
+    margin: 30px auto;
 }
 
 
@@ -52,6 +51,15 @@
     font-style: italic;
 }
 
+.para3{
+    max-width: 450px;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    margin-top: 100px;
+
+}
+
+
 .img1 {
     float:right;
     width: 450px;
@@ -66,5 +74,70 @@
     margin-top: -75px;
 }
 
+.container1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.8fr 0.9fr;
+    grid-template-areas:
+    "topleft img3"
+    "img4 middleright"
+    "bottomleft img5";
+
+}
+
+.topleft{
+    grid-area: topleft;
+    align-self: center;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.middleright{
+    grid-area: middleright;
+    text-align: right;
+    align-self: center;
+    justify-self: end;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 20px;
+}
 
 
+.bottemleft{
+    grid-area: bottomleft;
+    align-self: center;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-size: 20px;
+}
+
+.img3{
+    grid-area: img3;
+    width: 400px;
+    height: 200px;
+    justify-self: end;
+    border: 1px solid #000;
+}
+
+
+.img4{
+    grid-area: img4;
+    width: 400px;
+    height: 200px;
+    border: 1px solid #000;
+}
+
+
+.img5{
+    grid-area: img5;
+    width: 400px;
+    height: 200px;
+    justify-self: end;
+    border: 1px solid #000;
+}
+.endtekst{
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    max-width: 70%;
+}

@@ -17,6 +17,11 @@ header("Content-type: text/css; charset: UTF-8");
     font-weight: bold;
 }
 
+.j-content .row .col h2 {
+    color: #440E62;
+    margin-bottom: 12px;
+}
+
 .j-about {
     margin: 24px 448px 0 448px;
     padding: 186px 24px;
@@ -83,6 +88,27 @@ header("Content-type: text/css; charset: UTF-8");
 
 .row:last-of-type {
     margin-bottom: 0;
+}
+
+address.row {
+    margin-bottom: 12px !important;
+}
+
+address.row .col {
+    padding: 0 6px;
+}
+
+address.row .col:first-of-type {
+    text-align: right;
+    font-weight: bold;
+}
+
+address.row .col:last-of-type {
+    text-align: left;
+}
+
+address.row .col:last-of-type a {
+    color: #440E62;
 }
 
 .j-bg {

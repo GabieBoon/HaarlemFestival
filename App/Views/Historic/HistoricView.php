@@ -1,4 +1,4 @@
-<?php $this->insert('Includes/Historic/HistoricSubnav'); ?>
+<?php $this->insert('Historic/Includes/HistoricSubnav'); ?>
 
 <?php $this->start('head'); ?><!-- start head -->
 
@@ -13,6 +13,7 @@
 <div class="background-image">
     <?= $this->content('hissubnav'); ?>
     <section class="Home1">
+        <article>
         <h1 class="titel1">Day trip to Haarlem center and surroundings</h1>
         <p class="para1">
             Do you want to know more about the history of the
@@ -27,8 +28,14 @@
         </p>
         <br/>
         <br/>
+
+        </article>
         <img class="img1" src="<?= PROOT ?>public/images/Historic/bavokerk-haarlem.jpg" alt="test">
 
+        <span class="clearfix">
+
+        </span>
+        <article>
         <h1 class="titel2">Walking through Haarlem</h1>
         <br/>
         <br/>
@@ -44,7 +51,12 @@
             In the end you will feel like you know the city and its people.
             <br />
         </p>
-            <img class="img2" src="<?= PROOT ?>public/images/Historic/fotogracht.jpg" alt="test">
+
+        </article>
+        <img class="img2" src="<?= PROOT ?>public/images/Historic/fotogracht.jpg" alt="test">
+        <span class="clearfix">
+
+        </span>
 
     </section>
 
