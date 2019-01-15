@@ -14,13 +14,29 @@
     z-index: 12;
 }
 
+.subnav a{
+    color: #FFF;
+    opacity: 0.5;
+}
+
+.active {
+    opacity: 1 !important;
+}
+
+
+.subnav a:hover {
+    text-decoration: none;
+    color: #FFF;
+    opacity: 1;
+}
+
 .hissubnav::before,
 .hissubnav::after{
     position: absolute;
     content: '';
     width: 15%;
     height: 40px;
-    min-width: 100px;
+    min-width: 250px;
     background: #FFFFFF;
     z-index: 1;
 }
@@ -38,3 +54,6 @@
     transform: skew(160deg);
     background-color:#DB1F1F;
 }
+
+
+
