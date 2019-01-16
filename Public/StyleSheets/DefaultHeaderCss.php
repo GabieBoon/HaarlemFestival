@@ -240,3 +240,37 @@ Header.Home{
 Header.Schedule{
     background-color: <?php echo $scheduleColor ?>
 }
+
+.dropbtn {
+color: white;
+border: none;
+cursor: pointer;
+padding:0;
+}
+
+.dropbtn img{
+width:50px;
+}
+
+.dropdown {
+display: inline-block;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+right: 0;
+background-color: #f9f9f9;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-content img{
+    width:50px;
+    margin:0;
+    padding:0;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #3e8e41;}

@@ -5,5 +5,5 @@
     <p> <?= $restaurant->bio?> </p>
     <p> <?= $restaurant->foodTypecol?> </p>
     <p>Stars: <?php for ($i=0; $i<$restaurant->stars; $i++){ print "⋆"; } ?></p>
-    <a href="<?= PROOT ?>food/<?= $restaurant->name ?>"> <h5>view restaurant</h5> </a>
+    <a href="<?= PROOT ?>food/restaurant/<?= $restaurant->name ?>"> <h5>view restaurant</h5> </a>
 </div>

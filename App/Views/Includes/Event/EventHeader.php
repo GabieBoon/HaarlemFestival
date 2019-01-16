@@ -1,10 +1,13 @@
 
 <?php $this->start('head'); ?>
 <!-- Header CSS -->
-     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/DefaultHeaderCss.php" >
+    <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/DefaultHeaderCss.php" >
+
 <?php $this->end(); ?>
 
 <?php $this->start('header'); ?>
+
+
 <header class="<?= $this->_className?>">
     <a href="<?= PROOT ?>">
         <img
@@ -21,12 +24,23 @@
             <li class="<?php if($this->_className == 'Schedule'){echo 'activeSchedule';} ?> schedule-btn nav-btn"><a href="<?= PROOT ?>schedule/">Schedule</a></li>
             <li class="<?php if($this->_className == 'Cart' ){echo 'activeTicket';}elseif($this->_className == 'Order'){echo 'activeTicket';} ?> cart-btn nav-btn"><a class="cart-icon" href="<?= PROOT ?>cart/"><i class="fas fa-shopping-cart"></i></a></li>
 
-            <li class="nav-btn">
-                <select class="language-selection">
-                    <option value="nederlands">Nederlands</option>
-                    <option value="engels">Engels</option>
-                </select>
-            </li>
+            <div class="dropdown">
+                <button class="dropbtn language-selection"><img src="<?= PROOT ?>public/images/languages/engels.png" alt="engels"></button>
+                <div class="dropdown-content" style="left:0;">
+                    <img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="nederlands">
+                    <img src="<?= PROOT ?>public/images/languages/engels.png" alt="engels">
+                </div>
+            </div>
+
+<!--            <li class="dropdown">-->
+<!--                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Taalselectie<span class="caret"></span></a>-->
+<!--                <ul class="dropdown-menu">-->
+<!--                    <li><img src="--><?//= PROOT ?><!--public/images/languages/nederlands.png" alt="nederlands"></li>-->
+<!--                    <li><img src="--><?//= PROOT ?><!--public/images/languages/engels.png" alt="engels"></li>-->
+<!--                </ul>-->
+<!--            </li>-->
+
+
         </ul>
     </nav>
 </header>

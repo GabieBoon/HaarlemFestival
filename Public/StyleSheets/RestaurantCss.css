@@ -8,10 +8,138 @@
     height: 200px;
 }
 
-.restaurantDetails p {
+.details{
+    display:flex;
+    width:100%;
+    flex-flow: column;
+}
+
+.detailRow{
+    width:100%;
+    /*display:flex;*/
+
+}
+.detailRow{
+    display: block !important;
+}
+
+.detailRow p{
+    display: inline-block;
+    position:relative;
+}
+
+.wrapper {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom:40px;
+}
+.form-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-row > div{
+    flex: 0.5;
+}
+
+.form-row > p,
+.form-row > div > p{
+    padding: .5em 0 .5em .5em;
+    margin-right:15px;
+    width:150px;
+    word-wrap: break-word;
+}
+
+.form-row  :last-child  {
+    flex: 2;
+}
+
+iframe{
+    height: 225px;
+}
+
+.test{
+    margin: 0 auto;
+    max-width:400px;
+}
+
+h3{
+    font-size:22px;
+    font-weight: bold;
+}
+
+.test h3{
     display: inline;
 }
 
-.restaurantDetail{
-    margin-bottom:20px;
+.left h3{
+    text-align: left;
+}
+
+.price{
+    margin-bottom: 17px;
+}
+
+.right{
+    float: right;
+}
+
+.steruitleg{
+    font-size:12px;
+}
+
+.reservationButton{
+    background-color: #CB6C0E;
+    font-weight: bold;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;;
+}
+
+.buttonwrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:30px;
+}
+
+.Overlay {}
+
+.OverlayBackground {
+    position: fixed;
+    /* Sit on top of the page content */
+    width: 100vw;
+    /* Full width (cover the whole page) */
+    height: 100vh;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(215,215,215,0.85);
+    /* Black background with opacity */
+    z-index: 20;
+    /* Specify a stack order in case you're using a different order for other elements */
+    padding-top:8%;
+}
+
+.OverlayForeground {
+    background-color: #ffffff;
+    z-index: 50;
+    width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+
+}
+
+.popupContent{
+    max-width: 700px;
+    margin: 0 auto;
 }
