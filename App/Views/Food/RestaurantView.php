@@ -41,7 +41,7 @@ function encodeURIComponent($str) {
                     </div>
                     <div class="form-row">
                         <p class="font-weight-bold">Stars</p>
-                        <p class="child-2">⋆⋆⋆⋆</p>
+                        <p class="child-2">4 stars</p>
                     </div>
                     <div class="form-row">
                         <div>
@@ -53,17 +53,20 @@ function encodeURIComponent($str) {
                     </div>
                 </div>
 
-                <div class="test">
+                <div class="priceoverview">
                     <div class="price">
                         <h3 class="left">Reservation fees:</h3>
+                        <h3 class="right"> </h3>
                         <h3 class="right">€ 10,00</h3>
                     </div>
                     <div class="price">
                         <h3 class="left">Total price (13+):</h3>
+                        <h3 class="right blue"> *</h3>
                         <h3 class="right">€ 45,00</h3>
                     </div>
                     <div class="price">
                         <h3 class="left">Total price for childeren:</h3>
+                        <h3 class="right blue">‏*</h3>
                         <h3 class="right">€ 22,50</h3>
                     </div>
 
@@ -81,33 +84,46 @@ function encodeURIComponent($str) {
                         <div class="OverlayForeground" >
                             <div class="popupContent">
                                 <h1>Session: RestaurantName</h1>
-                                <p>Number of people</p>
-                                <input type="text">
-                                <p>Number of childeren (12-)</p>
-                                <input type="text">
-                                <p>Select a day</p>
-                                <select>
-                                    <option value="" disabled selected>Make your choice...</option>
-                                    <option value="1">Day 1</option>
-                                    <option value="2">Day 2</option>
-                                    <option value="3">Day 3</option>
-                                    <option value="4">Day 4</option>
-                                </select>
-                                <p>Select a session</p>
-                                <select>
-                                    <option value="" disabled selected>Make your choice...</option>
-                                    <option value="1">Session 1</option>
-                                    <option value="2">Session 2</option>
-                                    <option value="3">Session 3</option>
-                                    <option value="4">Session 4</option>
-                                </select>
-                                <p class="font-italic">Allergens can be reported in the checkout process.</p>
+                                <div class="number">
+                                    <p>Number of people</p>
+                                    <input type="text">
+                                </div>
+                                <div class="number">
+                                    <p>Number of childeren (12-)</p>
+                                    <input type="text">
+                                </div>
+                                <div class="input">
+                                    <p>Select a day</p>
+                                    <select>
+                                        <option value="" disabled selected>Make your choice...</option>
+                                        <option value="1">Day 1</option>
+                                        <option value="2">Day 2</option>
+                                        <option value="3">Day 3</option>
+                                        <option value="4">Day 4</option>
+                                    </select>
+                                </div>
+                                <div class="input">
+                                    <p>Select a session</p>
+                                    <select>
+                                        <option value="" disabled selected>Make your choice...</option>
+                                        <option value="1">Session 1</option>
+                                        <option value="2">Session 2</option>
+                                        <option value="3">Session 3</option>
+                                        <option value="4">Session 4</option>
+                                    </select>
+                                </div>
 
-                                <h2>Total price €</h2>
-                                <h2>0.00</h2>
+                                <p class="font-italic allergiesInfo">Allergens can be reported in the checkout process.</p>
 
-                                <button class="cancelBTN">Cancel</button>
-                                <button class="OrderBTN">Order</button>
+                                <div class="totalPrice">
+                                    <h2>0.00</h2>
+                                    <h2>Total price €</h2>
+                                </div>
+
+                                <div class="buttons">
+                                    <button class="cancelBTN reservationButton">Cancel</button>
+                                    <button class="OrderBTN reservationButton">Order</button>
+                                </div>
                             </div>
                         </div>
                     </div>
