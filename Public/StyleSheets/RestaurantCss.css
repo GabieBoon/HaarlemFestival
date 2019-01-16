@@ -58,7 +58,7 @@ iframe{
     height: 225px;
 }
 
-.test{
+.priceoverview{
     margin: 0 auto;
     max-width:400px;
 }
@@ -68,7 +68,7 @@ h3{
     font-weight: bold;
 }
 
-.test h3{
+.priceoverview h3{
     display: inline;
 }
 
@@ -82,6 +82,10 @@ h3{
 
 .right{
     float: right;
+}
+
+.blue{
+    color:#0000FF;
 }
 
 .steruitleg{
@@ -114,32 +118,72 @@ h3{
 
 .OverlayBackground {
     position: fixed;
-    /* Sit on top of the page content */
     width: 100vw;
-    /* Full width (cover the whole page) */
     height: 100vh;
-    /* Full height (cover the whole page) */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(215,215,215,0.85);
-    /* Black background with opacity */
     z-index: 20;
-    /* Specify a stack order in case you're using a different order for other elements */
-    padding-top:8%;
+    padding-top:10%;
 }
 
 .OverlayForeground {
     background-color: #ffffff;
     z-index: 50;
     width: 1000px;
-    height: 600px;
+    height: 450px;
     margin: 0 auto;
-
+    border-style: solid;
+    border-width: 1px;
 }
 
 .popupContent{
     max-width: 700px;
     margin: 0 auto;
+}
+
+.input p{
+    display:inline;
+}
+
+.input select{
+    float:right;
+    width:300px;
+}
+
+.number p{
+    display:inline;
+}
+
+.number input{
+    width:300px;
+    height: 22px;
+    float:right;
+    max-width: 300px;
+}
+
+.popupContent h1{
+    padding-top:20px;
+    margin-bottom: 50px;
+}
+
+.allergiesInfo{
+    padding-top:15px;
+    padding-bottom:50px;
+}
+
+.totalPrice{
+    width:100%;
+    height:50px;
+}
+
+.totalPrice h2{
+    display:inline;
+    float:right;
+}
+
+.OrderBTN{
+    float:right;
 }
