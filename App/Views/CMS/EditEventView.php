@@ -20,18 +20,19 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
 
 ?>
 
-<div id="base">
-    <!-- Unnamed (Rectangle) -->
-    <div id="u462">
-        <div id="u462_div"></div>
-        <div id="u462_text" class="text ">
-            <h1><span>Edit <?= ucfirst($this->event); ?> Page</span></h1>
+<div id="pageWrapper">
+    <header id="pageHeader">
+        <div id="pageTitle">
+            <h1>Edit
+                <?= ucfirst($this->event); ?> Page</h1>
             <p>Choose an event from the menu</p>
-            
         </div>
-    </div>
-</div>
+    </header>
+    <main id="pageMain" class="">
 
+
+    </main>
+</div>
 
 
 

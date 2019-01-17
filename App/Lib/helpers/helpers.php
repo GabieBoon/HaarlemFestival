@@ -116,5 +116,26 @@ function camelCaseExplode($string, $lowercase = true, $example_string = 'AA Bc',
     return is_string($glue) ? implode($glue, $array) : $array;
 }
 
+function toCamelCase(string $string)
+{
+    return lcfirst(str_replace(' ', '', ucwords($string)));
+}
+
+
+
+function commify($str)
+{
+    $n = strlen($str);
+    if ($n <= 3) {
+        $return = $str;
+    } else {
+        $pre = substr($str, 0, $n - 3);
+        $post = substr($str, $n - 3, 3);
+        $pre = commify($pre);
+        $return = "$pre,$post";
+    }
+    return ($return);
+}
+
 
 ?>

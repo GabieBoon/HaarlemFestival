@@ -26,4 +26,5 @@ class CmsModel extends ModelBase
             return 'Event';
         }
     }
+
 }

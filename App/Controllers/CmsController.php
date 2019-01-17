@@ -101,15 +101,12 @@ class CmsController extends ControllerBase //Jasper
 
 
 
-    public function statisticsAction($event = '')
+    public function statisticsAction($event = 'Event')
     {
-        if ($event == 'this') {
-
-        } elseif ($event == 'that') {
-
-        }
-        
+        $this->view->event = CmsModel::CheckEvent($event);
         $this->view->UserModel = UserModel::checkLoginState();
+       
+        
         $this->view->renderView('CMS/StatisticsView');
     }
 

@@ -1,4 +1,8 @@
-JQuery: production jQuery v3.3.1 https://jquery.com/download/
+﻿JQuery: production jQuery v3.3.1 https://jquery.com/download/
+
 Bootstrap: compiled v4.2.1 dist https://getbootstrap.com/docs/4.2/getting-started/download/
+
 fontawesome: free v5.6.3 web https://fontawesome.com/download
+
 fitty: v2.2.6 https://github.com/rikschennink/fitty/tree/gh-pages/dist
+Highcharts: v7.0.1 https://www.highcharts.com/blog/download/

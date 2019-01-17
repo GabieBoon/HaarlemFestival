@@ -58,7 +58,7 @@ return 'href = "'. PROOT . $path . '" class="' . $menuItemClass .  $currentPage 
 <nav id="menuWrapper">
     <ul id="menu">
         <li><a <?= getMenuItem('cms/dashboard'); ?>><i class="menuIcon fas fa-tachometer-alt"></i>Dashboard</a></li>
-        <li><a <?= getMenuItem('cms/statistics'); ?>><i class="menuIcon fas fa-chart-line"></i>Statistics</a>
+        <li><a <?= getMenuItem('cms/statistics/dance'); ?>><i class="menuIcon fas fa-chart-line"></i>Statistics</a>
             <ul>
                 <li><a <?= getMenuItem('cms/statistics/dance', true); ?>>Dance</a></li>
                 <li><a <?= getMenuItem('cms/statistics/jazz', true); ?>>Jazz</a></li>
@@ -66,7 +66,7 @@ return 'href = "'. PROOT . $path . '" class="' . $menuItemClass .  $currentPage 
                 <li><a <?= getMenuItem('cms/statistics/historic', true); ?>>Historic</a></li>
             </ul>
         </li>
-        <li><a <?= getMenuItem('cms/edit/timetable'); ?>>
+        <li><a <?= getMenuItem('cms/edit/timetable/dance'); ?>>
                     <i class="menuIcon far fa-calendar"></i>
                     <i class="menuIcon layer-2 fas fa-pen"></i>
                 Edit Timetable</a>
@@ -77,7 +77,7 @@ return 'href = "'. PROOT . $path . '" class="' . $menuItemClass .  $currentPage 
                 <li><a <?= getMenuItem('cms/edit/timetable/historic', true); ?>>Historic</a></li>
             </ul>
         </li>
-        <li><a <?= getMenuItem('cms/edit/event'); ?>><i class="menuIcon fas fa-edit"></i>Edit Event Pages</a>
+        <li><a <?= getMenuItem('cms/edit/event/dance'); ?>><i class="menuIcon fas fa-edit"></i>Edit Event Pages</a>
             <ul>
                 <li><a <?= getMenuItem('cms/edit/event/dance', true); ?>>Dance</a></li>
                 <li><a <?= getMenuItem('cms/edit/event/jazz', true); ?>>Jazz</a></li>

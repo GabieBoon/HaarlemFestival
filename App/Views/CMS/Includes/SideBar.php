@@ -17,7 +17,7 @@ $pathToImageFolder = PROOT . 'Public/Images/';
 
 ?>
 
-<section id="sidebarLeft">
+<section id="sidebarLeft" class="">
 
 
     <img id="logo" src="<?= $pathToImageFolder . 'HaarlemFestival-Logo-WT.svg'; ?>">
