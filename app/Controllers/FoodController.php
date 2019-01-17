@@ -21,9 +21,9 @@ class FoodController extends ControllerBase {
         $this->view->renderView('Food/FoodView');
     }
 
-    public function restaurantAction($restaurantName) {
-        $this->view->restaurantDetails = $this->FoodModel->getRestaurantDetails($restaurantName);
-        $this->view->restaurant = $restaurantName;
+    public function restaurantAction($restaurantId = NULL) {
+        $this->view->restaurantDetails = $this->FoodModel->getRestaurantDetails($restaurantId);
+        $this->view->restaurant = $restaurantId;
 
         $content = new ContentModel();
         $this->view->ContentModel = $content->getContent('EN','Food');
