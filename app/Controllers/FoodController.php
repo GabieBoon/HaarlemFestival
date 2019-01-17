@@ -15,10 +15,19 @@ class FoodController extends ControllerBase {
 
         include ROOT . DS . 'app' . DS . 'Views' . DS . 'Food' . DS . 'ViewFunctions' . DS . 'FoodViewFunctions.php';
 
+        $content = new ContentModel();
+        $this->view->ContentModel = $content->getContent('Food');
+
         $this->view->renderView('Food/FoodView');
     }
 
     public function restaurantAction($restaurantName) {
+        $this->view->restaurant = $restaurantName;
+
+        $content = new ContentModel();
+        $this->view->ContentModel = $content->getContent('Food');
+
+
         $this->view->renderView('Food/RestaurantView');
     }
 }

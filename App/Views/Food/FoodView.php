@@ -14,13 +14,13 @@
     <article class="food-content-box">
         <div class="food-content">
             <div class="about-food">
-                <h4>About Food</h4>
-                <p>Curious about what kind of great food Haarlem has to offer? Then you have arrived at the right page! On this page you will find several restaurants that are located in Haarlem where you can dine during the festival. Read below about the restaurants that are affiliated with the haarlem festival.</p>
-                <p>If you buy a ticket for a restaurant, you place a reservation for which the costs are 10 euros. Additional costs of the restaurant will be settled at the restaurant.</p>
+                <h4><?= $this->ContentModel[0]->content?></h4>
+                <p><?= $this->ContentModel[1]->content?></p>
+                <p><?= $this->ContentModel[2]->content?></p>
             </div>
 
             <div class="restaurant-list">
-                <h4>Restaurants</h4>
+                <h4><?= $this->ContentModel[3]->content?></h4>
 
                 <?= FoodViewFunctions::viewRestaurantInfo($this->restaurantInfo); ?>
             </div>
