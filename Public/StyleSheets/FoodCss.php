@@ -14,6 +14,10 @@ $foodColor = "#F0841B";
     text-align: center;
 }
 
+.about-food p{
+    text-align:left;
+}
+
 .background-image{
     background-size:cover;
     background-repeat:no-repeat ;

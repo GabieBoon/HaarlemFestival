@@ -28,7 +28,7 @@ function encodeURIComponent($str) {
                     <p><a href="<?= PROOT ?>Home/">Home</a> > <a href="<?= PROOT ?>Food">Food</a> > RestaurantName</p>
                 </div>
 
-                <h1>RestaurantName</h1>
+                <h1><?= $this->restaurant; ?></h1>
 
                 <img class="restaurantImage" src="<?= PROOT ?>public/images/RestaurantBanners/ml.png" alt="Haarlem Festival Logo" href="<?= PROOT ?>Home/"/>
 
@@ -79,11 +79,14 @@ function encodeURIComponent($str) {
                     <button class="reservationButton">Make your reservation</button>
                 </div>
 
+                <?php var_dump($this->restaurantDetails) ?>
+
+
                 <div class="Overlay" style="display: none">
                     <div class="OverlayBackground" >
                         <div class="OverlayForeground" >
                             <div class="popupContent">
-                                <h1>Session: RestaurantName</h1>
+                                <h1>Session: <?= $this->restaurant; ?></h1>
                                 <div class="number">
                                     <p>Number of people</p>
                                     <input type="text">

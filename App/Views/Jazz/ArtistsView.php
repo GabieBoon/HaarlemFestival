@@ -1,16 +1,14 @@
 <?php
 
-$pageNumber = explode('/', ltrim($_SERVER['PATH_INFO'], '/'))[2];
-
-$artists = array();
-
-if ($pageNumber == 1) {
-    $artists = array('Chris Alain', 'Evolve', 'Fox & The Mayors', 'Gare du Nord', 'Gumbo Kings', 'Han Bennink');
-} elseif ($pageNumber == 2) {
-    $artists = array('Jonna Fraser', 'Lilith Merlot', 'Myles Sanko', 'Ntjam Rosie', 'Rilan & The Bombardiers', 'Ruis Soundsystem');
-} else {
-    $artists = array('Soul Six', 'The Family XL', 'The Nordanians', 'Tom Thomson', 'Uncle Sue', 'Wicked Jazz Sounds');
-}
+//$artists = array();
+//
+//if ($this->pageNumber == 1) {
+//    $artists = array('Chris Alain', 'Evolve', 'Fox & The Mayors', 'Gare du Nord', 'Gumbo Kings', 'Han Bennink');
+//} elseif ($this->pageNumber == 2) {
+//    $artists = array('Jonna Fraser', 'Lilith Merlot', 'Myles Sanko', 'Ntjam Rosie', 'Rilan & The Bombardiers', 'Ruis Soundsystem');
+//} elseif ($this->pageNumber == 3) {
+//    $artists = array('Soul Six', 'The Family XL', 'The Nordanians', 'Tom Thomson', 'Uncle Sue', 'Wicked Jazz Sounds');
+//}
 
 ?>
 
@@ -39,8 +37,8 @@ if ($pageNumber == 1) {
                     <section class=\"col-sm\">
                         <a class=\"j-artist-link\" href=\"\">
                             <figure class=\"j-artist\">
-                                <img src=\"" . PROOT . "Public/Images/Jazz/Artists/" . str_replace(' ', '', $artists[$i]) . ".jpg\" alt=\"$artists[$i]\">
-                                <figcaption>$artists[$i]</figcaption>
+                                <img src=\"" . PROOT . "Public/Images/Jazz/Artists/" . $this->artistIds[$i] . ".jpg\" alt=\"" . $this->artists[$i] . "\">
+                                <figcaption>" . $this->artists[$i] . "</figcaption>
                             </figure>
                         </a>
                     </section>
@@ -57,8 +55,8 @@ if ($pageNumber == 1) {
                     <section class=\"col-sm\">
                         <a class=\"j-artist-link\" href=\"\">
                             <figure class=\"j-artist\">
-                                <img src=\"" . PROOT . "Public/Images/Jazz/Artists/" . str_replace(' ', '', $artists[$i]) . ".jpg\" alt=\"$artists[$i]\">
-                                <figcaption>$artists[$i]</figcaption>
+                                <img src=\"" . PROOT . "Public/Images/Jazz/Artists/" . $this->artistIds[$i] . ".jpg\" alt=\"" . $this->artists[$i] . "\">
+                                <figcaption>" . $this->artists[$i] . "</figcaption>
                             </figure>
                         </a>
                     </section>
@@ -69,11 +67,11 @@ if ($pageNumber == 1) {
         </section>
         <section class="row">
             <ul class="j-artist-pag">
-                <li><a href="<?php if($pageNumber - 1 >= 1){echo(PROOT . 'jazz/artists/' . ($pageNumber - 1));}else{echo(PROOT . 'jazz/artists/1');} ?>"><</a></li>
-                <li><a class="<?php if($pageNumber == 1){echo('j-artist-pag-active');} ?>" href="<?= PROOT ?>jazz/artists/1">1</a></li>
-                <li><a class="<?php if($pageNumber == 2){echo('j-artist-pag-active');} ?>" href="<?= PROOT ?>jazz/artists/2">2</a></li>
-                <li><a class="<?php if($pageNumber == 3){echo('j-artist-pag-active');} ?>" href="<?= PROOT ?>jazz/artists/3">3</a></li>
-                <li><a href="<?php if($pageNumber + 1 <= 3){echo(PROOT . 'jazz/artists/' . ($pageNumber + 1));}else{echo(PROOT . 'jazz/artists/3');} ?>">></a></li>
+                <li><a href="<?php if($this->pageNumber - 1 >= 1){echo(PROOT . 'jazz/artists/' . ($this->pageNumber - 1));}else{echo(PROOT . 'jazz/artists/1');} ?>"><</a></li>
+                <li><a class="<?php if($this->pageNumber == 1){echo('j-artist-pag-active');} ?>" href="<?= PROOT ?>jazz/artists/1">1</a></li>
+                <li><a class="<?php if($this->pageNumber == 2){echo('j-artist-pag-active');} ?>" href="<?= PROOT ?>jazz/artists/2">2</a></li>
+                <li><a class="<?php if($this->pageNumber == 3){echo('j-artist-pag-active');} ?>" href="<?= PROOT ?>jazz/artists/3">3</a></li>
+                <li><a href="<?php if($this->pageNumber + 1 <= 3){echo(PROOT . 'jazz/artists/' . ($this->pageNumber + 1));}else{echo(PROOT . 'jazz/artists/3');} ?>">></a></li>
             </ul>
         </section>
     </main>
