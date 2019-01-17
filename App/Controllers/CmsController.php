@@ -121,6 +121,13 @@ class CmsController extends ControllerBase //Jasper
         if ($lc_type == 'timetable') {
             $this->view->renderView('CMS/EditTimetableView');
         } elseif ($lc_type == 'event') {
+
+
+            $content = new ContentModel();
+            $this->view->ContentModel = $content->getContent($event);
+
+
+
             $this->view->renderView('CMS/EditEventView');
         }
         

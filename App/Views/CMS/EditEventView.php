@@ -29,8 +29,9 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
         </div>
     </header>
     <main id="pageMain" class="">
-
-
+    <pre>
+<?php print_r($this->ContentModel); ?>
+</pre>
     </main>
 </div>
 

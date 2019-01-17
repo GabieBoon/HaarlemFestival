@@ -19,10 +19,10 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
         </div>
     </header>
     <main id="pageMain" class="">
-
+line graph here
     <?php
 
-    $this->partial('CMS', 'statsWidget');
+   
 
     
         // <div id="u4">
