@@ -15,6 +15,18 @@ class FoodModel extends ModelBase{
         return $this->_db->query($sql)->getResult();
     }
 
+    public function getRestaurantDetails(string $restaurant){
+        $sql = "SELECT V.id, V.name, V.houseNr, V.street, V.postalCode, R.stars, FT.foodTypecol, FTT.price12
+                FROM jaspewo251_festival.Venue AS V
+	              JOIN jaspewo251_festival.Restaurant as R on V.id = R.venueId
+	              JOIN jaspewo251_festival.RestaurantFoodType as RFT on R.id = RFT.restaurantId
+	              JOIN jaspewo251_festival.FoodType AS FT on RFT.foodTypeId = FT.id
+	              Join jaspewo251_festival.FoodTicket AS FTT on R.id = FTT.restaurantId
+                WHERE V.name = ?
+                GROUP BY V.id";
+        return $this->query($sql, [$restaurant])->getFirstResult();
+    }
+
     public static function CheckRestaurants(string $restaurant)
     {
         $ucf_restaurant = ucfirst($restaurant);

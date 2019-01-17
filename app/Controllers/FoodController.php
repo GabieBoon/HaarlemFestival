@@ -22,11 +22,11 @@ class FoodController extends ControllerBase {
     }
 
     public function restaurantAction($restaurantName) {
+        $this->view->restaurantDetails = $this->FoodModel->getRestaurantDetails($restaurantName);
         $this->view->restaurant = $restaurantName;
 
         $content = new ContentModel();
         $this->view->ContentModel = $content->getContent('Food');
-
 
         $this->view->renderView('Food/RestaurantView');
     }
