@@ -124,10 +124,7 @@ class CmsController extends ControllerBase //Jasper
 
 
             $content = new ContentModel();
-            $this->view->ContentModel = $content->getContent($event);
-
-
-
+            $this->view->ContentModel = $content->getContent('EN', $event);
             $this->view->renderView('CMS/EditEventView');
         }
         
