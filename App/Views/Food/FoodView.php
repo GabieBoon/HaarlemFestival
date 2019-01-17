@@ -14,13 +14,12 @@
     <article class="food-content-box">
         <div class="food-content">
             <div class="about-food">
-                <h4><?= $this->ContentModel[0]->content?></h4>
-                <p><?= $this->ContentModel[1]->content?></p>
-                <p><?= $this->ContentModel[2]->content?></p>
+                <h4><?= $this->ContentModel->About->title?></h4>
+                <?= $this->ContentModel->About->text?>
             </div>
 
             <div class="restaurant-list">
-                <h4><?= $this->ContentModel[3]->content?></h4>
+                <h4><?= $this->ContentModel->Restaurants->title?></h4>
 
                 <?= FoodViewFunctions::viewRestaurantInfo($this->restaurantInfo); ?>
             </div>

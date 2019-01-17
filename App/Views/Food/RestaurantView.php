@@ -79,7 +79,7 @@ function encodeURIComponent($str) {
                     <button class="reservationButton">Make your reservation</button>
                 </div>
 
-                <?php var_dump($this->restaurantDetails) ?>
+                <?php print_r($this->restaurantDetails) ?>
 
 
                 <div class="Overlay" style="display: none">
