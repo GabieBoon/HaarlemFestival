@@ -15,19 +15,92 @@
         }
 
 
-        public function getRawContent(string $event, string $section)
+        public function getRawContent(string $language, string $event, string $section)
         {
-            $sql = "SELECT * FROM Content WHERE event = ? AND section = ?";
-            return $this->query($sql, [$event, $section])->getResult();
+            $sql = "SELECT * FROM `Content` WHERE `language` = ? AND `event` = ? AND `section` = ?";
+            return $this->query($sql, [$language ,$event, $section])->getResult();
         }
 
-        public function getSectionNames(string $event)
+        public function getSectionNames(string $language, string $event)
         {
-            $sql = "SELECT group_concat(DISTINCT section) as 'sections' FROM Content WHERE event = ?;";
-            $result = (array)$this->query($sql, [$event])->getFirstResult();
+            $sql = "SELECT group_concat(DISTINCT `section`) as 'sections' FROM `Content` WHERE `language` = ? AND `event` = ?;";
+            $result = (array)$this->query($sql, [$language, $event])->getFirstResult();
 
             return explode(',', $result['sections']);
         }
+
+        
+
+        public function getContent(string $language, string $event, string $section = '')
+        {
+            // return $this->getRawContent($event, $section); //debugging purposes
+            if (($language != 'NL') && ($language != 'EN')) {
+                return false;
+            }
+            
+            $sectionArray = $this->getSectionNames($language, $event);
+            $contentObject = new stdClass();
+
+            $count_1 = count($sectionArray);
+            for ($i = 0; $i < $count_1; $i++) {
+                $section = $sectionArray[$i];
+
+                $rawContentObject = $this->getRawContent($language, $event, $section);
+                $contentObject->{$section} = new stdClass();
+
+                $count_2 = count($rawContentObject);
+                for ($j = 0; $j < $count_2; $j++) {
+                    $rawContent = $rawContentObject[$j];
+
+                    $variety = $rawContent->variety;
+                    $content = $rawContent->content;
+
+                    $contentObject->{$section}->{$variety} = $content;
+                }
+            }
+            return $contentObject;
+        }
+
+        public function getDetailedContent(string $language, string $event, string $section = '')
+        {
+            // return $this->getRawContent($event, $section); //debugging purposes
+            if (($language != 'NL') && ($language != 'EN')) {
+                return false;
+            }
+
+            $sectionArray = $this->getSectionNames($language, $event);
+            $contentObject = new stdClass();
+
+            $count_1 = count($sectionArray);
+            for ($i = 0; $i < $count_1; $i++) {
+                $section = $sectionArray[$i];
+
+                $rawContentObject = $this->getRawContent($language, $event, $section);
+                $contentObject->{$section} = new stdClass();
+
+                $count_2 = count($rawContentObject);
+                for ($j = 0; $j < $count_2; $j++) {
+                    $rawContent = $rawContentObject[$j];
+
+                    $variety = $rawContent->variety;
+
+                    $contentObject->{$section}->{$variety} = (object)[
+                        'content' => $rawContent->content,
+                        'type' => $rawContent->type,
+                        'language' => $rawContent->language
+                    ];
+                }
+            }
+            return $contentObject;
+        }
+
+
+
+        public function storeContentPerSection(Type $var = null)
+        {
+
+        }
+
 
         public function getRestaurantDetails(string $restaurant)
         {
@@ -40,46 +113,5 @@
                 WHERE V.name = ?
                 GROUP BY V.id";
             return $this->query($sql, [$restaurant])->getFirstResult();
-        }
-
-
-        public function getContent(string $language, string $event, string $section = '')
-        {
-            // return $this->getRawContent($event, $section); //debugging purposes
-            if (($language != 'NL') && ($language != 'EN')) {
-                return false;
-            }
-            
-            $sectionArray = $this->getSectionNames($event);
-            $contentObject = new stdClass();
-
-            $count_1 = count($sectionArray);
-            for ($i = 0; $i < $count_1; $i++) {
-                $section = $sectionArray[$i];
-
-                $rawContent = $this->getRawContent($event, $section);
-                $contentObject->{$section} = new stdClass();
-
-                $count_2 = count($rawContent);
-                for ($j = 0; $j < $count_2; $j++) {
-                    $key = $rawContent[$j]->variety;
-                    $value = $rawContent[$j]->content;
-
-                    $contentObject->{$section}->{$key} = $value;
-                }
-
-            }
-
-            return $contentObject;
-
-        }
-
-
-
-
-
-        public function storeContentPerSection(Type $var = null)
-        {
-
         }
     }

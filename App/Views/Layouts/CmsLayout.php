@@ -1,5 +1,5 @@
 <?php if ($this->_action != 'login') {$this->insert('CMS/Includes/Sidebar'); }?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -16,6 +16,8 @@
     <script src="<?= PROOT ?>Public/Vendor/jQuery/jQuery.min.js"></script>
     <script src="<?= PROOT ?>Public/Vendor/Fitty/fitty.min.js"></script>
   
+
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="<?= PROOT ?>Public/Vendor/Bootstrap/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
     <script src="<?= PROOT ?>Public/Vendor/Bootstrap/js/Bootstrap.min.js"></script>
