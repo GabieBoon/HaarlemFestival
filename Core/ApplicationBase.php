@@ -10,6 +10,9 @@ class ApplicationBase {
             $_SESSION['Cart'] = array();
         }
 
+        if (!array_key_exists('Language', $_SESSION)){
+            $_SESSION['Language'] = "EN";
+        }
         
         //hou bij welke pagina er als laatste bezocht is
         if (array_key_exists('CurrentPage', $_SESSION)){

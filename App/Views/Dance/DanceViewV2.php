@@ -22,18 +22,16 @@
 
         <section class="DanceSection">
 
-            <h2>About dance</h2>
+            <h2><?= $this->content->About->title ?></h2>
 
             <p>
-                For the first year the Haarlem Festival contains a dance event! With 5 out of the 6 DJ's being in the top 10 DJ's
-                in the world, Haarlem Dance will be one giant party. Apart from standard formats Haarlem Dance will include back to back
-                sessions in which multiple talented DJ's will play and mix together. There will also be a session named Tiëstoworld in which
-                Tiësto will play songs spanning his entire career. This session will also include some suprise guests!
+
+                <?= $this->content->About->text ?>
             </p>
         </section>
 
         <section class="DanceSection">
-            <h2>Artists</h2>
+            <h2><?= $this->content->Artists->title ?></h2>
             <p>
                 <?= DanceViewFunctions::showArtists($this->danceArtists); ?>
             </p>
@@ -41,7 +39,7 @@
         </section>
 
         <section class="DanceSection">
-            <h2>Locaties</h2>
+            <h2><?= $this->content->Locations->title ?></h2>
             <p>
                 <?= DanceViewFunctions::showLocations($this->danceLocations); ?>
             </p>
@@ -49,10 +47,10 @@
         </section>
 
         <section class="DanceSection">
-            <h2>Tickets</h2>
+            <h2><?= $this->content->Tickets->title ?></h2>
 
             <p>
-                Check prices for individual concerts in the timetable below. For the real party-people there are also All-Access-Tickets available!
+                <?= $this->content->Tickets->text ?>
             </p>
 
             <?= DanceViewFunctions::showAllAccessTickets($this->allAccessTickets) ?>
@@ -60,7 +58,7 @@
         </section>
 
         <section class="DanceSection" id="schedule">
-            <h2>Schedule</h2>
+            <h2><?= $this->content->Timetable->title ?></h2>
 
             <nav>
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
@@ -103,10 +101,6 @@
             </div>
 
         </div>
-
-
-
-
 
 
         <span class="clearfix"></span>
