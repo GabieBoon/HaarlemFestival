@@ -29,18 +29,8 @@ class DanceController extends ControllerBase
 
         $content = new ContentModel();
 
-        $language = $_SESSION['Language'];
 
-
-        if ($language === "EN"){
-            $this->view->content = $content->getContent('EN','Dance');
-        }
-        elseif ($language === "NL"){
-            $this->view->content = $content->getContent('NL','Dance');
-        }
-
-
-
+        $this->view->content = $content->getContent($_SESSION['Language'],'Dance');
 
 
         $this->view->renderView("Dance/DanceViewV2");
