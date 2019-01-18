@@ -52,4 +52,15 @@ class FoodModel extends ModelBase{
             return 'Restaurant';
         }
     }
+
+    //geschreven door David, nodig voor schedule, hoort qua inhoud bij foodmodel
+    public function getFoodTickets(){
+        $sql = "SELECT t.id, t.price, t.startTime, t.endTime, t.ticketsAvailable, t.event, t.isAllAccessTicket, v.name as restaurant, 
+                ft.price12 FROM Ticket as t 
+                join FoodTicket as ft on t.id = ft.ticketId 
+                join Restaurant as r on r.id = ft.restaurantId 
+                join Venue as v on v.id = r.venueId";
+        return $this->_db->query($sql)->getResult();
+    }
+
 }
