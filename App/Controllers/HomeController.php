@@ -19,4 +19,9 @@ class HomeController extends ControllerBase {
         $this->view->renderView('Home/HomeView');
     }
 
+    public function changeLanguageAction($language){
+
+        $_SESSION['Language'] = $language;
+        Router::redirect($_SESSION['LastVisited']);
+    }
 }
