@@ -24,6 +24,14 @@ class DanceViewFunctions
     public static function showAllAccessTickets($tickets)
     {
         foreach ($tickets as $ticket) {
+
+            $startDateTime = explode(' ', $ticket->startTime);
+            $startDate = explode('-', $startDateTime[0]);
+
+            $endDateTime = explode(' ', $ticket->endTime);
+            $endDate = explode('-', $endDateTime[0]);
+
+
             include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'AllAccessTicketRow' . '.php';
         }
     } 

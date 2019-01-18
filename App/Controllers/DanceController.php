@@ -27,6 +27,12 @@ class DanceController extends ControllerBase
 
         include ROOT . DS . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'ViewFunctions' . DS . 'DanceViewFunctions.php';
 
+        $content = new ContentModel();
+
+
+        $this->view->content = $content->getContent($_SESSION['Language'],'Dance');
+
+
         $this->view->renderView("Dance/DanceViewV2");
     }
 
