@@ -15,7 +15,8 @@
         <div class="food-content">
             <div class="about-food">
                 <h4><?= $this->ContentModel->About->title?></h4>
-                <?= $this->ContentModel->About->text?>
+                <p><?= $this->ContentModel->About->text?></p>
+                <p><?= $this->ContentModel->About->text2?></p>
             </div>
 
             <div class="restaurant-list">

@@ -141,3 +141,14 @@
     font-style: italic;
     max-width: 70%;
 }
+
+.hisSchedeulenav{
+    max-width: 1250px;
+    margin-top: 20px;
+    margin-left: 10%;
+    background: #FFFFFF;
+}
+
+.hisSchedeule1{
+    margin-left: 10%;
+}
