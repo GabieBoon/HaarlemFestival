@@ -85,7 +85,7 @@ return 'href = "'. PROOT . $path . '" class="' . $menuItemClass .  $currentPage 
                 <li><a <?= getMenuItem('cms/edit/event/historic', true); ?>>Historic</a></li>
             </ul>
         </li>
-        <li><a <?= getMenuItem('cms/manageusers'); ?>><i class="menuIcon fas fa-users-cog"></i>ManageUsers</a></li>
+        <li><a <?= getMenuItem('cms/manageusers'); ?>><i class="menuIcon fas fa-users-cog"></i>Manage Users</a></li>
         <li><a <?= getMenuItem('cms/settings'); ?>><i class="menuIcon fas fa-cog"></i>Settings</a></li>
     </ul>
 </nav>

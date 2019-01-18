@@ -38,7 +38,7 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
 
 
 
-<?php showEditingControls($this->ContentModel);?>
+<?php showEditingControls($this->event, $this->ContentModel);?>
 
     <pre>
 <!-- < ?php print_r($this->ContentModel); ?> -->
