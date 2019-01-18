@@ -25,10 +25,10 @@
             <li class="<?php if($this->_className == 'Cart' ){echo 'activeTicket';}elseif($this->_className == 'Order'){echo 'activeTicket';} ?> cart-btn nav-btn"><a class="cart-icon" href="<?= PROOT ?>cart/"><i class="fas fa-shopping-cart"></i></a></li>
 
             <div class="dropdown">
-                <button class="dropbtn language-selection"><img src="<?= PROOT ?>public/images/languages/engels.png" alt="engels"></button>
+                <button class="dropbtn language-selection"><img src="<?= PROOT ?>public/images/languages/<?= $_SESSION['Language'] ?>.png" alt="engels"></button>
                 <div class="dropdown-content" style="left:0;">
-                    <img src="<?= PROOT ?>public/images/languages/nederlands.png" alt="nederlands">
-                    <img src="<?= PROOT ?>public/images/languages/engels.png" alt="engels">
+                    <a href="<?= PROOT ?>/Home/changeLanguage/NL"> <img src="<?= PROOT ?>public/images/languages/NL.png" alt="nederlands"> </a>
+                    <a href="<?= PROOT ?>/Home/changeLanguage/EN"> <img  src="<?= PROOT ?>public/images/languages/EN.png" alt="engels"> </a>
                 </div>
             </div>
 

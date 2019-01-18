@@ -238,7 +238,4 @@ class ViewBase
         $pathArray = explode('/', $path);
         return implode(DS, $pathArray);
     }
-
-
-
 }

@@ -4,7 +4,7 @@ class Table {
 
     private $day, $startHour, $endHour, $event, $tickets, $eventColumn, $columnCount; //meegegeven vanuit generateTable
     private $rowSource, $rowTitle, $ticketTitle, $ticketFormat, $checkForTickets; //handig om informatie door te geven door de klasse
-    private $currentRow, $currentHour, $currentTicket, $foodSessionsPrinted, $historicToursPrinted;  //houd bij welke rij, colom etc je in zit
+    private $currentRow, $currentHour, $currentTicket, $foodSessionsPrinted;  //houd bij welke rij, colom etc je in zit
     private $cellWidth;
 
     public function generateTable($day, $startHour, $endHour, $event, $head = true, $eventColumn = false, $rowSource = NULL, $tickets = NULL)
@@ -33,7 +33,7 @@ class Table {
             case "Historic":
                 $this->rowTitle = "language";
                 $this->ticketTitle = "language";
-                $this->ticketFormat = ['Morning Tour','Midday Tour','Evening Tour'];
+                $this->ticketFormat = ['Morning Tour','Midday Tour','Evening Tour','Night Tour'];
                 break;
             case "Jazz":
                 $this->rowTitle = "name";
@@ -116,7 +116,7 @@ class Table {
             //start een nieuwe rij
             $this->startTableRow();
             $this->foodSessionsPrinted = 0;
-            $this->historicToursPrinted = 0;
+
 
 
             //alleen voor schedule pagina
@@ -229,8 +229,28 @@ class Table {
             $this->foodSessionsPrinted++;
         }
         elseif ($this->event == "Historic"){
-            echo $this->ticketFormat[$this->historicToursPrinted];
-            $this->historicToursPrinted++;
+
+            $startDateTime = explode(' ', $this->currentTicket->startTime);
+            $startTime = explode(':', $startDateTime[1]);
+
+            $format = 0;
+
+            if ($startTime[0] < 11){
+                $format = 0;
+            }
+            elseif ($startTime[0] < 14){
+                $format = 1;
+            }
+            elseif ($startTime[0] < 17){
+                $format = 2;
+            }
+            elseif ($startTime[0] < 20){
+                $format = 3;
+            }
+
+
+
+            echo $this->ticketFormat[$format];
         }
         else{
             $format = $this->ticketFormat;

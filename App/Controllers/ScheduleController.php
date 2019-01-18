@@ -29,15 +29,21 @@ class ScheduleController extends ControllerBase {
 //    }
 
     public function showPage(){
+
+        $danceModel = new DanceModel();
+        $foodModel = new FoodModel();
+        $historicModel = new HistoricModel();
+        $jazzModel = new JazzModel();
+
         $this->view->danceLocations = $this->ScheduleModel->getLocations("Dance");
         $this->view->jazzLocations = $this->ScheduleModel->getLocations("Jazz");
         $this->view->restaurants = $this->ScheduleModel->getLocations("Food");
-        $this->view->languages = $this->ScheduleModel->getLanguages();
+        $this->view->languages = $historicModel->getLanguages();
 
-        $this->view->danceTickets = $this->ScheduleModel->getDanceTickets();
-        $this->view->foodTickets = $this->ScheduleModel->getFoodTickets();
-        $this->view->historicTickets = $this->ScheduleModel->getHistoricTickets();
-        $this->view->jazzTickets = $this->ScheduleModel->getJazzTickets();
+        $this->view->danceTickets = $danceModel->getDanceTickets();
+        $this->view->foodTickets = $foodModel->getFoodTickets();
+        $this->view->historicTickets = $historicModel->getHistoricTickets();
+        $this->view->jazzTickets = $jazzModel->getJazzTickets();
 
         include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
         $this->view->table = new Table();
