@@ -6,11 +6,17 @@
 <link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/StyleSheet.css"><!-- Cms CSS -->
 
 
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
+<!-- Include stylesheet -->
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
 <?php $this->end(); ?>
 
 <!-- body -->
 <?php $this->start('body'); ?>
-
+ <?php $this->partial('CMS', 'EditPagesControls'); ?>
 
 
 <?php $user = $this->UserModel; ?>
@@ -29,11 +35,19 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
         </div>
     </header>
     <main id="pageMain" class="">
+
+
+
+<?php showEditingControls($this->ContentModel);?>
+
     <pre>
-<?php print_r($this->ContentModel); ?>
+<!-- < ?php print_r($this->ContentModel); ?> -->
 </pre>
     </main>
 </div>
+
+
+
 
 
 

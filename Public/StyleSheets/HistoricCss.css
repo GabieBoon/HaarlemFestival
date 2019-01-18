@@ -142,9 +142,11 @@
     max-width: 70%;
 }
 
-.hisSchedeule{
+.hisSchedeulenav{
+    max-width: 1250px;
     margin-top: 20px;
-
+    margin-left: 10%;
+    background: #FFFFFF;
 }
 
 .hisSchedeule1{

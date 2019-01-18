@@ -1,12 +1,14 @@
 
 <?php $this->insert('Historic/Includes/HistoricSubnav'); ?>
 
+
 <?php $this->start('head'); ?><!-- start head -->
 
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/HistoricCss.css" >
     <link rel="stylesheet" type="text/css" href= "<?= PROOT ?>Public/StyleSheets/ScheduleCss.css" >
 
-<?= $this->getBgImage(); ?><!-- get backgroundImage //if one is set -->
+<?= $this->getBgImage(); ?>
+<script src="<?= PROOT ?>Public/JavaScripts/JQuerySchedule.js"></script>
 
 <?php $this->end(); ?><!-- end head -->
 
@@ -14,7 +16,7 @@
 
     <div class="background-image">
 <?= $this->content('hissubnav'); ?>
-        <section class="hisSchedeule">
+        <section class="hisSchedeulenav">
 
             <nav>
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
@@ -25,41 +27,42 @@
                 </div>
             </nav>
 
+        </section>
+
             <div class="hisSchedeule1">
 
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active" id="nav-26" role="tabpanel" aria-labelledby="nav-26-tab">
 
                     <table>
-                        <table class="HistoricTable" ><?= $this->table->generateTable(26,10,27, "Historic", false, true,$this->languages, $this->historicTickets) ?> </table>
+                        <table class="HistoricTable" ><?= $this->table->generateTable(26,8,21, "Historic", true, false, $this->languages, $this->historicTickets) ?> </table>
                     </table>
 
                 </div>
                 <div class="tab-pane fade" id="nav-27" role="tabpanel" aria-labelledby="nav-27-tab">
 
                     <table>
-                        <table class="HistoricTable"><?= $this->table->generateTable(27,10,27, "Historic", false, true,$this->languages, $this->historicTickets) ?> </table>
+                        <table class="HistoricTable"><?= $this->table->generateTable(27,8,21, "Historic", true, false, $this->languages, $this->historicTickets) ?> </table>
                     </table>
 
                 </div>
                 <div class="tab-pane fade" id="nav-28" role="tabpanel" aria-labelledby="nav-28-tab">
 
                     <table>
-                        <table class="HistoricTable"><?= $this->table->generateTable(28,10,27, "Historic", false, true,$this->languages, $this->historicTickets) ?> </table>
+                        <table class="HistoricTable"><?= $this->table->generateTable(28,8,21, "Historic", true, false, $this->languages, $this->historicTickets) ?> </table>
                     </table>
 
                 </div>
                 <div class="tab-pane fade" id="nav-29" role="tabpanel" aria-labelledby="nav-29-tab">
 
                     <table>
-                        <table class="HistoricTable"><?= $this->table->generateTable(29,10,27, "Historic", false, true,$this->languages, $this->historicTickets) ?> </table>
+                        <table class="HistoricTable"><?= $this->table->generateTable(29,8,21, "Historic", true, false, $this->languages, $this->historicTickets) ?> </table>
                     </table>
 
                 </div>
             </div>
-        </div>
 
-        </section>
+            </div>
 
         <section class="Home1">
 

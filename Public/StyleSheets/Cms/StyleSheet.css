@@ -13,7 +13,7 @@ body {
 #pageWrapper {
     height: 100%;
     width: 100%;
-    background-color: tomato;
+    /* background-color: tomato; */
 }
 
 #pageHeader {
@@ -24,7 +24,7 @@ body {
     height: 100%;
     width: 100%;
     /* position: relative; */
-    display: flex;
+    /* display: flex; */
 }
 
 /* #u462_div {
@@ -67,20 +67,33 @@ body {
     white-space: nowrap */
 }
 
-.statsWidgetWrapper {
+.widget {
     text-align: left;
-    /* height: 140px; */
-    max-width: 225px;
     background-color: rgba(228, 228, 228, 1);
-    border-radius: 10px;
-    /*! color: #ccc; */
-    margin: 0;
     padding: 10px;
-    margin-left: 50px;
-    white-space: nowrap;
+    margin: 25px;
+    border-radius: 10px;
 }
 
-.statsWidget {}
+.widget:first-of-type {
+    margin-top: 0;
+}
+
+/* .widget:last-of-type {
+    margin-bottom: 0;
+} */
+
+.statsWidgetWrapper {
+    /*! color: #ccc; */
+
+}
+
+.statsWidget {
+    margin-left: 50px;
+    /* height: 140px; */
+    max-width: 225px;
+    margin: 0;
+}
 
 .statsWidgetTitle {
     white-space: nowrap;
@@ -107,6 +120,20 @@ body {
 .statsWidgetGraph {
     width: 205px;
     height: auto;
+}
+
+.wysiwyg-editor {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 750px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+}
+.wysiwyg-editor>textarea{
+    border:0 !important; /*otherwise it'll be overwritten by the jquery of the wysiqyg editor*/ 
+    width: 100%;
+
 }
 
 #u371_div {
