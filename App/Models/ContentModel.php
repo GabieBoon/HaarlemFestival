@@ -29,7 +29,7 @@
             return explode(',', $result['sections']);
         }
 
-        
+
 
         public function getContent(string $language, string $event, string $section = '')
         {
@@ -85,6 +85,7 @@
                     $variety = $rawContent->variety;
 
                     $contentObject->{$section}->{$variety} = (object)[
+                        'id' => $rawContent->id,
                         'content' => $rawContent->content,
                         'type' => $rawContent->type,
                         'language' => $rawContent->language
