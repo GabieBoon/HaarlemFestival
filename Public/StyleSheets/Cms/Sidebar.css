@@ -1,7 +1,7 @@
 #sidebarLeft {
     background-color: rgba(14, 61, 89, 1);
     width: 200px;
-    min-height: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
 }
