@@ -155,16 +155,11 @@
                 ],
                 'prefix' => ''
             ];
-            
-
-
-            
-            //< ? =  
+             
 
             for ($i = 0; $i < 8; $i++) {
                 showStatsWidget(${'data' . $i});
             }
-
 
 
             ?>
