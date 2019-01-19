@@ -170,11 +170,11 @@ class ViewBase
     //         case 'Jazz':
     //             $activeColour = "#440E62";
     //             break;
-    //         case 'Historic':
-    //             $activeColour = "#DB1F1F";
-    //             break;
     //         case 'Food':
     //             $activeColour = "#F0841B";
+    //             break;
+    //         case 'Historic' :
+    //             $activeColour = "#DB1F1F";
     //             break;
     //         case 'Schedule':
     //             $activeColour = "#DCC500";

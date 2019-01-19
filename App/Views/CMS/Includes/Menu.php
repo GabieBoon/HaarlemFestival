@@ -58,13 +58,13 @@ return 'href = "'. PROOT . $path . '" class="' . $menuItemClass .  $currentPage 
 <nav id="menuWrapper">
     <ul id="menu">
         <li><a <?= getMenuItem('cms/dashboard'); ?>><i class="menuIcon fas fa-tachometer-alt"></i>Dashboard</a></li>
-        <li><a <?= getMenuItem('cms/statistics/dance'); ?>><i class="menuIcon fas fa-chart-line"></i>Statistics</a>
-            <ul>
-                <li><a <?= getMenuItem('cms/statistics/dance', true); ?>>Dance</a></li>
-                <li><a <?= getMenuItem('cms/statistics/jazz', true); ?>>Jazz</a></li>
-                <li><a <?= getMenuItem('cms/statistics/food', true); ?>>Food</a></li>
-                <li><a <?= getMenuItem('cms/statistics/historic', true); ?>>Historic</a></li>
-            </ul>
+        <li><a <?= getMenuItem('cms/statistics/'); ?>><i class="menuIcon fas fa-chart-line"></i>Statistics</a>
+            <!-- <ul>
+                <li><a < ?= getMenuItem('cms/statistics/dance', true); ?>>Dance</a></li>
+                <li><a < ?= getMenuItem('cms/statistics/jazz', true); ?>>Jazz</a></li>
+                <li><a < ?= getMenuItem('cms/statistics/food', true); ?>>Food</a></li>
+                <li><a < ?= getMenuItem('cms/statistics/historic', true); ?>>Historic</a></li>
+            </ul> -->
         </li>
         <li><a <?= getMenuItem('cms/edit/timetable/dance'); ?>>
                     <i class="menuIcon far fa-calendar"></i>
