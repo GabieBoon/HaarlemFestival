@@ -40,24 +40,35 @@ class DanceController extends ControllerBase
     }
 
     //wordt gebruikt om via Ajax artiestenInfo op te halen
-    public function artistAction($artistId)
+    public function artistAction($artistId = NULL)
     {
-        $danceArtist = $this->DanceModel->getDanceArtist($artistId);
+        if ($artistId != NULL){
+            $danceArtist = $this->DanceModel->getDanceArtist($artistId);
 
-        //encode via json zodat de klasse uit de db goed overkomt naar jQuery
-        header("Content-Type: application/json");
-        echo json_encode($danceArtist);
-
+            //encode via json zodat de klasse uit de db goed overkomt naar jQuery
+            header("Content-Type: application/json");
+            echo json_encode($danceArtist);
+        }
+        else{
+            //error opvanging voor als de user niet via AJAX op de pagina komt
+            $this->showPage();
+        }
     }
 
-    //wordt gebruikt om via Ajax artiestenInfo op te halen
-    public function locationAction($locationId)
+    //wordt gebruikt om via Ajax locatieInfo op te halen
+    public function locationAction($locationId = NULL)
     {
-        $danceLocation = $this->DanceModel->getLocation("Dance", $locationId);
+        if ($locationId != NULL){
+            $danceLocation = $this->DanceModel->getLocation("Dance", $locationId);
 
-        //encode via json zodat de klasse uit de db goed overkomt naar jQuery
-        header("Content-Type: application/json");
-        echo json_encode($danceLocation);
+            //encode via json zodat de klasse uit de db goed overkomt naar jQuery
+            header("Content-Type: application/json");
+            echo json_encode($danceLocation);
+        }
+        else{
+            //error opvanging voor als de user niet via AJAX op de pagina komt
+            $this->showPage();
+        }
 
     }
 }

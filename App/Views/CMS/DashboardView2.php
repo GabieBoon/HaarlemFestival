@@ -19,8 +19,9 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
         </div>
     </header>
     <main id="pageMain" class="">
-line graph here
-    <?php
+         <?php $this->partial('CMS', 'lineGraphWidget');
+
+        showLineGraphWidget();
 
    
 

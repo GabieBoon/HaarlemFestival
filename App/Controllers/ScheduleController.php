@@ -6,6 +6,7 @@ class ScheduleController extends ControllerBase {
     public function __construct($className, $action)
     {
         parent::__construct($className, $action);
+        $this->view->setBgImage('schedulebg.jpg');
     }
 
     public function indexAction(){
