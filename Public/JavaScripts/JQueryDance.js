@@ -33,7 +33,7 @@ $(document).ready(function(){
                 document.getElementById("artistLabel5").innerHTML = Artist.bio;
             }
         };
-        xmlhttp.open("GET", "http://localhost/haarlem-festival/public/JavaScripts/DanceArtistInfo.php?q=" + artistId, true);
+        xmlhttp.open("GET", "http://localhost/haarlem-festival/public/phpScripts/DanceArtistInfo.php?q=" + artistId, true);
         xmlhttp.send();
 
 
@@ -61,7 +61,7 @@ $(document).ready(function(){
 
             }
         };
-        xmlhttp.open("GET", "http://localhost/haarlem-festival/public/JavaScripts/DanceLocationInfo.php?q=" + locationId, true);
+        xmlhttp.open("GET", "http://localhost/haarlem-festival/public/phpScripts/DanceLocationInfo.php?q=" + locationId, true);
         xmlhttp.send();
 
 

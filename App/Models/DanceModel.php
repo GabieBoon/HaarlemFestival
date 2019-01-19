@@ -41,6 +41,7 @@ class DanceModel extends ModelBase{
                 join Artist as a on a.id = da.artistId";
         $tickets = $this->_db->query($sql)->getResult();
 
+        //zorg dat meerdere artiesten bij één ticket goed worden weergegeven
         $tickets = $this->ArraysVoorKoppeltabellen($tickets);
 
         return $tickets;
@@ -50,8 +51,5 @@ class DanceModel extends ModelBase{
         $sql = "SELECT * FROM `Ticket` where isAllAccessTicket = true and event = 'Dance'";
         return $this->_db->query($sql)->getResult();
 
-        //$sql = "SELECT * FROM `Ticket` where isAllAccessTicket = ? and event = ?";
-        //$bind = [true, 'Dance'];
-        //return $this->_db->query($sql, $bind)->getResult();
     }
 }
