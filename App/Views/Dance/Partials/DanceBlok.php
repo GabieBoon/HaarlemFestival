@@ -1,4 +1,4 @@
-<div class="blok <?= $soort ?>">
+<div id="<?= $id ?>" class="blok <?= $soort ?>">
     
     <h3> <?= $title ?> </h3>
     

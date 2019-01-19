@@ -8,6 +8,7 @@ class DanceViewFunctions
 
             $title = $location->name;
             $soort = "Location";
+            $id = $location->id;
 
             include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';
         }
@@ -19,6 +20,7 @@ class DanceViewFunctions
 
             $title = $artist->stageName;
             $soort = "Artist";
+            $id = $artist->id;
 
             include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';
         }

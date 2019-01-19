@@ -100,11 +100,12 @@
 
                 <div class="OverlayArtist" style="display: none">
 
-                    <p><?= $this->content->OverlayArtist->label1 ?> </p>
-                    <p><?= $this->content->OverlayArtist->label2 ?> </p>
-                    <p><?= $this->content->OverlayArtist->label3 ?> </p>
-                    <p><?= $this->content->OverlayArtist->label4 ?> </p>
-                    <p><?= $this->content->OverlayArtist->label5 ?> </p>
+                    <p><?= $this->content->OverlayArtist->label1 ?> </p> <p id="artistLabel1"></p>
+                    <p><?= $this->content->OverlayArtist->label2 ?> </p> <p id="artistLabel2"></p>
+                    <p><?= $this->content->OverlayArtist->label3 ?> </p> <p id="artistLabel3"></p>
+                    <p><?= $this->content->OverlayArtist->label4 ?> </p> <p id="artistLabel4"></p>
+                    <p><?= $this->content->OverlayArtist->label5 ?> </p> <p id="artistLabel5"></p>
+
                 </div>
 
                 <div class="OverlayLocation" style="display: none">

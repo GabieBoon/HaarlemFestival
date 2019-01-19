@@ -34,4 +34,13 @@ class DanceController extends ControllerBase
         $this->view->renderView("Dance/DanceView");
     }
 
+    public function artistAction($artistId)
+    {
+        $danceArtist = $this->DanceModel->getDanceArtist($artistId);
+
+        header("Content-Type: application/json");
+        echo json_encode($danceArtist);
+
+    }
+
 }
