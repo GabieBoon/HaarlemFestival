@@ -48,7 +48,7 @@ if (isset($_SESSION['customerData'])) {
 
     <button type="submit" class="btn btn-primary">Continue</button>
 </form>
-<a href="<?= PROOT ?>cart/" role="button" class="btn btn-primary">Back</a>
+<a href="<?= PROOT ?>cart" role="button" class="btn btn-primary">Back</a>
 <!-- </div> -->
 <!-- < ?= $this->getHeaderColour(); ?> -->
 
