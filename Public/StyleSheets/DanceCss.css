@@ -40,13 +40,6 @@ h2 {
     margin-left: 100px;
 }
 
-/* p { */
-    /* font-size: 24px; */
-    /* width: 760px; */
-    /* align-content: center; */
-    /* margin-left: 70px; */
-/* } */
-
 /* BLOKKEN */
 
 .blok {
@@ -110,4 +103,9 @@ h2 {
     margin-left: 10%;
     margin-top: 10px;
     height: 90%;
+}
+
+
+.AllAccessButton{
+
 }

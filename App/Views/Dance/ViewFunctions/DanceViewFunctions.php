@@ -5,17 +5,20 @@ class DanceViewFunctions
     public static function showLocations($locations)
     {
         foreach ($locations as $location) {
+
             $title = $location->name;
+            $soort = "Location";
+
             include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';
         }
     }
-    
-    //plz use for loops.. https://phpbench.com/  :)
+
     public static function showArtists($artists) 
     {
         foreach ($artists as $artist) {
 
             $title = $artist->stageName;
+            $soort = "Artist";
 
             include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';
         }
@@ -25,6 +28,7 @@ class DanceViewFunctions
     {
         foreach ($tickets as $ticket) {
 
+            //split datum en tijd, daarna uren,minuten en seconden
             $startDateTime = explode(' ', $ticket->startTime);
             $startDate = explode('-', $startDateTime[0]);
 
@@ -36,24 +40,24 @@ class DanceViewFunctions
         }
     } 
 
-    //miss zelfs beter om deze in router te gooien, komt later wel
+    //zoekt een plaatje in de map images aan de hand van de naam van het plaatje
     public static function getPicture($pictureName)
-    { // desperately in need of some rework
+    {
+        $plek = 'public' . DS . 'images' . DS . $pictureName;
 
-        // $pictureArray = explode('/', $pictureName);
-        // $pictureString = implode(DS, $pictureArray);
+        if (file_exists(ROOT . $plek . '.jpg')) {
 
-        //plek en pad zijn hetzelfde?
-        $plek = ROOT . DS . 'public' . DS . 'images' . DS . $pictureName;
+            $pictureArray = explode(DS, $plek);
+            $pictureString = implode('/', $pictureArray);
 
-        $pad = "/haarlem-festival/public/images/" . $pictureName;
+            return PROOT . $pictureString . '.jpg';
 
+        } elseif (file_exists(ROOT . $plek . '.png')) {
 
-        // als "plek" .jpg bestaat, return "pad". jpg en anders "pad" . png? waarom geen return "plek"
-        if (file_exists($plek . '.jpg')) {
-            return $pad . '.jpg';
-        } elseif (file_exists($plek . '.png')) {
-            return $pad . '.png';
+            $pictureArray = explode(DS, $plek);
+            $pictureString = implode('/', $pictureArray);
+
+            return PROOT . $pictureString . '.png';
         }
 
     }

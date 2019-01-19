@@ -31,7 +31,7 @@ class DanceController extends ControllerBase
         $this->view->content = $content->getContent($_SESSION['Language'],'Dance');
 
 
-        $this->view->renderView("Dance/DanceViewV2");
+        $this->view->renderView("Dance/DanceView");
     }
 
 }
