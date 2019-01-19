@@ -26,8 +26,8 @@ class Table {
         //set waarden die voor elk event verschillend zijn
         switch ($event) {
             case "Dance":
-                $this->rowTitle = "name"; //denk in tabel venue heet het name
-                $this->ticketTitle = "venue"; //denk in tabel tickets heet het venue
+                $this->rowTitle = "name"; //denk: in tabel venue heet het veld name
+                $this->ticketTitle = "venue"; //denk: in tabel tickets heet het veld venue
                 $this->ticketFormat = "stageName";
                 break;
             case "Historic":
@@ -43,7 +43,7 @@ class Table {
             case "Food":
                 $this->rowTitle = "name";
                 $this->ticketTitle = "restaurant";
-                $this->ticketFormat = ['Session 1','Session 2','Session 3'];
+                $this->ticketFormat = ['Session 1','Session 2','Session 3', 'Session 4'];
                 break;
             default:
                 $body = false;
@@ -162,9 +162,8 @@ class Table {
            $class = "class= '" . $class . " '" ;
         }
 
-
         //maak een cel in de tabel
-        include ROOT . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Tables' . DS . 'TableData' . '.php';
+        include ROOT . 'app' . DS . 'Views' . DS . 'Includes' . DS . 'Tables' . DS . 'TableData' . '.php';
     }
 
     private function checkForTicket(){
@@ -174,6 +173,8 @@ class Table {
                 $title = $this->rowTitle;
                 $ticketTitle = $this->ticketTitle;
 
+                //splits binnenkomende data op
+                //data komt binnen als 2019-7-27 20:30:00
                 $startDateTime = explode(' ', $ticket->startTime);
                 $startDate = explode('-', $startDateTime[0]);
                 $startTime = explode(':', $startDateTime[1]);
@@ -187,13 +188,15 @@ class Table {
 
                     if ($startTime[0] == $this->currentHour)
                     {
+                        //bepaal of de ticket aan het begin of ergens middenin het uur moet beginnen
                         $ticketMargin = $startTime[1] / 60 * $this->cellWidth;
 
                         $this->currentTicket = $ticket;
 
+                        //bereken de lengte van het ticket
                         $ticketLength = $this->getTicketLength($startTime,$endTime, $startDate, $endDate);
 
-                        include ROOT . 'app' . DS . 'Views' . DS . 'Layouts' . DS . 'Tables' . DS . 'TableBlok.php';
+                        include ROOT . 'app' . DS . 'Views' . DS . 'Includes' . DS . 'Tables' . DS . 'TableBlok.php';
                     }
                 }
             }
@@ -222,6 +225,7 @@ class Table {
 
     }
 
+    //formatting van de getoonde tickets
     private function showTicket(){
 
         if ($this->event == "Food" ){
@@ -271,6 +275,7 @@ class Table {
 
         echo " €". $this->currentTicket->price;
     }
+
 
     private function setCellWidth(){
         //mag nog dynamisch vanuit de css worden opgehaald
