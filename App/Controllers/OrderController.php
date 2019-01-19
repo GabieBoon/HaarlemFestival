@@ -9,8 +9,8 @@ class OrderController extends ControllerBase
         parent::__construct($className, $action);
         
         //these are editable
-        // $this->view->setSiteTitle('Wanna buy some tickets?');
-        // $this->view->setBgImage('cartBackground.jpg');
+         $this->view->setSiteTitle('Order - Haarlem Festival');
+         $this->view->setBgImage('orderbg.jpg');
     }
 
     public function indexAction()

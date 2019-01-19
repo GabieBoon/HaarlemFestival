@@ -8,24 +8,20 @@
 
 <?php $this->start('body'); ?><!-- start body -->
 
-
-
-
-
 <main class="background-image">
-
-
-<h1>Tickets</h1>
-<?php
- $this->printTickets ();
-// foreach ($_SESSION['Cart'] as $ticketId => $ticket) {
-//     var_dump($ticket);
-// }
-?>
-
-<a href="<?= PROOT ?>Order/Data" role="button" class="btn btn-primary">Afrekenen</a>
-
-
+    <div class="container cart-content">
+        <h1 class="text-center">Tickets in cart</h1>
+        <?php
+//        $this->printTickets();
+         foreach ($_SESSION['Cart'] as $ticket) {
+             echo '<pre>';
+             var_dump($ticket);
+             echo '</pre>';
+//             include ROOT . 'app' . DS . 'Views' . DS . 'Order' . DS . 'Partials' . DS . 'TicketRow' . '.php';
+         }
+        ?>
+        <a href="<?= PROOT ?>order/data" role="button" class="btn btn-primary">Proceed to payment</a>
+    </div>
 </main>
 <?php $this->end(); ?><!-- end body -->
 

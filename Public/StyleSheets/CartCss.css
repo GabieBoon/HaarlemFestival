@@ -1,0 +1,12 @@
+.cart-content {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.ticket {
+    font-size: 1.2em;
+    border: 1px solid #CCC;
+    border-left: none;
+    border-right: none;
+    padding: 8px 0;
+    margin-bottom: 12px !important;
+}
