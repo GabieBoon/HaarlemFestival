@@ -7,7 +7,7 @@ class Table {
     private $currentRow, $currentHour, $currentTicket, $foodSessionsPrinted;  //houd bij welke rij, colom etc je in zit
     private $cellWidth;
 
-    public function generateTable($day, $startHour, $endHour, $event, $head = true, $eventColumn = false, $rowSource = NULL, $tickets = NULL)
+    public function generateTable($day, $startHour, $endHour, $event, $head = true, $eventColumn = false, $rowSource = NULL, $tickets = NULL, $tableWidth = 1250)
     {
         //set variabelen
         $this->day = $day;
@@ -51,7 +51,7 @@ class Table {
         }
 
         //bereken de breedte van een cel in de tabel en sla dit op voor later gebruik
-        $this->setCellWidth();
+        $this->setCellWidth($tableWidth);
 
 
         if ($head) {
@@ -277,9 +277,9 @@ class Table {
     }
 
 
-    private function setCellWidth(){
+    private function setCellWidth($tableWidth){
         //mag nog dynamisch vanuit de css worden opgehaald
-        $tableWidth = 1250;
+        //$tableWidth = 1250;
         $locationCellWidth = 250;
         $eventCellWidth = 100;
 
