@@ -60,7 +60,7 @@
         <section class="DanceSection" id="schedule">
             <h2><?= $this->content->Timetable->title ?></h2>
 
-            <nav>
+            <nav class="navigationTimetable">
                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link active" id="nav-27-tab" data-toggle="tab" href="#nav-27" role="tab" aria-controls="nav-27" aria-selected="true">27</a>
                     <a class="nav-item nav-link" id="nav-28-tab" data-toggle="tab" href="#nav-28" role="tab" aria-controls="nav-28" aria-selected="false">28</a>
@@ -74,12 +74,16 @@
                         <?=$this->table->generateTable(27,10,27, "Dance", true, false, $this->danceLocations, $this->danceTickets) ?>
                     </table>
 
+
+
                 </div>
                 <div class="tab-pane fade" id="nav-28" role="tabpanel" aria-labelledby="nav-28-tab">
 
                     <table>
                         <?=$this->table->generateTable(28,10,27, "Dance", true, false, $this->danceLocations, $this->danceTickets) ?>
                     </table>
+
+
 
                 </div>
                 <div class="tab-pane fade" id="nav-29" role="tabpanel" aria-labelledby="nav-29-tab">
@@ -88,8 +92,11 @@
                         <?=$this->table->generateTable(29,10,27, "Dance", true, false, $this->danceLocations, $this->danceTickets) ?>
                     </table>
 
+
                 </div>
             </div>
+
+            <span class="clearfix"></span>
 
         </section>
 

@@ -25,6 +25,7 @@ class DanceModel extends ModelBase{
         return $this->_db->query($sql)->getResult();
     }
 
+    //lijkt op getDanceArtists maar krijgt maar een resultaat terug, geen array van resultaten
     public function getDanceArtist($artistId)
     {
         $sql = "select * from DanceArtist join Artist on artistId = Artist.Id where Artist.Id = ?";
