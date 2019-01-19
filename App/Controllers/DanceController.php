@@ -43,4 +43,12 @@ class DanceController extends ControllerBase
 
     }
 
+    public function locationAction($locationId)
+    {
+        $danceLocation = $this->DanceModel->getLocation("Dance", $locationId);
+
+        header("Content-Type: application/json");
+        echo json_encode($danceLocation);
+
+    }
 }

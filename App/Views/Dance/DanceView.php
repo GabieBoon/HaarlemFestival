@@ -32,17 +32,17 @@
 
         <section class="DanceSection">
             <h2><?= $this->content->Artists->title ?></h2>
-            <p>
+
                 <?= DanceViewFunctions::showArtists($this->danceArtists); ?>
-            </p>
+
 
         </section>
 
         <section class="DanceSection">
             <h2><?= $this->content->Locations->title ?></h2>
-            <p>
+
                 <?= DanceViewFunctions::showLocations($this->danceLocations); ?>
-            </p>
+
 
         </section>
 
@@ -110,10 +110,10 @@
 
                 <div class="OverlayLocation" style="display: none">
 
-                    <p><?= $this->content->OverlayLocation->label1 ?> </p>
-                    <p><?= $this->content->OverlayLocation->label2 ?> </p>
-                    <p><?= $this->content->OverlayLocation->label3 ?> </p>
-                    <p><?= $this->content->OverlayLocation->label4 ?> </p>
+                    <p><?= $this->content->OverlayLocation->label1 ?> </p> <p id="locationLabel1"></p>
+                    <p><?= $this->content->OverlayLocation->label2 ?> </p> <p id="locationLabel2"></p>
+                    <p><?= $this->content->OverlayLocation->label3 ?> </p> <p id="locationLabel3"></p>
+                    <p><?= $this->content->OverlayLocation->label4 ?> </p> <p id="locationLabel4"></p>
                 </div>
 
             </div>

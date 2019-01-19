@@ -13,6 +13,12 @@ class DanceModel extends ModelBase{
         return $this->_db->query($sql, [$event])->getResult();
     }
 
+    public function getLocation($event, $locationId)
+    {
+        $sql = "select * from Venue where event like ? and id = ?";
+        return $this->_db->query($sql, [$event, $locationId])->getFirstResult();
+    }
+
     public function getDanceArtists()
     {
         $sql = "select * from DanceArtist join Artist on artistId = Artist.Id";
