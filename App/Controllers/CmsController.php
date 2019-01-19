@@ -8,14 +8,15 @@ class CmsController extends ControllerBase //Jasper
         $this->view->setLayout('Cms');
     }
 
+    // index
     public function indexAction()
     {
-        //formatted_print_r(UserModel::currentLoggedInUser());
         if (UserModel::checkLoginState(false)) {
             Router::redirect('cms/dashboard');
         }
     }
 
+    // Login
     public function loginAction()
     {
         //checking currentLoggedInUser instead of loginState bc otherwise it'll loop 
@@ -25,9 +26,6 @@ class CmsController extends ControllerBase //Jasper
 
         $validation = new Validate();
         if ($_POST) {
-            // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-            // formatted_print_r($password);
-            //form validation
             $validation->check($_POST, [
                 'username' => [
                     'display' => 'Username',
@@ -64,20 +62,13 @@ class CmsController extends ControllerBase //Jasper
         $this->view->renderView('cms/loginView');
     }
 
+    // Logout
     public function logoutAction()
     {
-
         UserModel::checkLoginState(false)->logout();
-        //$user->logout();
-
-        //formatted_print_r(UserModel::currentLoggedInUser());
-        // $user = UserModel::currentLoggedInUser();
-        // if ($user) {
-        //     $user->logout();
-        // }
-        // Router::redirect('cms');
     }
 
+    // Dashboard
     public function dashboardAction($arg = '')
     {
         if ($arg == 'deleteUserSession') {
@@ -89,30 +80,24 @@ class CmsController extends ControllerBase //Jasper
         }
 
         $this->view->UserModel = UserModel::checkLoginState();
-        $this->view->renderView('cms/DashboardView2');
+        $this->view->renderView('cms/DashboardView');
 
     }
-    // Dashboard
+
     // Statistics
-    // Edit Timetable
-    // Edit Event Pages
-    // ManageUsers
-    // Settings
-
-
-
     public function statisticsAction($event = 'Event')
     {
-        $this->view->event = CmsModel::CheckEvent($event);
+        $this->view->event = CmsModel::checkEvent($event);
         $this->view->UserModel = UserModel::checkLoginState();
        
         
         $this->view->renderView('CMS/StatisticsView');
     }
 
+    // EditTimetable && EditEventPage
     public function editAction($type, $event = 'Event')
     {
-        $this->view->event = CmsModel::CheckEvent($event);
+        $this->view->event = CmsModel::checkEvent($event);
         $this->view->UserModel = UserModel::checkLoginState();
 
 
@@ -130,11 +115,13 @@ class CmsController extends ControllerBase //Jasper
         
     }
 
-    public function manageUsersAction($type=null, $event = '')
+    // Manage Users
+    public function manageUsersAction($args=[], $event = '')
     {
-        if ($event != '') {
-
-
+        if (strtolower($args[0]) === 'register') {
+            // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            // formatted_print_r($password);
+            // form validation
         }
 
         $lc_type = strtolower($type);
@@ -150,6 +137,7 @@ class CmsController extends ControllerBase //Jasper
         $this->view->renderView('CMS/ManageUsersView');
     }
 
+    // Settings
     public function settingsAction($type = null, $event = '')
     {
         if ($event != '') {

@@ -1,7 +1,7 @@
 <?php
 
 
-function showEditPagesWidget(string $event, $contentObj)
+function showEditTimetableWidget(string $event, $contentObj)
 {
     foreach ($contentObj as $sectionTitle => $sectionObj) {
         ?>
@@ -30,7 +30,7 @@ function showEditPagesWidget(string $event, $contentObj)
                     } elseif ($varietyObj->type === "COLOR") {
                             //SHOW SOMETHING LIKE AN COLOR PICKER
                     } else {
-                        echo('<p>Oops, it looks like there is no editable control for: ' . $varietyObj->type . '. Sorry!</p>');
+                        echo ('<p>Oops, it looks like there is no editable control for: ' . $varietyObj->type . '. Sorry!</p>');
                     }
                     echo ('</section>');
                 }
@@ -48,7 +48,36 @@ function showEditPagesWidget(string $event, $contentObj)
 }
 
 
-function showWysiwygEditor(string $uniqId, string $inputId, string $text)
+function showEditTimetableHeader(string $uniqId, string $inputId, string $text)
+{
+    $wysiwygEditorId = 'editor_' . $uniqId; ?>
+
+<div class="wysiwyg-editor">
+    <!-- <label for="about">About me</label> -->
+    <input id="<?= $inputId ?>" type="hidden">
+
+    <div id="<?= $wysiwygEditorId ?>">
+        <?= $text ?>
+    </div>
+
+    <!-- Initialize Quill editor -->
+    <script>
+        var quill = new Quill(<?= "'#" . $wysiwygEditorId . "'" ?>, {
+            theme: 'snow'
+        });
+
+
+    </script>
+</div>
+<?php 
+//     var form = document.querySelector('form');
+// form.onsubmit = function() {
+//   // Populate hidden form on submit
+//   var about = document.querySelector('input[name=about]');
+//   about.value = JSON.stringify(quill.getContents());
+}
+
+function showEditTimetableRow(string $uniqId, string $inputId, string $text)
 {
     $wysiwygEditorId = 'editor_' . $uniqId; ?>
 

@@ -17,9 +17,9 @@ $pathToImageFolder = PROOT . 'Public/Images/';
 
 ?>
 
-<section id="sidebarLeft" class="">
+<aside id="sidebarLeft" class="">
 
-
+ <a id="goToSiteLnk" href="<?= PROOT ?>home"><i class="goToSiteIcon fas fa-home"> </i> Go to website</a>   
     <img id="logo" src="<?= $pathToImageFolder . 'HaarlemFestival-Logo-WT.svg'; ?>">
 
     <div id="loggedInUserInfoWrapper">
@@ -38,13 +38,13 @@ $pathToImageFolder = PROOT . 'Public/Images/';
             <p><?= $this->UserModel->role ?></p>
             <a id="logoutBtn" href="<?= PROOT ?>cms/logout">Logout</a>
         </div>
-        <span class="clearFix"></span>
+        
 
     </div>
 
 
     <?= $this->content('menu'); ?>
 
-</section>
+</aside>
 
 <?php $this->end(); ?>

@@ -6,14 +6,40 @@
     padding: 0;
 }
 
+a#goToSiteLnk {
+    color: #000;
+    display: block;
+    background-color: rgba(201, 201, 201, 1);
+    padding-left: 10px;
+    position: relative;
+    width: inherit;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    /* margin-top: 10px;  */
+}
+
+a#goToSiteLnk:hover {
+    background-color: rgba(221, 221, 221, 1);
+    text-decoration: none;
+}
+
+a#goToSiteLnk .goToSiteIcon {
+    width: 50px;
+    vertical-align: top;
+}
+
+a#goToSiteLnk .goToSiteIcon::before {
+    font-size: 35px;
+    line-height: 50px;
+}
+
 #logo {
     display: block;
     position: relative;
-    margin: 0;
+    margin: 10px 0;
     padding: 0;
     width: 200px;
-    /* background: url(/Haarlem-Festival/Public/Images/HaarlemFestival-Logo-WT.svg) no-repeat top left;
-    background-size: contain; */
 }
 
 #wrapper {
@@ -24,7 +50,7 @@
 
 #loggedInUserInfoWrapper {
     position: relative;
-    margin: 25px 0;
+    margin-bottom: 25px;
     padding: 5px 0;
     border-top: 1px solid #c9c9c9;
     border-bottom: 1px solid #c9c9c9;

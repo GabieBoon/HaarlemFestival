@@ -1,27 +1,7 @@
 <?php
 
 
-function fetchColor(string $color = '')
-{
-    $color = ucfirst($color);
-    if ($color === 'Dance') {
-        return "#3083D0";
-    } elseif ($color === 'Jazz') {
-        return "#440E62";
-    } elseif ($color === 'Food') {
-        return "#F0841B";
-    } elseif ($color === 'Historic') {
-        return "#DB1F1F";
-    } elseif ($color === 'Schedule') {
-        return "#DCC500";
-    } elseif ($color === 'Cart') {
-        return "#849A7D";
-    } elseif ($color === 'Default') {
-        return "#7cb5ec";
-    } else {
-        return "";
-    }
-}
+
 
 function formatData(array $dataArray)
 {
@@ -29,7 +9,7 @@ function formatData(array $dataArray)
     $count = count($dataArray);
     for ($i = 0; $i < $count; $i++) {
         $dataObj = $dataArray[$i];
-        $dataString .= "{name: '" . $dataObj->name . "', y: " . $dataObj->value . ", color: '" . fetchColor($dataObj->color) . "'}, ";
+        $dataString .= "{name: '" . $dataObj->name . "', y: " . $dataObj->value . ", color: '" . CmsModel::getEventColor($dataObj->color) . "'}, ";
     }
     return rtrim($dataString, ', ');
 }
