@@ -1,3 +1,4 @@
+//toon de overlay
 $(document).ready(function(){
     $(".blok").click(function(event){
 
@@ -5,6 +6,7 @@ $(document).ready(function(){
     });
 });
 
+//hide de overlay
 $(document).ready(function(){
     $(".OverlayBackground").click(function(event){
 
@@ -14,6 +16,7 @@ $(document).ready(function(){
     });
 });
 
+//toont het artiest gedeelte van de overlay en stuur een AJAX request voor de informatie
 $(document).ready(function(){
     $(".Artist").click(function(event){
 
@@ -24,6 +27,7 @@ $(document).ready(function(){
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 
+                //aangezien php een object teruggeeft wordt er json gebruikt om deze goed door te geven
                 var Artist = JSON.parse(this.responseText);
 
                 document.getElementById("artistLabel1").innerHTML = Artist.stageName;
@@ -42,6 +46,7 @@ $(document).ready(function(){
     });
 });
 
+//toont het location gedeelte van de overlay en stuur een AJAX request voor de informatie
 $(document).ready(function(){
     $(".Location").click(function(event){
 
@@ -52,6 +57,7 @@ $(document).ready(function(){
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
 
+                //aangezien php een object teruggeeft wordt er json gebruikt om deze goed door te geven
                 var Location = JSON.parse(this.responseText);
 
                 document.getElementById("locationLabel1").innerHTML = Location.street + Location.houseNr;

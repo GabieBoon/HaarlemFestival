@@ -42,10 +42,10 @@ class DanceViewFunctions
         }
     } 
 
-    //zoekt een plaatje in de map images aan de hand van de naam van het plaatje
+    //zoekt een plaatje in de map images/Dance aan de hand van de naam van het plaatje
     public static function getPicture($pictureName)
     {
-        $plek = 'public' . DS . 'images' . DS . $pictureName;
+        $plek = 'public' . DS . 'images' . DS . 'Dance' . DS . $pictureName;
 
         if (file_exists(ROOT . $plek . '.jpg')) {
 
