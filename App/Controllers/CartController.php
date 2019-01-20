@@ -37,4 +37,10 @@ class CartController extends ControllerBase
 
     }
 
+    public function removeTicketAction($ticketId) {
+        unset($_SESSION['Cart'][$ticketId]);
+
+        Router::redirect('cart');
+    }
+
 }
