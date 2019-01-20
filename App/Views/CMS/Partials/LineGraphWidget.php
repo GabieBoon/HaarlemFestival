@@ -56,6 +56,10 @@ function showLineGraphWidget(object $dataObj)
                         title: {
                         text: null
                     },
+                    xAxis: {
+                        type: 'datetime',
+                        categories: ['11/01','12/01','13/01','14/01','15/01','16/01','17/01','18/01','19/01','Yesterday']
+                    },
                     credits: {
 	                    enabled: false
 	                },
