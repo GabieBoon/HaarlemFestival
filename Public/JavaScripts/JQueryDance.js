@@ -53,7 +53,7 @@ $(document).ready(function(){
                 if (Artist.bio === null){
                     Artist.bio = ""
                 }
-                
+
                 document.getElementById("artistHeader").innerHTML = Artist.stageName;
 
                 document.getElementById("artistLabel1").innerHTML = Artist.stageName;

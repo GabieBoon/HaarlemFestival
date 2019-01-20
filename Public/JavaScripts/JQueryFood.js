@@ -11,3 +11,34 @@ $(document).ready(function(){
         $(".Overlay").hide();
     });
 });
+
+$(document).ready(function(){
+    $(".OrderBTN").click(function(event){
+
+        var people = $(".People" ).val();
+        var children = $(".Children" ).val();
+        var day = $(".Day option:selected").val();
+        var session = $(".Session option:selected").val();
+
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200){
+
+                if (this.responseText == "succes"){
+                    $(".Overlay").hide();
+                }
+                else{
+                    document.getElementById("ErrorMessage").innerHTML = this.responseText;
+                }
+
+            }
+        }
+
+        xmlhttp.open("GET", "http://localhost/haarlem-festival/public/phpScripts/RestaurantOrder.php?people=" + people +  "&children="
+            + children + "&day=" + day + "&session=" + session, true);
+        xmlhttp.send();
+
+
+    });
+});

@@ -121,7 +121,12 @@ table {
 
 .Regel p {
     display: inline-block;
+
 }
+.Regel {
+    margin-left: 40px;
+}
+
 
 #artistHeader, #locationHeader  {
     display: flex;
@@ -130,6 +135,9 @@ table {
 }
 .OverlayArtistPicture, .OverlayLocationPicture {
     margin-bottom: 40px;
+    margin-left: 10%;
+    max-width: 80%;
+
     /*position: absolute;*/
     /*left: 50%;*/
     /*transform: translate(-50%, -0%);*/
