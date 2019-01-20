@@ -7,7 +7,7 @@ class FoodViewFunctions
     {
         foreach($restaurants as $restaurant){
 
-            include ROOT . 'app' . DS . 'Views' . DS . 'Food' . DS . 'Partials' . DS . 'RestaurantBlock' . '.php';
+            include ROOT . 'App' . DS . 'Views' . DS . 'Food' . DS . 'Partials' . DS . 'RestaurantBlock' . '.php';
         }
     }
 }

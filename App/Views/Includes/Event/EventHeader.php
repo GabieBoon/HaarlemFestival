@@ -11,7 +11,7 @@
 <header class="<?= $this->_className?>">
     <a href="<?= PROOT ?>">
         <img
-             class="nav-logo" src="<?= PROOT ?>public/images/HaarlemFestival-Logo-WT.svg" alt="Haarlem Festival Logo" href="<?= PROOT ?>Home/"/>
+             class="nav-logo" src="<?= PROOT ?>Public/Images/HaarlemFestival-Logo-WT.svg" alt="Haarlem Festival Logo" href="<?= PROOT ?>Home/"/>
     </a>
     <nav class="nav-wrapper">
         <ul class="nav-left">
@@ -25,10 +25,12 @@
             <li class="<?php if($this->_className == 'Cart' ){echo 'activeTicket';}elseif($this->_className == 'Order'){echo 'activeTicket';} ?> cart-btn nav-btn"><a class="cart-icon" href="<?= PROOT ?>cart/"><i class="fas fa-shopping-cart"></i></a></li>
 
             <div class="dropdown">
-                <button class="dropbtn language-selection"><img src="<?= PROOT ?>public/images/languages/<?= $_SESSION['Language'] ?>.png" alt="engels"></button>
+                <button class="dropbtn language-selection"><img src="<?= PROOT ?>Public/Images/languages/<?= $_SESSION['Language'] ?>.png" alt="engels"></button>
                 <div class="dropdown-content" style="left:0;">
-                    <a href="<?= PROOT ?>/Home/changeLanguage/NL"> <img src="<?= PROOT ?>public/images/languages/NL.png" alt="nederlands"> </a>
-                    <a href="<?= PROOT ?>/Home/changeLanguage/EN"> <img  src="<?= PROOT ?>public/images/languages/EN.png" alt="engels"> </a>
+                    <a href="<?= PROOT ?>/Home/changeLanguage/NL"> <img src="<?= PROOT ?>Public/Images/languages/NL.png" alt="nederlands"> </a>
+
+                    <a href="<?= PROOT ?>/Home/changeLanguage/EN"> <img  src="<?= PROOT ?>Public/Images/languages/EN.png" alt="engels"> </a>
+
                 </div>
             </div>
 

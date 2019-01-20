@@ -76,10 +76,10 @@ class CmsController extends ControllerBase //Jasper
         $this->view->UserModel = UserModel::checkLoginState();
         if ($arg == 'deleteUserSession') {
             Session::deleteSession(CURRENT_USER_SESSION_NAME);
-            router::redirect('cms');
+            Router::redirect('cms');
         } elseif ($arg == 'deleteSession') {
             Session::deleteSession('ALL');
-            router::redirect('cms');
+            Router::redirect('cms');
         }
 
 

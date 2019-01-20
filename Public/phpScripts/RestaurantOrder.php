@@ -6,7 +6,8 @@ $children = $_REQUEST["children"];
 $day = $_REQUEST["day"];
 $session = $_REQUEST["session"];
 
-include 'C:\xampp\htdocs\haarlem-festival\Config\config.php';
+//require config file
+require_once(__DIR__ . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . 'config.php');
 
 include ROOT . 'Core' . DS . 'Router' . '.php';
 

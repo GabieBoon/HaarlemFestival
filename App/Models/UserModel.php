@@ -105,7 +105,7 @@ class UserModel extends ModelBase
             $lc_destination = strtolower($destination);
             for ($i = 0; $i < $count; $i++) {
                 if ($lc_destination === $blackList[$i]) {
-                    router::redirect('cms/login');
+                    Router::redirect('cms/login');
                 }
             }
         }
@@ -116,12 +116,12 @@ class UserModel extends ModelBase
             return $user;
         } elseif ($returnToSender) {
             checkBlacklist($_SESSION['LastVisited']);
-            router::redirect('cms/login?dest=' . $_SESSION['LastVisited']);
+            Router::redirect('cms/login?dest=' . $_SESSION['LastVisited']);
         } elseif ($diffDestination != '') {
             checkBlacklist($diffDestination);
-            router::redirect('cms/login?dest=' . $diffDestination);
+            Router::redirect('cms/login?dest=' . $diffDestination);
         } else {
-            router::redirect('cms/login');
+            Router::redirect('cms/login');
         }
     }
 

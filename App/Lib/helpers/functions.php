@@ -1,3 +1,3 @@
 <?php
-require_once(ROOT . 'app' . DS . 'lib' . DS . 'helpers' . DS . 'helpers.php');
+require_once(ROOT . 'App' . DS . 'Lib' . DS . 'helpers' . DS . 'helpers.php');
 ?>
