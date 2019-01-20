@@ -22,7 +22,7 @@
         <br/>
 
         </article>
-        <img class="img1" src="<?= PROOT ?>public/images/Historic/bavokerk-haarlem.jpg" alt="test">
+        <img class="img1" src="<?= PROOT ?>Public/Images/Historic/bavokerk-haarlem.jpg" alt="test">
 
         <span class="clearfix">
 
@@ -37,7 +37,7 @@
         </p>
 
         </article>
-        <img class="img2" src="<?= PROOT ?>public/images/Historic/fotogracht.jpg" alt="test">
+        <img class="img2" src="<?= PROOT ?>Public/Images/Historic/fotogracht.jpg" alt="test">
         <span class="clearfix">
 
         </span>
