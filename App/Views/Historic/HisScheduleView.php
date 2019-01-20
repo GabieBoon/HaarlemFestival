@@ -66,15 +66,11 @@
 
         <section class="Home1">
 
-            <h1 class="titel1"> Information: </h1>
+            <h1 class="titel1"> <?= $this->ContentModel->Schedule->title ?> </h1>
 
             <p class="endtekst">
-            Duration of this walking tour will be approx. 2,5 hours
-            (with a 15-minute break with refreshments). The location for the break is the Jopen Kerk.
-            There will be several departures a day. The tour starts near the ‘Church of St. Bavo’,
-            ‘Grote Markt’ in the centre of Haarlem. A giant flag marked ‘Haarlem Historic’ will mark
-            the exact starting location.Due to the nature of this walk participants must be a minimum
-            of 12 years old and no strollers are allowed. Groups will consist of 12 participants + 1 guide.
+                <?= $this->ContentModel->Schedule->text ?>
+
             </p>
 
             <a role="button" href=""></a>

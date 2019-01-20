@@ -14,17 +14,9 @@
     <?= $this->content('hissubnav'); ?>
     <section class="Home1">
         <article>
-        <h1 class="titel1">Day trip to Haarlem center and surroundings</h1>
+        <h1 class="titel1"> <?= $this->ContentModel->About->title1 ?> </h1>
         <p class="para1">
-            Do you want to know more about the history of the
-            city? Or did you come to Haarlem to shop
-            extensively? Your boredom is simply not an option
-            here, wander through this historic city full of
-            monuments, squares and parks. Discover how the
-            masterpieces of French Neck look up close. Walk
-            along the boutiques in the Golden streets. Step
-            inside the imposing Grote or St. Bavokerk and
-            admire its organ that Mozart once played.
+            <?= $this->ContentModel->About->text1 ?>
         </p>
         <br/>
         <br/>
@@ -36,19 +28,11 @@
 
         </span>
         <article>
-        <h1 class="titel2">Walking through Haarlem</h1>
+        <h1 class="titel2"> <?= $this->ContentModel->About->title2 ?> </h1>
         <br/>
         <br/>
         <p class="para2">
-
-            Be surprised during a walk along
-            unique spots in the Haarlem city center.
-            From hidden courtyards to large churches.
-            Together in a group with people who love doing the same thing,
-            an experienced city guide wil tell
-            you the hottest and most interesting
-            facts worth knowing about this beautiful city.
-            In the end you will feel like you know the city and its people.
+            <?= $this->ContentModel->About->text2 ?>
             <br />
         </p>
 
