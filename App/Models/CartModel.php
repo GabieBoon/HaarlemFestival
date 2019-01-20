@@ -61,6 +61,21 @@ class CartModel extends ModelBase
         return $this->query($sql, [$ticketId])->getFirstResult();
     }
 
+    public function getTicketStats(string $event) {
+        $sql = "SELECT  O.orderDateTime, OT.numberOfTickets, T.event as event
+
+                FROM `Order` as O
+
+                join OrderTicket as OT on O.id = OT.orderId
+                join Ticket as T on OT.ticketId = T.id 
+
+                where event = ?
+                ;"
+                ;
+
+        return $this->query($sql, [$event])->getResult();
+    }
+
 //    public function getStageName($ticket) {
 //        if ($ticket->event == "Dance") {
 //            $sql = "SELECT A.stageName

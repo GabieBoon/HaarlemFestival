@@ -1,6 +1,6 @@
 <?php
 
-function formatData(array $dataArray)
+function formatTimeLineGraphData(array $dataArray)
 {
     $dataString = "";
     $count = count($dataArray);
@@ -26,7 +26,7 @@ function formatData(array $dataArray)
 function showTimeLineGraphWidget(object $dataObj)
 {
     
-    $dataString = formatData($dataObj->data);
+    $dataString = formatTimeLineGraphData($dataObj->data);
     //formatted_print_r($dataString);
     $widgetId = uniqid(toCamelCase($dataObj->title) . '_');
     ?>
@@ -63,8 +63,9 @@ function showTimeLineGraphWidget(object $dataObj)
                         type: 'datetime'
                     },
                     yAxis: {
+                        
                         title: {
-                            text: 'Exchange rate'
+                            text: 'Ticket Sales'
                         }
                     },
                     credits: {

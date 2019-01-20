@@ -18,10 +18,15 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
         </div>
     </header>
     <main id="pageMain" class="">
-         <?php $this->partial('CMS', 'TimeLineGraphWidget');
+        <?php 
+        $this->partial('CMS', 'TimeLineGraphWidget');
+        $this->partial('CMS', 'lineGraphWidget');
+
+
+        
 
         $data = (object)[
-            'title' => 'Visitor count last 10 days',
+            'title' => 'Ticket sales last 10 days',
             'data' => [
                 (object)[
                     'name' => 'Dance',
@@ -47,6 +52,33 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
         ];
 
         showTimeLineGraphWidget($data);
+
+        $data = (object)[
+            'title' => 'Revenue stream last 10 days',
+            'data' => [
+                (object)[
+                    'name' => 'Dance',
+                    'value' => [207, 244, 183, 198, 220, 172, 82, 158, 169, 170],
+                    'color' => 'Dance'
+                ],
+                (object)[
+                    'name' => 'Jazz',
+                    'value' => [212, 124, 180, 93, 63, 221, 71, 135, 148, 57],
+                    'color' => 'Jazz'
+                ],
+                (object)[
+                    'name' => 'Food',
+                    'value' => [197, 68, 76, 191, 189, 96, 73, 144, 99, 215],
+                    'color' => 'Food'
+                ],
+                (object)[
+                    'name' => 'Historic',
+                    'value' => [160, 196, 66, 144, 157, 169, 87, 112, 137, 90],
+                    'color' => 'Historic'
+                ]
+            ], 'prefix' => '€'
+        ];
+        showLineGraphWidget($data);
 ?>
             </main>
 </div>
