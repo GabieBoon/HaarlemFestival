@@ -32,8 +32,7 @@ function encodeURIComponent($str) {
 
                 <img class="restaurantImage" src="<?= PROOT ?>public/images/RestaurantBanners/ml.png" alt="Haarlem Festival Logo" href="<?= PROOT ?>Home/"/>
 
-                <p>The successful restaurant by chef Joshua Jaring is – just like ratatouille – a mix of French cuisine in the reality of today with excellent value for money in an accessible environment. So we started in 2013 in de lange veerstraat and so we go after moving in also by 2015 on our unique monumental location on the Spaarne. Michelin named our restaurant at the presentation of our first star in 2014 an example to the new generation of chefs and restaurants: less stiff, less expensive, and more accessible. It comes to what's on the Board. Find out for yourself: from experience menus to our exclusive a la carte dishes. Everything to perfection made with surprising taste palettes, a sublime wine choice, our extensive wine list with more than 460 wines and only the best seasonal produce available. Come enjoy at lunch or dinner and choose how far you want to be included in the culinary world of chef Joshua Jaring and his team. Our location is also suitable for weddings and offers a private dining.</p>
-<!--                <p>--><?//= $this->restaurantDetails->restaurantDescription;?><!--</p>-->
+                <?php if ($_SESSION["Language"] === "NL") {echo $this->restaurantDetails->restaurantDescriptionNL;} elseif($_SESSION["Language"] === "EN"){echo $this->restaurantDetails->restaurantDescriptionEN;};?>
                 <div class="wrapper">
                     <div class="form-row">
                         <p class="font-weight-bold" >Kitchen</p>
@@ -93,10 +92,10 @@ function encodeURIComponent($str) {
                                     <p>Select a day</p>
                                     <select class="Day">
                                         <option value="" disabled selected>Make your choice...</option>
-                                        <option value="1">Day 1</option>
-                                        <option value="2">Day 2</option>
-                                        <option value="3">Day 3</option>
-                                        <option value="4">Day 4</option>
+                                        <option value="26">Day 1</option>
+                                        <option value="27">Day 2</option>
+                                        <option value="28">Day 3</option>
+                                        <option value="29">Day 4</option>
                                     </select>
                                 </div>
                                 <div class="input ">
