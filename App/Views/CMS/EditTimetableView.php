@@ -31,11 +31,8 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
 
 
 
-<?php showEditTimetableWidget($this->event,$this->ScheduleData); ?>
+<?php showEditTimetableWidget($this->event,[$this->ScheduleData]); ?>
 
-    <pre>
-<!-- < ?php print_r($this->ContentModel); ?> -->
-</pre>
     </main>
 </div>
 
