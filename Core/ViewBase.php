@@ -40,10 +40,10 @@ class ViewBase
     public function renderView(string $viewName)
     {
         //view
-        $this->check_include(ROOT . 'App' . DS . 'Views' . DS . $this->sanitizePath($viewName) . '.php'); 
+        $this->check_include(ROOT . 'app' . DS . 'Views' . DS . $this->sanitizePath($viewName) . '.php');
 
         //layout
-        $this->check_include(ROOT . 'App' . DS . 'Views' . DS . 'Layouts' . DS . $this->_layout . 'Layout.php'); 
+        $this->check_include(ROOT . 'app' . DS . 'Views' . DS . 'Layouts' . DS . $this->_layout . 'Layout.php');
     }
 
     public function check_include(string $pathToSomething)

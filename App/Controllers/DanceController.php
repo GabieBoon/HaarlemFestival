@@ -25,7 +25,7 @@ class DanceController extends ControllerBase
         $this->view->allAccessTickets = $this->DanceModel->getAllAccessTicketsDance();
 
         //laad de tablegenerator in
-        include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
+        include ROOT . DS . 'app' . DS . 'Lib' . DS . 'TableGenerator' . DS . 'Table.php';
         $this->view->table = new Table();
 
         //laad de extra functies voor de view laag in

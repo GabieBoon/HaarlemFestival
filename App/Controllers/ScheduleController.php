@@ -34,7 +34,7 @@ class ScheduleController extends ControllerBase {
         $this->view->jazzTickets = $jazzModel->getJazzTickets();
 
         //laad de tablegenerator in
-        include ROOT . DS . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
+        include ROOT . DS . 'app' . DS . 'Lib' . DS . 'TableGenerator' . DS . 'Table.php';
         $this->view->table = new Table();
 
         $this->view->renderView("Schedule/ScheduleView");
