@@ -12,43 +12,13 @@ class ViewBase
               $_outputBuffer,
               $_layout = DEFAULT_NAME,
               $_bgImage;
-              //$_layoutMap;
 
     public function __construct($_className, $_action)
     {
         $this->_className = $_className;
         $this->_action = $_action;
-        //$this->title = $siteTitle;
-        
-        //include ROOT . 'app' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
-        //$this->_table = new Table();
+
     }
-
-
-
-    //geef de pagina weer
-    // public function render($layoutName = null)
-    // {
-
-    //     if ($layoutName == null) {
-    //         $layoutName = $this->_className . 'Layout.php';
-    //     } else {
-    //         $layoutName .= 'Layout.php';
-    //         $layoutName += 'Layout.php';
-    //     }
-
-    //     //head
-    //     include ROOT . 'App' . DS . 'Layouts' . DS . 'Head.php';
-
-    //     //header
-    //     include ROOT . 'App' . DS . 'Layouts' . DS . 'Header.php';
-
-    //     //content
-    //     include ROOT . 'App' . DS . 'Layouts' . DS . $layoutName;
-
-    //     //footer
-    //     include ROOT . 'App' . DS . 'Layouts' . DS . 'Footer.php';
-    // }
 
     public function printTickets()
     {

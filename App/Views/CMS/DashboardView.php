@@ -8,9 +8,8 @@
 <?php $this->start('body'); ?>
 <?php $user = $this->UserModel;
 $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
-
-
 ?>
+
 <div id="pageWrapper">
     <header id="pageHeader">
         <div id="pageTitle">
@@ -19,14 +18,44 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
         </div>
     </header>
     <main id="pageMain" class="">
-         <?php $this->partial('CMS', 'lineGraphWidget');
+         <?php $this->partial('CMS', 'TimeLineGraphWidget');
 
-        showLineGraphWidget();
+        $data = (object)[
+            'title' => 'Visitor count last 10 days',
+            'data' => [
+                (object)[
+                    'name' => 'Dance',
+                    'value' => [207, 244, 183, 198, 220, 172, 82, 158, 169, 170],
+                    'color' => 'Dance'
+                ],
+                (object)[
+                    'name' => 'Jazz',
+                    'value' => [212, 124, 180, 93, 63, 221, 71, 135, 148, 57],
+                    'color' => 'Jazz'
+                ],
+                (object)[
+                    'name' => 'Food',
+                    'value' => [197, 68, 76, 191, 189, 96, 73, 144, 99, 215],
+                    'color' => 'Food'
+                ],
+                (object)[
+                    'name' => 'Historic',
+                    'value' => [160, 196, 66, 144, 157, 169, 87, 112, 137, 90],
+                    'color' => 'Historic'
+                ]
+            ], 'prefix' => ''
+        ];
 
-   
+        showTimeLineGraphWidget($data);
+?>
+            </main>
+</div>
+<?php $this->end(); ?>
 
     
-         // <div id="u4">
+
+
+       <?php  // <div id="u4">
         //     <div id="u4_state0" class="panel_state">
         //         <div id="u4_state0_content" class="panel_state_content">
         //             <div id="u5">
@@ -968,6 +997,3 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
        
         ?>
 
-    </main>
-</div>
-<?php $this->end(); ?>

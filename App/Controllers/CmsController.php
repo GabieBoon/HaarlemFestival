@@ -60,6 +60,7 @@ class CmsController extends ControllerBase //Jasper
             }
         }
         $this->view->displayErrors = $validation->displayErrors();
+        $this->view->setBgImage('loginbg.jpg'); 
         $this->view->renderView('cms/loginView');
     }
 
@@ -72,6 +73,7 @@ class CmsController extends ControllerBase //Jasper
     // Dashboard
     public function dashboardAction($arg = '')
     {
+        $this->view->UserModel = UserModel::checkLoginState();
         if ($arg == 'deleteUserSession') {
             Session::deleteSession(CURRENT_USER_SESSION_NAME);
             router::redirect('cms');
@@ -80,7 +82,7 @@ class CmsController extends ControllerBase //Jasper
             router::redirect('cms');
         }
 
-        $this->view->UserModel = UserModel::checkLoginState();
+
         $this->view->renderView('cms/DashboardView');
 
     }
@@ -88,37 +90,69 @@ class CmsController extends ControllerBase //Jasper
     // Statistics
     public function statisticsAction($event = 'Event')
     {
-        $this->view->event = CmsModel::checkEvent($event);
         $this->view->UserModel = UserModel::checkLoginState();
-       
-        
+        $this->view->event = CmsModel::checkEvent($event);
+
+
+
         $this->view->renderView('CMS/StatisticsView');
     }
 
     // EditTimetable && EditEventPage
-    public function editAction($type, $event = 'Event')
+    public function editAction($type, $event = 'Event', $args = [])
     {
-        $this->view->event = CmsModel::checkEvent($event);
+        function getScheduleInfoByEvent(string $event)
+        {
+            $ScheduleModel = new ScheduleModel();
+            $dates = $ScheduleModel->getDatesByEvent($event);
+
+            $eventSessions = (object)[];
+
+            $dateCount = count($dates);
+            for ($i = 0; $i < $dateCount; $i++) {
+                $date = $dates[$i]->date;
+
+                $eventSessions->{$date} = $ScheduleModel->getEventsByEventDate($event, $date);
+                $eventSessionCount = count($eventSessions->{$date});
+                for ($j = 0; $j < $eventSessionCount; $j++) {
+                    $ticketId = $eventSessions->{$date}[$j]->ticketId;
+                    $ArtistAndLocationData = $ScheduleModel->getArtistAndLocationByTicketId($event, $ticketId);
+
+                    foreach ($ArtistAndLocationData as $key => $value) {
+                        $eventSessions->{$date}[$j]->{$key} = $value;
+                    }
+                }
+            }
+            return $eventSessions;
+        }
+
+
         $this->view->UserModel = UserModel::checkLoginState();
-
-
-
+        $this->view->event = CmsModel::checkEvent($event);
         $lc_type = strtolower($type);
-        if ($lc_type == 'timetable') {
-            $this->view->renderView('CMS/EditTimetableView');
-        } elseif ($lc_type == 'event') {
+        if ($lc_type === 'timetable') {
 
+
+            $this->view->ScheduleData = getScheduleInfoByEvent($event);
+
+
+
+
+
+            $this->view->renderView('CMS/EditTimetableView');
+        } elseif ($lc_type === 'event') {
 
             $content = new ContentModel();
-            $this->view->ContentModel = $content->getDetailedContent('EN', $event);
+            $this->view->ContentModel = $content->getDetailedContent($_SESSION['Language'], $event);
             $this->view->renderView('CMS/EditEventView');
         }
-        
+
     }
 
     // Manage Users
-    public function manageUsersAction($args=[], $event = '')
+    public function manageUsersAction($args = [], $event = '')
     {
+        $this->view->UserModel = UserModel::checkLoginState();
         if (strtolower($args[0]) === 'register') {
             // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             // formatted_print_r($password);
@@ -134,13 +168,14 @@ class CmsController extends ControllerBase //Jasper
 
 
 
-        $this->view->UserModel = UserModel::checkLoginState();
+
         $this->view->renderView('CMS/ManageUsersView');
     }
 
     // Settings
     public function settingsAction($type = null, $event = '')
     {
+        $this->view->UserModel = UserModel::checkLoginState();
         if ($event != '') {
 
 
@@ -155,7 +190,6 @@ class CmsController extends ControllerBase //Jasper
 
 
 
-        $this->view->UserModel = UserModel::checkLoginState();
         $this->view->renderView('CMS/SettingsView');
     }
 
