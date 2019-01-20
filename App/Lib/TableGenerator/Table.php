@@ -163,7 +163,7 @@ class Table {
         }
 
         //maak een cel in de tabel
-        include ROOT . 'app' . DS . 'Views' . DS . 'Includes' . DS . 'Tables' . DS . 'TableData' . '.php';
+        include ROOT . 'App' . DS . 'Views' . DS . 'Includes' . DS . 'Tables' . DS . 'TableData' . '.php';
     }
 
     private function checkForTicket(){
@@ -196,7 +196,7 @@ class Table {
                         //bereken de lengte van het ticket
                         $ticketLength = $this->getTicketLength($startTime,$endTime, $startDate, $endDate);
 
-                        include ROOT . 'app' . DS . 'Views' . DS . 'Includes' . DS . 'Tables' . DS . 'TableBlok.php';
+                        include ROOT . 'App' . DS . 'Views' . DS . 'Includes' . DS . 'Tables' . DS . 'TableBlok.php';
                     }
                 }
             }
