@@ -2,6 +2,6 @@
     
     <h3> <?= $title ?> </h3>
     
-    <img src="<?= DanceViewFunctions::getPicture($title)?>" alt = "afbeelding">
+    <img class="<?= $soort ?><?= $id ?>" src="<?= DanceViewFunctions::getPicture($title)?>" alt = "afbeelding">
 
 </div>

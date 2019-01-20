@@ -107,20 +107,29 @@
 
                 <div class="OverlayArtist" style="display: none">
 
-                    <p><?= $this->content->OverlayArtist->label1 ?> </p> <p id="artistLabel1"></p>
-                    <p><?= $this->content->OverlayArtist->label2 ?> </p> <p id="artistLabel2"></p>
-                    <p><?= $this->content->OverlayArtist->label3 ?> </p> <p id="artistLabel3"></p>
-                    <p><?= $this->content->OverlayArtist->label4 ?> </p> <p id="artistLabel4"></p>
-                    <p><?= $this->content->OverlayArtist->label5 ?> </p> <p id="artistLabel5"></p>
+                    <h2 id="artistHeader"></h2>
+
+                    <img class="OverlayArtistPicture" src="" alt = "artist">
+
+                    <div class="Regel"><p><?= $this->content->OverlayArtist->label1 ?>:</p> <p id="artistLabel1"></p> </div>
+                    <div class="Regel"><p><?= $this->content->OverlayArtist->label2 ?>:</p> <p id="artistLabel2"></p></div>
+                    <div class="Regel"><p><?= $this->content->OverlayArtist->label3 ?>:</p> <p id="artistLabel3"></p></div>
+                    <div class="Regel"><p><?= $this->content->OverlayArtist->label4 ?>:</p> <p id="artistLabel4"></p></div>
+                    <div class="Regel"><p><?= $this->content->OverlayArtist->label5 ?>:</p> <p id="artistLabel5"></p></div>
 
                 </div>
 
                 <div class="OverlayLocation" style="display: none">
 
-                    <p><?= $this->content->OverlayLocation->label1 ?> </p> <p id="locationLabel1"></p>
-                    <p><?= $this->content->OverlayLocation->label2 ?> </p> <p id="locationLabel2"></p>
-                    <p><?= $this->content->OverlayLocation->label3 ?> </p> <p id="locationLabel3"></p>
-                    <p><?= $this->content->OverlayLocation->label4 ?> </p> <p id="locationLabel4"></p>
+                    <h2 id="locationHeader"></h2>
+
+                    <img class="OverlayLocationPicture" src="" alt = "location">
+
+                    <div class="Regel"><p><?= $this->content->OverlayLocation->label1 ?>:</p> <p id="locationLabel1"></p></div>
+                    <div class="Regel"><p><?= $this->content->OverlayLocation->label2 ?>:</p> <p id="locationLabel2"></p></div>
+                    <div class="Regel"><p><?= $this->content->OverlayLocation->label3 ?>:</p> <p id="locationLabel3"></p></div>
+                    <div class="Regel"><p><?= $this->content->OverlayLocation->label4 ?>:</p> <p id="locationLabel4"></p></div>
+
                 </div>
 
             </div>

@@ -21,16 +21,30 @@ class DanceModel extends ModelBase{
 
     public function getDanceArtists()
     {
-        $sql = "select * from DanceArtist join Artist on artistId = Artist.Id";
+        $sql = "select * from DanceArtist join Artist on artistId = Artist.Id ";
         return $this->_db->query($sql)->getResult();
     }
 
     //lijkt op getDanceArtists maar krijgt maar een resultaat terug, geen array van resultaten
     public function getDanceArtist($artistId)
     {
-        $sql = "select * from DanceArtist join Artist on artistId = Artist.Id where Artist.Id = ?";
-        return $this->_db->query($sql, [$artistId])->getFirstResult();
+        $sql = "select a.stageName, a.firstName, a.preposition, a.lastName, a.id as id, a.bio, da.rank, ms.musicStyle from DanceArtist as da
+                join Artist as a on da.artistId = a.Id
+                join DanceArtistMusicStyle as dams on dams.danceArtistId = da.id
+                join MusicStyle as ms on dams.musicStyleId = ms.id
+                where a.Id = ?";
+
+        $artist = $this->_db->query($sql, [$artistId])->getResult();
+
+        $artist = $this->ArraysVoorKoppeltabellen($artist);
+
+        return $artist[0];
+
+
     }
+
+
+
 
     public function getDanceTickets(){
         $sql = "SELECT t.id, t.price, t.startTime, t.endTime, t.ticketsAvailable, t.event, t.isAllAccessTicket, v.name as venue, 

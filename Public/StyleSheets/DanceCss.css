@@ -78,19 +78,15 @@ h2 {
 
 .OverlayBackground {
     position: absolute;
-    /* Sit on top of the page content */
     width: 100%;
-    /* Full width (cover the whole page) */
-    height: 100%;
-    /* Full height (cover the whole page) */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(242, 242, 242, 0.85);
-    /* Black background with opacity */
     z-index: 20;
-    /* Specify a stack order in case you're using a different order for other elements */
+
+    min-height: 200%;
 }
 
 .OverlayForeground {
@@ -100,7 +96,8 @@ h2 {
     width: 80%;
     margin-left: 10%;
     margin-top: 10px;
-    height: 90%;
+
+    min-height: 150%;
 }
 
 
@@ -109,6 +106,7 @@ h2 {
 }
 .AllAccessButton{
     display: inline-block;
+    margin-left: 200px;
 }
 
 table {
@@ -119,4 +117,20 @@ table {
 .navigationTimetable {
     margin-left: 10%;
     width: 80%;
+}
+
+.Regel p {
+    display: inline-block;
+}
+
+#artistHeader, #locationHeader  {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.OverlayArtistPicture, .OverlayLocationPicture {
+    margin-bottom: 40px;
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -0%);*/
 }
