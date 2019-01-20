@@ -1,13 +1,14 @@
 <?php
 
+
 //require config file
-require_once(__DIR__ . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php');
+require_once(__DIR__ . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . 'config.php');
 
 //laad tools en extra's
-require_once(ROOT . 'app' . DS . 'lib' . DS . 'helpers' . DS . 'functions.php');
+require_once(ROOT . 'App' . DS . 'Lib' . DS . 'helpers' . DS . 'functions.php');
 
 //router werd hier niet aangeroepen
-require_once(ROOT . 'core' . DS . 'Router.php');
+require_once(ROOT . 'Core' . DS . 'Router.php');
 
 
 //autoload alle core klassen
@@ -21,10 +22,11 @@ spl_autoload_register(function ($fullClassName)
     $className = implode($classNameArray);
 
     $mvcFolderName = strtolower($mvcName) . 's';
+    $mvcFolderName = ucfirst($mvcFolderName);
 
-    $pathToCore = ROOT . 'core' . DS . $fullClassName . '.php';
+    $pathToCore = ROOT . 'Core' . DS . $fullClassName . '.php';
 
-    $pathToClass = ROOT . 'app' . DS . $mvcFolderName . DS . $fullClassName . '.php';
+    $pathToClass = ROOT . 'App' . DS . $mvcFolderName . DS . $fullClassName . '.php';
 
     if (file_exists($pathToCore)) {
         require_once($pathToCore);
