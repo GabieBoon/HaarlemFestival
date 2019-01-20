@@ -3,7 +3,7 @@
 
 
 
-function formatData(array $dataArray)
+function formatStatsWidgetData(array $dataArray)
 {
     $dataString = "";
     $count = count($dataArray);
@@ -17,7 +17,7 @@ function formatData(array $dataArray)
 function showStatsWidget(object $dataObj)
 {
     
-    $dataString = formatData($dataObj->data);
+    $dataString = formatStatsWidgetData($dataObj->data);
     $widgetId = uniqid(toCamelCase($dataObj->title) . '_');
     ?>
 

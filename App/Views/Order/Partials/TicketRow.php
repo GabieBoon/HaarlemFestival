@@ -2,9 +2,9 @@
     <div class="col-7">
         <?php
 
-        $weekdays = array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday');
+        $weekdays = array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
 
-        $dayOfWeek = $weekdays[date('w', strtotime($ticket->startTime)) - 1];
+        $dayOfWeek = $weekdays[date('w', strtotime($ticket->startTime))];
 
         switch ($ticket->event) {
             case "Dance":

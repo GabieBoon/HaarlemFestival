@@ -20,7 +20,7 @@ function showEditTimetableWidget(string $event, $args = [])
                     <p class="h5 text-primary createShowP">0 row selected</p>
                 </div>
             </div>
-
+            <!-- Toevoeg knop -->
             <div class="row d-flex justify-content-center modalWrapper">
                 <div class="modal fade addNewInputs" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="modalAdd"
                     aria-hidden="true">
@@ -53,7 +53,8 @@ function showEditTimetableWidget(string $event, $args = [])
                         </div>
                     </div>
                 </div>
-
+                <!-- /Toevoeg knop -->
+                <!-- Edit knop -->
                 <div class="text-center">
                     <a href="" class="btn btn-info btn-rounded btn-sm" data-toggle="modal" data-target="#modalAdd">Add<i
                             class="fas fa-plus-square ml-1"></i></a>
@@ -95,12 +96,13 @@ function showEditTimetableWidget(string $event, $args = [])
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="text-center buttonEditWrapper">
-                    <button class="btn btn-info btn-rounded btn-sm buttonEdit" data-toggle="modal" data-target="#modalEdit"
-                        disabled>Edit<i class="fas fa-pencil-square-o ml-1"></i></a>
+                    <button class="btn btn-info btn-rounded btn-sm buttonEdit" data-toggle="modal" data-target="#modalEdit">Edit
+                    <i class="fas fa-pencil-square-o ml-1"></i></a>
                 </div>
-
+                <!-- /Edit knop -->
+                <!-- Delete knop -->
                 <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete"
                     aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -128,7 +130,8 @@ function showEditTimetableWidget(string $event, $args = [])
                         data-target="#modalDelete" disabled>Delete<i class="fas fa-times ml-1"></i></a>
                 </div>
             </div>
-
+            <!-- /Delete knop -->
+            <!-- tabellen -->
             <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
 
                 <thead>
