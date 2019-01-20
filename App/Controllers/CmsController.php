@@ -83,6 +83,15 @@ class CmsController extends ControllerBase //Jasper
         }
 
 
+        $this->view->TicketStats = [];
+        $CartModel = new CartModel();
+        $events = ['Dance', 'Jazz', 'Food', 'Historic'];
+        $count = count($events);
+        for ($i = 0; $i < $count; $i++) {
+            $this->view->TicketStats[$i] = $CartModel->getTicketStats($events[$i]);
+        }
+
+        //formatted_print_r($this->view->TicketStats);
         $this->view->renderView('cms/DashboardView');
 
     }

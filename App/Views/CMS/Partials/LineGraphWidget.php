@@ -1,6 +1,6 @@
 <?php
 
-function formatData(array $dataArray)
+function formatLineGrapData(array $dataArray)
 {
     $dataString = "";
     $count = count($dataArray);
@@ -26,7 +26,7 @@ function formatData(array $dataArray)
 function showLineGraphWidget(object $dataObj)
 {
     
-    $dataString = formatData($dataObj->data);
+    $dataString = formatLineGrapData($dataObj->data);
     //formatted_print_r($dataString);
     $widgetId = uniqid(toCamelCase($dataObj->title) . '_');
     ?>
