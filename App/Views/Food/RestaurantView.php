@@ -81,17 +81,17 @@ function encodeURIComponent($str) {
                         <div class="OverlayForeground" >
                             <div class="popupContent">
                                 <h1>Session: <?= $this->restaurantDetails->name; ?></h1>
-                                <div class="number">
+                                <div class="number ">
                                     <p>Number of people</p>
-                                    <input type="text">
+                                    <input class="People" type="text">
                                 </div>
-                                <div class="number">
+                                <div class="number ">
                                     <p>Number of childeren (12-)</p>
-                                    <input type="text">
+                                    <input class="Children" type="text">
                                 </div>
-                                <div class="input">
+                                <div class="input ">
                                     <p>Select a day</p>
-                                    <select>
+                                    <select class="Day">
                                         <option value="" disabled selected>Make your choice...</option>
                                         <option value="1">Day 1</option>
                                         <option value="2">Day 2</option>
@@ -99,14 +99,13 @@ function encodeURIComponent($str) {
                                         <option value="4">Day 4</option>
                                     </select>
                                 </div>
-                                <div class="input">
+                                <div class="input ">
                                     <p>Select a session</p>
-                                    <select>
+                                    <select class="Session">
                                         <option value="" disabled selected>Make your choice...</option>
                                         <option value="1">Session 1</option>
                                         <option value="2">Session 2</option>
                                         <option value="3">Session 3</option>
-                                        <option value="4">Session 4</option>
                                     </select>
                                 </div>
 
@@ -121,6 +120,9 @@ function encodeURIComponent($str) {
                                     <button class="cancelBTN reservationButton">Cancel</button>
                                     <button class="OrderBTN reservationButton">Order</button>
                                 </div>
+
+                                <div id="ErrorMessage"></div>
+
                             </div>
                         </div>
                     </div>

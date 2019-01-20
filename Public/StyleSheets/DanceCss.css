@@ -2,7 +2,7 @@
 
 .DanceSection {
     width: 45vw;
-    min-width: 700px;
+    min-width: 900px;
     height: auto;
     /* width: 900px; */
     background-color: rgba(242, 242, 242, 0.75);
@@ -21,12 +21,12 @@
 }
 
 #schedule {
-    width: 1820px;
+    width: 100%;
     margin-bottom: 0px;
 }
 
 main {
-    width: 100vw;
+    /*width: 100vw;*/
     /* width: 1920px; */
     box-sizing: border-box;
     padding: 40px;
@@ -78,19 +78,15 @@ h2 {
 
 .OverlayBackground {
     position: absolute;
-    /* Sit on top of the page content */
     width: 100%;
-    /* Full width (cover the whole page) */
-    height: 100%;
-    /* Full height (cover the whole page) */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background-color: rgba(242, 242, 242, 0.85);
-    /* Black background with opacity */
     z-index: 20;
-    /* Specify a stack order in case you're using a different order for other elements */
+
+    min-height: 200%;
 }
 
 .OverlayForeground {
@@ -100,10 +96,49 @@ h2 {
     width: 80%;
     margin-left: 10%;
     margin-top: 10px;
-    height: 90%;
+
+    min-height: 150%;
 }
 
 
+.AllAccessText{
+    display: inline-block;
+}
 .AllAccessButton{
+    display: inline-block;
+    margin-left: 200px;
+}
 
+table {
+    margin: 20px 10px 20px;
+    width: 1250px;
+}
+
+.navigationTimetable {
+    margin-left: 10%;
+    width: 80%;
+}
+
+.Regel p {
+    display: inline-block;
+
+}
+.Regel {
+    margin-left: 40px;
+}
+
+
+#artistHeader, #locationHeader  {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.OverlayArtistPicture, .OverlayLocationPicture {
+    margin-bottom: 40px;
+    margin-left: 10%;
+    max-width: 80%;
+
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -0%);*/
 }
