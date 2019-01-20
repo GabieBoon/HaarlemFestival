@@ -16,13 +16,13 @@ class FoodModel extends ModelBase{
     }
 
     public function getRestaurantDetails($restaurant){
-        $sql = "SELECT R.id, R.restaurantDescription, V.name, V.houseNr, V.street, V.postalCode, R.stars, FT.foodTypecol, FTT.price12, T.price
-                FROM jaspewo251_festival.Venue AS V
-                    JOIN jaspewo251_festival.Restaurant as R on V.id = R.venueId
-                    JOIN jaspewo251_festival.RestaurantFoodType as RFT on R.id = RFT.restaurantId
-                    JOIN jaspewo251_festival.FoodType AS FT on RFT.foodTypeId = FT.id
-                    Join jaspewo251_festival.FoodTicket AS FTT on R.id = FTT.restaurantId
-                    JOIN jaspewo251_festival.Ticket AS T on FTT.ticketId = T.id
+        $sql = "SELECT R.id, R.restaurantDescriptionEN, R.restaurantDescriptionNL, V.name, V.houseNr, V.street, V.postalCode, R.stars, FT.foodTypecol, FTT.price12, T.price
+                FROM Venue AS V
+                    JOIN Restaurant as R on V.id = R.venueId
+                    JOIN RestaurantFoodType as RFT on R.id = RFT.restaurantId
+                    JOIN FoodType AS FT on RFT.foodTypeId = FT.id
+                    Join FoodTicket AS FTT on R.id = FTT.restaurantId
+                    JOIN Ticket AS T on FTT.ticketId = T.id
                 WHERE R.id = ?
                 GROUP BY V.id";
         return $this->query($sql, [$restaurant])->getFirstResult();
@@ -59,7 +59,8 @@ class FoodModel extends ModelBase{
                 ft.price12 FROM Ticket as t 
                 join FoodTicket as ft on t.id = ft.ticketId 
                 join Restaurant as r on r.id = ft.restaurantId 
-                join Venue as v on v.id = r.venueId";
+                join Venue as v on v.id = r.venueId 
+                order by t.startTime";
         return $this->_db->query($sql)->getResult();
     }
 

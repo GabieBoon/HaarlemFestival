@@ -21,7 +21,6 @@ class CartController extends ControllerBase
     public function addTicketAction($ticketId){
 
         $data = $this->CartModel->getTicketDataById($ticketId);
-//        $this->CartModel->getDataFromObj($data);
 
         //voeg ticket toe tenzij hij al in het Cart zit
         if (!array_key_exists($ticketId, $_SESSION['Cart'])) {
@@ -31,8 +30,6 @@ class CartController extends ControllerBase
             $_SESSION['Cart'][$ticketId]->amount += 1;
         }
 
-        //please use Router::redirect(); - Jasper
-        //header('Location: http://localhost' .  PROOT . $_SESSION['LastVisited'] . '/' );
         Router::redirect($_SESSION['LastVisited']);
 
     }
