@@ -93,10 +93,10 @@ function encodeURIComponent($str) {
                                     <?= $this->ContentModel->PopupInfoDay->text?>
                                     <select class="Day">
                                         <option value="" disabled selected>Make your choice...</option>
-                                        <option value="26">Day 1</option>
-                                        <option value="27">Day 2</option>
-                                        <option value="28">Day 3</option>
-                                        <option value="29">Day 4</option>
+                                        <option value="26">26 Juli</option>
+                                        <option value="27">27 Juli</option>
+                                        <option value="28">28 Juli</option>
+                                        <option value="29">29 Juli</option>
                                     </select>
                                 </div>
                                 <div class="input ">
