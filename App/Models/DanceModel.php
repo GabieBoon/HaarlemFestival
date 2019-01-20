@@ -25,7 +25,6 @@ class DanceModel extends ModelBase{
         return $this->_db->query($sql)->getResult();
     }
 
-    //lijkt op getDanceArtists maar krijgt maar een resultaat terug, geen array van resultaten
     public function getDanceArtist($artistId)
     {
         $sql = "select a.stageName, a.firstName, a.preposition, a.lastName, a.id as id, a.bio, da.rank, ms.musicStyle from DanceArtist as da
@@ -36,15 +35,11 @@ class DanceModel extends ModelBase{
 
         $artist = $this->_db->query($sql, [$artistId])->getResult();
 
+        //zorg dat meerder muziekstijlen per artiest goed worden weergegeven
         $artist = $this->ArraysVoorKoppeltabellen($artist);
 
         return $artist[0];
-
-
     }
-
-
-
 
     public function getDanceTickets(){
         $sql = "SELECT t.id, t.price, t.startTime, t.endTime, t.ticketsAvailable, t.event, t.isAllAccessTicket, v.name as venue, 

@@ -30,4 +30,9 @@ class FoodController extends ControllerBase {
 
         $this->view->renderView('Food/RestaurantView');
     }
+
+    public function restaurantOrderAction($number, $day, $session){
+        echo "succes: uw tickets zijn toegevoegd aan het winkelwagentje";
+    }
+
 }
