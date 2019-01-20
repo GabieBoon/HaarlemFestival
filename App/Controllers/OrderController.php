@@ -38,7 +38,7 @@ class OrderController extends ControllerBase
             $lastName = $_SESSION['customerData']['lastName'];
             $email = $_SESSION['customerData']['email'];
             $remarks = $_SESSION['customerData']['remarks'];
-            $currentdate = date("d-m-Y");
+            $currentdate = date("Y-m-d");
 
             $tickets = $_SESSION['Cart'];
 
@@ -69,6 +69,9 @@ class OrderController extends ControllerBase
                 $pdf->Cell(50, 10, "{$firstName} {$lastName}");
                 $pdf->Ln();
                 $pdf->SetY(20);
+                $pdf->SetX(110);
+                $pdf->Cell(40, 10, "$email");
+                $pdf->SetY(30);
                 $pdf->SetX(110);
                 $pdf->Cell(40, 10, "$currentdate");
                 $pdf->SetFont('Arial', 'B', 20);

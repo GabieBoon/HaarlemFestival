@@ -15,7 +15,7 @@ class HistoricController extends ControllerBase {
     public function indexAction(){
 
         $content = new ContentModel();
-        $this->view->ContentModel = $content->getContent('EN','Historic');
+        $this->view->ContentModel = $content->getContent($_SESSION['Language'],'Historic');
 
         $this->view->renderView('Historic/HistoricView');
     }
@@ -26,7 +26,7 @@ class HistoricController extends ControllerBase {
 
     public function locationsAction() {
         $content = new ContentModel();
-        $this->view->ContentModel = $content->getContent('EN','Historic');
+        $this->view->ContentModel = $content->getContent($_SESSION['Language'],'Historic');
 
         $this->view->renderView('Historic/HisLocationsView');
     }
@@ -34,7 +34,7 @@ class HistoricController extends ControllerBase {
     public function scheduleAction() {
 
         $content = new ContentModel();
-        $this->view->ContentModel = $content->getContent('EN','Historic');
+        $this->view->ContentModel = $content->getContent($_SESSION['Language'],'Historic');
 
         $this->view->languages = $this->HistoricModel->getLanguages();
         $this->view->historicTickets = $this->HistoricModel->getHistoricTickets();
