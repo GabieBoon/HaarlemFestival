@@ -60,6 +60,7 @@ class CmsController extends ControllerBase //Jasper
             }
         }
         $this->view->displayErrors = $validation->displayErrors();
+        $this->view->setBgImage('loginbg.jpg'); 
         $this->view->renderView('cms/loginView');
     }
 
