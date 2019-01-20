@@ -33,17 +33,26 @@ class OrderController extends ControllerBase
     public function successAction()
     {
         // plz format to dynamic absolute path
+        if (!empty($_SESSION['customerData'])) {
+            $firstName = $_SESSION['customerData']['firstName'];
+            $lastName = $_SESSION['customerData']['lastName'];
+            $email = $_SESSION['customerData']['email'];
+            $remarks = $_SESSION['customerData']['remarks'];
+            $currentdate = date("d-m-Y");
+
+        }
+
         require('app/lib/fpdf/fpdf.php'); 
 
         $pdf = new FPDF();
         $pdf->AddPage();
         $pdf->SetFont('Arial', 'B', 16);
         $pdf->SetX(110);
-        $pdf->Cell(50, 10, 'Thijs Otter');
+        $pdf->Cell(50, 10, "{$firstName} {$lastName}");
         $pdf->Ln();
         $pdf->SetY(20);
         $pdf->SetX(110);
-        $pdf->Cell(40, 10, '19/12/2018');
+        $pdf->Cell(40, 10, "$currentdate");
         $pdf->SetFont('Arial', 'B', 20);
         $pdf->SetY(50);
         $pdf->SetX(110);
@@ -71,25 +80,46 @@ class OrderController extends ControllerBase
         $pdf->Setx(38);
         $pdf->SetFont('Arial', 'I', 14);
         $pdf->Cell(60, 10, 'Evenementen');
+        $pdf->SetY(110);
+        $pdf->Setx(38);
+        $pdf->Cell(60, 10, "");
         $pdf->SetY(130);
         $pdf->Setx(110);
         $pdf->SetFont('Arial', 'I', 14);
         $pdf->Cell(60, 10, 'Koper:');
+        $pdf->SetY(130);
+        $pdf->Setx(150);
+        $pdf->Cell(60, 10, "{$firstName} {$lastName}");
         $pdf->SetY(137);
         $pdf->Setx(110);
-        $pdf->Cell(60, 10, 'Datum:          19/12/2018');
+        $pdf->Cell(60, 10, 'Datum event:');
+        $pdf->SetY(137);
+        $pdf->Setx(150);
+        $pdf->Cell(60, 10, "");
         $pdf->SetY(144);
         $pdf->Setx(110);
-        $pdf->Cell(60, 10, 'Locatie:        Haarlem');
+        $pdf->Cell(60, 10, 'Locatie:');
+        $pdf->SetY(144);
+        $pdf->Setx(150);
+        $pdf->Cell(60, 10, 'Haarlem');
         $pdf->SetY(151);
         $pdf->Setx(110);
-        $pdf->Cell(60, 10, 'Tijd:           17:00');
+        $pdf->Cell(60, 10, 'Tijd:');
+        $pdf->SetY(151);
+        $pdf->Setx(150);
+        $pdf->Cell(60, 10, '17:00');
         $pdf->SetY(158);
         $pdf->Setx(110);
-        $pdf->Cell(60, 10, 'Prijs:          60,00');
+        $pdf->Cell(60, 10, 'Prijs:');
+        $pdf->SetY(158);
+        $pdf->Setx(150);
+        $pdf->Cell(60, 10, '60,00 euro');
         $pdf->SetY(165);
         $pdf->Setx(110);
-        $pdf->Cell(60, 10, 'Type:           Normaal');
+        $pdf->Cell(60, 10, 'Type:');
+        $pdf->SetY(165);
+        $pdf->Setx(150);
+        $pdf->Cell(60, 10, 'Normaal');
         $pdf->Output();
 
         $this->view->renderView('Order/SuccessView');

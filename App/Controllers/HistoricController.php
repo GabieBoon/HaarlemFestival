@@ -13,6 +13,10 @@ class HistoricController extends ControllerBase {
     }
 
     public function indexAction(){
+
+        $content = new ContentModel();
+        $this->view->ContentModel = $content->getContent('EN','Historic');
+
         $this->view->renderView('Historic/HistoricView');
     }
 
@@ -21,10 +25,16 @@ class HistoricController extends ControllerBase {
     }
 
     public function locationsAction() {
+        $content = new ContentModel();
+        $this->view->ContentModel = $content->getContent('EN','Historic');
+
         $this->view->renderView('Historic/HisLocationsView');
     }
 
     public function scheduleAction() {
+
+        $content = new ContentModel();
+        $this->view->ContentModel = $content->getContent('EN','Historic');
 
         $this->view->languages = $this->HistoricModel->getLanguages();
         $this->view->historicTickets = $this->HistoricModel->getHistoricTickets();
