@@ -16,7 +16,8 @@
                     </ul>
             </div>
             <div class="column">
-                <a href="<?= PROOT ?>Home/" ><img class="foot-logo" src="<?= PROOT ?>public/images/HaarlemFestival-Logo-WT.svg" alt="Haarlem Festival Logo" /></a>
+                <a href="<?= PROOT ?>Home/" ><img class="foot-logo" src="<?= PROOT ?>Public/Images/HaarlemFestival-Logo-WT.svg" alt="Haarlem Festival Logo" /></a>
+
             </div>
             <div class="column contactinfo">
                 <div class="contactinfo-box">

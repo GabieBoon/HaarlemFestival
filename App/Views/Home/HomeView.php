@@ -11,7 +11,8 @@
 <?php $this->start('body'); ?>
 
     <div class="background-image">
-        <img class="logo-center" src="<?= PROOT ?>public/images/HaarlemFestival-Logo-WT.png" alt="Haarlem Festival Logo"/>
+        <img class="logo-center" src="<?= PROOT ?>Public/Images/HaarlemFestival-Logo-WT.png" alt="Haarlem Festival Logo"/>
+
     </div>
 
 

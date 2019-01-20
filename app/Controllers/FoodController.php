@@ -13,7 +13,7 @@ class FoodController extends ControllerBase {
     public function indexAction(){
         $this->view->restaurantInfo = $this->FoodModel->getRestaurantInfo();
 
-        include ROOT . DS . 'app' . DS . 'Views' . DS . 'Food' . DS . 'ViewFunctions' . DS . 'FoodViewFunctions.php';
+        include ROOT . DS . 'App' . DS . 'Views' . DS . 'Food' . DS . 'ViewFunctions' . DS . 'FoodViewFunctions.php';
 
         $content = new ContentModel();
         $this->view->ContentModel = $content->getContent('EN','Food');

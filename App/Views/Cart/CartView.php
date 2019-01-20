@@ -24,7 +24,8 @@
 //             echo '<pre>';
 //             var_dump($ticket);
 //             echo '</pre>';
-             include ROOT . 'app' . DS . 'Views' . DS . 'Order' . DS . 'Partials' . DS . 'TicketRow' . '.php';
+
+             include ROOT . 'App' . DS . 'Views' . DS . 'Order' . DS . 'Partials' . DS . 'TicketRow' . '.php';
          }
         ?>
         <a href="<?= PROOT ?>order/data" role="button" class="btn btn-primary">Proceed to payment</a>
