@@ -39,7 +39,7 @@ class HistoricController extends ControllerBase {
         $this->view->languages = $this->HistoricModel->getLanguages();
         $this->view->historicTickets = $this->HistoricModel->getHistoricTickets();
 
-        include ROOT . DS . 'App' . DS . 'lib' . DS . 'TableGenerator' . DS . 'Table.php';
+        include ROOT . DS . 'App' . DS . 'Lib' . DS . 'TableGenerator' . DS . 'Table.php';
         $this->view->table = new Table();
 
         $this->view->renderView('Historic/HisScheduleView');

@@ -27,7 +27,7 @@
             <?= $this->ContentModel->Locations->lo3 ?><br/><br/>
         </p>
 
-        <img class="img3" src="<?= PROOT ?>public/images/Historic/Bavo.jpg" alt="test">
+        <img class="img3" src="<?= PROOT ?>Public/Images/Historic/Bavo.jpg" alt="test">
 
         <p class="middleright">
             <?= $this->ContentModel->Locations->lo4 ?><br/><br/>
@@ -36,7 +36,7 @@
 
             <?= $this->ContentModel->Locations->lo6 ?><br/>
         </p>
-        <img class="img4" src="<?= PROOT ?>public/images/Historic/jopenkerk.jpg" alt="test">
+        <img class="img4" src="<?= PROOT ?>Public/Images/Historic/jopenkerk.jpg" alt="test">
 
 
         <p class="bottemleft">
@@ -46,7 +46,7 @@
 
             <?= $this->ContentModel->Locations->lo9 ?><br/>
         </p>
-        <img class="img5" src="<?= PROOT ?>public/images/Historic/molen_de_adriaan.png" alt="test">
+        <img class="img5" src="<?= PROOT ?>Public/Images/Historic/molen_de_adriaan.png" alt="test">
 
 
         </div>
