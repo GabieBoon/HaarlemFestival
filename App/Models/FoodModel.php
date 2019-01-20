@@ -16,7 +16,7 @@ class FoodModel extends ModelBase{
     }
 
     public function getRestaurantDetails($restaurant){
-        $sql = "SELECT R.id, R.restaurantDescriptionEN, R.restaurantDescriptionNL, V.name, V.houseNr, V.street, V.postalCode, R.stars, FT.foodTypecol, FTT.price12, T.price
+        $sql = "SELECT R.id, R.restaurantDescriptionEN, R.restaurantDescriptionNL, R.imagePath, V.name, V.houseNr, V.street, V.postalCode, R.stars, FT.foodTypecol, FTT.price12, T.price
                 FROM Venue AS V
                     JOIN Restaurant as R on V.id = R.venueId
                     JOIN RestaurantFoodType as RFT on R.id = RFT.restaurantId

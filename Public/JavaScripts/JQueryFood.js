@@ -12,6 +12,18 @@ $(document).ready(function(){
     });
 });
 
+function showPrice(hoeveelheid) {
+
+    var people = $(".People").val();
+    var childeren = $(".Children").val();
+
+    var totalPeople = people + childeren;
+
+    var totalPrice = totalPeople * 10;
+
+    $('.price').val(totalPrice);
+}
+
 $(document).ready(function(){
     $(".OrderBTN").click(function(event){
 
@@ -31,7 +43,6 @@ $(document).ready(function(){
                 else{
                     document.getElementById("ErrorMessage").innerHTML = this.responseText;
                 }
-
             }
         }
 
