@@ -138,8 +138,6 @@ class OrderController extends ControllerBase
                 $pdf->SetY(165);
                 $pdf->Setx(150);
                 $pdf->Cell(60, 10, "$ticketType");
-                $pdf->Output();
-
             }
 
 

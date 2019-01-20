@@ -82,15 +82,15 @@ function encodeURIComponent($str) {
                                 <h1>Session: <?= $this->restaurantDetails->name; ?></h1>
 
                                 <div class="number" onchange="showPrice(this.value)">
-                                    <p>Number of people</p>
+                                    <?= $this->ContentModel->PopupInfoPeople->text?>
                                     <input class="People" type="text">
                                 </div>
                                 <div class="number" onchange="showPrice(this.value)">
-                                    <p>Number of childeren (12-)</p>
+                                    <?= $this->ContentModel->PopupInfoChilderen->text?>
                                     <input class="Children" type="text">
                                 </div>
                                 <div class="input ">
-                                    <p>Select a day</p>
+                                    <?= $this->ContentModel->PopupInfoDay->text?>
                                     <select class="Day">
                                         <option value="" disabled selected>Make your choice...</option>
                                         <option value="26">Day 1</option>
@@ -100,7 +100,7 @@ function encodeURIComponent($str) {
                                     </select>
                                 </div>
                                 <div class="input ">
-                                    <p>Select a session</p>
+                                    <?= $this->ContentModel->PopupInfoSession->text?>
                                     <select class="Session">
                                         <option value="" disabled selected>Make your choice...</option>
                                         <option value="1">Session 1</option>
