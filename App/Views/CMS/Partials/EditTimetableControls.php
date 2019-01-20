@@ -74,23 +74,21 @@ function showEditTimetableWidget(string $event, $args = [])
                                 <?php
                                 foreach ($dateDataArray[0] as $key => $value) {
                                     ?>
+
                                     <div class="md-form mb-5">
-                                        <input type="text" id="formNameEdit" class="form-control validate">
-                                        <label data-error="wrong" data-success="right" for="formNameEdit"><?= $key?></label>
+                                        <input type="text" id="form<?= $key ?>Edit" class="form-control validate">
+                                        <label data-error="wrong" data-success="right" for="form<?= $key ?>Edit"><?= $key?></label>
                                     </div>
 
                                     <?php
                                 }
                                 ?>
-                                
-
-
-
+                        
                             </div>
                             <div class="modal-footer d-flex justify-content-center editInsideWrapper">
                                 <button class="btn btn-outline-secondary btn-block editInside" data-dismiss="modal">Edit
                                     form
-                                    <i class="fas fa-paper-plane-o ml-1"></i>
+                                    <i class="fas fa-paper-plane ml-1"></i>
                                 </button>
                             </div>
                         </div>
@@ -140,6 +138,7 @@ function showEditTimetableWidget(string $event, $args = [])
                         foreach ($dateDataArray[0] as $key => $value) {
                             echo ('<th class="th-sm">' . $key . '</th>');
                         }
+                        echo ('<th class="th-sm">Select</th>');
                         ?>
                     </tr>
                 </thead>
@@ -152,6 +151,32 @@ function showEditTimetableWidget(string $event, $args = [])
                             foreach ($dateDataArray[$i] as $key => $value) {
                                 echo ('<td>'. $value . '</td>');
                             }
+                        ?>
+                        <td>
+                        
+
+  <div class="input-group-append">
+ 
+    <button type="button" class="btn btn-outline-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="">Action</span>
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div role="separator" class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+                     <!-- <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" >
+                            <span class="custom-control-indicator"></span>
+                        </label>
+                        </div> -->
+                        </td>
+
+                         <?php   
                         echo('</tr>');
                     }
                     ?>
