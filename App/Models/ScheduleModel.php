@@ -49,9 +49,9 @@ class ScheduleModel extends ModelBase
                 JOIN DanceTicketArtist AS DTA ON T.id = DTA.danceTicketId
                 JOIN DanceArtist AS DA ON DTA.danceArtistId = DA.id
                 JOIN Artist AS A on DA.artistId = A.id
-                JOIN Venue AS V ON T.venueId = V.id;
+                JOIN Venue AS V ON T.venueId = V.id
 
-                WHERE ticketId = ?
+                WHERE ticketId = ?;
             ";
         } elseif ($event === 'Jazz') {
             $sql = "SELECT
@@ -87,7 +87,7 @@ class ScheduleModel extends ModelBase
                 
                 FROM Ticket as t 
                 join HistoricTicket as ht on t.id = ht.ticketId 
-                join Venue as v on v.id = ht.venueId;
+                join Venue as v on v.id = ht.venueId
                 
                 WHERE ticketId = ?;
                 ";

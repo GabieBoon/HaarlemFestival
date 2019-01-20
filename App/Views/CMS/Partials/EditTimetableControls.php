@@ -4,8 +4,6 @@
 function showEditTimetableWidget(string $event, $args = [])
 {
 
-
-
     foreach ($args[0] as $date => $dateDataArray) {
 
         ?>
@@ -15,12 +13,7 @@ function showEditTimetableWidget(string $event, $args = [])
             <?= $date ?>
         </h1>
     </header>
-    <section class="">
-
-
-
-
-        <div class="wrapper-modal-editor">
+    <section class="wrapper-modal-editor">
 
             <div class="block my-4">
                 <div class="d-flex justify-content-center">
