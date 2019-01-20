@@ -30,7 +30,7 @@ function encodeURIComponent($str) {
 
                 <h1><?= $this->restaurantDetails->name; ?></h1>
 
-                <img class="restaurantImage" src="<?= PROOT ?>public/images/RestaurantBanners/ml.png" alt="Haarlem Festival Logo" href="<?= PROOT ?>Home/"/>
+                <img class="restaurantImage" src="<?= PROOT . $this->restaurantDetails->imagePath?>" alt="Haarlem Festival Logo" href="<?= PROOT ?>Home/"/>
 
                 <?php if ($_SESSION["Language"] === "NL") {echo $this->restaurantDetails->restaurantDescriptionNL;} elseif($_SESSION["Language"] === "EN"){echo $this->restaurantDetails->restaurantDescriptionEN;};?>
                 <div class="wrapper">
@@ -56,17 +56,17 @@ function encodeURIComponent($str) {
                     <div class="price">
                         <h3 class="left">Reservation fees:</h3>
                         <h3 class="right"> </h3>
-                        <h3 class="right">€ 10,00</h3>
+                        <h3 class="right">€ 10.00</h3>
                     </div>
                     <div class="price">
                         <h3 class="left">Total price (13+):</h3>
                         <h3 class="right blue"> *</h3>
-                        <h3 class="right">€ <?= ($this->restaurantDetails->price);?></h3>
+                        <h3 class="right">€ <?= number_format($this->restaurantDetails->price, 2);?></h3>
                     </div>
                     <div class="price">
                         <h3 class="left">Total price for childeren:</h3>
                         <h3 class="right blue">‏*</h3>
-                        <h3 class="right">€ <?= $this->restaurantDetails->price12;?></h3>
+                        <h3 class="right">€ <?= number_format($this->restaurantDetails->price12, 2);?></h3>
                     </div>
                     <p class="steruitleg"><?= $this->ContentModel->PricingInfo->text?></p>
                 </div>
@@ -80,11 +80,12 @@ function encodeURIComponent($str) {
                         <div class="OverlayForeground" >
                             <div class="popupContent">
                                 <h1>Session: <?= $this->restaurantDetails->name; ?></h1>
-                                <div class="number ">
+
+                                <div class="number" onchange="showPrice(this.value)">
                                     <p>Number of people</p>
                                     <input class="People" type="text">
                                 </div>
-                                <div class="number ">
+                                <div class="number" onchange="showPrice(this.value)">
                                     <p>Number of childeren (12-)</p>
                                     <input class="Children" type="text">
                                 </div>
@@ -108,10 +109,10 @@ function encodeURIComponent($str) {
                                     </select>
                                 </div>
 
-                                <p class="font-italic allergiesInfo">Allergens can be reported in the checkout process.</p>
+                                <p class="font-italic allergiesInfo"><?= $this->ContentModel->PopupInfoExtra->text?></p>
 
                                 <div class="totalPrice">
-                                    <h2>0.00</h2>
+                                    <h2 class="price">0.00</h2>
                                     <h2>Total price €</h2>
                                 </div>
 
