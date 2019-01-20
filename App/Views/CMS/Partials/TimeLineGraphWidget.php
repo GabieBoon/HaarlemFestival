@@ -60,7 +60,8 @@ function showTimeLineGraphWidget(object $dataObj)
                         text: document.ontouchstart === undefined ? 'Click and drag in the plot area to zoom in' : 'Pinch the chart to zoom in'
                     },
                     xAxis: {
-                        type: 'datetime'
+                        type: 'datetime',
+                        categories: ['11/01','12/01','13/01','14/01','15/01','16/01','17/01','18/01','19/01','Yesterday']
                     },
                     yAxis: {
                         
