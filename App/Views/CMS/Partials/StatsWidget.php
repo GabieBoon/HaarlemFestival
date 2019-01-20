@@ -16,6 +16,7 @@ function formatData(array $dataArray)
 
 function showStatsWidget(object $dataObj)
 {
+    
     $dataString = formatData($dataObj->data);
     $widgetId = uniqid(toCamelCase($dataObj->title) . '_');
     ?>

@@ -14,15 +14,15 @@ function showEditPagesWidget(string $event, $contentObj)
             </header>
             <section class="varietyItem">
                 
-                <form action="<?= PROOT ?>cms/edit/event/<?= $event ?>" method="post">
+                <form action="<?= PROOT . 'cms/edit/event/' . $event ?>" method="post">
                 <?php
                 foreach ($sectionObj as $varietyTitle => $varietyObj) {
                     $uniqId = uniqid();
                     $inputId = $varietyTitle . '_' . $uniqId; //bc i need them to be seperate
                     echo ('<section class="formItem">');
-                    echo '<label for="' . $inputId . '">' . $varietyTitle . '</label>';
+                    echo ('<label for="' . $inputId . '">' . $varietyTitle . '</label>');
                     if ($varietyObj->type === "TEXT") {
-                        echo '<input type="text" id="' . $inputId . '" name="' . $varietyTitle . '" value="' . $varietyObj->content . '">';
+                        echo ('<input type="text" id="' . $inputId . '" name="' . $varietyTitle . '" value="' . $varietyObj->content . '">');
                     } elseif ($varietyObj->type === "BIGTEXT") {
                         showWysiwygEditor($uniqId, $inputId, $varietyObj->content);
                     } elseif ($varietyObj->type === "IMG") {
@@ -30,7 +30,7 @@ function showEditPagesWidget(string $event, $contentObj)
                     } elseif ($varietyObj->type === "COLOR") {
                             //SHOW SOMETHING LIKE AN COLOR PICKER
                     } else {
-                        echo('<p>Oops, it looks like there is no editable control for: ' . $varietyObj->type . '. Sorry!</p>');
+                        echo ('<p>Oops, it looks like there is no editable control for: ' . $varietyObj->type . '. Sorry!</p>');
                     }
                     echo ('</section>');
                 }

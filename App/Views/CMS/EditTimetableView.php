@@ -5,13 +5,6 @@
 <?php $this->start('head'); ?>
 <link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/StyleSheet.css"><!-- Cms CSS -->
 
-
-<!-- Include the Quill library -->
-<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-
-<!-- Include stylesheet -->
-<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
 <?php $this->end(); ?>
 
 <!-- body -->
@@ -38,7 +31,7 @@ $pathToImageFolder = PROOT . 'Public' . DS . 'Images' . DS;
 
 
 
-<?php showEditTimetableWidget($this->event, $this->ContentModel); ?>
+<?php showEditTimetableWidget($this->event,$this->ScheduleData); ?>
 
     <pre>
 <!-- < ?php print_r($this->ContentModel); ?> -->

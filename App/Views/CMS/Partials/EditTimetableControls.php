@@ -1,50 +1,73 @@
 <?php
 
 
-function showEditTimetableWidget(string $event, $contentObj)
+function showEditTimetableWidget(string $event, $args = [])
 {
-    foreach ($contentObj as $sectionTitle => $sectionObj) {
-        ?>
 
-        <article class="contentEditPage widget">
+    echo ('<pre>');
+    print_r($args);
+    echo ('</pre>');
+    $datesCount = count($args->dates);
+    for ($i = 0; $i < $datesCount; $i++) {
+        $date = $args->dates[$i]->date
+
+        ?>
+            <article class="timetableEditPage widget">
             <header>
                 <h1>
-                    <?= $sectionTitle ?>
+                    <?= $date ?>
                 </h1>
             </header>
-            <section class="varietyItem">
-                
-                <form action="<?= PROOT ?>cms/edit/event/<?= $event ?>" method="post">
-                <?php
-                foreach ($sectionObj as $varietyTitle => $varietyObj) {
-                    $uniqId = uniqid();
-                    $inputId = $varietyTitle . '_' . $uniqId; //bc i need them to be seperate
-                    echo ('<section class="formItem">');
-                    echo '<label for="' . $inputId . '">' . $varietyTitle . '</label>';
-                    if ($varietyObj->type === "TEXT") {
-                        echo '<input type="text" id="' . $inputId . '" name="' . $varietyTitle . '" value="' . $varietyObj->content . '">';
-                    } elseif ($varietyObj->type === "BIGTEXT") {
-                        showWysiwygEditor($uniqId, $inputId, $varietyObj->content);
-                    } elseif ($varietyObj->type === "IMG") {
-                            //SHOW SOMETHING LIKE AN UPLOAD BOX AND SHOW IMAGE
-                    } elseif ($varietyObj->type === "COLOR") {
-                            //SHOW SOMETHING LIKE AN COLOR PICKER
-                    } else {
-                        echo ('<p>Oops, it looks like there is no editable control for: ' . $varietyObj->type . '. Sorry!</p>');
-                    }
-                    echo ('</section>');
-                }
-                ?>
-                <input id="submit-form" class="d-none" type="submit">
-            </form>
+            <section class="">
+
             </section>
-            <footer>
-                <label for="submit-form" class="btn btn-primary submit">Save Changes</label>
-                <?php //SHOW A LAST EDITED DATE AND TIME FROM DATABASE?>
-            </footer>
-        </article>
-        <?php 
+            </article>
+        <?php
+
     }
+
+    // foreach ($contentObj as $sectionTitle => $sectionObj) {
+    //     ? >
+
+    //     <article class="contentEditPage widget">
+    //         <header>
+    //             <h1>
+    //                 <?= $sectionTitle ? >
+    //             </h1>
+    //         </header>
+    //         <section class="varietyItem">
+                
+    //             <form action="<?= PROOT ? >cms/edit/event/<?= $event ? >" method="post">
+    //             <?php
+    //             foreach ($sectionObj as $varietyTitle => $varietyObj) {
+    //                 $uniqId = uniqid();
+    //                 $inputId = $varietyTitle . '_' . $uniqId; //bc i need them to be seperate
+    //                 echo ('<section class="formItem">');
+    //                 echo '<label for="' . $inputId . '">' . $varietyTitle . '</label>';
+    //                 if ($varietyObj->type === "TEXT") {
+    //                     echo '<input type="text" id="' . $inputId . '" name="' . $varietyTitle . '" value="' . $varietyObj->content . '">';
+    //                 } elseif ($varietyObj->type === "BIGTEXT") {
+    //                     showWysiwygEditor($uniqId, $inputId, $varietyObj->content);
+    //                 } elseif ($varietyObj->type === "IMG") {
+    //                         //SHOW SOMETHING LIKE AN UPLOAD BOX AND SHOW IMAGE
+    //                 } elseif ($varietyObj->type === "COLOR") {
+    //                         //SHOW SOMETHING LIKE AN COLOR PICKER
+    //                 } else {
+    //                     echo ('<p>Oops, it looks like there is no editable control for: ' . $varietyObj->type . '. Sorry!</p>');
+    //                 }
+    //                 echo ('</section>');
+    //             }
+    //             ? >
+    //             <input id="submit-form" class="d-none" type="submit">
+    //         </form>
+    //         </section>
+    //         <footer>
+    //             <label for="submit-form" class="btn btn-primary submit">Save Changes</label>
+    //             <?php //SHOW A LAST EDITED DATE AND TIME FROM DATABASE? >
+    //         </footer>
+    //     </article>
+    //     <?php 
+    // }
 }
 
 

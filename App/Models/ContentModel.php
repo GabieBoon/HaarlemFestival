@@ -2,26 +2,18 @@
 
     class ContentModel extends ModelBase
     {
-        //this doesnt work xD
-        // protected $_id,
-        //     $_event,
-        //     $_section,
-        //     $_content,
-        //     $_language;
-
         public function __construct()
         {
             parent::__construct();
         }
 
-
-        public function getRawContent(string $language, string $event, string $section)
+        protected function getRawContent(string $language, string $event, string $section)
         {
             $sql = "SELECT * FROM `Content` WHERE `language` = ? AND `event` = ? AND `section` = ?";
             return $this->query($sql, [$language ,$event, $section])->getResult();
         }
 
-        public function getSectionNames(string $language, string $event)
+        protected function getSectionNames(string $language, string $event)
         {
             $sql = "SELECT group_concat(DISTINCT `section`) as 'sections' FROM `Content` WHERE `language` = ? AND `event` = ?;";
             $result = (array)$this->query($sql, [$language, $event])->getFirstResult();
@@ -30,20 +22,22 @@
         }
 
 
-
-        public function getContent(string $language, string $event, string $section = '')
+        public function getContent(string $language, string $event, array $sectionNameArray = [])
         {
             // return $this->getRawContent($event, $section); //debugging purposes
             if (($language != 'NL') && ($language != 'EN')) {
-                return false;
+                throw new Exception($language . ' is not a valid language');
+            }
+
+            if ($sectionNameArray === []) {
+                $sectionNameArray = $this->getSectionNames($language, $event);
             }
             
-            $sectionArray = $this->getSectionNames($language, $event);
             $contentObject = new stdClass();
 
-            $count_1 = count($sectionArray);
+            $count_1 = count($sectionNameArray);
             for ($i = 0; $i < $count_1; $i++) {
-                $section = $sectionArray[$i];
+                $section = $sectionNameArray[$i];
 
                 $rawContentObject = $this->getRawContent($language, $event, $section);
                 $contentObject->{$section} = new stdClass();
@@ -61,19 +55,22 @@
             return $contentObject;
         }
 
-        public function getDetailedContent(string $language, string $event, string $section = '')
+        public function getDetailedContent(string $language, string $event, array $sectionNameArray = [])
         {
             // return $this->getRawContent($event, $section); //debugging purposes
             if (($language != 'NL') && ($language != 'EN')) {
-                return false;
+                throw new Exception($language . ' is not a valid language');
             }
 
-            $sectionArray = $this->getSectionNames($language, $event);
+            if ($sectionNameArray === []) {
+                $sectionNameArray = $this->getSectionNames($language, $event);
+            }
+            
             $contentObject = new stdClass();
 
-            $count_1 = count($sectionArray);
+            $count_1 = count($sectionNameArray);
             for ($i = 0; $i < $count_1; $i++) {
-                $section = $sectionArray[$i];
+                $section = $sectionNameArray[$i];
 
                 $rawContentObject = $this->getRawContent($language, $event, $section);
                 $contentObject->{$section} = new stdClass();
@@ -103,6 +100,7 @@
         }
 
 
+        //miss naar food model 🤔?
         public function getRestaurantDetails(string $restaurant)
         {
             $sql = "SELECT V.id, V.name, V.houseNr, V.street, V.postalCode, R.stars, FT.foodTypecol, FTT.price12
