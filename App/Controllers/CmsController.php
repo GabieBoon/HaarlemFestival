@@ -8,6 +8,7 @@ class CmsController extends ControllerBase //Jasper
         $this->view->setLayout('Cms');
     }
 
+
     // index
     public function indexAction()
     {
