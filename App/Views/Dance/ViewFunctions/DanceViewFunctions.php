@@ -38,14 +38,14 @@ class DanceViewFunctions
             $endDate = explode('-', $endDateTime[0]);
 
 
-            include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'AllAccessTicketRow' . '.php';
+            include ROOT . 'App' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'AllAccessTicketRow' . '.php';
         }
     } 
 
     //zoekt een plaatje in de map images/Dance aan de hand van de naam van het plaatje
     public static function getPicture($pictureName)
     {
-        $plek = 'public' . DS . 'images' . DS . 'Dance' . DS . $pictureName;
+        $plek = 'Public' . DS . 'images' . DS . 'Dance' . DS . $pictureName;
 
         if (file_exists(ROOT . $plek . '.jpg')) {
 
