@@ -118,7 +118,7 @@ function encodeURIComponent($str) {
 
                                 <div class="buttons">
                                     <button class="cancelBTN reservationButton">Cancel</button>
-                                    <button class="OrderBTN reservationButton">Order</button>
+                                    <button class="OrderBTN reservationButton" onclick="placeReservation(<?= "'" . PROOT . "'"?>)">Order</button>
                                 </div>
 
                                 <div id="ErrorMessage"></div>
