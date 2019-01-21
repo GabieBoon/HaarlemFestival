@@ -61,7 +61,7 @@ class CmsController extends ControllerBase //Jasper
         }
         $this->view->displayErrors = $validation->displayErrors();
         $this->view->setBgImage('loginbg.jpg'); 
-        $this->view->renderView('cms/loginView');
+        $this->view->renderView('CMS/LoginView');
     }
 
     // Logout
@@ -92,7 +92,7 @@ class CmsController extends ControllerBase //Jasper
         }
 
         //formatted_print_r($this->view->TicketStats);
-        $this->view->renderView('cms/DashboardView');
+        $this->view->renderView('CMS/DashboardView');
 
     }
 

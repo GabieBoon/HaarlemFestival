@@ -2,7 +2,7 @@
 <?php $this->setSiteTitle('CMS - Statistics'); ?>
 <!-- head -->
 <?php $this->start('head'); ?>
-<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/StyleSheet.css"><!-- Cms CSS -->
+<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/CMS/StyleSheet.css"><!-- Cms CSS -->
 <?php $this->end(); ?>
 <!-- body -->
 <?php $this->start('body'); ?>
@@ -16,7 +16,7 @@
     </header>
     <main id="pageMain" class="d-flex flex-wrap">
 
-    <?php $this->partial('CMS', 'statsWidget'); ?>
+    <?php $this->partial('CMS', 'StatsWidget'); ?>
         
         
 

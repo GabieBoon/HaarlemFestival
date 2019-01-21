@@ -1,6 +1,6 @@
 <!-- set site title -->
 <?php $this->setSiteTitle('CMS Settings'); ?>
-<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/StyleSheet.css"><!-- Cms CSS -->
+<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/CMS/StyleSheet.css"><!-- Cms CSS -->
 <!-- head -->
 <?php $this->start('head'); ?>
 <meta content="test" />

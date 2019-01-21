@@ -3,7 +3,7 @@
 <!-- head -->
 <?php $this->start('head'); ?>
 
-<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/Cms/Sidebar.css"><!-- Cms CSS -->
+<link rel="stylesheet" type="text/css" href="<?= PROOT ?>Public/StyleSheets/CMS/Sidebar.css"><!-- Cms CSS -->
 
 
 
