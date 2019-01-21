@@ -14,7 +14,7 @@ function formatStatsWidgetData(array $dataArray)
     return rtrim($dataString, ', ');
 }
 
-function showStatsWidget(object $dataObj)
+function showStatsWidget(stdClass $dataObj)
 {
     
     $dataString = formatStatsWidgetData($dataObj->data);

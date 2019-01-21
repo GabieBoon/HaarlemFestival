@@ -23,7 +23,7 @@ function formatLineGrapData(array $dataArray)
 }
 
 
-function showLineGraphWidget(object $dataObj)
+function showLineGraphWidget(stdClass $dataObj)
 {
     
     $dataString = formatLineGrapData($dataObj->data);

@@ -23,7 +23,7 @@ function formatTimeLineGraphData(array $dataArray)
 }
 
 
-function showTimeLineGraphWidget(object $dataObj)
+function showTimeLineGraphWidget(stdClass $dataObj)
 {
     
     $dataString = formatTimeLineGraphData($dataObj->data);

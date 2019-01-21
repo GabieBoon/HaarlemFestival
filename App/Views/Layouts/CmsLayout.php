@@ -31,7 +31,7 @@
     <script src="<?= PROOT ?>Public/Vendor/Highcharts/code/modules/export-data.js"></script>
 
 
-    <script src="<?= PROOT ?>Public/JavaScriptS/jQueryCms.js"></script>
+    <script src="<?= PROOT ?>Public/JavaScripts/jQueryCms.js"></script>
     
 
     <?= $this->content('head'); ?>
