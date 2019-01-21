@@ -10,7 +10,7 @@ class DanceViewFunctions
             $soort = "Location";
             $id = $location->id;
 
-            include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';
+            include ROOT . 'App' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';
         }
     }
 
@@ -22,7 +22,7 @@ class DanceViewFunctions
             $soort = "Artist";
             $id = $artist->id;
 
-            include ROOT . 'app' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';
+            include ROOT . 'App' . DS . 'Views' . DS . 'Dance' . DS . 'Partials' . DS . 'DanceBlok' . '.php';
         }
     }
 
