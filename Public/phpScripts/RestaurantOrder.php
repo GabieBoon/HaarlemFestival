@@ -7,7 +7,7 @@ $day = $_REQUEST["day"];
 $session = $_REQUEST["session"];
 
 //require config file
-require_once(__DIR__ . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . 'config.php');
+require_once('../../' . 'Config' . DIRECTORY_SEPARATOR . 'config.php');
 
 include ROOT . 'Core' . DS . 'Router' . '.php';
 

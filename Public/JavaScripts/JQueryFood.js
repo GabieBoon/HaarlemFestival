@@ -25,12 +25,15 @@ function showPrice(hoeveelheid) {
 }
 
 $(document).ready(function(){
-    $(".OrderBTN").click(function(event){
+    $(".OrderBTN").click(function(event){;
 
         var people = $(".People" ).val();
         var children = $(".Children" ).val();
         var day = $(".Day option:selected").val();
         var session = $(".Session option:selected").val();
+
+        // alert(<?php echo ""__DIR__ ?>);
+
 
         var xmlhttp = new XMLHttpRequest();
 
@@ -45,8 +48,7 @@ $(document).ready(function(){
                 }
             }
         }
-
-        xmlhttp.open("GET", "http://localhost/haarlem-festival/public/phpScripts/RestaurantOrder.php?people=" + people +  "&children="
+        xmlhttp.open("GET", " http://localhost/haarlem-festival/public/phpScripts/RestaurantOrder.php?people=" + people +  "&children="
             + children + "&day=" + day + "&session=" + session, true);
         xmlhttp.send();
 

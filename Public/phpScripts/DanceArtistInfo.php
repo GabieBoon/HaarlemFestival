@@ -7,7 +7,7 @@
 $artistId = $_REQUEST["q"];
 
 //require config file
-require_once(__DIR__ . DIRECTORY_SEPARATOR . 'Config' . DIRECTORY_SEPARATOR . 'config.php');
+require_once('../../' . 'Config' . DIRECTORY_SEPARATOR . 'config.php');
 
 include ROOT . 'Core' . DS . 'Router' . '.php';
 
