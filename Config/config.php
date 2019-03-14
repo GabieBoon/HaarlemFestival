@@ -6,16 +6,16 @@ define ('DEBUG', true);
 
 ## DB settings##
     //set database host
-define('DB_HOST', 'school.jasperstedema.nl');
+define('DB_HOST', 'XXX');
 
     //set database name
-define('DB_NAME', 'jaspewo251_festival');
+define('DB_NAME', 'XXX');
 
     //set database user
-define('DB_USER', 'jaspewo251_festival');
+define('DB_USER', 'XXX');
 
     //set database password
-define('DB_PASSWORD', 'YHQAzcGaVm');
+define('DB_PASSWORD', 'XXX');
 ##end DB settings##
 
 
